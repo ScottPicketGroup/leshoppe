@@ -4,6 +4,7 @@ import { Page } from '../../styled-components/GlobalStyles'
 import About from './sections/about'
 import Hero from './sections/hero'
 import Intro from './sections/intro'
+import MenuBoard from './sections/menu-board/MenuBoard'
 import Quote from './sections/qoute'
 const Landing = () => {
     return (
@@ -12,6 +13,7 @@ const Landing = () => {
             <Intro/>
             <About/>
             <Quote/>
+            <MenuBoard/>
         </Page>
     )
 }

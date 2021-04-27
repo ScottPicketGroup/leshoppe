@@ -74,7 +74,7 @@ export const ImgLandscapeSmall = styled.img`
   width: 35.5rem;
   height: 23.7rem;
   background: green;
-  margin-bottom: 13.5rem;
+  
   @media only screen and (max-width: 1440px) and (min-width: 800px) {
     width: 28rem;
   }

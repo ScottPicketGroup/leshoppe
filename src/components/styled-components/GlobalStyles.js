@@ -63,6 +63,7 @@ export const PageBackground = styled.div`
 position: fixed;
 min-height: 100%;
 width: 100vw;
+opacity: ${props => props.fade > 20 ? "55%" : "100%"};
 background-image: url(${landing});
 background-repeat: no-repeat;
 background-color: ${cream};
@@ -74,11 +75,11 @@ z-index: 1;
 
 export const Page = styled.div`
 min-height: 100%;
-width: 100vw;
+width: 99vw;
 position: absolute;
 padding: ${padding.page.vertical} ${padding.page.horizontal};
 z-index: 2;
-height: 100px;
+overflow-x: hidden;
 background: transperant;
 `
 export const MenuButton = styled.button`
