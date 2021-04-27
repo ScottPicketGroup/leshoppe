@@ -14,10 +14,10 @@ const Layout = ({ children }) => {
     <div>
       <Header />
       <GlobalStyle />
-      <PageBackground >
+      <PageBackground />
        
        
-      </PageBackground>
+   
       <main onScroll={scroll}>{children}</main>
     </div>
   )
