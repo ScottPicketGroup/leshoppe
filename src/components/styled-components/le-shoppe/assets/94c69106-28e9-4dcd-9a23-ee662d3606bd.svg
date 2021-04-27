@@ -1,0 +1,19 @@
+<svg id="Mobile_Footer" data-name="Mobile Footer" xmlns="http://www.w3.org/2000/svg" width="375" height="557" viewBox="0 0 375 557">
+  <rect id="Rectangle_2488" data-name="Rectangle 2488" width="375" height="557" opacity="0.05"/>
+  <g id="Group_1028" data-name="Group 1028" transform="translate(0 -3569)">
+    <line id="Line_51" data-name="Line 51" x2="338" transform="translate(18.5 3658)" fill="none" stroke="#000" stroke-width="1"/>
+    <text id="subscribe" transform="translate(18 3644)" font-size="20" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">SUBSCRIBE</tspan></text>
+  </g>
+  <text id="First_Name" data-name="First Name" transform="translate(19 149)" fill="#909090" font-size="14" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">FIRST NAME</tspan></text>
+  <line id="Line_39" data-name="Line 39" x2="338" transform="translate(18 161.5)" fill="none" stroke="#000" stroke-width="1"/>
+  <text id="Surname" transform="translate(19 221)" fill="#909090" font-size="14" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">SURNAME</tspan></text>
+  <line id="Line_39-2" data-name="Line 39" x2="338" transform="translate(18 233.5)" fill="none" stroke="#000" stroke-width="1"/>
+  <text id="Contact_Number" data-name="Contact Number" transform="translate(19 293)" fill="#909090" font-size="14" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">CONTACT NUMBER</tspan></text>
+  <line id="Line_39-3" data-name="Line 39" x2="338" transform="translate(18 305.5)" fill="none" stroke="#000" stroke-width="1"/>
+  <text id="Email_Address" data-name="Email Address" transform="translate(19 365)" fill="#909090" font-size="14" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">EMAIL ADDRESS</tspan></text>
+  <line id="Line_39-4" data-name="Line 39" x2="338" transform="translate(18.5 377.5)" fill="none" stroke="#000" stroke-width="1"/>
+  <text id="Privacy_policy_Terms_Conditions" data-name="Privacy policy
+Terms &amp; Conditions" transform="translate(18 503)" font-size="12" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">PRIVACY POLICY</tspan><tspan x="0" y="20">TERMS &amp; CONDITIONS</tspan></text>
+  <text id="_cadre_property" data-name="© cadre property" transform="translate(217 523)" font-size="12" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">© CADRE PROPERTY</tspan></text>
+  <text id="SUBMIT" transform="translate(19 436)" font-size="18" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">SUBMIT</tspan></text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1828" height="41.5" viewBox="0 0 1828 41.5">
+  <g id="Header" transform="translate(0 0.5)">
+    <g id="Logo" transform="translate(0 17)">
+      <path id="Path_1" data-name="Path 1" d="M5723.647,7250.707a6.039,6.039,0,0,1,5.331,2.845h5.657c-.524-2.648-3.466-7.847-10.987-7.847-6.964,0-11.9,5.068-11.9,12s4.937,12,11.9,12c7.815,0,10.562-5.526,10.987-7.848h-5.624a5.784,5.784,0,0,1-5.363,2.845c-3.857,0-6.212-3.172-6.212-7S5719.79,7250.707,5723.647,7250.707Z" transform="translate(-5711.746 -7245.705)"/>
+      <path id="Path_2" data-name="Path 2" d="M5799.354,7246.915l-10.168,23.248h5.591l1.733-4.022h11.052l1.733,4.022h5.885l-10.137-23.248Zm-.85,14.583,3.532-8.207,3.531,8.207Z" transform="translate(-5766.167 -7246.555)"/>
+      <path id="Path_3" data-name="Path 3" d="M5893.177,7247.025h-9.613v23.215h9.613c7.423,0,12.72-4.153,12.72-11.608C5905.9,7251.014,5900.6,7247.025,5893.177,7247.025Zm-.1,18.441h-3.957V7251.8h3.957c4.284,0,7.161,2.354,7.161,6.833C5900.24,7262.949,5897.363,7265.466,5893.079,7265.466Z" transform="translate(-5832.491 -7246.633)"/>
+      <path id="Path_4" data-name="Path 4" d="M5991.35,7254.316c0-4.84-3.139-7.292-8.272-7.292h-13.6v23.215h5.559v-8.829h6.376l4.9,8.829h5.853l-5.231-9.45A6.4,6.4,0,0,0,5991.35,7254.316Zm-8.861,2.419h-7.455V7251.8h7.455c2.093,0,3.172.719,3.172,2.518C5985.66,7255.918,5984.614,7256.736,5982.488,7256.736Z" transform="translate(-5892.864 -7246.633)"/>
+      <path id="Path_5" data-name="Path 5" d="M6060.173,7265.434v-4.971h8.272v-4.675h-8.272V7251.6h13.864v-4.578h-19.423v23.216h20.7v-4.807Z" transform="translate(-5952.696 -7246.633)"/>
+    </g>
+    <line id="Line_1" data-name="Line 1" x2="1828" fill="none" stroke="#000" stroke-width="1"/>
+    <text id="contact" transform="translate(1740 35)" font-size="16" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">CONTACT</tspan></text>
+    <text id="news" transform="translate(1539 35)" font-size="16" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">NEWS</tspan></text>
+    <text id="Projects" transform="translate(1296 35)" font-size="16" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">PROJECTS</tspan></text>
+    <text id="About" transform="translate(1085 35)" font-size="16" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">ABOUT</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,133 @@
+{
+  "dsp_spec_version": "0.0.1",
+  "last_updated_by": "",
+  "last_updated": "2021-04-20T04:33:15.849Z",
+  "entities": [
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "af86781a-9454-4883-a109-7dcd19218d3a",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Bars - Home Indicator - iPhone - Light - Portrait",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "561bb600-5099-4880-adc7-f616acac1ac0",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      }
+    },
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "772765d7-02d9-464d-9715-7871b611b3a8",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Bars - Toolbar - iPhone - Compact - Light - 5 Glyphs",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "da218a03-0179-4960-8837-0bc7bac8ecfa",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      }
+    },
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "cd060a55-83c0-482b-9c70-1cce149686fc",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Footer",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "fe217c87-bdbe-4fd2-92cc-8e3cf329df17",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      }
+    },
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "75efa5a8-7cba-46fa-bdb9-9400612cd765",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Header",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "e376a6f1-5cf8-42e0-b140-2329bc0e6197",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      }
+    },
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "c4bde92d-6bf5-4e75-a5c5-0eabbde5b8ae",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Logo",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "4aac51fd-7db0-4abc-a5a6-9213d8478d43",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      }
+    },
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "ab713cdf-3a52-485b-aa31-7bb485e2f0d6",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Mobile Footer",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "94c69106-28e9-4dcd-9a23-ee662d3606bd",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      }
+    },
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "cb5f8e99-e7aa-4ba7-9bc5-d635e9840b5e",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Mouse",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "fd584e07-86eb-4466-9fe3-5ace4df9580e",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      }
+    }
+  ]
+}

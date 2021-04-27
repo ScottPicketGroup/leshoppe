@@ -1,0 +1,30 @@
+<svg id="Footer" xmlns="http://www.w3.org/2000/svg" width="1920" height="360" viewBox="0 0 1920 360">
+  <rect id="Rectangle_2488" data-name="Rectangle 2488" width="1920" height="360" opacity="0.05"/>
+  <g id="Group_985" data-name="Group 985" transform="translate(0 -5077)">
+    <text id="_72_North_Street_Richmond_Victoria_Australia_3121" data-name="72 North Street
+Richmond Victoria
+Australia 3121" transform="translate(46 5324)" font-size="12" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">72 NORTH STREET</tspan><tspan x="0" y="20">RICHMOND VICTORIA</tspan><tspan x="0" y="40">AUSTRALIA 3121</tspan></text>
+    <text id="info_cadre.net.au_61_3_9428_9967" data-name="info@cadre.net.au
++61 3 9428 9967" transform="translate(511 5324)" font-size="12" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">INFO@CADRE.NET.AU</tspan><tspan x="0" y="20">+61 3 9428 9967</tspan></text>
+    <text id="linkedin_Instagram" data-name="linkedin
+Instagram" transform="translate(976 5324)" font-size="12" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">LINKEDIN</tspan><tspan x="0" y="20">INSTAGRAM</tspan></text>
+    <line id="Line_64" data-name="Line 64" x2="1828" transform="translate(46 5188)" fill="none" stroke="#000" stroke-width="1"/>
+    <text id="Subscribe" transform="translate(46 5167)" font-size="20" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">SUBSCRIBE</tspan></text>
+    <text id="Privacy_policy_Terms_Conditions_cadre_property_" data-name="Privacy policy
+Terms &amp; Conditions
+© cadre property
+" transform="translate(1441 5324)" font-size="12" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">PRIVACY POLICY</tspan><tspan x="0" y="20">TERMS &amp; CONDITIONS</tspan><tspan x="0" y="40">© CADRE PROPERTY</tspan><tspan font-family="StyreneALC-Light, Styrene A LC"><tspan x="0" y="60"></tspan></tspan></text>
+    <text id="Staff_log_in" data-name="Staff log in" transform="translate(1874 5324)" font-size="12" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="-78.264" y="0">STAFF LOG IN</tspan></text>
+    <g id="Group_984" data-name="Group 984" transform="translate(0 -145)">
+      <line id="Line_13" data-name="Line 13" x2="433" transform="translate(46 5408.5)" fill="none" stroke="#000" stroke-width="1"/>
+      <line id="Line_61" data-name="Line 61" x2="433" transform="translate(511 5408.5)" fill="none" stroke="#000" stroke-width="1"/>
+      <line id="Line_62" data-name="Line 62" x2="433" transform="translate(976 5408.5)" fill="none" stroke="#000" stroke-width="1"/>
+      <line id="Line_63" data-name="Line 63" x2="433" transform="translate(1441.5 5408.5)" fill="none" stroke="#000" stroke-width="1"/>
+      <text id="First_Name" data-name="First Name" transform="translate(46 5393)" fill="#909090" font-size="14" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">FIRST NAME</tspan></text>
+      <text id="Last_Name" data-name="Last Name" transform="translate(511 5393)" fill="#909090" font-size="14" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">LAST NAME</tspan></text>
+      <text id="Contact_Number" data-name="Contact Number" transform="translate(976 5393)" fill="#909090" font-size="14" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">CONTACT NUMBER</tspan></text>
+      <text id="Email" transform="translate(1441 5393)" fill="#909090" font-size="14" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">EMAIL</tspan></text>
+      <text id="submit" transform="translate(1795 5393)" font-size="18" font-family="Helvetica-Light, Helvetica" font-weight="300"><tspan x="0" y="0">SUBMIT</tspan></text>
+    </g>
+  </g>
+</svg>

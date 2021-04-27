@@ -1,0 +1,370 @@
+{
+  "dsp_spec_version": "0.0.1",
+  "last_updated_by": "",
+  "last_updated": "2021-04-20T04:33:15.849Z",
+  "entities": [
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "f6365728-8353-43a3-aa76-e903416c616b",
+      "name": "Menu",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "6ba3f039-552f-4bd3-92a4-69c33e14d30f",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "f6365728-8353-43a3-aa76-e903416c616b",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "f6365728-8353-43a3-aa76-e903416c616b",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "f6365728-8353-43a3-aa76-e903416c616b",
+          "type": "size",
+          "value": "28",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "825593aa-e18b-4ea7-a63e-678d17311531",
+      "name": "BC2",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "06cc65c8-4d3a-4fa0-9b8c-5d052424eab7",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "825593aa-e18b-4ea7-a63e-678d17311531",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "825593aa-e18b-4ea7-a63e-678d17311531",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "825593aa-e18b-4ea7-a63e-678d17311531",
+          "type": "size",
+          "value": "24",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "bbd80b94-e638-473b-abd0-2978042e4635",
+      "name": "Button",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "638c4dc8-d545-4693-8f75-b89c29410f9b",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "bbd80b94-e638-473b-abd0-2978042e4635",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "bbd80b94-e638-473b-abd0-2978042e4635",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "bbd80b94-e638-473b-abd0-2978042e4635",
+          "type": "size",
+          "value": "16",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "8ff8ff43-10ac-4b6f-a157-199677428e51",
+      "name": "Form field description",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "dda038e3-80ba-4c98-aa2f-848eb3a6dd4f",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "8ff8ff43-10ac-4b6f-a157-199677428e51",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "8ff8ff43-10ac-4b6f-a157-199677428e51",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "8ff8ff43-10ac-4b6f-a157-199677428e51",
+          "type": "size",
+          "value": "20",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "10032655-759d-441b-9edb-62b1b10683ef",
+      "name": "BC3",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "e1831a9c-23f4-4039-a260-3c94debfea0c",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "10032655-759d-441b-9edb-62b1b10683ef",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "10032655-759d-441b-9edb-62b1b10683ef",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "10032655-759d-441b-9edb-62b1b10683ef",
+          "type": "size",
+          "value": "16",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "a4bb389e-0093-4f68-86bd-567a0fe1227d",
+      "name": "H2/CTA",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "e734511e-2db9-4f33-a317-67fc7410d7f5",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "a4bb389e-0093-4f68-86bd-567a0fe1227d",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "a4bb389e-0093-4f68-86bd-567a0fe1227d",
+          "type": "custom",
+          "value": "Medium",
+          "key": "weight"
+        },
+        {
+          "id": "a4bb389e-0093-4f68-86bd-567a0fe1227d",
+          "type": "size",
+          "value": "24",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "33e223a3-c6f6-4ba9-81b8-9dfd7d40df40",
+      "name": "Form Field Labels",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "af742bdc-ba38-44ca-b3d2-7f2faa9fbd30",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "33e223a3-c6f6-4ba9-81b8-9dfd7d40df40",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "33e223a3-c6f6-4ba9-81b8-9dfd7d40df40",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "33e223a3-c6f6-4ba9-81b8-9dfd7d40df40",
+          "type": "size",
+          "value": "20",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "4c73bd54-357d-42da-90e2-0f8ad592bae7",
+      "name": "H3",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "40a7f719-658d-4019-94f1-5eca869dff10",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "4c73bd54-357d-42da-90e2-0f8ad592bae7",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "4c73bd54-357d-42da-90e2-0f8ad592bae7",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "4c73bd54-357d-42da-90e2-0f8ad592bae7",
+          "type": "size",
+          "value": "16",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "5a4c4d37-c4ad-421e-a80a-2365e8216c46",
+      "name": "Pull Quote",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "fe5cc111-9a24-4fe5-b805-0048def59542",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "5a4c4d37-c4ad-421e-a80a-2365e8216c46",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "5a4c4d37-c4ad-421e-a80a-2365e8216c46",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "5a4c4d37-c4ad-421e-a80a-2365e8216c46",
+          "type": "size",
+          "value": "40",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "5ee527cb-5faf-4775-ad95-ce5927064867",
+      "name": "H1",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "148f85cc-8a26-4ac0-873a-690f9a882282",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "5ee527cb-5faf-4775-ad95-ce5927064867",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "5ee527cb-5faf-4775-ad95-ce5927064867",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "5ee527cb-5faf-4775-ad95-ce5927064867",
+          "type": "size",
+          "value": "40",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "5d46030c-1c0b-4bd7-8d30-fcab4d843b80",
+      "name": "BC1",
+      "tags": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/23c25dea-990c-4b7b-5847-7b076cc1c3c9",
+        "id": "3e643269-6682-44fc-b695-356e68117426",
+        "last_sync": "2021-04-20T04:33:15.848Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "5d46030c-1c0b-4bd7-8d30-fcab4d843b80",
+          "type": "custom",
+          "value": "TT Norms Pro",
+          "key": "family"
+        },
+        {
+          "id": "5d46030c-1c0b-4bd7-8d30-fcab4d843b80",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "5d46030c-1c0b-4bd7-8d30-fcab4d843b80",
+          "type": "size",
+          "value": "28",
+          "key": "size"
+        }
+      ]
+    }
+  ]
+}

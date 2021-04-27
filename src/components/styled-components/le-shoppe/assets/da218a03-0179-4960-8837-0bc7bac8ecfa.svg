@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="83.5" viewBox="0 0 375 83.5">
+  <defs>
+    <filter id="Background" x="0" y="0" width="375" height="83.5" filterUnits="userSpaceOnUse">
+      <feOffset dy="-0.5" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Bars_-_Toolbar_-_iPhone_-_Compact_-_Light_-_5_Glyphs" data-name="Bars - Toolbar - iPhone - Compact - Light - 5 Glyphs" transform="translate(0 0.5)">
+    <g id="Background-2" data-name="Background" transform="translate(-3376 -7031)">
+      <g transform="matrix(1, 0, 0, 1, 3376, 7030.5)" filter="url(#Background)">
+        <rect id="Background-3" data-name="Background" width="375" height="83" transform="translate(0 0.5)" fill="rgba(249,249,249,0.94)" opacity="0.999"/>
+      </g>
+    </g>
+    <g id="Button_5" data-name="Button 5" transform="translate(-3050 -6979)">
+      <rect id="Frame" width="44" height="44" transform="translate(3373 6982)" fill="#fff" opacity="0"/>
+      <text id="Symbol" transform="translate(3395 7012)" fill="#007aff" font-size="22" font-family="LastResort, '\.LastResort'" letter-spacing="0em"><tspan x="-12.622" y="0">􀈑</tspan></text>
+    </g>
+    <g id="Button_4" data-name="Button 4" transform="translate(-3129 -6979)">
+      <rect id="Frame-2" data-name="Frame" width="44" height="44" transform="translate(3373 6982)" fill="#fff" opacity="0"/>
+      <text id="Symbol-2" data-name="Symbol" transform="translate(3395 7012)" fill="#007aff" font-size="22" font-family="LastResort, '\.LastResort'" letter-spacing="0em"><tspan x="-12.622" y="0">􀈕</tspan></text>
+    </g>
+    <g id="Button_3" data-name="Button 3" transform="translate(-3207 -6979)">
+      <rect id="Frame-3" data-name="Frame" width="44" height="44" transform="translate(3373 6982)" fill="#fff" opacity="0"/>
+      <text id="Symbol-3" data-name="Symbol" transform="translate(3395 7012)" fill="#007aff" font-size="22" font-family="LastResort, '\.LastResort'" letter-spacing="0em"><tspan x="-12.622" y="0">􀈎</tspan></text>
+    </g>
+    <g id="Button_2" data-name="Button 2" transform="translate(-3286 -6979)">
+      <rect id="Frame-4" data-name="Frame" width="44" height="44" transform="translate(3373 6982)" fill="#fff" opacity="0"/>
+      <text id="Symbol-4" data-name="Symbol" transform="translate(3395 7013)" fill="#007aff" font-size="22" font-family="LastResort, '\.LastResort'" letter-spacing="0em"><tspan x="-12.622" y="0">􀈂</tspan></text>
+    </g>
+    <g id="Button_1" data-name="Button 1" transform="translate(-3365 -6979)">
+      <rect id="Frame-5" data-name="Frame" width="44" height="44" transform="translate(3373 6982)" fill="#fff" opacity="0"/>
+      <text id="Symbol-5" data-name="Symbol" transform="translate(3395 7012)" fill="#007aff" font-size="22" font-family="LastResort, '\.LastResort'" letter-spacing="0em"><tspan x="-12.622" y="0">􀅼</tspan></text>
+    </g>
+  </g>
+</svg>
