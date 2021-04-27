@@ -10,8 +10,8 @@ import Landing from "../components/pages/landing/landing"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-{/* <ComingSoon/> */}
-<Landing/>
+<ComingSoon/>
+{/* <Landing/> */}
   </Layout>
 )
 

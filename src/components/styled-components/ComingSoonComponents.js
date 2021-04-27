@@ -6,8 +6,12 @@ export const LandingPageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 600px) {
-    align-items: start;
+  z-index: 3;
+  position: relative;
+  @media screen and (max-width: 800px) {
+    margin-top: 0;
+   align-items: center;
+ height: 100vh;
   }
 `
 
@@ -23,6 +27,7 @@ export const LandingContentContainer = styled.div`
   }
   @media screen and (max-width: 600px) {
     width: 340px;
+  
   }
 `
 export const LogoContainer = styled.div`
@@ -31,15 +36,16 @@ export const LogoContainer = styled.div`
   
   
   @media screen and (max-width: 1200px) {
-    margin-top: 17rem;
+   
     display: flex;
     justify-content: center;
     padding: 0;
   }
   @media screen and (max-width: 600px) {
-    margin-top: 3.37rem;
+   
   
-    
+    margin-top: 0;
+   
   }
 `
 export const TextContainer = styled.div`

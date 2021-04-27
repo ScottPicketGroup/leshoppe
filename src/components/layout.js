@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, {useState, useEffect} from "react"
 import {
   GlobalStyle,
   PageBackground,
@@ -6,19 +6,31 @@ import {
 import Header from "./header"
 import landing from '../images/logos/landing.png'
 const Layout = ({ children }) => {
-  const scroll = e => {
-    console.log('boob')
+  const [scrollY, setScrollY] = useState(0);
+
+  function logit() {
+    setScrollY(window.pageYOffset);
+    console.log(window.pageYOffset);
   }
-  console.log('boob')
+
+  useEffect(() => {
+    function watchScroll() {
+      window.addEventListener("scroll", logit);
+    }
+    watchScroll();
+    return () => {
+      window.removeEventListener("scroll", logit);
+    };
+  });
   return (
     <div>
       <Header />
       <GlobalStyle />
       <PageBackground />
-       
+      <div className="fixed-center">Scroll position: {scrollY}px</div>
        
    
-      <main onScroll={scroll}>{children}</main>
+      <main >{children}</main>
     </div>
   )
 }
