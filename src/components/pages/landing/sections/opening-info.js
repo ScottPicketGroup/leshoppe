@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
 import oldGuy from "../../../../images/placeholders/openingGuy.jpg"
-import outside from "../../../../images/placeholders/openingOutside.jpg"
+import outside from "../../../../images/placeholders/OpeningOutside.jpg"
 
 const OpeningInfo = () => {
   return (
@@ -11,7 +11,7 @@ const OpeningInfo = () => {
         <ImgPortraitSmall src={oldGuy} />
       <ImgLandscapeSmall src={outside} />
         </ImgBox>
-    
+    hi hi
       <OpeningInfoText>
         <h1 style={{ marginBottom: `2.25rem` }}>Location and Opening Times</h1>
         <P padding="2rem" bc2>
