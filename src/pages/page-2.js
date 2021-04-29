@@ -13,7 +13,7 @@ import { color, font } from "../components/styled-components/variables"
 import Landing from "../components/pages/landing/landing"
 const SecondPage = () => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Welcome" />
     <Landing />
   </Layout>
 )

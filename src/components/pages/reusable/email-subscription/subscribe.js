@@ -5,14 +5,16 @@ import axios from 'axios'
 import { P } from "../../../styled-components/GlobalStyles"
 const Subscribe = () => {
   const [email, setEmail] = useState("")
+  const [emailErr, setEmailErr] = useState(false)
   const [signUp, setSignup] = useState(true)
   const [thankyou, setThankyou] = useState(true)
   const handleChange = event => {
     setEmail(event.target.value)
+    !email.includes(".") || !email.includes("@")  ? setEmailErr(true) : setEmailErr(false)
   }
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(email)
+    if (email.includes(".") || email.includes("@")) 
     axios.post("https://jsonplaceholder.typicode.com/posts", email)
      .then(res => {
        console.log(res)
@@ -22,6 +24,10 @@ const Subscribe = () => {
      .catch(err => {
        console.log(`err`, err)
      })
+     else {
+       setEmailErr(true)
+       console.log(`emailErr`, emailErr)
+     }
   }
 
   return (
@@ -32,15 +38,16 @@ const Subscribe = () => {
         <SignUp onSubmit={handleSubmit}>
         <p>EMAIL ADDRESS</p>
         <form>
-        <input
+        <Input
           placeholder="Please enter your email address"
           name="email"
           type="text"
           value={email}
           onChange={handleChange}
-          required
+          err={emailErr}
         />
-        <SignUpSubmit type="submit">SUBSCRIBE</SignUpSubmit>
+        {emailErr ? <P error style={{marginTop: `1rem`}}>Please enter a valid email address</P> : null}
+        <SignUpSubmit err={emailErr} type="submit">SUBSCRIBE</SignUpSubmit>
       </form>
     </SignUp>
       ) : (
@@ -71,45 +78,48 @@ const SubContainer = styled.div`
 const SignUp = styled.div`
   font-size: 0.75rem;
 
-  input {
-    width: 95%;
-    height: 2rem;
+  
+`
+const Input = styled.input `
+  width: 95%;
+  height: 2rem;
+  background: #fdf9ee;
+  border: none;
+  padding: 1.5rem 0;
+  font-size: 0.75rem;
+  line-height: none;
+  border-bottom: 1px solid ${props => props.err ? 'red' : '#153e35'};
+  ::placeholder {
+    color: darkgrey;
+    font-size: 1rem;
+    margin-bottom: 10rem;
+  }
+  :focus {
+    outline: none;
     background: #fdf9ee;
-    border: none;
-    padding: 1.5rem 0;
-    font-size: 0.75rem;
-    line-height: none;
-    border-bottom: 1px solid #153e35;
-    ::placeholder {
-      color: darkgrey;
-      font-size: 1rem;
-      margin-bottom: 10rem;
-    }
-    :focus {
-      outline: none;
-      background: #fdf9ee;
 
-      height: 3rem;
-      font-size: 150%;
-    }
-    :valid {
-      font-size: 1rem;
-    }
-    ::-moz-focus-outer {
-      color: white;
-    }
+    height: 3rem;
+    font-size: 150%;
+  }
+  :valid {
+    font-size: 1rem;
+  }
+  ::-moz-focus-outer {
+    color: white;
   }
 `
+
 const SignUpSubmit = styled.button`
   background: none;
 
   padding: 0.5rem 2rem;
-  border: 1px solid #153e35;
+  border: 1px solid ${props => props.err ? 'red' : '#153e35'};
+  color: ${props => props.err ? 'red' : '#153e35'};
   margin-top: 1.75rem;
   font-size: 120%;
   transition: all 0.2s ease;
   :hover {
-    background: #153e35;
-    color: white;
+    background: ${props => props.err ? 'red' : '#153e35'};
+    color: ${props => props.err ? 'white' : 'white'};
   }
 `
