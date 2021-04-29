@@ -60,7 +60,7 @@ export const AboutText = styled.div`
 export const ImgPortraitSmall = styled.img`
   width: 25.2rem;
   margin-right: 1rem;
-  background: blue;
+ 
   @media only screen and (max-width: 1440px) and (min-width: 800px) {
     width: 20rem;
   }
@@ -73,7 +73,7 @@ export const ImgPortraitSmall = styled.img`
 export const ImgLandscapeSmall = styled.img`
   width: 35.5rem;
   height: 23.7rem;
-  background: green;
+ 
   
   @media only screen and (max-width: 1440px) and (min-width: 800px) {
     width: 28rem;
