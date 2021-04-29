@@ -11,7 +11,7 @@ const OpeningInfo = () => {
         <ImgPortraitSmall src={oldGuy} />
       <ImgLandscapeSmall src={outside} />
         </ImgBox>
-    hi hi
+  
       <OpeningInfoText>
         <h1 style={{ marginBottom: `2.25rem` }}>Location and Opening Times</h1>
         <P padding="2rem" bc2>

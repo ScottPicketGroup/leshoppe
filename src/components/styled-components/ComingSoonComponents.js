@@ -9,7 +9,7 @@ export const LandingPageContainer = styled.div`
   z-index: 3;
   position: relative;
   @media screen and (max-width: 800px) {
-    margin-top: 0;
+  
    align-items: center;
  height: 100vh;
   }
@@ -21,13 +21,14 @@ export const LandingContentContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
+  margin-top: 220.5!important;
   @media screen and (max-width: 1200px) {
     width: 800px;
+    
   }
   @media screen and (max-width: 600px) {
     width: 340px;
-  
+   
   }
 `
 export const LogoContainer = styled.div`
@@ -39,7 +40,10 @@ export const LogoContainer = styled.div`
    
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 0;
+    margin-top: 10rem;
+  
   }
   @media screen and (max-width: 600px) {
    

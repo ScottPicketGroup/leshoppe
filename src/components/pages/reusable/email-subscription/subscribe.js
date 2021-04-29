@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import font from "../../.././../fonts/TT-Norms-Pro.ttf"
+import axios from 'axios'
 import { P } from "../../../styled-components/GlobalStyles"
 const Subscribe = () => {
   const [email, setEmail] = useState("")
@@ -12,21 +13,15 @@ const Subscribe = () => {
   const handleSubmit = e => {
     e.preventDefault()
     console.log(email)
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      body: JSON.stringify({
-        body: email,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .then(() => {
-        setSignup(false)
-        setThankyou(true)
-        }) 
+    axios.post("https://jsonplaceholder.typicode.com/posts", email)
+     .then(res => {
+       console.log(res)
+       setSignup(false)
+      setThankyou(true)
+     })
+     .catch(err => {
+       console.log(`err`, err)
+     })
   }
 
   return (
