@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <GlobalStyle />
-      <PageBackground fade={scrollY} />
+      {/* <PageBackground fade={scrollY} /> */}
       <main>{children}</main>
     </>
   )

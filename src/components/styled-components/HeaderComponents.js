@@ -26,6 +26,7 @@ export const ComingSoonContainer = styled.div`
 max-height: 1.5rem;
 display: flex;
 align-content: center;
+font-size: 1.5rem;
 span {
   padding-top: .15rem;
 }

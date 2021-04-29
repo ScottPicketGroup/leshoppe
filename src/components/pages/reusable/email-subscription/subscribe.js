@@ -1,46 +1,62 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import font from '../../.././../fonts/TT-Norms-Pro.ttf'
+import font from "../../.././../fonts/TT-Norms-Pro.ttf"
+import { P } from "../../../styled-components/GlobalStyles"
 const Subscribe = () => {
   const [email, setEmail] = useState("")
+  const [signUp, setSignup] = useState(true)
+  const [thankyou, setThankyou] = useState(true)
   const handleChange = event => {
     setEmail(event.target.value)
   }
   const handleSubmit = e => {
     e.preventDefault()
     console.log(email)
-    // fetch('https://jsonplaceholder.typicode.com/posts', {
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //         title: 'foo',
-    //         body: email,
-    //         userId: 1
-    //     }),
-    //     headers: {
-    //         'Content-type': 'application/json; charset=UTF-8'
-    //     },
-    // })
-    // .then((response) => response.json())
-    // .then((json) => console.log(json))
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      body: JSON.stringify({
+        body: email,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then(response => response.json())
+      .then(json => console.log(json))
+      .then(() => {
+        setSignup(false)
+        setThankyou(true)
+        }) 
   }
 
   return (
     <SubContainer>
-      <SignUp onSubmit={handleSubmit}>
-      <p>EMAIL ADDRESS</p>
-        
+      
+      {signUp ?
+      (
+        <SignUp onSubmit={handleSubmit}>
+        <p>EMAIL ADDRESS</p>
         <form>
-          <input
-            placeholder="Please enter your email address"
-            name="email"
-            type="text"
-            value={email}
-            onChange={handleChange}
-            required
-          />
-        </form>
+        <input
+          placeholder="Please enter your email address"
+          name="email"
+          type="text"
+          value={email}
+          onChange={handleChange}
+          required
+        />
         <SignUpSubmit type="submit">SUBSCRIBE</SignUpSubmit>
-      </SignUp>
+      </form>
+    </SignUp>
+      ) : (
+      <>
+       <P bc2>Thank you</P>
+       <P bc2>You are now signed up to our mailing list.</P>
+       
+       </>
+      )
+    }
+       
     </SubContainer>
   )
 }
@@ -49,9 +65,12 @@ export default Subscribe
 
 const SubContainer = styled.div`
   width: 100%;
- 
+
   overflow: visible;
   margin-top: 1rem;
+  p {
+    font-size: 1rem;
+  }
 `
 
 const SignUp = styled.div`
