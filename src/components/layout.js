@@ -4,7 +4,8 @@ import {
   PageBackground,
 } from "../components/styled-components/GlobalStyles"
 import Header from "./header"
-import landing from "../images/logos/landing.png"
+import styled from 'styled-components'
+import LogoFooter from "./pages/reusable/logo-footer/LogoFooter"
 const Layout = ({ children }) => {
   const [scrollY, setScrollY] = useState(0)
 
@@ -22,14 +23,25 @@ const Layout = ({ children }) => {
       window.removeEventListener("scroll", logit)
     }
   })
+  
   return (
-    <>
+    <LayoutContainer>
+  
       <Header />
       <GlobalStyle />
       {/* <PageBackground fade={scrollY} /> */}
       <main>{children}</main>
-    </>
+      
+  
+    </LayoutContainer>
+  
   )
 }
 
 export default Layout
+
+export const LayoutContainer = styled.div`
+height: 100%;
+display: flex;
+
+`

@@ -7,10 +7,10 @@ import outside from "../../../../images/placeholders/OpeningOutside.jpg"
 const OpeningInfo = () => {
   return (
     <OpeningInfoContainer>
-        <ImgBox>
+        {/* <ImgBox> */}
         <ImgPortraitSmall src={oldGuy} />
       <ImgLandscapeSmall src={outside} />
-        </ImgBox>
+        {/* </ImgBox> */}
   
       <OpeningInfoText>
         <h1 style={{ marginBottom: `2.25rem` }}>Location and Opening Times</h1>
@@ -122,9 +122,9 @@ export const Hours = styled.div`
 `
 
 export const ImgPortraitSmall = styled.img`
-  
+  width: 25.2rem;
   margin-right: 1rem;
-  background: blue;
+ 
   @media only screen and (max-width: 1440px) and (min-width: 800px) {
     width: 20rem;
   }
@@ -133,23 +133,25 @@ export const ImgPortraitSmall = styled.img`
     margin: 1rem 0;
   }
 `
-export const ImgBox = styled.div`
-width: 58%;
+// export const ImgBox = styled.div`
+// width: 58%;
 
-display: flex;
-justify-content: space-between;
-flex-flow: wrap;
-`
+// display: flex;
+// justify-content: space-between;
+// flex-flow: wrap;
+// `
+
+
 export const ImgLandscapeSmall = styled.img`
-max-width: 56%;
-max-height: 65%;
-  background: green;
-
+  width: 35.5rem;
+  height: 23.7rem;
+ 
+  
   @media only screen and (max-width: 1440px) and (min-width: 800px) {
     width: 28rem;
   }
   @media only screen and (max-width: 700px) {
     width: 100%;
- 
+    height: 100%;
   }
 `

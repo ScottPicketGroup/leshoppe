@@ -72,8 +72,11 @@ background-size: 30rem;
 top: 0;
 z-index: 1;
 `
-
 export const Page = styled.div`
+width: 100%;
+`
+
+export const Section1 = styled.div`
 min-height: 100%;
 width: 99vw;
 position: absolute;
@@ -133,4 +136,32 @@ export const P = styled.p`
       ? `${bc3.lineHeight}`
       : null};
     padding-top: ${props => props.padding};
+`
+export const UnderlineLink = styled.a`
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+  transition: all .3s ease-in-out ;
+  display:table;
+  :hover {
+    font-size: 130%;
+  }
+/* ::before {
+  content: "";
+  position: absolute;
+ 
+ width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transform: translateX(-100px);
+  transition: all 0.3s ease-in-out 0s;
+}
+:hover::before {
+  visibility: visible;
+  transform: translateX(-100px);
+} */
 `

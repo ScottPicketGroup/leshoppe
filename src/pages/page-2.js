@@ -11,11 +11,16 @@ import {
 } from "../components/styled-components/GlobalStyles"
 import { color, font } from "../components/styled-components/variables"
 import Landing from "../components/pages/landing/landing"
+import LogoFooter from "../components/pages/reusable/logo-footer/LogoFooter"
 const SecondPage = () => (
+  <>
   <Layout>
     <SEO title="Welcome" />
     <Landing />
+    
   </Layout>
+  
+  </>
 )
 
 export default SecondPage

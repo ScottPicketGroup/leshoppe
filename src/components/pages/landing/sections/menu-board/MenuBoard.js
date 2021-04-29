@@ -18,22 +18,22 @@ const MenuBoard = ({data}) => {
 
 export default MenuBoard
 
-export const one = graphql`
-  query MyQuery {
-    allContentfulSlider {
-      edges {
-        node {
-          id
-          mediaMany {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const one = graphql`
+//   query MyQuery {
+//     allContentfulSlider {
+//       edges {
+//         node {
+//           id
+//           mediaMany {
+//             fluid {
+//               ...GatsbyContentfulFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export const MenuBoardPageContainer = styled.div`
 h1 {
