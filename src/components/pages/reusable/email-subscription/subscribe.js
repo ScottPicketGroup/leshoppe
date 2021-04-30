@@ -1,13 +1,15 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import font from "../../.././../fonts/TT-Norms-Pro.ttf"
-import axios from 'axios'
 import { P } from "../../../styled-components/GlobalStyles"
+
+
 const Subscribe = () => {
   const [email, setEmail] = useState("")
   const [emailErr, setEmailErr] = useState(false)
   const [signUp, setSignup] = useState(true)
-  const [thankyou, setThankyou] = useState(true)
+  const [thankyou, setThankyou] = useState(false)
+
+  
   const handleChange = event => {
     setEmail(event.target.value)
     !email.includes(".") || !email.includes("@")  ? setEmailErr(true) : setEmailErr(false)
@@ -15,24 +17,37 @@ const Subscribe = () => {
   const handleSubmit = e => {
     e.preventDefault()
     if (email.includes(".") || email.includes("@")) 
-    axios.post("https://jsonplaceholder.typicode.com/posts", email)
-     .then(res => {
-       console.log(res)
-       setSignup(false)
-      setThankyou(true)
-     })
-     .catch(err => {
-       console.log(`err`, err)
-     })
-     else {
-       setEmailErr(true)
-       console.log(`emailErr`, emailErr)
-     }
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer 25183d2e-1266-4207-a9d3-a5d9422d94b0");
+    myHeaders.append("Timestamp", "1619765391");
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify({
+      "data": {
+        "email": email
+      }
+    });
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch("https://api.sproutsend.com/contacts?", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .then(setSignup(false)
+      
+      ).then(setThankyou(true))
+      .catch(error => console.log('error', error));
   }
 
   return (
+   
     <SubContainer>
-      
+    
       {signUp ?
       (
         <SignUp onSubmit={handleSubmit}>
@@ -60,6 +75,7 @@ const Subscribe = () => {
     }
        
     </SubContainer>
+   
   )
 }
 
