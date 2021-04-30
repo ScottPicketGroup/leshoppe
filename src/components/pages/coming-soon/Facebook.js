@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import gsap from "gsap"
 import { TweenLite, Power3 } from "gsap"
+import styled from 'styled-components'
 
 gsap.registerPlugin()
 
@@ -28,14 +29,18 @@ const Facebook = () => {
   }, [hovered])
 
   return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        position: `relative`,
-        height: `100%`,
-      }}
-    >
+    <SocialsLink
+    href="https://www.facebook.com/leshoppe.chancerylane"
+    target="blank"
+    onMouseEnter={() => setHovered(true)}
+    onMouseLeave={() => setHovered(false)}
+    style={{
+      position: `relative`,
+      height: `100%`,
+
+      paddingRight: `1rem`,
+    }}
+  >
       <div
         ref={el => (iconHover = el)}
         style={{
@@ -96,8 +101,12 @@ const Facebook = () => {
           </g>
         </svg>
       </div>
-    </div>
+      </SocialsLink>
   )
 }
 
 export default Facebook
+
+export const SocialsLink = styled.a`
+
+`

@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react"
 import { Logo } from "../../styled-components/ComingSoonComponents"
-import gsap from 'gsap'
-import { TweenLite, Power3 } from "gsap";
+import styled from 'styled-components'
+import gsap from "gsap"
+import { TweenLite, Power3 } from "gsap"
 
 gsap.registerPlugin()
 
@@ -12,61 +13,52 @@ const Instagram = () => {
 
   useEffect(() => {
     if (hovered) {
-    TweenLite.to(icon, .5, {
-      opacity: 0
-     })
-     TweenLite.to(iconHover, .5, {
-      opacity: 1
-     })
-   
+      TweenLite.to(icon, 0.5, {
+        opacity: 0,
+      })
+      TweenLite.to(iconHover, 0.5, {
+        opacity: 1,
+      })
+    } else {
+      TweenLite.to(icon, 0.5, {
+        opacity: 1,
+      })
+      TweenLite.to(iconHover, 0.5, {
+        opacity: 0,
+      })
     }
-    else {
-    TweenLite.to(icon, .5, {
-      opacity: 1
-     })
-     TweenLite.to(iconHover, .5, {
-      opacity: 0
-     })
-    }
-
   }, [hovered])
-  
- 
-
 
   // const fadeOutHovered = () => {
   //   setHovered(false)
   //   console.log('joveredout')
-    
+
   // }
 
   return (
-    <div 
-    onMouseEnter={() => setHovered(true)}
-    onMouseLeave={() => setHovered(false)}
-    style={{
-      position: `relative`,
-      height: `100%`,
+    <SocialsLink
+      href="https://www.instagram.com/leshoppe.chancerylane"
+      target="blank"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        position: `relative`,
+        height: `100%`,
 
-      paddingRight: `1rem`
-
-    }}
+        paddingRight: `1rem`,
+      }}
     >
-
-    
-      
-         <div ref={el => (iconHover = el)}
-         style={{
-           position: `absolute`
-         }}
-         >
+      <div
+        ref={el => (iconHover = el)}
+        style={{
+          position: `absolute`,
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="42"
           height="42"
           viewBox="0 0 42 42"
-          
-          
         >
           <g
             id="Group_6251"
@@ -123,16 +115,14 @@ const Instagram = () => {
             </g>
           </g>
         </svg>
-        </div>
-   
-        <div ref={el => (icon = el)}
-        >
-  <svg
+      </div>
+
+      <div ref={el => (icon = el)}>
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="42"
           height="42"
           viewBox="0 0 42 42"
-          
           stroke="white"
         >
           <g
@@ -190,13 +180,13 @@ const Instagram = () => {
             </g>
           </g>
         </svg>
-        </div>
-    
-
-        
-      
-        </div>
+      </div>
+    </SocialsLink>
   )
 }
 
 export default Instagram
+
+export const SocialsLink = styled.a`
+
+`
