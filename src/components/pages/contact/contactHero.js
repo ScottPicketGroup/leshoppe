@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import landingSqaure from '../../../../images/placeholders/homeSqaure.jpg'
+import landingSqaure from '../../../images/placeholders/kidSquare.jpg'
 
-const Hero = () => {
+const ContactHero = () => {
     return (
         <HeroContainer>
             <ImgSqaure src={landingSqaure} alt='man in a butchers apron'/>
@@ -10,7 +10,7 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default ContactHero
 
 export const HeroContainer = styled.div`
 width: 100%;

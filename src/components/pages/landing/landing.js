@@ -10,11 +10,12 @@ import MenuBoard from './sections/menu-board/MenuBoard'
 import OpeningInfo from './sections/opening-info'
 import Quote from './sections/qoute'
 import Footer from '../reusable/footer/Footer'
-import Menu from '../menu/menu'
 const Landing = () => {
+
     return (
-        <Page>
-            <Menu/>
+         
+        <Page >
+            
             <Section1>
             <Hero/>
             <Intro/>
@@ -27,6 +28,7 @@ const Landing = () => {
             </Section1>
             
         </Page>
+     
     )
 }
 
@@ -40,4 +42,8 @@ padding: ${padding.page.vertical} ${padding.page.horizontal};
 z-index: 2;
 overflow-x: hidden;
 background: transperant;
+@media(max-width: 700px) {
+   width: 100%;
+  
+}
 `

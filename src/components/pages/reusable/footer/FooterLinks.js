@@ -9,7 +9,7 @@ const FooterLinks = () => {
            <FooterLink to="/" style={{ marginBottom: `1.75rem` }}><P bc2>LE SHOPPE</P></FooterLink>
            <FooterLink to="/"><P bc2>Home</P></FooterLink>
            <FooterLink to="/contact"><P bc2>Contact</P></FooterLink>
-           <FooterLink to="/terms+conditions"><P bc2>Terms and Conditions</P></FooterLink>
+           <FooterLink to="/terms-and-conditions"><P bc2>Terms and Conditions</P></FooterLink>
         </FooterLinksContainer>
     )
 }

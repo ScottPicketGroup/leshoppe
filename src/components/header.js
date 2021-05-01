@@ -7,17 +7,23 @@ import {
   LogoContainer,
   ComingSoonContainer,
 } from "../components/styled-components/HeaderComponents"
-import { MenuButton } from "./styled-components/GlobalStyles"
+import { P } from "./styled-components/GlobalStyles"
 
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, menuOpen, setMenuOpen }) => (
+
   <header>
+    
     <HeaderContainer>
       <LogoContainer>
         <Logo />
       </LogoContainer>
       
-      <ComingSoonContainer><span>COMING SOON</span></ComingSoonContainer>
+      <ComingSoonContainer onClick={() => setMenuOpen(true)}>
+        {!menuOpen ? (
+          <P bc1>Menu</P>
+        ): null}
+        </ComingSoonContainer>
     </HeaderContainer>
   </header>
 )

@@ -25,7 +25,22 @@ flex-flow: wrap;
 export const ImgLandScape = styled.img`
 width: 50.25rem;
 margin-bottom: 13.5rem;
+
+    height: 100%;
+    @media(max-width: 1440px) {
+        width: 30.25rem;
+   display: flex;
+   order: 1;
+}
 `
 export const IntroText = styled.div`
 width: 32rem;
+
+
+    height: 100%;
+    @media(max-width: 700px) {
+   width: 100%;
+   margin-bottom: 56px;
+}
+
 `

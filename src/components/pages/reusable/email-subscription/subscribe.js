@@ -39,8 +39,8 @@ const Subscribe = () => {
       .then(response => response.json())
       .then(result => console.log(result))
       .then(setSignup(false)
-      
-      ).then(setThankyou(true))
+      .then(setThankyou(true))
+      )
       .catch(error => console.log('error', error));
   }
 

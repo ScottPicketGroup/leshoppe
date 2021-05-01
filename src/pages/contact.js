@@ -1,13 +1,13 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Landing from "../components/pages/landing/landing"
+import ContactLanding from '../components/pages/contact/contactLanding'
 const SecondPage = (menuOpen,setMenuOpen) => (
   <>
   
     <Layout>
-      <SEO title="Welcome" />
-      <Landing/>
+      <SEO title="Contact" />
+   <ContactLanding/>
     </Layout>
   </>
 )

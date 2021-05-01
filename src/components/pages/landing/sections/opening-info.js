@@ -122,29 +122,22 @@ export const Hours = styled.div`
 `
 
 export const ImgPortraitSmall = styled.img`
-  width: 25.2rem;
+  width: 20.2rem;
+  height: 100%;
   margin-right: 1rem;
  
-  @media only screen and (max-width: 1440px) and (min-width: 800px) {
+  /* @media only screen and (max-width: 1440px) and (min-width: 800px) {
     width: 20rem;
-  }
-  @media only screen and (max-width: 700px) {
+  } */
+  @media only screen and (max-width: 900px) {
     width: 100%;
     margin: 1rem 0;
   }
 `
-// export const ImgBox = styled.div`
-// width: 58%;
-
-// display: flex;
-// justify-content: space-between;
-// flex-flow: wrap;
-// `
-
 
 export const ImgLandscapeSmall = styled.img`
-  width: 35.5rem;
-  height: 23.7rem;
+  width: 25.5rem;
+  height: 100%;
  
   
   @media only screen and (max-width: 1440px) and (min-width: 800px) {

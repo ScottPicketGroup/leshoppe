@@ -6,9 +6,10 @@ import {
 import Header from "./header"
 import styled from 'styled-components'
 import LogoFooter from "./pages/reusable/logo-footer/LogoFooter"
+import Menu from "./pages/menu/menu"
 const Layout = ({ children }) => {
   const [scrollY, setScrollY] = useState(0)
-
+  const [menuOpen, setMenuOpen] = useState(false)
   function logit() {
     setScrollY(window.pageYOffset)
     console.log(window.pageYOffset)
@@ -26,11 +27,11 @@ const Layout = ({ children }) => {
   
   return (
     <LayoutContainer>
-  
-      <Header />
+        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <GlobalStyle />
-      {/* <PageBackground fade={scrollY} /> */}
-      <main>{children}</main>
+      <PageBackground fade={scrollY} />
+      <Main >{children}</Main>
       
   
     </LayoutContainer>
@@ -44,4 +45,8 @@ export const LayoutContainer = styled.div`
 height: 100%;
 display: flex;
 
+`
+
+export const Main = styled.main`
+width: 10vw;
 `
