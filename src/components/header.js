@@ -20,9 +20,9 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => (
       </LogoContainer>
       
       <ComingSoonContainer onClick={() => setMenuOpen(true)}>
-        {!menuOpen ? (
-          <P bc1>Menu</P>
-        ): null}
+        {/* {!menuOpen ? ( */}
+          <P bc1>COMING SOON</P>
+        {/* ): null} */}
         </ComingSoonContainer>
     </HeaderContainer>
   </header>
