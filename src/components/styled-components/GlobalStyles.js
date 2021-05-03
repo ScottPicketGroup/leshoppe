@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
 import { color, font, padding } from "./variables"
-import tTNormsPro from "../../fonts/TT-Norms-Pro.ttf"
+import TTNormsProNormal from '../../fonts/font.woff'
+import TTNormsProNormal2 from '../../fonts/font.woff2'
 import landing from '../../images/logos/landing.png'
 const { cream, green, error } = color
 const {
@@ -27,9 +28,17 @@ export const GlobalStyle = createGlobalStyle`
     padding:0; 
     box-sizing:border-box;   
 }
+@font-face {
+  font-family: 'ttNormsPro';
+        src: local('TTNormsPro'), local('TTNormsPro'),
+        url(${TTNormsProNormal2}) format('woff2'),
+        url(${TTNormsProNormal}) format('woff');
+        font-weight: 300;
+        font-style: normal;
+    }
 
   body {
-    font-family: tTNormsPro, Helvetica, sans-serif;
+   font-family: ttNormsPro;
     background: ${cream};
     color: ${green}; 
     letter-spacing: 0.02rem;
