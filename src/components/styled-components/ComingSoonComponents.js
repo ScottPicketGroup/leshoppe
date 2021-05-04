@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const LandingPageContainer = styled.div`
-  height: 100%;
-  margin-top: 10.5rem;
+  height: 92.5vh;
+  margin-top: 5.25rem;
   width: 99vw;
   display: flex;
   justify-content: center;
