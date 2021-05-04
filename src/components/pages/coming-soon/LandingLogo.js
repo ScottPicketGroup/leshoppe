@@ -42,6 +42,10 @@ export default LandingLogo
 export const SVG = styled.svg`
 width: 22rem;
 height: 17.5rem;
+@media screen and (max-width: 1200px) {
+  width: 17.2rem;
+height: 11.125rem;
+}
 @media screen and (max-width: 770px) {
   width: 15.2rem;
 height: 14.125rem;
