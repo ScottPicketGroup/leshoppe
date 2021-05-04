@@ -12,7 +12,7 @@ export const LandingPageContainer = styled.div`
 
   @media screen and (max-width: 799px) {
     margin-top: 6.8rem;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
   }
    
