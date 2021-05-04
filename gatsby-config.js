@@ -46,5 +46,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        shopName: 'mareksstore',
+        accessToken: '1a756361ce2840172f04f5c916d6f6ca',
+        verbose: true,
+      },
+    },
   ],
 }

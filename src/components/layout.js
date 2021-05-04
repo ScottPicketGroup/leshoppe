@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
         <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <GlobalStyle />
-      {/* <PageBackground fade={scrollY} /> */}
+      <PageBackground fade={scrollY} />
       <Main >{children}</Main>
       
   
