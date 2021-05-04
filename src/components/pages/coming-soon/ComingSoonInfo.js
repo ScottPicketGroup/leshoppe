@@ -8,7 +8,7 @@ const ComingSoonInfo = () => {
             <h1>Coming Soon</h1>
             <PL bc2
             
-            >Sign up to our newletter for news, stories and invitations to the things we love to share and enjoy from Scott Pickett Group.</PL>
+            >Sign up for updates from the Scott Pickett Group and to be the first to know when Le Shoppe is live. /PL>
             <Subscribe/>
         </>
     )
