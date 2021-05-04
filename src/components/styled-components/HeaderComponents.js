@@ -6,29 +6,40 @@ export const HeaderContainer = styled.div`
 display: flex;
 position: fixed;
 top: 0;
-z-index: 3;
+z-index: 300;
 justify-content: space-between;
-width: 100%;
+width: 100vw;
 padding: 2rem ${padding.page.horizontal};
 border-bottom: 1px solid #153E35;
 background: ${color.cream};
 @media screen and (max-width: 600px) {
-    padding: 1rem 2rem;
-
+    padding: 1.2rem;
+    height: 3.5rem;
   }
 `
 
 export const LogoContainer = styled.div`
 max-height: 1.5rem;
+@media screen and (max-width: 500px) {
+  img {max-height: .5rem;}
+  }
 `
 
 export const ComingSoonContainer = styled.div`
 max-height: 1.5rem;
+
 display: flex;
-align-content: center;
+align-items: center;
 font-size: 1.5rem;
 span {
   padding-top: .15rem;
 }
+@media screen and (max-width: 500px) {
+ font-size: 99%;
+  }
+  @media screen and (max-width: 350px) {
+ padding-left: .5rem;
+ text-align: center;
+  }
 `
 

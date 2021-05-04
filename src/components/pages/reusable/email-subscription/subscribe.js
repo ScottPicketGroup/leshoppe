@@ -2,80 +2,85 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
 
-
 const Subscribe = () => {
   const [email, setEmail] = useState("")
   const [emailErr, setEmailErr] = useState(false)
   const [signUp, setSignup] = useState(true)
   const [thankyou, setThankyou] = useState(false)
 
-  
   const handleChange = event => {
     setEmail(event.target.value)
-    !email.includes(".") || !email.includes("@")  ? setEmailErr(true) : setEmailErr(false)
+    !email.includes(".") || !email.includes("@")
+      ? setEmailErr(true)
+      : setEmailErr(false)
   }
   const handleSubmit = e => {
     e.preventDefault()
-    if (email.includes(".") || email.includes("@")) 
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer 25183d2e-1266-4207-a9d3-a5d9422d94b0");
-    myHeaders.append("Timestamp", "1619765391");
-    myHeaders.append("Content-Type", "application/json");
-    
-    var raw = JSON.stringify({
-      "data": {
-        "email": email
-      }
-    });
-    
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-    
-    fetch("https://api.sproutsend.com/contacts?", requestOptions)
-      .then(response => response.json())
-      .then(result => console.log(result))
-      .then(setSignup(false)
-      .then(setThankyou(true))
+    if ((email && email.includes(".")) || email.includes("@")) {
+      var myHeaders = new Headers()
+      myHeaders.append(
+        "Authorization",
+        "Bearer 25183d2e-1266-4207-a9d3-a5d9422d94b0"
       )
-      .catch(error => console.log('error', error));
+      myHeaders.append("Timestamp", "1619765391")
+      myHeaders.append("Content-Type", "application/json")
+
+      var raw = JSON.stringify({
+        data: {
+          email: email,
+        },
+      })
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      }
+
+      fetch("https://api.sproutsend.com/contacts?", requestOptions)
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .then(setSignup(false))
+        .then(setThankyou(true))
+
+        .catch(error => console.log("error", error))
+    } else {
+      setEmailErr(true)
+    }
   }
 
   return (
-   
     <SubContainer>
-    
-      {signUp ?
-      (
+      {signUp ? (
         <SignUp onSubmit={handleSubmit}>
-        <p>EMAIL ADDRESS</p>
-        <form>
-        <Input
-          placeholder="Please enter your email address"
-          name="email"
-          type="text"
-          value={email}
-          onChange={handleChange}
-          err={emailErr}
-        />
-        {emailErr ? <P error style={{marginTop: `1rem`}}>Please enter a valid email address</P> : null}
-        <SignUpSubmit err={emailErr} type="submit">SUBSCRIBE</SignUpSubmit>
-      </form>
-    </SignUp>
+          <Label>EMAIL ADDRESS</Label>
+          <form>
+            <Input
+              placeholder="Please enter your email address"
+              name="email"
+              type="text"
+              value={email}
+              onChange={handleChange}
+              err={emailErr}
+            />
+            {emailErr ? (
+              <P error style={{ marginTop: `1rem` }}>
+                Please enter a valid email address
+              </P>
+            ) : null}
+            <SignUpSubmit err={emailErr} type="submit">
+              <Label>SUBSCRIBE</Label>
+            </SignUpSubmit>
+          </form>
+        </SignUp>
       ) : (
-      <>
-       <P bc2>Thank you</P>
-       <P bc2>You are now signed up to our mailing list.</P>
-       
-       </>
-      )
-    }
-       
+        <>
+          <P bc2>Thank you</P>
+          <P bc2>You are now signed up to our mailing list.</P>
+        </>
+      )}
     </SubContainer>
-   
   )
 }
 
@@ -93,10 +98,16 @@ const SubContainer = styled.div`
 
 const SignUp = styled.div`
   font-size: 0.75rem;
-
-  
 `
-const Input = styled.input `
+const Label = styled.p`
+  font-size: 1rem;
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.75rem !important;
+  
+  }
+`
+const Input = styled.input`
   width: 95%;
   height: 2rem;
   background: #fdf9ee;
@@ -104,24 +115,31 @@ const Input = styled.input `
   padding: 1.5rem 0;
   font-size: 0.75rem;
   line-height: none;
-  border-bottom: 1px solid ${props => props.err ? 'red' : '#153e35'};
+  border-bottom: 1px solid ${props => (props.err ? "red" : "#153e35")};
   ::placeholder {
-    color: darkgrey;
+    opacity: 75%;
     font-size: 1rem;
     margin-bottom: 10rem;
+    @media screen and (max-width: 450px) {
+      font-size: 0.75rem;
+    }
   }
   :focus {
     outline: none;
     background: #fdf9ee;
-
+    opacity: 75%;
     height: 3rem;
     font-size: 150%;
   }
   :valid {
     font-size: 1rem;
+    opacity: 75%;
   }
   ::-moz-focus-outer {
     color: white;
+  }
+  @media screen and (max-width: 450px) {
+    padding: .75rem 0;
   }
 `
 
@@ -129,13 +147,18 @@ const SignUpSubmit = styled.button`
   background: none;
 
   padding: 0.5rem 2rem;
-  border: 1px solid ${props => props.err ? 'red' : '#153e35'};
-  color: ${props => props.err ? 'red' : '#153e35'};
+  border: 1px solid ${props => (props.err ? "red" : "#153e35")};
+  color: ${props => (props.err ? "red" : "#153e35")};
   margin-top: 1.75rem;
   font-size: 120%;
   transition: all 0.2s ease;
   :hover {
-    background: ${props => props.err ? 'red' : '#153e35'};
-    color: ${props => props.err ? 'white' : 'white'};
+    opacity: 75%;
+    /* background: ${props => (props.err ? "red" : "#153e35")};
+    color: ${props => (props.err ? "white" : "white")}; */
+  }
+  @media screen and (max-width: 450px) {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 1.6rem;
   }
 `

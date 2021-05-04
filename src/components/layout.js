@@ -27,10 +27,10 @@ const Layout = ({ children }) => {
   
   return (
     <LayoutContainer>
-        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+       
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <GlobalStyle />
-      <PageBackground fade={scrollY} />
+      
       <Main >{children}</Main>
       
   

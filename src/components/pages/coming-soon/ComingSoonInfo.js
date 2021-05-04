@@ -6,7 +6,7 @@ const ComingSoonInfo = () => {
         <>
             <h1>Coming Soon</h1>
             <P bc2
-            style={{marginBottom: `2.25rem`}}
+            style={{marginBottom: `3.34rem`}}
             >Sign up to our newletter for news, stories and invitations to the things we love to share and enjoy from Scott Pickett Group.</P>
             <Subscribe/>
         </>

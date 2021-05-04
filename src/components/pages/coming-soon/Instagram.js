@@ -1,46 +1,12 @@
-import React, { useState, useRef, useEffect } from "react"
-import { Logo } from "../../styled-components/ComingSoonComponents"
-import styled from 'styled-components'
-import gsap from "gsap"
-import { TweenLite, Power3 } from "gsap"
+import React from "react"
 
-gsap.registerPlugin()
+import styled from "styled-components"
 
 const Instagram = () => {
-  const [hovered, setHovered] = useState(false)
-  let icon = useRef(null)
-  let iconHover = useRef(null)
-
-  useEffect(() => {
-    if (hovered) {
-      TweenLite.to(icon, 0.5, {
-        opacity: 0,
-      })
-      TweenLite.to(iconHover, 0.5, {
-        opacity: 1,
-      })
-    } else {
-      TweenLite.to(icon, 0.5, {
-        opacity: 1,
-      })
-      TweenLite.to(iconHover, 0.5, {
-        opacity: 0,
-      })
-    }
-  }, [hovered])
-
-  // const fadeOutHovered = () => {
-  //   setHovered(false)
-  //   console.log('joveredout')
-
-  // }
-
   return (
     <SocialsLink
       href="https://www.instagram.com/leshoppe.chancerylane"
       target="blank"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       style={{
         position: `relative`,
         height: `100%`,
@@ -48,139 +14,36 @@ const Instagram = () => {
         paddingRight: `1rem`,
       }}
     >
-      <div
-        ref={el => (iconHover = el)}
-        style={{
-          position: `absolute`,
-        }}
+      <svg
+        id="CL_LS_IG_Static"
+        xmlns="http://www.w3.org/2000/svg"
+        width="42"
+        height="42"
+        viewBox="0 0 42 42"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="42"
-          height="42"
-          viewBox="0 0 42 42"
-        >
-          <g
-            id="Group_6251"
-            data-name="Group 6251"
-            transform="translate(-1440 -803)"
-          >
-            <g
-              id="Ellipse_1"
-              data-name="Ellipse 1"
-              transform="translate(1440 803)"
-              fill="#153e35"
-              stroke="#153e35"
-              stroke-width="2"
-            >
-              <circle cx="21" cy="21" r="21" stroke="none" />
-              <circle cx="21" cy="21" r="20" fill="none" />
-            </g>
-            <circle
-              id="Oval-path"
-              cx="1.409"
-              cy="1.409"
-              r="1.409"
-              transform="translate(1465.44 816.799)"
-              fill="#fdf9ee"
-            />
-            <g
-              id="Rectangle_5838"
-              data-name="Rectangle 5838"
-              transform="translate(1450 813)"
-              fill="none"
-              stroke="#fff"
-              stroke-width="2.5"
-            >
-              <rect width="22.5" height="22" rx="6" stroke="none" />
-              <rect
-                x="1.25"
-                y="1.25"
-                width="20"
-                height="19.5"
-                rx="4.75"
-                fill="none"
-              />
-            </g>
-            <g
-              id="Ellipse_2"
-              data-name="Ellipse 2"
-              transform="translate(1456 819)"
-              fill="none"
-              stroke="#fdf9ee"
-              stroke-width="2"
-            >
-              <circle cx="5.5" cy="5.5" r="5.5" stroke="none" />
-              <circle cx="5.5" cy="5.5" r="4.5" fill="none" />
-            </g>
-          </g>
-        </svg>
-      </div>
-
-      <div ref={el => (icon = el)}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="42"
-          height="42"
-          viewBox="0 0 42 42"
-          stroke="white"
-        >
-          <g
-            id="Group_6250"
-            data-name="Group 6250"
-            transform="translate(-1440 -803)"
-          >
-            <circle
-              id="Oval-path"
-              cx="1.409"
-              cy="1.409"
-              r="1.409"
-              transform="translate(1465.44 816.799)"
-              fill="#153e35"
-            />
-            <g
-              id="Ellipse_1"
-              data-name="Ellipse 1"
-              transform="translate(1440 803)"
-              fill="none"
-              stroke="#153e35"
-              stroke-width="2"
-            >
-              <circle cx="21" cy="21" r="21" stroke="none" />
-              <circle cx="21" cy="21" r="20" fill="none" />
-            </g>
-            <g
-              id="Rectangle_5838"
-              data-name="Rectangle 5838"
-              transform="translate(1450 813)"
-              fill="none"
-              stroke="#153e35"
-              stroke-width="2.5"
-            >
-              <rect width="22.5" height="22" rx="6" stroke="none" />
-              <rect
-                x="1.25"
-                y="1.25"
-                width="20"
-                height="19.5"
-                rx="4.75"
-                fill="none"
-              />
-            </g>
-            <g
-              id="Ellipse_2"
-              data-name="Ellipse 2"
-              transform="translate(1456 819)"
-              fill="none"
-              stroke="#153e35"
-              stroke-width="2"
-            >
-              <circle cx="5.5" cy="5.5" r="5.5" stroke="none" />
-              <circle cx="5.5" cy="5.5" r="4.5" fill="none" />
-            </g>
-          </g>
-        </svg>
-      </div>
+        <path
+          id="Path_11773"
+          data-name="Path 11773"
+          d="M21,42A21,21,0,1,1,42,21,21.024,21.024,0,0,1,21,42ZM21,1.614A19.386,19.386,0,1,0,40.386,21,19.407,19.407,0,0,0,21,1.614Z"
+          fill="#153e35"
+        />
+        <g id="Group_2417" transform="translate(9.582 9.676)">
+          <path
+            id="Exclusion_34"
+            d="M3644.967-60.259h-9.192A6.782,6.782,0,0,1,3629-67.034v-9.192A6.782,6.782,0,0,1,3635.775-83h9.192a6.782,6.782,0,0,1,6.775,6.775v9.192A6.782,6.782,0,0,1,3644.967-60.259Zm-9.192-20.454a4.492,4.492,0,0,0-4.487,4.487v9.192a4.492,4.492,0,0,0,4.487,4.487h9.192a4.492,4.492,0,0,0,4.487-4.487v-9.192a4.492,4.492,0,0,0-4.487-4.487Zm4.6,14.965a5.882,5.882,0,0,1-5.882-5.882,5.882,5.882,0,0,1,5.882-5.882,5.882,5.882,0,0,1,5.882,5.882h0a5.888,5.888,0,0,1-5.886,5.88Zm0-9.475a3.594,3.594,0,0,0-3.594,3.594,3.594,3.594,0,0,0,3.594,3.594,3.594,3.594,0,0,0,3.594-3.594h0a3.6,3.6,0,0,0-3.6-3.6Z"
+            transform="translate(-3629 83.001)"
+            fill="#153e35"
+          />
+          <circle
+            id="Oval-path"
+            cx="1.409"
+            cy="1.409"
+            r="1.409"
+            transform="translate(15.858 4.123)"
+            fill="#153e35"
+          />
+        </g>
+      </svg>
     </SocialsLink>
   )
 }
@@ -188,5 +51,7 @@ const Instagram = () => {
 export default Instagram
 
 export const SocialsLink = styled.a`
-
+  :hover {
+    opacity: 75%;
+  }
 `

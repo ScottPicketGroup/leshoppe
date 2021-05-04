@@ -47,6 +47,7 @@ export const GlobalStyle = createGlobalStyle`
         line-height: ${h1.lineHeight};
         letter-spacing: ${h1.letterSpacing};
         font-weight: ${h1.fontWeight}
+    
     } 
     h2 {
       font-size: ${h2.fontSize};
@@ -65,9 +66,20 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: regular;
         color: #153E35;
     }
+    @media screen and (max-width: 450px) {
+          h1 {
+            font-size: 1.5rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+    
+  }
   }
 `
-
+export const ComingSoonMenu = styled.h1`
+font-size: 1.25rem
+`
 export const PageBackground = styled.div`
 position: fixed;
 min-height: 100%;

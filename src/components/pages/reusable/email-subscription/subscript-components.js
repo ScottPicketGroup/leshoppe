@@ -57,7 +57,7 @@ export const InputMessage = styled.textarea `
   overflow: hidden;
   
   ::placeholder {
-    color: darkgrey;
+    opacity: 75%;
     font-size: 1rem;
     margin-bottom: 10rem;
   }

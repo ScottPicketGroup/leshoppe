@@ -7,7 +7,7 @@ import {
   LogoContainer,
   ComingSoonContainer,
 } from "../components/styled-components/HeaderComponents"
-import { P } from "./styled-components/GlobalStyles"
+import { ComingSoonMenu, P } from "./styled-components/GlobalStyles"
 
 
 const Header = ({ siteTitle, menuOpen, setMenuOpen }) => (
@@ -19,10 +19,8 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => (
         <Logo />
       </LogoContainer>
       
-      <ComingSoonContainer onClick={() => setMenuOpen(true)}>
-        {!menuOpen ? (
-          <P bc1>MENU</P>
-        ): null}
+      <ComingSoonContainer>
+      <ComingSoonMenu>COMING SOON</ComingSoonMenu>
         </ComingSoonContainer>
     </HeaderContainer>
   </header>
