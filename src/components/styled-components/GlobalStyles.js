@@ -157,6 +157,12 @@ export const P = styled.p`
       ? `${bc3.lineHeight}`
       : null};
     padding-top: ${props => props.padding};
+    opacity: ${props =>
+    props.fFD
+      ? `${formFieldDesc.opacity}`
+      : '1'
+      
+   };
 `
 export const UnderlineLink = styled.a`
   position: relative;

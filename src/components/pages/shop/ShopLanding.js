@@ -7,12 +7,14 @@ import { color, font, padding } from "../../styled-components/variables"
 import Footer from "../reusable/footer/Footer"
 import HeroSection from "../reusable/pages/HeroSection"
 import ShopInfo from '../../pages/shop/ShopInfo'
+import Shop from "./Shop"
 const ContactLanding = () => {
   return (
     <Page>
       <Section1>
         <HeroSection img="shopSquare"/>
         <ShopInfo/>
+        <Shop/>
         <LogoFooter />
         <Footer />
       </Section1>

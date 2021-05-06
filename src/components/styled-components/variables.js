@@ -52,7 +52,8 @@ export const font = {
     formFieldDesc: {
         size: '1.25rem',
         lineHeight: '1.12',
-        letterSpacing: '.02rem'
+        letterSpacing: '.02rem',
+        opacity: '50%'
     },
     button: {
         size: "1rem",

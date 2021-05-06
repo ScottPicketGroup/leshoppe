@@ -11,7 +11,7 @@ import { Socials } from "../../styled-components/ComingSoonComponents"
 import Facebook from "../coming-soon/Facebook"
 import Instagram from "../coming-soon/Instagram"
   const Menu = ({menuOpen, setMenuOpen}) => {
-    console.log(`menuOpen`, menuOpen)
+  
     return (
       <>
         <PopOuBackground display={menuOpen}>
@@ -24,6 +24,7 @@ import Instagram from "../coming-soon/Instagram"
             <MenuLinksContainer>
               
               <MenuLink to="/page-2" onClick={() => setMenuOpen(false)}>Home</MenuLink>
+              <MenuLink to="/shop" onClick={() => setMenuOpen(false)}>Shop</MenuLink>
               <MenuLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</MenuLink>
               <MenuLink to="">-</MenuLink>
               <MenuLink href="http://www.chancerylane.com.au" target="blank">
@@ -51,7 +52,7 @@ import Instagram from "../coming-soon/Instagram"
     height: 100vh;
     width: 100vw;
     background: rgba(0, 0, 0, 60%);
-    z-index: 100;
+    z-index: 400;
     transition: transform .4s ease-out;
     transform: ${props => props.display ? "translateX(0vh)" : "translateX(100vw)" };
 

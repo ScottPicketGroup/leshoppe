@@ -24,11 +24,11 @@ export default ContactInfo
 
 export const ContactInfoContainer = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 6.75rem;
+  margin-bottom: 13.37rem;
 `
 
 export const ContactImage = styled.div`
