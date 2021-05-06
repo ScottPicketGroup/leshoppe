@@ -79,7 +79,7 @@ export const InputMessage = styled.textarea `
 
 export const SignUpSubmit = styled.button`
   background: none;
-
+ font-family: tTNormsPro;
   padding: 0.5rem 2rem;
   border: 1px solid ${props => props.err ? 'red' : '#153e35'};
   color: ${props => props.err ? 'red' : '#153e35'};
@@ -89,5 +89,8 @@ export const SignUpSubmit = styled.button`
   :hover {
     background: ${props => props.err ? 'red' : '#153e35'};
     color: ${props => props.err ? 'white' : 'white'};
+  } 
+  p {
+    font-family: tTNormsPro;
   }
 `

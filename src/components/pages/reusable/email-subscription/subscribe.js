@@ -161,4 +161,7 @@ const SignUpSubmit = styled.button`
     font-size: 0.75rem !important;
     padding: 0.5rem 1.6rem;
   }
+  p {
+    font-family: tTNormsPro;
+  }
 `

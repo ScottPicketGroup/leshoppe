@@ -84,7 +84,7 @@ export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3.37rem 2rem 0 0;
+  padding: 3.37rem 0rem 0 0;
   @media screen and (max-width: 450px) {
   align-items: flex-end;
 }
