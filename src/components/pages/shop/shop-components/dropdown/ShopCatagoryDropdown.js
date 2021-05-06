@@ -11,12 +11,12 @@ const ShopCatagoryDropdown = ({
   setCatagory,
 }) => {
   const [open, setOpen] = useState(false)
-
+  const [menuLabel, setMenuLabel] = useState('Sort By Catagory')
   let menu = useRef(null)
 
   const openMenu = () => {
     setOpen(!open)
-    open
+    !open
       ? gsap.to(menu, 0.2, {
           height: `auto`,
           ease: Power0,
@@ -35,7 +35,8 @@ const ShopCatagoryDropdown = ({
     >
       <Menu>
         <First bc2 open={open}>
-          {catagory}
+          {menuLabel}
+          
         </First>
         <DropdownArrow open={open} />
       </Menu>
@@ -46,6 +47,7 @@ const ShopCatagoryDropdown = ({
         setCatagory={setCatagory}
         catagory={catagory}
         open={open}
+        setMenuLabel={setMenuLabel}
       />
     </ShopCatagoryDropdownContainer>
   )
@@ -59,11 +61,12 @@ const ShopCatagoryDropdownContainer = styled.div`
   width: 16.5%;
   overflow: hidden;
   margin-bottom: 6rem;
+  height: 28px;
 `
 const Menu = styled.div`
   display: flex;
   justify-content: space-between;
 `
 export const First = styled(P)`
-  color: ${props => (props.open ? "" : "grey")};
+  color: ${props => (props.open ? "grey" : "")};
 `

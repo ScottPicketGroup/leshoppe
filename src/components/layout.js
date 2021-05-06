@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   function logit() {
     setScrollY(window.pageYOffset)
-    console.log(window.pageYOffset)
+  
   }
 
   useEffect(() => {

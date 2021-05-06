@@ -36,11 +36,7 @@ const ProductList = ({ products, catagory }) => {
   `)
   return (
     <div>
-      {/* {catagory == "Sort By Catagory" ? (
-        <P bc1> All prodcuts </P>
-      ) : (
-        <P bc1> {catagory}</P>
-      )}{" "} */}
+   
       <ProductGrid >
         {data.allShopifyProduct.edges.map(product => (
           <ProductCard product={product} catagory={catagory}/>

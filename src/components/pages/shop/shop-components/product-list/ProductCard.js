@@ -7,7 +7,7 @@ const ProductCard = ({product, catagory}) => {
     const {title, images, productType, variants, description} = product.node
     const productTypeDisplay = productType.charAt(0).toUpperCase()+ productType.slice(1)
     const catagoryDisplay = catagory.charAt(0).toUpperCase()+ catagory.slice(1)
-    console.log(productTypeDisplay, catagory)
+    
 
     return (
         <>
@@ -21,7 +21,7 @@ const ProductCard = ({product, catagory}) => {
             <ProductLink> <P bc2> View Item</P> </ProductLink>
             
         </ProductCardContainer>) : 
-        catagory === 'All Products' ?
+        catagory === 'All Products'  ?
         (
             <ProductCardContainer>
   <ProductImage fluid={images[0].localFile.childImageSharp.fluid} alt="blah"/>

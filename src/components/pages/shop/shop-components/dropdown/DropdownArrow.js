@@ -21,5 +21,5 @@ export const SVG = styled.svg`
 height: 1.7rem;
 width: 0.85rem;
 transition: transform .2s ease;
-transform: ${props => props.open ? null : "rotate(180deg)"};
+transform: ${props => props.open ? "rotate(180deg)" : null};
 `
