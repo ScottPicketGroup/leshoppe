@@ -224,45 +224,7 @@ margin-top: 2.25rem;
 margin-bottom: 1.75rem;
 `
 
-export const TickBox = styled.div`
-  
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 2px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 
-  &:hover ${CheckMark} {
-    background-color: blue;
-  }
-
-  input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 26px;
-  width: 0;
-}
-input:checked ${CheckMark} {
-  background-color: black;
-  }
-
-`
-export const CheckMark = styled.div`
-position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  ${TickBox}:hover & {
-    display: none;
-  }
-`
 
 export const Label = styled(P) `
 font-size: ${props => props.thankyou ? '1.5rem' : `1.25rem`};
