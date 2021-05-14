@@ -4,63 +4,63 @@ import {P} from '../../../styled-components/GlobalStyles'
 const FooterContact = () => {
     return (
         <FooterContactContainer>
-             <P bc2>CONTACT DETAILS</P>
-        <P bc3 style={{padding: `1rem 0`}}>
+             <Heading>CONTACT DETAILS</Heading>
+        <Address>
           Le Shoppe
           <br />
           513 Elizabeth Street <br />
           Melbourne 3000
-        </P>
+        </Address>
             <OpeningHoursContainer>
           <Days>
             <ul>
               <li>
-                <P bc3>Monday</P>
+                <Text>Monday</Text>
               </li>
               <li>
-                <P bc3>Tuesday</P>
+                <Text>Tuesday</Text>
               </li>
               <li>
-                <P bc3>Wednesday</P>
+                <Text>Wednesday</Text>
               </li>
               <li>
-                <P bc3>Thursday</P>
+                <Text>Thursday</Text>
               </li>
               <li>
-                <P bc3>Friday</P>
+                <Text>Friday</Text>
               </li>
               <li>
-                <P bc3>Saturday</P>
+                <Text>Saturday</Text>
               </li>
               <li>
-                <P bc3>Sunday</P>
+                <Text>Sunday</Text>
               </li>
             </ul>
           </Days>
           <Hours>
             <ul>
               <li>
-                <P bc3>11:30am–9pm</P>
+                <Text>11:30am–9pm</Text>
               </li>
               <li>
-                <P bc3>11:30am–9pm</P>
+                <Text>11:30am–9pm</Text>
               </li>
               <li>
-                <P bc3>11:30am–9pm</P>
+                <Text>11:30am–9pm</Text>
               </li>
               <li>
-                <P bc3>11:30am–9pm</P>
+                <Text>11:30am–9pm</Text>
               </li>
               <li>
-                <P bc3>11:30am–11:30pm
-</P>
+                <Text>11:30am–11:30pm
+</Text>
               </li>
               <li>
-                <P bc3>11:30am–11:30pm
-</P>
+                <Text>11:30am–11:30pm
+</Text>
               </li>
               <li>
-                <P bc3>11:30am–9pm</P>
+                <Text>11:30am–9pm</Text>
               </li>
             </ul>
           </Hours>
@@ -72,25 +72,60 @@ const FooterContact = () => {
 export default FooterContact
 
 export const FooterContactContainer = styled.div`
-width: 18.5rem;
-height: 100%;
+width: 43.3%;
 
+@media screen and (max-width: 450px) {
+    width: 100%;
+    margin-top: 2.25rem;
+    font-size: .75rem;
+}
+`
+export const Heading = styled.div`
+margin-bottom: 1.75rem;
+@media screen and (max-width: 450px) {
+  margin-bottom: 1.5rem;
+  font-size: .75rem;
+}
+`
+
+export const Address = styled.div`
+margin-bottom: 2.25rem;
+@media screen and (max-width: 450px) {
+   margin-bottom: 1rem;
+   font-size: .75rem;
+}
 `
 export const OpeningHoursContainer = styled.div`
   width: 100%;
   display: flex;
+  font-size: .75rem;
 
   ul {
     list-style-type: none;
   }
   li{
-    padding-bottom: .25rem;
+    font-size: .75rem;
+    
   }
+ 
 `
 export const Days = styled.div`
-  width: 25%;
+  width: 30%;
   margin-right: 1.5rem;
+  
+  @media screen and (max-width: 450px) {
+  margin-right: -2.25rem;
+  
+}
 `
 export const Hours = styled.div`
-  width: 75%;
+  width: 70%;
+`
+
+export const Text = styled(P)`
+font-size: 1rem;
+@media screen and (max-width: 450px) {
+  margin-right: 1.5rem;
+  font-size: .75rem !important;
+}
 `

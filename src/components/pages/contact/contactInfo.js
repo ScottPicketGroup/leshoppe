@@ -17,7 +17,7 @@ const ContactInfo = () => {
           got planned.
           </PC>
           <PC bc1>
-            {" "}
+          
             Follow the links at the bottom of the page to our social pages so
             you don’t miss any of the action.
           </PC>
@@ -89,23 +89,37 @@ export default ContactInfo
 
 export const ContactInfoContainer = styled.div`
   width: 100%;
-  height: 80vh;
+ 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 6.75rem;
+  margin-bottom: 6rem;
 `
 
 export const ContactImage = styled.div`
-  width: 53%;
+  width: 58%;
+  @media screen and (max-width: 450px) {
+    width: 75%;
+    order: 2;
+    
+}
+
   img {
     width: 100%;
   }
+
 `
 
 export const ContactText = styled.div`
-  width: 32%;
+  width: 33%;
   height: 100%;
+  display: flex;
+  flex-flow: column;
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    order: 1;
+    margin-bottom: 3.5rem;
+}
 `
 export const PC = styled(P)`
   margin-bottom: 2rem;

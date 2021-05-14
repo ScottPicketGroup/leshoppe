@@ -7,29 +7,28 @@ import outside from "../../../../images/placeholders/OpeningOutside.jpg"
 const OpeningInfo = () => {
   return (
     <OpeningInfoContainer>
-        {/* <ImgBox> */}
+        <ImgContainer>
         <ImgPortraitSmall src={oldGuy} />
       <ImgLandscapeSmall src={outside} />
-        {/* </ImgBox> */}
+      </ImgContainer>
   
       <OpeningInfoText>
-        <h1 style={{ marginBottom: `2.25rem` }}>Location and Opening Times</h1>
-        <P padding="2rem" bc2>
+        <Heading>Location and Opening Times</Heading>
+        <P bc2>
           Le Shoppe
           <br />
           513 Elizabeth Street <br />
           Melbourne 3000
         </P>
-        <h2 style={{ marginTop: `2.25rem` }}>
-          {" "}
+        <GoogleLink>
           <a
             href="https://www.google.com/maps/@-37.8068975,144.9567553,17z"
             target="_blank"
           >
             VIEW IN GOOGLE MAPS
-          </a>{" "}
-        </h2>
-        <P padding="2rem" bc2></P>
+          </a>
+        </GoogleLink>
+      
         <OpeningHoursContainer>
           <Days>
             <ul>
@@ -99,10 +98,16 @@ export const OpeningInfoContainer = styled.div`
   margin-bottom: 13.5rem;
   @media only screen and (max-width: 800px) {
     justify-content: center;
+    margin-bottom: 6rem;
   }
 `
 export const OpeningInfoText = styled.div`
-  width: 32rem;
+  width: 33.3%;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    order: 1;
+    margin-bottom: 3.5rem;
+  }
 `
 
 export const OpeningHoursContainer = styled.div`
@@ -113,6 +118,23 @@ export const OpeningHoursContainer = styled.div`
     list-style-type: none;
   }
 `
+export const Heading = styled.h1`
+margin-bottom: 2.25rem;
+@media screen and (max-width: 700px) {
+    
+    margin-bottom: 1.5rem;
+  }
+`
+
+export const GoogleLink = styled.h2`
+margin: 2.25rem 0;
+
+@media screen and (max-width: 700px) {
+    
+    margin: 1.5rem 0;
+  }
+`
+
 export const Days = styled.div`
   width: 25%;
   margin-right: 1.5rem;
@@ -121,30 +143,29 @@ export const Hours = styled.div`
   width: 75%;
 `
 
-export const ImgPortraitSmall = styled.img`
-  width: 20.2rem;
-  height: 100%;
-  margin-right: 1rem;
- 
-  /* @media only screen and (max-width: 1440px) and (min-width: 800px) {
-    width: 20rem;
-  } */
-  @media only screen and (max-width: 900px) {
+export const ImgContainer = styled.div`
+  width: 58%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
     width: 100%;
-    margin: 1rem 0;
+    order: 2;
+  }
+`
+export const ImgPortraitSmall = styled.img`
+  width: 40%;
+  @media screen and (max-width: 450px) {
+    width: 75%;
+    margin-bottom: 3.5rem;
   }
 `
 
 export const ImgLandscapeSmall = styled.img`
-  width: 25.5rem;
-  height: 100%;
- 
-  
-  @media only screen and (max-width: 1440px) and (min-width: 800px) {
-    width: 28rem;
-  }
-  @media only screen and (max-width: 700px) {
-    width: 100%;
-    height: 100%;
+  width: 57%;
+  @media screen and (max-width: 450px) {
+  width: 75%;
+  align-self: flex-end;
   }
 `

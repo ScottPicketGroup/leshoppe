@@ -12,7 +12,11 @@ export const SubContainer = styled.div`
 `
 
 export const SignUp = styled.form`
+font-size: 1.25rem;
+@media screen and (max-width: 450px) {
   font-size: 0.75rem;
+}
+ 
 display: flex;
   
 `

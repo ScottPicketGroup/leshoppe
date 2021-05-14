@@ -3,30 +3,31 @@ import styled from "styled-components"
 import Image from "./slider-components/Image"
 
 import Video from "./slider-components/Video"
-const MenuImageSlider = ({ assets, slideLive }) => {
+const MenuImageSlider = ({ assets, slideLive, setSlideLive }) => {
 
   return (
     <MenuImageSliderContainer>
       {assets.map((image, i) => (
-        <div class="">
+       <>
           {image.file.contentType === "text/html" ? (
             <Video
               slideLive={slideLive + 1}
+              setSlideLive={setSlideLive}
               videoSrc={image.file.fileName}
               videoTitle={image.description}
               zIndex={i + 1}
-              transform={`translateX(${slideLive * 60}vw)`}
+             
             />
           ) : (
             <Image 
             slideLive={slideLive + 1}
             zIndex={i + 1}
-            transform={`translateX(${slideLive * 60}vw)`}
+            setSlideLive={setSlideLive}
             fluid={image.fluid}
         title={image.description}
             />
           )}
-        </div>
+    </>
       ))}
     </MenuImageSliderContainer>
   )
@@ -35,8 +36,10 @@ const MenuImageSlider = ({ assets, slideLive }) => {
 export default MenuImageSlider
 
 export const MenuImageSliderContainer = styled.div`
-  width: 96vw;
-  height: 42.12rem;
+  width: 100%;
+  position: relative;
+  height: 35.3vw;
   padding: 0;
   display: flex;
+ 
 `

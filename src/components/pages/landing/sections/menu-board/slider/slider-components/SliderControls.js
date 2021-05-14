@@ -1,9 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+
+import BackIcon from './backIcon'
+import ForwardIcon from './forwardIcon'
+
 const SliderControls = ({slideLive, setSlideLive}) => {
 
     const back = () => {
-        console.log(`slideLive`, slideLive)
         if (slideLive === -2) {setSlideLive(slideLive +1)} 
     }
     const forward = () => {
@@ -11,8 +14,12 @@ const SliderControls = ({slideLive, setSlideLive}) => {
     }
     return (
         <SliderControlsContainer>
-        <Control onClick={back}>Back</Control> 
-        <Control onClick={forward} style={{marginLeft: `1rem`}}> Forward</Control>
+        <Control onClick={back}>
+            <BackIcon/>
+            </Control> 
+        <Control onClick={forward} style={{marginLeft: `1rem`}}> 
+        <ForwardIcon/>
+        </Control>
     </SliderControlsContainer>
     )
 }
@@ -22,12 +29,13 @@ export default SliderControls
 export const SliderControlsContainer = styled.div`
 padding: 1rem;
 display: flex;
-width: 50vw;
+width: 53vw;
 justify-content: flex-end;
-
+@media screen and (max-width: 450px) {
+    display: none;
+  }
 `
 
 export const Control = styled.div`
-padding: .5rem 1rem;
-border: 1px solid black;
+
 `

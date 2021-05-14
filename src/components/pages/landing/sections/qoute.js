@@ -28,11 +28,21 @@ const QuotePageContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 13.5rem;
+  @media screen and (max-width: 450px) {
+    margin-bottom: 6rem;
+  }
 `
 const QouteContainer = styled.div`
   width: 80%;
   padding: 6rem 0;
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    padding: 3.5rem 0;
+  }
 `
 const QouteIcon = styled.img`
 height: 1.75rem;
+@media screen and (max-width: 450px) {
+    height:  1.26rem;
+  }
 `

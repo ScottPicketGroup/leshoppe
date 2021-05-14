@@ -6,10 +6,10 @@ import {P} from '../../../styled-components/GlobalStyles'
 const FooterLinks = () => {
     return (
         <FooterLinksContainer>
-           <FooterLink to="/" style={{ marginBottom: `1.75rem` }}><P bc2>LE SHOPPE</P></FooterLink>
-           <FooterLink to="/"><P bc2>Home</P></FooterLink>
-           <FooterLink to="/contact"><P bc2>Contact</P></FooterLink>
-           <FooterLink to="/terms-and-conditions"><P bc2>Terms and Conditions</P></FooterLink>
+           <FooterLink to="/">LE SHOPPE</FooterLink>
+           <FooterLink to="/">Home</FooterLink>
+           <FooterLink to="/contact">Contact</FooterLink>
+           <FooterLink to="/terms-and-conditions">Terms and Conditions</FooterLink>
         </FooterLinksContainer>
     )
 }
@@ -17,22 +17,39 @@ const FooterLinks = () => {
 export default FooterLinks
 
 export const FooterLinksContainer = styled.div`
-width: 18.5rem;
-height: 100%;
+width: 33.3%;
+
 
 display: flex;
 flex-direction: column;
+@media screen and (max-width: 450px) {
+    width: 100%;
+    margin-top: 3rem;
+   
+}
 `
 
 export const FooterLink = styled(Link)`
-padding: 1rem 1rem 1rem 0;
+margin-bottom: 1.75rem;
 text-decoration: none;
 transition: all .3s ease-in-out;
+font-size: 1rem;
+@media screen and (max-width: 450px) {
+    margin-bottom: 1.5rem;
+    font-size: .75rem;
+}
   :hover {
       opacity: 75%;
-      transform: scale(1.01)
+    
   }
   :first-child {
-      padding: 0;
+      margin-bottom: 1.75rem;
+      @media screen and (max-width: 450px) {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+:last-child {
+    margin-bottom: 0;
+}
   }
 `

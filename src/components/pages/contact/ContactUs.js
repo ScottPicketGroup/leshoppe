@@ -19,4 +19,8 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 margin-bottom: 6.75rem;
+flex-wrap: wrap;
+@media screen and (max-width: 450px) {
+width: 100%;
+}
 `

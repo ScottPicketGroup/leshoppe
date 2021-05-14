@@ -8,9 +8,11 @@ const Footer = () => {
     return (
         <FooterContainer>
             <LeftContainer>
+                <SubContainer>
                 <FooterLinks/>
                 <FooterContact/>
                 <FooterSocials/>
+                </SubContainer>
             </LeftContainer>
             <FooterSubscribe/>
         </FooterContainer>
@@ -21,16 +23,36 @@ export default Footer
 
 export const FooterContainer = styled.div`
 width: 100vw;
-height: 100%;
+min-height: 100%;
 margin-left: -5.5rem;
 display: flex;
-justify-content: space-between;
+
 flex-wrap: wrap;
 padding: 3.6rem 5.25rem 5.25rem 3.5rem;
+@media screen and (max-width: 450px) {
+    flex-wrap: wrap;
+    padding: 0;
+    width: 100vw !important;
+    margin: 0 ;
+    justify-content: flex-start;
+    
+  }
 `
 
 export const LeftContainer = styled.div`
-width: 56rem;
-display: flex;
+width: 75%;
+
 flex-wrap: wrap;
+@media screen and (max-width: 450px) {
+    width: 100%;
+}
+`
+
+export const SubContainer = styled.div`
+width: 66.66%;
+display: flex;
+@media screen and (max-width: 450px) {
+    flex-direction: column;
+    width: 100%;
+}
 `

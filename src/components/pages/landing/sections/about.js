@@ -8,12 +8,12 @@ const About = () => {
   return (
     <AboutContainer>
       <AboutText>
-        <h1 style={{ marginBottom: `2.25rem` }}>
+        <Heading>
           About Le Shoppe
           <br />
           Second line example
-        </h1>
-        <P bc2>
+        </Heading>
+        <Paragraph bc2>
           The acquisition of our newest site in Little Collins Street sees our
           first footprint into the top end of Melbourne’s CBD.{" "}
           <i> Housed in the historic Normanby Chambers building,</i> Scott
@@ -21,22 +21,23 @@ const About = () => {
           become an instant classic. Returning to its most successful
           incarnation, Chancery Lane will return the space to a
           European-inspired bistro – albeit with an edge.
-        </P>
+        </Paragraph>
 
-        <P padding="2rem" bc2>
+        <Paragraph  bc2>
           1. Like its name, the fit-out pays homage <br />
           2. Previous era; a space where opulence and luxury <br />
           3. Served as a refuge from life outside
-        </P>
-        <P padding="2rem" bc2>
+        </Paragraph>
+        <Paragraph  bc2>
           - Like its name, the fit-out pays homage <br />
           - Previous era; a space where opulence and luxury <br />- Served as a
           refuge from life outside
-        </P>
+        </Paragraph>
       </AboutText>
-
-      <ImgPortraitSmall src={meat} />
-      <ImgLandscapeSmall src={salami} />
+      <ImgContainer>
+        <ImgPortraitSmall src={meat} />
+        <ImgLandscapeSmall src={salami} />
+      </ImgContainer>
     </AboutContainer>
   )
 }
@@ -52,35 +53,55 @@ export const AboutContainer = styled.div`
   @media only screen and (max-width: 800px) {
     justify-content: center;
   }
+  @media only screen and (max-width: 450px) {
+
+    margin-bottom: 6rem;
+    
+  }
 `
 export const AboutText = styled.div`
-  width: 32rem;
-`
-
-export const ImgPortraitSmall = styled.img`
-  width: 20.2rem;
-  height: 100%;
-  margin-right: 1rem;
- 
-  /* @media only screen and (max-width: 1440px) and (min-width: 800px) {
-    width: 20rem;
-  } */
-  @media only screen and (max-width: 900px) {
+  width: 33%;
+  @media screen and (max-width: 450px) {
     width: 100%;
-    margin: 1rem 0;
+    margin-bottom: 3.5rem;
+  }
+`
+export const Heading = styled.h1`
+margin-top: 2.25rem;
+@media screen and (max-width: 450px) {
+  margin-bottom: 1.5rem;
+}
+`
+export const Paragraph = styled(P) `
+margin-bottom: 2.5rem;
+@media screen and (max-width: 450px) {
+  margin-bottom: 1.5rem;
+}
+`
+export const ImgContainer = styled.div`
+  width: 58%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    width: 100%;
+    order: 2;
+  }
+`
+export const ImgPortraitSmall = styled.img`
+  width: 40%;
+  @media screen and (max-width: 450px) {
+    width: 75%;
+    margin-bottom: 3.5rem;
   }
 `
 
 export const ImgLandscapeSmall = styled.img`
-  width: 25.5rem;
-  height: 100%;
- 
-  
-  @media only screen and (max-width: 1440px) and (min-width: 800px) {
-    width: 28rem;
-  }
-  @media only screen and (max-width: 700px) {
-    width: 100%;
-    height: 100%;
+  width: 57%;
+  @media screen and (max-width: 450px) {
+  width: 75%;
+  align-self: flex-end;
   }
 `
+

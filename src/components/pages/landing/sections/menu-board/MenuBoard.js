@@ -29,15 +29,11 @@ const MenuBoard = () => {
   const menuBoardImages = data.allContentfulSlider.edges[0].node.mediaMany
 
   const [slideLive, setSlideLive] = useState(-1)
- 
+
   return (
     <MenuBoardPageContainer>
       <h1>Menu Board</h1>
-      <MenuImageSlider
-        assets={menuBoardImages}
-        slideLive={slideLive}
-       
-      />
+      <MenuImageSlider assets={menuBoardImages} slideLive={slideLive}  setSlideLive={setSlideLive}/>
       <SliderControls slideLive={slideLive} setSlideLive={setSlideLive} />
     </MenuBoardPageContainer>
   )

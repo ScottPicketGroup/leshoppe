@@ -10,7 +10,9 @@ import {
 import { P } from "./styled-components/GlobalStyles"
 
 
-const Header = ({ siteTitle, menuOpen, setMenuOpen }) => (
+const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
+  const openMenu = () => {setMenuOpen(true)}
+  return (
 
   <header>
     
@@ -19,13 +21,17 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => (
         <Logo />
       </LogoContainer>
       
-      <ComingSoonContainer>
-        {/* {!menuOpen ? ( */}
-          <P bc1>COMING SOON</P>
-        {/* ): null} */}
+      <ComingSoonContainer
+      
+      >
+        {!menuOpen ? (
+          <P bc1
+          onClick={openMenu}
+          >MENU</P>
+        ): null}
         </ComingSoonContainer>
     </HeaderContainer>
   </header>
-)
+)}
 
 export default Header

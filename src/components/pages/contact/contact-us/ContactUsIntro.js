@@ -16,8 +16,17 @@ const ContactUsIntro = () => {
 export default ContactUsIntro
 
 export const ContactUsIntroContainer = styled.div`
-width: 32%;
+width: 25%;
+
 h1 {
     margin-bottom: 2.25rem;
 }
+
+@media screen and (max-width: 450px) {
+    width: 100%;
+    margin-bottom: 3.5rem !important;
+  h1 {
+    margin-bottom: 1.5rem !important;
+  }
+  }
 `

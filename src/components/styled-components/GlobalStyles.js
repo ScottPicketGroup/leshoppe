@@ -65,13 +65,17 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1.25rem;
         font-weight: regular;
         color: #153E35;
+        text-decoration: none;
     }
     @media screen and (max-width: 450px) {
           h1 {
             font-size: 1.5rem;
+          } 
+          h2 a {
+            font-size: .75rem !important;
           }
           p {
-            font-size: 1rem;
+            font-size: 1rem !important;
           }
     
   }
@@ -101,10 +105,16 @@ export const Section1 = styled.div`
 min-height: 100%;
 width: 99vw;
 position: absolute;
+left: 0;
+display: flex;
+flex-direction: column;
 padding: ${padding.page.vertical} ${padding.page.horizontal};
 z-index: 2;
 overflow-x: hidden;
 background: transperant;
+@media screen and (max-width: 700px) {
+    padding: 1.15rem;
+  }
 `
 export const MenuButton = styled.button`
   border: none;

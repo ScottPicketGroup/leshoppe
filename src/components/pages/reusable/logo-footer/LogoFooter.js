@@ -58,6 +58,14 @@ export const LogoFooterContainer = styled.div`
   flex-wrap: wrap;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  @media screen and (max-width: 450px) {
+    flex-wrap: nowrap;
+    padding: 0;
+    width: 100vw !important;
+    margin: 0 0 0 -5vw;
+    justify-content: flex-start;
+    
+  }
 `
 export const LogoLink = styled.a`
   text-decoration: none;
@@ -66,6 +74,12 @@ export const LogoLink = styled.a`
   :hover {
     opacity: 75%;
     transform: scale(1.1);
+  }
+  :first-child {
+    margin-left: 5vw;
+  }
+  @media screen and (max-width: 450px) {
+    padding: .6rem;
   }
 `
 export const Image = styled(Img)`

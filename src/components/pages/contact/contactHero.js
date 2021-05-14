@@ -18,19 +18,16 @@ display: flex;
 justify-content: flex-end;
 
   @media only screen and (max-width: 700px) {
-  justify-content: center;
+ 
   margin-top: 30rem;
   }
 `
 export const ImgSqaure = styled.img`
-max-width: 32rem;
-margin-bottom: 7rem;
-@media only screen and (max-width: 1440px) and (min-width: 800px) {
-    width: 28rem;
-  }
-  @media only screen and (max-width: 700px) {
-    width: 100%;
-    height: 100%;
-  }
+max-width: 25%;
+margin-bottom: 6rem;
+
+@media screen and (max-width: 450px) {
+max-width: 50%;
+}
 `
 

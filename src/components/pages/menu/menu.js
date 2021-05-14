@@ -10,6 +10,7 @@
 import { Socials } from "../../styled-components/ComingSoonComponents"
 import Facebook from "../coming-soon/Facebook"
 import Instagram from "../coming-soon/Instagram"
+import LeShoppeLogo from "./leShopeLogo"
   const Menu = ({menuOpen, setMenuOpen}) => {
   
     return (
@@ -17,7 +18,7 @@ import Instagram from "../coming-soon/Instagram"
         <PopOuBackground display={menuOpen}>
           <MenuContainer display={menuOpen}>
           <MenuHeader>
-            <LogoBox><img src={leShoppe} alt="leshoppe logo" /></LogoBox>
+            <LogoBox><LeShoppeLogo/></LogoBox>
             
             <P bc2 onClick={() => setMenuOpen(false)}>X CLOSE</P>
           </MenuHeader> 
@@ -34,10 +35,10 @@ import Instagram from "../coming-soon/Instagram"
               <ImgBox> 
               <img src={meat} alt="meat picture" width="100%"/>
               </ImgBox>
-              <Socials>
-                <Facebook/>
-                <Instagram/>
-              </Socials>
+              <Socials style={{marginBottom: `56px`}}>
+                <Facebook menu/>
+                <Instagram menu/>
+              </Socials >
             </MenuLinksContainer>
           </MenuContainer>
         </PopOuBackground>
@@ -55,49 +56,86 @@ import Instagram from "../coming-soon/Instagram"
     z-index: 400;
     transition: transform .4s ease-out;
     transform: ${props => props.display ? "translateX(0vh)" : "translateX(100vw)" };
-
+    @media screen and (max-width: 450px) {
+      width: 100vw;
+      padding: 0;
+      background: transparent;
+}
   `
   export const MenuContainer = styled.div`
+    
+        height: 100vh;
+    width: 29%;
     display: flex;
-    height: auto;
-    height: 100vh;
-    width: 37rem;
-    padding: 2rem 5.25rem;
+    align-items: center;
     position: absolute;
-    right: ${props => props.display ? "0vw" : "-50vw" };
+    right: ${props => props.display ? "0vw" : "-58vw" };
     z-index: 150;
-    background: white;
+    background: #153E35;
     flex-direction: column;
     transition: right .275s ease-out;
     transition-delay:  .35s;
     background: #FDF9EE;
-
+    @media screen and (max-width: 450px) {
+      width: 100vw;
+      padding: 0 1rem;
+      background: #153E35;
+      align-content: space-between !important;
+}
   `
 
   export const MenuHeader = styled.div`
-  width: 70%;
+  width: 75%;
   height: 5rem;
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
+  @media screen and (max-width: 450px) {
+    padding: 0 1rem;
+    width: 100%;
+   p{ color: #FDF9EE !important;}
+ 
+}
   `
   export const MenuLinksContainer = styled.div`
     display: flex;
-    
+    height: 100%;
+    width: 75%;
     flex-direction: column;
+    justify-content: flex-end;
+    @media screen and (max-width: 450px) {
+      width: 100%;
+      padding: 0 1rem;
+      
+}
   `
 
   export const MenuLink = styled(Link)`
-    padding: 1.75rem 0 0 0;
+    margin-bottom: 1.75rem;
     text-decoration: none;
+    @media screen and (max-width: 450px) {
+      color: #FDF9EE !important;
+}
   `
 export const LogoBox = styled.div`
-
+height: 100%;
+display: flex;
+align-items: center;
 width: 30%;
 `
 
 export const ImgBox = styled.div`
-width: 70%;
+width: 100%;
 margin-top: 2rem;
 margin-bottom: 2rem;
+display:flex;
+@media screen and (max-width: 450px) {
+height: 6rem;
+img {
+  display: none;
+}
+}
+
 `
