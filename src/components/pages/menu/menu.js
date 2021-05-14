@@ -86,8 +86,8 @@ import LeShoppeLogo from "./leShopeLogo"
 
   export const MenuHeader = styled.div`
   width: 75%;
-  height: 5rem;
-  
+  margin-top: 2.25rem;
+   
   display: flex;
   align-items: center;
   justify-content: space-between;
