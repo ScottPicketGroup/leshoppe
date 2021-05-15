@@ -30,4 +30,8 @@ align-items: center;
   font-size: 1rem;
   padding: .25rem 0 1rem 0;
   color: ${props => (props.open ? "grey" : "")};
+  @media screen and (max-width: 450px) {
+padding: .15rem 0;
+}
+
 `

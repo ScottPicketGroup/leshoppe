@@ -58,10 +58,13 @@ export default ShopCatagoryDropdown
 const ShopCatagoryDropdownContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 16.5%;
+  width: 20.5%;
   overflow: hidden;
   margin-bottom: 6rem;
   height: 28px;
+  @media screen and (max-width: 450px) {
+    width: 50%;
+}
 `
 const Menu = styled.div`
   display: flex;

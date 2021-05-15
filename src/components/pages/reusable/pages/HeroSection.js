@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import shopSquare from '../../../../images/placeholders/shopSqaure.jpg'
 
-const HeroSection = ({img}) => {
+const HeroSection = () => {
     
   
     return (
@@ -22,14 +22,13 @@ justify-content: flex-end;
   @media only screen and (max-width: 700px) {
   justify-content: center;
   margin-top: 30rem;
+  display: none;
   }
 `
 export const ImgSqaure = styled.img`
-max-width: 32rem;
-margin-bottom: 7rem;
-@media only screen and (max-width: 1440px) and (min-width: 800px) {
-    width: 28rem;
-  }
+max-width: 30%;
+margin-bottom: 6rem;
+
   @media only screen and (max-width: 700px) {
     width: 100%;
     height: 100%;

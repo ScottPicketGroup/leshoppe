@@ -38,9 +38,9 @@ const mouseMove = e => {
 export default SliderContainer
 
 const SliderContainerContainer = styled.div`
-width: 60%;
+width: 58%;
 background: purple;
-height: 500px;
+height: 42.25rem;
 display: flex;
 `
 

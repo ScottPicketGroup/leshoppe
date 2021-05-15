@@ -29,18 +29,28 @@ export const ContactInfoContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 13.37rem;
+  @media screen and (max-width: 450px) {
+    display: none;
+}
 `
 
 export const ContactImage = styled.div`
   width: 53%;
+  display: flex;
   img {
     width: 100%;
   }
+  @media screen and (max-width: 450px) {
+    display: none;
+}
 `
 
 export const ContactText = styled.div`
   width: 32%;
   height: 100%;
+  @media screen and (max-width: 450px) {
+    width: 100%;
+}
 `
 export const PC = styled(P)`
   margin-bottom: 2rem;

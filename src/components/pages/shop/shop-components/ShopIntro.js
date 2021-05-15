@@ -16,10 +16,15 @@ export default ShopIntro
 
 export const ShopIntroContainer = styled.div`
 width: 33%;
+margin-top: 6rem;
 h1 {
     margin-bottom: 2.25rem;
 }
 p {
     margin-bottom: 2.25rem;
+}
+@media screen and (max-width: 450px) {
+    width: 100%;
+    margin-bottom: 1.5rem;
 }
 `

@@ -1,29 +1,47 @@
 import React, { useState, useRef } from "react"
 import styled from "styled-components"
-import { gsap, Power0 } from "gsap"
+import { gsap, Power0, Power1 } from "gsap"
 import { P } from "../../../../../styled-components/GlobalStyles"
 import DropdownArrow from "./DropdownArrow"
 import Qauntities from "./Qauntities"
-const ProductQauntityDropdown = ({
- 
-}) => {
+import installMediaQueryWatcher from './mediaQueryWatcher'
+const ProductQauntityDropdown = ({}) => {
   const [open, setOpen] = useState(false)
-  const [menuLabel, setMenuLabel] = useState('QAUNTITY - ')
+  const [menuLabel, setMenuLabel] = useState("QAUNTITY - ")
   const [itemsAvailable, setItemsAvailable] = useState(1)
   const [qauntity, setQauntity] = useState(1)
   let menu = useRef(null)
 
   const openMenu = () => {
-    setOpen(!open)
-    !open
+    
+    
+    installMediaQueryWatcher("(max-width: 600px", function(matches) {
+      if (matches) {
+        !open
+      ? gsap.to(menu, 0.2, {
+          height: `auto`,
+          ease: Power1,
+        })
+      : gsap.to(menu, 0.2, {
+          height: `2.25rem`,
+          ease: Power0,
+        })
+        setOpen(!open)
+      } else {
+        !open
       ? gsap.to(menu, 0.2, {
           height: `auto`,
           ease: Power0,
         })
       : gsap.to(menu, 0.2, {
-        height: `2.875rem`,
+          height: `2.875rem`,
           ease: Power0,
         })
+      }
+    }
+      
+      )
+      
   }
 
   return (
@@ -35,9 +53,7 @@ const ProductQauntityDropdown = ({
       <Menu>
         <First bc2 open={open}>
           {menuLabel} {qauntity}
-          
         </First>
-       
       </Menu>
 
       <Qauntities
@@ -60,27 +76,27 @@ const ProductQauntityDropdownContainer = styled.div`
   width: 45%;
   height: 2.875rem;
   overflow: hidden;
-  margin-bottom: 6rem;
   display: flex;
-  
   align-items: center;
-
-  /* color: ${props => (props.cart ? `#FDF9EE` : "153E35")};
-  background: ${props => (props.cart ? `#153E35` : "")}; */
-  border: 1px solid #153E35;
-        border-radius: 1px;
-        :hover {
-          background:  #153E35;
-          color: #FDF9EE;
-        }
+  border: 1px solid #153e35;
+  border-radius: 1px;
+  :hover {
+    background: #153e35;
+    color: #fdf9ee;
+  }
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    height: 2.25rem;
+}
 `
 const Menu = styled.div`
   display: flex;
   justify-content: space-between;
 `
 export const First = styled(P)`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   height: 2.875rem;
   color: ${props => (props.open ? "grey" : "")};

@@ -7,6 +7,7 @@ import Header from "./header"
 import styled from 'styled-components'
 import LogoFooter from "./pages/reusable/logo-footer/LogoFooter"
 import Menu from "./pages/menu/menu"
+import { LogoContainer } from "./styled-components/HeaderComponents"
 const Layout = ({ children }) => {
   const [scrollY, setScrollY] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -29,7 +30,9 @@ const Layout = ({ children }) => {
     <LayoutContainer>
        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-      
+      <LogoContainer>
+      <PageBackground/>
+      </LogoContainer>
       <GlobalStyle />
       
       <Main >{children}</Main>

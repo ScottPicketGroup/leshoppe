@@ -17,6 +17,37 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               handle
+              description
+              availableForSale
+              title
+              tags
+              productType
+              variants {
+                priceV2 {
+                  amount
+                  currencyCode
+                }
+                title
+                image {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        srcSet
+                      }
+                    }
+                  }
+                }
+              }
+              images {
+                localFile {
+                  id
+                  childImageSharp {
+                    fluid {
+                      srcSet
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -33,7 +64,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     // Create pages for each markdown file.
     const ProductTemplate = path.resolve(`src/components/pages/reusable/product-template/ProductTemplate.js`)
     result.data.allShopifyProduct.edges.forEach(({ node }) => {
-      const path = node.handle
+      const path = `/shop/products/${node.handle}`
       createPage({
         path,
         component: ProductTemplate,
@@ -41,7 +72,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         // as a GraphQL variable to query for data from the markdown file.
         context: {
             pagePath: path,
-            handle: node.handle
+            handle: node.handle,
+            product: node
         },
       })
     })
