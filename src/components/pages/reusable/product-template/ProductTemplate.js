@@ -18,7 +18,7 @@ const ProductTemplate = ({ pageContext }) => {
     <Layout>
       <Page>
         <Section1>
-          <ProductContainer product={pageContext.product}/>
+          <ProductContainer product={pageContext}/>
           <RecommendationList />
           <LogoFooter />
           <Footer />
@@ -32,4 +32,32 @@ export default ProductTemplate
 
 // export const query = graphql`
 
+// query AllProducts {
+//   allShopifyProduct(filter: {availableForSale: {eq: true}}) {
+//     edges {
+//       node {
+//         id
+//         description
+//         handle
+//         tags
+//         title
+//         images {
+//           localFile {
+//             childImageSharp {
+//               fluid {
+//                 base64
+//                 tracedSVG
+//                 srcWebp
+//                 srcSetWebp
+//                 originalImg
+//                 originalName
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 // `
+

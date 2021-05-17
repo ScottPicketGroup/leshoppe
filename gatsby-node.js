@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-console.log(result.data.allShopifyProduct.edges[0].node.title, 'boooooooooobs')
+
     // Create pages for each markdown file.
     const ProductTemplate = path.resolve(`src/components/pages/reusable/product-template/ProductTemplate.js`)
     result.data.allShopifyProduct.edges.forEach(({ node }) => {
