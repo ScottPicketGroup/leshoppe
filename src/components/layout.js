@@ -67,6 +67,7 @@ export const LayoutContainer = styled.div`
   min-height: 100vh;
   display: flex;
   position: relative;
+  overflow: hidden;
 `
 
 export const Main = styled.main`

@@ -105,6 +105,7 @@ export const Page = styled.div`
 width: 100%;
 height: 100%;
 position: relative;
+overflow: hidden;
 `
 
 export const Section1 = styled.div`
@@ -221,12 +222,4 @@ export const Footer = styled.div`
   @media screen and (max-width: 450px) {
   align-items: flex-end;
 }
-`
-
-export const Test = styled.div`
-position: fixed;
-z-index: 300;
-height: 3rem;
-width: 3rem;
-background: brown;
 `
