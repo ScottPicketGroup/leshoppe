@@ -8,10 +8,7 @@ const SliderContainer = ({ product }) => {
  
   return (
     <div>
-    <ProductImage
-        fluid={product.product.images[2].localFile.childImageSharp.fluid}
-        alt="bleh"
-      />
+ 
       </div>
   )
 }
