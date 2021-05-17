@@ -13,37 +13,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const result = await graphql(
       `
       query AllProducts {
-        allShopifyProduct {
+        allShopifyProduct(filter: {availableForSale: {eq: true}}) {
           edges {
             node {
-              handle
+              id
               description
-              availableForSale
-              title
+              handle
               tags
-              productType
-              variants {
-                priceV2 {
-                  amount
-                  currencyCode
-                }
-                title
-                image {
-                  localFile {
-                    childImageSharp {
-                      fluid {
-                        srcSet
-                      }
-                    }
-                  }
-                }
-              }
+              title
               images {
                 localFile {
-                  id
                   childImageSharp {
                     fluid {
-                      srcSet
+                      base64
+                      tracedSVG
+                      srcWebp
+                      srcSetWebp
+                      originalImg
+                      originalName
                     }
                   }
                 }
@@ -60,7 +47,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-
+console.log(result.data.allShopifyProduct.edges[0].node.title, 'boooooooooobs')
     // Create pages for each markdown file.
     const ProductTemplate = path.resolve(`src/components/pages/reusable/product-template/ProductTemplate.js`)
     result.data.allShopifyProduct.edges.forEach(({ node }) => {
