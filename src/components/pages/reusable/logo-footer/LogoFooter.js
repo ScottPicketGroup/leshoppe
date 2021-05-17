@@ -84,4 +84,7 @@ export const LogoLink = styled.a`
 export const Image = styled(Img)`
   width: ${props => props.width / 2}rem;
   margin: 0.5rem;
+  @media screen and (max-width: 450px) {
+    width: ${props => props.width / 1.62}rem;
+}
 `
