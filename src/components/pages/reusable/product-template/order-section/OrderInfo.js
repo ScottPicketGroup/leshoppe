@@ -4,7 +4,7 @@ import { Button, P } from "../../../../styled-components/GlobalStyles"
 
 import ProductQauntityDropdown from "./dropdown/ProductQauntityDropdown"
 const OrderInfo = ({product}) => {
-  
+  console.log(product, 'from info container')
   return (
     <OrderInfoContainer>
      boob
