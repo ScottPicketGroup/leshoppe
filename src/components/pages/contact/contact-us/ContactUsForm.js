@@ -12,11 +12,7 @@ import {
 import CheckBox from "./CheckBox"
 const ContactUsForm = () => {
   const [error, setError] = useState({
-    fName: false,
-    sName: false,
-    email: false,
-    number: false,
-    message: false
+    fName: false
   })
   const [inputs, setInputs] = useState({
     fName: "",
@@ -37,10 +33,12 @@ const ContactUsForm = () => {
     !inputs.email.includes(".") || !inputs.email.includes("@") 
       ? setError(error => ({ ...error, email: true}) )
       : setError(error => ({ ...error, email: false}) )
+
   }
-  const handleSubmit = e => {
-    e.preventDefault()
-    inputs.fName.length === 0 ? setError(error => ({ ...error, fName: true}) )
+
+  const checkForm = () => {
+    
+    !inputs.fName ? setError(error => ({ ...error, fName: true}) )
     : setError(error => ({ ...error, fName: false}) )
     inputs.sName.length === 0 ? setError(error => ({ ...error, sName: true}) )
     : setError(error => ({ ...error, sName: false}) )
@@ -50,11 +48,12 @@ const ContactUsForm = () => {
     : setError(error => ({ ...error, number: false}) )
     inputs.message.length === 0 ? setError(error => ({ ...error, message: true}) )
     : setError(error => ({ ...error, message: false}) )
+  }
+  const handleSubmit = e => {
+    e.preventDefault()
+    checkForm()
+    if ( inputs.fName && inputs.sName && inputs.email.includes("@") && inputs.number && inputs.message)  setThankyou(true)    
     
-    if (error.name) alert(error.name)
- 
-  
-
   }
   return (
     <ContactUsFormContainer>
