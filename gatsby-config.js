@@ -1,6 +1,4 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
@@ -18,7 +16,7 @@ module.exports = {
       options: {
         spaceId: `rgc4vkz2tcms`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: 'REM3Hkix0qZRVnKuW3QmvXq7ADnpzemUyeJ3eHlnoho',
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
@@ -49,8 +47,8 @@ module.exports = {
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        shopName: 'mareksstore',
-        accessToken: '1a756361ce2840172f04f5c916d6f6ca',
+        shopName: 'scottpickettgroup',
+        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
         verbose: true,
       },
     },

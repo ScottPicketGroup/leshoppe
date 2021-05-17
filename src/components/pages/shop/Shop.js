@@ -10,6 +10,7 @@ const Shop = () => {
     "Homeware",
     "Bread",
     "Cutlery",
+    "Meat"
   ])
   const [catagory, setCatagory] = useState("Sort By Catagory")
 
