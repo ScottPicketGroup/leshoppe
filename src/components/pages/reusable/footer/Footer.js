@@ -22,14 +22,14 @@ const Footer = () => {
 export default Footer
 
 export const FooterContainer = styled.div`
-width: 100vw;
+width: 99vw;
 
 display: flex;
 position: relative;
 z-index: 2;
-margin-top: 2.25rem;
+margin: 2.25rem 0 6rem 0;
 flex-wrap: wrap;
-padding: 2rem;
+padding: 0 2rem;
 
 @media screen and (max-width: 450px) {
     flex-wrap: wrap;

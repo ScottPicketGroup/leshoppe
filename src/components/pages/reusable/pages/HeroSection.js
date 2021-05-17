@@ -26,7 +26,7 @@ justify-content: flex-end;
   }
 `
 export const ImgSqaure = styled.img`
-max-width: 30%;
+max-width: 33%;
 margin-bottom: 6rem;
 
   @media only screen and (max-width: 700px) {

@@ -4,7 +4,7 @@ import { Button, P } from "../../../../styled-components/GlobalStyles"
 
 import ProductQauntityDropdown from "./dropdown/ProductQauntityDropdown"
 const OrderInfo = ({product}) => {
-  const {title, price, productType, description} = product
+  const {title, price, productType, description, variants} = product
   console.log(product)
   return (
     <OrderInfoContainer>
@@ -18,7 +18,7 @@ const OrderInfo = ({product}) => {
       </TextContainer>
 
       <ButtonsContainer>
-        <ProductQauntityDropdown />
+        <ProductQauntityDropdown/>
         <ButtonI cart>
           <ButtonILabel>ADD TO CART </ButtonILabel>
         </ButtonI>

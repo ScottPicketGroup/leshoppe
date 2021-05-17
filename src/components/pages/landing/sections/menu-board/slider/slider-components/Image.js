@@ -48,7 +48,8 @@ console.log(`mouseDown`, mouseDown)
     onDragEnd={handleMouseUp}
     onMouseDown={handleMouseDown}
     onMouseMove={handleMouseMove}
- 
+    onTouchMove={handleMouseMove}
+    onTouchStart={handleMouseDown}
     >
       <SliderImage fluid={fluid} zIndex={zIndex + 1} 
   

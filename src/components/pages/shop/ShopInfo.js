@@ -35,7 +35,7 @@ export const ContactInfoContainer = styled.div`
 `
 
 export const ContactImage = styled.div`
-  width: 53%;
+  width: 58%;
   display: flex;
   img {
     width: 100%;
@@ -46,7 +46,7 @@ export const ContactImage = styled.div`
 `
 
 export const ContactText = styled.div`
-  width: 32%;
+  width: 33%;
   height: 100%;
   @media screen and (max-width: 450px) {
     width: 100%;

@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
     }
   })
 
-  console.log(scrollY, logoLimit, logoDisplay)
+
   return (
     <LayoutContainer>
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />

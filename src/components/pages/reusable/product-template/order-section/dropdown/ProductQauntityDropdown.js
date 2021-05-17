@@ -5,16 +5,14 @@ import { P } from "../../../../../styled-components/GlobalStyles"
 import DropdownArrow from "./DropdownArrow"
 import Qauntities from "./Qauntities"
 import installMediaQueryWatcher from './mediaQueryWatcher'
-const ProductQauntityDropdown = ({}) => {
+const ProductQauntityDropdown = ({variants}) => {
   const [open, setOpen] = useState(false)
   const [menuLabel, setMenuLabel] = useState("QAUNTITY - ")
   const [itemsAvailable, setItemsAvailable] = useState(1)
-  const [qauntity, setQauntity] = useState(1)
+  const [qauntity, setQauntity] = useState(10)
   let menu = useRef(null)
 
-  const openMenu = () => {
-    
-    
+  const openMenu = () => { 
     installMediaQueryWatcher("(max-width: 600px", function(matches) {
       if (matches) {
         !open
@@ -26,7 +24,7 @@ const ProductQauntityDropdown = ({}) => {
           height: `2.25rem`,
           ease: Power0,
         })
-        setOpen(!open)
+        
       } else {
         !open
       ? gsap.to(menu, 0.2, {
@@ -37,11 +35,11 @@ const ProductQauntityDropdown = ({}) => {
           height: `2.875rem`,
           ease: Power0,
         })
+        setOpen(!open)
       }
     }
       
-      )
-      
+      ) 
   }
 
   return (

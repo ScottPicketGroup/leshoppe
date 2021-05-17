@@ -73,7 +73,7 @@ export const font = {
 export const padding = {
     page: {
         horizontal: '5.25rem',
-        vertical: '8.25rem'
+        vertical: '10.25rem'
     },
     menuPadding: {
         vertical: '5.75rem',
