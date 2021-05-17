@@ -48,7 +48,7 @@ module.exports = {
       resolve: `gatsby-source-shopify`,
       options: {
         shopName: 'scottpickettgroup',
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        accessToken: '420e117d722371029ed050a1a7802bad',
         verbose: true,
       },
     },
