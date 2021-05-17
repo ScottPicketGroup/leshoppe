@@ -9,9 +9,27 @@ const Image = ({ fluid, zIndex, slideLive, title, setSlideLive }) => {
   const [mouseStartPos, setMouseStartPos] = useState(0)
   const [mouseEndPos, setMouseEndPos] = useState(0)
   const [mouseDown, setMouseDown] = useState(false)
- 
+  const [touchStart, setTouchStart] = React.useState(0);
+  const [touchEnd, setTouchEnd] = React.useState(0);
 
- 
+  function handleTouchStart(e) {
+    setTouchStart(e.targetTouches[0].clientX);
+}
+
+function handleTouchMove(e) {
+    setTouchEnd(e.targetTouches[0].clientX);
+}
+function handleTouchEnd() {
+  if (touchStart - touchEnd > 150) {
+      // do your stuff here for left swipe
+      back();
+  }
+
+  if (touchStart - touchEnd < -150) {
+      // do your stuff here for right swipe
+      forward();
+  }
+}
     const back = () => {
       if (slideLive === -1) {setSlideLive(slideLive => -1)} 
   }
@@ -48,8 +66,9 @@ console.log(`mouseDown`, mouseDown)
     onDragEnd={handleMouseUp}
     onMouseDown={handleMouseDown}
     onMouseMove={handleMouseMove}
-    onTouchMove={handleMouseMove}
-    onTouchStart={handleMouseDown}
+    onTouchMove={handleTouchMove}
+    onTouchStart={handleTouchStart}
+    onTouchEnd={handleTouchEnd}
     >
       <SliderImage fluid={fluid} zIndex={zIndex + 1} 
   
