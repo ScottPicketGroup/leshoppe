@@ -49,7 +49,7 @@ module.exports = {
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        shopName: 'scottpicketstore',
+        shopName: 'scottpicketgroup',
         accessToken: '1a756361ce2840172f04f5c916d6f6ca',
         verbose: true,
       },
