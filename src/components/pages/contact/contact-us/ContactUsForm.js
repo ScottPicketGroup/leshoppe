@@ -51,10 +51,10 @@ const ContactUsForm = () => {
     inputs.message.length === 0 ? setError(error => ({ ...error, message: true}) )
     : setError(error => ({ ...error, message: false}) )
     if (
-      error.name 
-    ) console.log(error)
+      !error.name 
+    ) setThankyou(true)
   
-    // else setError(true)
+
   }
   return (
     <ContactUsFormContainer>
