@@ -120,7 +120,7 @@ z-index: 2;
 overflow-x: hidden;
 background: transperant;
 @media screen and (max-width: 700px) {
-  margin-top: 2.25rem;  
+  margin-top: 3.5rem;  
   padding: 0 1.15rem;
   }
 `
@@ -221,5 +221,6 @@ export const Footer = styled.div`
   padding: 3.37rem 0rem 0 0;
   @media screen and (max-width: 450px) {
   align-items: flex-end;
+  
 }
 `

@@ -37,6 +37,7 @@ padding: 0 2rem;
     width: 100vw !important;
     margin: 0 ;
     justify-content: flex-start;
+    padding: 0 1rem;
     
   }
 `

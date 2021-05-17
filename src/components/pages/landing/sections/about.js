@@ -76,6 +76,9 @@ export const Paragraph = styled(P) `
 margin-bottom: 2.5rem;
 @media screen and (max-width: 450px) {
   margin-bottom: 1.5rem;
+  :last-child {
+    margin-bottom: 0;
+  }
 }
 `
 export const ImgContainer = styled.div`

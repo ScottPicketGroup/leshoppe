@@ -46,4 +46,7 @@ export const MenuBoardPageContainer = styled.div`
     margin-bottom: 2.25rem;
   }
   margin-bottom: 13.5rem;
+  @media screen and (max-width: 450px) {
+    margin-bottom: 11rem;
+}
 `

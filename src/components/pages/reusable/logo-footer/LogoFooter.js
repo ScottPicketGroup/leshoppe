@@ -63,7 +63,7 @@ export const LogoFooterContainer = styled.div`
     flex-wrap: nowrap;
     padding: 0;
     width: 100vw !important;
-    margin: 0 0 0 -5vw;
+    margin: 0;
     justify-content: flex-start;
     
   }

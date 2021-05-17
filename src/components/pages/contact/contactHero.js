@@ -25,7 +25,7 @@ margin-bottom: 6rem;
 
 @media screen and (max-width: 450px) {
 max-width: 50%;
-margin-bottom: 2.25rem;
+margin-bottom: 3.5rem;
 }
 `
 
