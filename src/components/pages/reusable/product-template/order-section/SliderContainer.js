@@ -4,11 +4,7 @@ import Img from "gatsby-image"
 const SliderContainer = ({ product }) => {
   const [mouseStart, setMouseStart] = useState(0)
   const [mouseEnd, SetMouseEnd] = useState()
-  const { title } = product.product
-  console.log(
-    `product.product`,
-    product.product.images[0].localFile.childImageSharp.fluid
-  )
+
  
   return (
     <div>
