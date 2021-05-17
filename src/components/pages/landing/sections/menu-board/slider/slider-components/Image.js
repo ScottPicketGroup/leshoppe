@@ -11,10 +11,11 @@ const Image = ({ fluid, zIndex, slideLive, title, setSlideLive }) => {
   const [mouseDown, setMouseDown] = useState(false)
  
 
-  const back = () => {
-    console.log(`slideLive`, slideLive)
-    if (slideLive === -1) {setSlideLive(slideLive)} 
-}
+ 
+    const back = () => {
+      if (slideLive === -1) {setSlideLive(slideLive => -1)} 
+  }
+
 const forward = () => {
     if (slideLive > -1) {setSlideLive(slideLive => slideLive -1)} 
    
@@ -35,12 +36,11 @@ const handleMouseMove = e => {
 //   console.log('mouse not down')
 }
 const handleMouseUp = e => {
+  console.log(slideLive)
   setMouseDown(false)
-  if (e.pageX < mouseStartPos) {forward()} else {back() 
-    console.log('nope')}
-
-
+  if (e.pageX < mouseStartPos) {forward()} else (back())
 }
+
 console.log(`mouseDown`, mouseDown)
   return (
     <ImageBox transform={`translateX(${54.55 * slideLive}vw)`}
