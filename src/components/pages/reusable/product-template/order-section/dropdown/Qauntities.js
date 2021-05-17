@@ -8,13 +8,19 @@ const Qaunitities = ({
   open,
   setMenuLabel,
 }) => {
-  const setQaunityAndLabel = qauntity => {
-    setQauntity(qauntity)
-    
+  const setQaunityAndLabel = q => {
+    setQauntity(q)
+    console.log(`qauntity`, q)
+  }
+  var qauntities = [];
+  for (var i = 0; i < itemsAvailable; i++) {
+    let q = i
+      qauntities.push(<QauntityLabel onClick={() => setQaunityAndLabel(q)} key={i}>{i}</QauntityLabel>);
   }
   return (
     <QaunititiesContainer>
-      <QauntityLabel onClick={() => setQaunityAndLabel(1)}>{qauntity}</QauntityLabel>
+    {qauntities}
+      
     </QaunititiesContainer>
   )
 }
@@ -29,7 +35,6 @@ width: 100%;
 align-items: center;
   font-size: 1rem;
   padding: .25rem 0 1rem 0;
-  color: ${props => (props.open ? "grey" : "")};
   @media screen and (max-width: 450px) {
 padding: .15rem 0;
 }

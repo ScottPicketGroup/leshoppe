@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import {Link} from 'gatsby'
 import { color, font, padding } from "./variables"
 
 export const HeaderContainer = styled.div`
@@ -18,7 +18,7 @@ background: ${color.cream};
   }
 `
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
 max-height: 1.5rem;
 @media screen and (max-width: 500px) {
   img {max-height: .5rem;}

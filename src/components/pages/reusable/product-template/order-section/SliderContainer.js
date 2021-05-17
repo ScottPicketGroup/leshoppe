@@ -1,56 +1,43 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-const SliderContainer = () => {
-const [mouseStart, setMouseStart] = useState(0)
-const [mouseEnd, SetMouseEnd] = useState()
-
-
-const dragSlideStart = (e) => {
-    // setMouseStart()
-    console.log(e.pageX)
-}
-
-const dragSlideEnd =  (e) => {
-    console.log(e.pageX)
-}
-
-const mouseMove = e => {
-    if (e.pageX > (mouseStart + 300))  {
-        setMouseStart(e.pageX)
-        console.log('boob')} else {console.log('nope')}
-    
-}
-    return (
-        <SliderContainerContainer
-        
-        >
-            <Slide1
-             draggable="true"
-            //  onMouseDown={dragSlideStart}
-            onMouseUp={dragSlideEnd}
-            onMouseMove={mouseMove}
-            ></Slide1>
-            <Slide2></Slide2>
-        </SliderContainerContainer>
-    )
+import React, { useState } from "react"
+import styled from "styled-components"
+import Img from "gatsby-image"
+const SliderContainer = ({ product }) => {
+  const [mouseStart, setMouseStart] = useState(0)
+  const [mouseEnd, SetMouseEnd] = useState()
+  const { title } = product.product
+  console.log(
+    `product.product`,
+    product.product.images[0].localFile.childImageSharp.fluid
+  )
+ 
+  return (
+    <div>
+    <ProductImage
+        fluid={product.product.images[2].localFile.childImageSharp.fluid}
+        alt="bleh"
+      />
+      </div>
+  )
 }
 
 export default SliderContainer
 
 const SliderContainerContainer = styled.div`
-width: 58%;
-background: purple;
-height: 42.25rem;
-display: flex;
+  width: 58%;
+  background: purple;
+  height: 42.25rem;
+  display: flex;
 `
-
+export const ProductImage = styled(Img)`
+  margin-bottom: 1.75rem;
+`
 const Slide1 = styled.div`
-height: 100%;
-width: 50%;
-background: khaki;
+  height: 100%;
+  width: 50%;
+  background: khaki;
 `
 const Slide2 = styled.div`
-height: 100%;
-width: 50%;
-background: whitesmoke;
+  height: 100%;
+  width: 50%;
+  background: whitesmoke;
 `

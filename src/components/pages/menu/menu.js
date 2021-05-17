@@ -20,7 +20,7 @@ import LeShoppeLogo from "./leShopeLogo"
           <MenuHeader>
             <LogoBox><LeShoppeLogo/></LogoBox>
             
-            <P bc2 onClick={() => setMenuOpen(false)}>X CLOSE</P>
+            <P bc2 onClick={() => setMenuOpen(false)}><span style={{marginRight: `1rem`}}>X </span>   CLOSE</P>
           </MenuHeader> 
             <MenuLinksContainer>
               
@@ -108,6 +108,7 @@ import LeShoppeLogo from "./leShopeLogo"
     @media screen and (max-width: 450px) {
       width: 100%;
       padding: 0 1rem;
+      margin-bottom: 2rem;
       
 }
   `
@@ -132,7 +133,7 @@ margin-top: 2rem;
 margin-bottom: 2rem;
 display:flex;
 @media screen and (max-width: 450px) {
-height: 6rem;
+height: 4rem;
 img {
   display: none;
 }

@@ -8,8 +8,8 @@ import installMediaQueryWatcher from './mediaQueryWatcher'
 const ProductQauntityDropdown = ({variants}) => {
   const [open, setOpen] = useState(false)
   const [menuLabel, setMenuLabel] = useState("QAUNTITY - ")
-  const [itemsAvailable, setItemsAvailable] = useState(1)
-  const [qauntity, setQauntity] = useState(10)
+  const [itemsAvailable, setItemsAvailable] = useState(10)
+  const [qauntity, setQauntity] = useState(1)
   let menu = useRef(null)
 
   const openMenu = () => { 

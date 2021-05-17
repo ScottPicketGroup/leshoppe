@@ -93,7 +93,7 @@ opacity: ${props => props.fade > 20 ? "55%" : "100%"};
 background-image: url(${landing});
 background-repeat: no-repeat;
 background-color: ${cream};
-background-position: 94% 23vw;
+background-position: 94% 25.5vw;
 background-size: 30%;
 top: 0;
 z-index: 1;

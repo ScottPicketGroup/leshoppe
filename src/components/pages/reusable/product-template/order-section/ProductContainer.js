@@ -6,7 +6,7 @@ import OrderInfo from './OrderInfo'
 import SliderContainer from './SliderContainer'
 
 const ProductContainer = ({product}) => {
-    console.log(product, ' from container')
+    
     return (
         <ProductContainerContainer>
             

@@ -4,10 +4,25 @@ import { Button, P } from "../../../../styled-components/GlobalStyles"
 
 import ProductQauntityDropdown from "./dropdown/ProductQauntityDropdown"
 const OrderInfo = ({product}) => {
-  console.log(product, 'from info container')
+  const {title, price, productType, description, variants} = product.product
+  console.log(product)
   return (
     <OrderInfoContainer>
-     boob
+      <TextContainer>
+        <CatagoryLabel FLF>{productType}</CatagoryLabel>
+        <ProductTitle>{title}</ProductTitle>
+        <Price bc1>${variants[0].priceV2.amount}</Price>
+        <Description bc2>
+      {description}
+        </Description>
+      </TextContainer>
+
+      <ButtonsContainer>
+        <ProductQauntityDropdown/>
+        <ButtonI cart>
+          <ButtonILabel>ADD TO CART </ButtonILabel>
+        </ButtonI>
+      </ButtonsContainer>
     </OrderInfoContainer>
   )
 }

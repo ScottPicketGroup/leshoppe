@@ -17,7 +17,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
   <header>
     
     <HeaderContainer>
-      <LogoContainer>
+      <LogoContainer to="/">
         <Logo />
       </LogoContainer>
       
