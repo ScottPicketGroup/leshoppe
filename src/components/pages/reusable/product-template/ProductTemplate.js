@@ -17,7 +17,7 @@ const ProductTemplate = ({ pageContext }) => {
     <Layout>
       <Page>
         <Section1>
-          <ProductContainer product={pageContext.product}/>
+          <ProductContainer />
           <RecommendationList />
           <LogoFooter />
           <Footer />
