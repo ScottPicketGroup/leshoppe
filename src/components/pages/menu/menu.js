@@ -24,10 +24,10 @@ import LeShoppeLogo from "./leShopeLogo"
           </MenuHeader> 
             <MenuLinksContainer>
               
-              <MenuLink to="/page-2" onClick={() => setMenuOpen(false)}>Home</MenuLink>
+              <MenuLink to="/" onClick={() => setMenuOpen(false)}>Home</MenuLink>
               <MenuLink to="/shop" onClick={() => setMenuOpen(false)}>Shop</MenuLink>
               <MenuLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</MenuLink>
-              <MenuLink to="">-</MenuLink>
+              <MenuLink >-</MenuLink>
               <MenuLink href="http://www.chancerylane.com.au" target="blank">
                 Visit Chancery Lane
               </MenuLink>
