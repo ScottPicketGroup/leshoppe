@@ -24,7 +24,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
       <ComingSoonContainer
       
       >
-        {process.env.SHOPIFY_ACCESS_TOKEN}
+        
 
         {!menuOpen ? (
           <P bc1
