@@ -13,12 +13,12 @@ import ProductContainer from "./order-section/ProductContainer"
 import RecommendationList from "./recommendations-section/product-list/ProductList"
 import Layout from "../../../layout"
 const ProductTemplate = ({ pageContext }) => {
-  console.log(`pageContext`, pageContext.product)
+
   return (
     <Layout>
       <Page>
         <Section1>
-          <ProductContainer product={pageContext.product}/>
+          <ProductContainer/>
           <RecommendationList />
           <LogoFooter />
           <Footer />

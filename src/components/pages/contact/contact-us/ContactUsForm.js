@@ -40,7 +40,7 @@ const ContactUsForm = () => {
   }
   const handleSubmit = e => {
     e.preventDefault()
-    inputs.fName.length === 0 ? setError(error => ({ ...error, fName: false}) )
+    inputs.fName.length === 0 ? setError(error => ({ ...error, fName: true}) )
     : setError(error => ({ ...error, fName: false}) )
     inputs.sName.length === 0 ? setError(error => ({ ...error, sName: true}) )
     : setError(error => ({ ...error, sName: false}) )
@@ -50,9 +50,9 @@ const ContactUsForm = () => {
     : setError(error => ({ ...error, number: false}) )
     inputs.message.length === 0 ? setError(error => ({ ...error, message: true}) )
     : setError(error => ({ ...error, message: false}) )
-    if (
-      !error.name 
-    ) setThankyou(true)
+    
+    if (error.name) alert(error.name)
+ 
   
 
   }
