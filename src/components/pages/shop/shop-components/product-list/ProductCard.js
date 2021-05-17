@@ -21,7 +21,7 @@ const ProductCard = ({ product, catagory }) => {
     <>
       {productTypeDisplay === catagoryDisplay ? (
         <ProductCardContainer>
-          <ProductLink to={`/shop/products/${product.node.handle}`}>
+          <ProductLink >
             <ProductImage
               fluid={images[0].localFile.childImageSharp.fluid}
               alt="blah"
@@ -38,7 +38,7 @@ const ProductCard = ({ product, catagory }) => {
         </ProductCardContainer>
       ) : catagory === "All Products" || catagory === "Sort By Catagory" ? (
         <ProductCardContainer>
-          <ProductLink to={`/shop/products/${product.node.handle}`}>
+          <ProductLink >
             <ProductImage
               fluid={images[0].localFile.childImageSharp.fluid}
               alt="blah"
