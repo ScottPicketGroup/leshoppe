@@ -9,7 +9,7 @@ const {
   h1,
   h2,
   h3,
-  bc1,
+  bc1,   
   bc2,
   bc3,
   pullQuotes,
@@ -85,35 +85,42 @@ export const ComingSoonMenu = styled.h1`
 font-size: 1.25rem
 `
 export const PageBackground = styled.div`
+display: ${props => props.display === true ? "flex" : "none"};
 position: fixed;
 min-height: 100%;
-width: 100vw;
+width: 62%;
 opacity: ${props => props.fade > 20 ? "55%" : "100%"};
 background-image: url(${landing});
 background-repeat: no-repeat;
 background-color: ${cream};
-background-position: 40% 58%;
-background-size: 30rem;
+background-position: 94% 23vw;
+background-size: 30%;
 top: 0;
 z-index: 1;
+@media screen and (max-width: 450px) {
+display: none;
+}
 `
 export const Page = styled.div`
 width: 100%;
+height: 100%;
+position: relative;
 `
 
 export const Section1 = styled.div`
-min-height: 100%;
+
 width: 99vw;
-position: absolute;
+position: relative;
 left: 0;
 display: flex;
 flex-direction: column;
-padding: ${padding.page.vertical} ${padding.page.horizontal};
+padding: ${padding.page.vertical} ${padding.page.horizontal} 0 ${padding.page.horizontal};
 z-index: 2;
 overflow-x: hidden;
 background: transperant;
 @media screen and (max-width: 700px) {
-    padding: 1.15rem;
+  margin-top: 2.25rem;  
+  padding: 0 1.15rem;
   }
 `
 export const MenuButton = styled.button`
@@ -201,4 +208,25 @@ export const UnderlineLink = styled.a`
   visibility: visible;
   transform: translateX(-100px);
 } */
+`
+
+export const Footer = styled.div`
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+ 
+  align-items: center;
+  padding: 3.37rem 0rem 0 0;
+  @media screen and (max-width: 450px) {
+  align-items: flex-end;
+}
+`
+
+export const Test = styled.div`
+position: fixed;
+z-index: 300;
+height: 3rem;
+width: 3rem;
+background: brown;
 `

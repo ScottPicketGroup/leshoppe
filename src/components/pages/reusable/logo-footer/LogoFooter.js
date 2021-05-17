@@ -47,9 +47,10 @@ const LogoFooter = () => {
 export default LogoFooter
 
 export const LogoFooterContainer = styled.div`
-  width: 100vw;
+  width: 99vw;
 
-  margin-left: -5.5rem;
+  position: relative;
+  z-index: 2;
   padding: 0.5rem 0rem;
   bottom: 0;
   display: flex;
@@ -73,11 +74,9 @@ export const LogoLink = styled.a`
   transition: all 0.3s ease-in-out;
   :hover {
     opacity: 75%;
-    transform: scale(1.1);
+ 
   }
-  :first-child {
-    margin-left: 5vw;
-  }
+  
   @media screen and (max-width: 450px) {
     padding: .6rem;
   }

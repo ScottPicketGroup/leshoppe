@@ -33,15 +33,14 @@ const ContactUsForm = () => {
   const handleChange = e => {
     setInputs(inputs => ({ ...inputs, [e.target.name]: e.target.value }))
     console.log(inputs.message)
-   
-   
+ 
     !inputs.email.includes(".") || !inputs.email.includes("@") 
       ? setError(error => ({ ...error, email: true}) )
       : setError(error => ({ ...error, email: false}) )
   }
   const handleSubmit = e => {
     e.preventDefault()
-    inputs.fName.length === 0 ? setError(error => ({ ...error, fName: true}) )
+    inputs.fName.length === 0 ? setError(error => ({ ...error, fName: false}) )
     : setError(error => ({ ...error, fName: false}) )
     inputs.sName.length === 0 ? setError(error => ({ ...error, sName: true}) )
     : setError(error => ({ ...error, sName: false}) )
@@ -51,9 +50,9 @@ const ContactUsForm = () => {
     : setError(error => ({ ...error, number: false}) )
     inputs.message.length === 0 ? setError(error => ({ ...error, message: true}) )
     : setError(error => ({ ...error, message: false}) )
-  if (
-    !error.fName, !error.sName, !error.email, !error.message 
-  ) setThankyou(true)
+    if (
+      error.name 
+    ) console.log(error)
   
     // else setError(true)
   }

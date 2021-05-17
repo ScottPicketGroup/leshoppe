@@ -17,17 +17,15 @@ width: 100%;
 display: flex;
 justify-content: flex-end;
 
-  @media only screen and (max-width: 700px) {
- 
-  margin-top: 30rem;
-  }
+  
 `
 export const ImgSqaure = styled.img`
-max-width: 25%;
+max-width: 33%;
 margin-bottom: 6rem;
 
 @media screen and (max-width: 450px) {
 max-width: 50%;
+margin-bottom: 2.25rem;
 }
 `
 

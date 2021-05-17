@@ -17,19 +17,12 @@ width: 100%;
 display: flex;
 justify-content: flex-end;
 margin-bottom: 3.5rem;
-  @media only screen and (max-width: 700px) {
-  margin-bottom: 3.5rem;
-  margin-top: 30rem;
-  
-  }
+
 `
 export const ImgSqaure = styled.img`
 width: 33%;
 
-@media only screen and (max-width: 1440px) and (min-width: 800px) {
-    width: 28rem;
-  }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 450px) {
     width: 50%;
     height: 100%;
   }
