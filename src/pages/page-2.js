@@ -7,7 +7,7 @@ const SecondPage = (menuOpen,setMenuOpen) => (
   
     <Layout>
       <SEO title="Welcome" />
-      <Landing/>
+     
     </Layout>
   </>
 )
