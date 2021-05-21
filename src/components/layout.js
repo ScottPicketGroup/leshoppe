@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
     })
   }
 
-console.log(`globalState.logoLimit`, globalState.logoLimit)
+
   return (
     
       <LayoutContainer>
