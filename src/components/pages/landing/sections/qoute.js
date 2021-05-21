@@ -9,9 +9,9 @@ const Quote = () => {
       <QouteContainer>
           
         <h1>
-          Like its name, the fit-out pays homage to a previous era; a space
-          where opulence and luxury served as a refuge from life outside and a
-          chance to indulge in the finer things.
+        “We want you to eat really well during your workday, whether it's a quick takeaway baguette, a salad selection for team meetings or a charcuterie platter to take home after work.”
+        <br/>
+        -Scott Pickett.
         </h1>
       </QouteContainer>
       <QouteIcon src={close} alt="open quote" />
@@ -35,6 +35,7 @@ const QuotePageContainer = styled.div`
 const QouteContainer = styled.div`
   width: 80%;
   padding: 6rem 0;
+  text-align: center;
   @media screen and (max-width: 450px) {
     width: 100%;
     padding: 3.5rem 0;

@@ -27,7 +27,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
         
 
         {!menuOpen ? (
-          <P bc1
+          <P menu
           onClick={openMenu}
           >MENU</P>
         ): null}

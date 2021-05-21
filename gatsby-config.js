@@ -28,6 +28,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -51,6 +52,7 @@ module.exports = {
         accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
         verbose: true,
       },
+     
     },
   ],
 }

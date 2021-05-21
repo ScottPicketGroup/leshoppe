@@ -1,8 +1,9 @@
-import React from "react"
+import React, {useEffect} from "react"
 import styled from "styled-components"
 import { P } from "../../../../../../styled-components/GlobalStyles"
 import Title from "./Title"
 const Video = ({
+  title, slideId, setTitle,
   videoSrc,
   videoTitle,
   zIndex,
@@ -11,7 +12,14 @@ const Video = ({
   description,
   setDescription,
   ...props
-}) => (
+}) => { 
+  
+  useEffect(() => {
+    console.log(slideLive -1 , slideId )
+    if (slideLive  -1 == slideId  ) setTitle(title)
+   
+    }, [slideLive])
+  return(
   <VideoContainer
   transform={`translateX(${59 * slideLive}vw)`}
   >
@@ -23,12 +31,12 @@ const Video = ({
     
     {slideLive * slideLive + 1 === zIndex ? <Title imgTitle={videoTitle} /> : null}
   </VideoContainer>
-)
+)}
 export default Video
 
 export const VideoContainer = styled.div`
 height: 100%;
-width: 53vw;
+min-width: 58%;
 margin-right: 1.5rem;
 @media screen and (max-width: 450px) {
     min-width: 85vw;
@@ -38,7 +46,7 @@ margin-right: 1.5rem;
 `
 
 export const VideoSlide = styled.iframe`
-width: 53vw;
+width: 100%;
 
   @media screen and (max-width: 450px) {
     width: 85vw;

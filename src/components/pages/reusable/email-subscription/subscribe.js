@@ -64,13 +64,9 @@ const Subscribe = () => {
               onChange={handleChange}
               err={emailErr}
             />
-            {emailErr ? (
-              <P error style={{ marginTop: `1rem` }}>
-                Please enter a valid email address
-              </P>
-            ) : null}
+           
             <SignUpSubmit err={emailErr} type="submit">
-              <Label>SUBSCRIBE</Label>
+              SUBSCRIBE
             </SignUpSubmit>
           </form>
         </SignUp>
@@ -115,11 +111,12 @@ const Input = styled.input`
   padding: 1.5rem 0;
   font-size: 0.75rem;
   line-height: none;
-  border-bottom: 1px solid ${props => (props.err ? "red" : "#153e35")};
+  border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "#153e35")};
   ::placeholder {
-    opacity: 75%;
+    
     font-size: 1rem;
     margin-bottom: 10rem;
+    color: ${props => props.err ? '#CB0000' : 'rgba(21, 62, 53, 50%)'};
     @media screen and (max-width: 450px) {
       font-size: 0.75rem;
     }
@@ -127,13 +124,13 @@ const Input = styled.input`
   :focus {
     outline: none;
     background: #fdf9ee;
-    opacity: 75%;
+   
     height: 3rem;
     font-size: 150%;
   }
   :valid {
     font-size: 1rem;
-    opacity: 75%;
+   
   }
   ::-moz-focus-outer {
     color: white;
@@ -147,15 +144,15 @@ const SignUpSubmit = styled.button`
   background: none;
 
   padding: 0.5rem 2rem;
-  border: 1px solid ${props => (props.err ? "red" : "#153e35")};
-  color: ${props => (props.err ? "red" : "#153e35")};
+  border: 1px solid ${props => (props.err ? "#CB0000" : "#153e35")};
+  color: ${props => (props.err ? "#CB0000" : "#153e35")};
   margin-top: 1.75rem;
   font-size: 120%;
   transition: all 0.2s ease;
   :hover {
-    opacity: 75%;
-    /* background: ${props => (props.err ? "red" : "#153e35")};
-    color: ${props => (props.err ? "white" : "white")}; */
+    opacity: ${props => (props.err ? "1" : ".75")};
+   
+    color: ${props => (props.err ? "#CB0000" : "#FDF9EE")}; 
   }
   @media screen and (max-width: 450px) {
     font-size: 0.75rem !important;

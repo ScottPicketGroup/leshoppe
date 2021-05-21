@@ -1,16 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
-import introImg from "../../../../images/placeholders/homeLandscapeMeat.jpg"
+import introImg from "../../../../images/placeholders/introLandscape.jpg"
 const Intro = () => {
   return (
     <IntroContainer>
       <ImgLandScape src={introImg} alt="meat hanging" />
+      
       <IntroText>
+      <h1
+      style={{marginBottom: `1.75rem`}}
+      > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</h1>
         <P bc1>
-          Scott Pickett and the team have re-imagined the former Bistro Vue site
-          to become an instant classic, referencing traditional techniques with
-          a modern edge that you can now take home with you.{" "}
+        Le Shoppe is Scott Pickett’s European-inspired coffee bar and provedore, located at 430 Little Collins St, Melbourne. Adjoining Chancery Lane Bistro, Le Shoppe is proud to continue Melbourne's legacy of historic grocers and corner stores.
         </P>
       </IntroText>
     </IntroContainer>

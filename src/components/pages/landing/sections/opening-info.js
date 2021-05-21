@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
-import oldGuy from "../../../../images/placeholders/openingGuy.jpg"
-import outside from "../../../../images/placeholders/OpeningOutside.jpg"
+import oldGuy from "../../../../images/placeholders/openingVertical.jpg"
+import outside from "../../../../images/placeholders/openingLandscape.jpg"
 
 const OpeningInfo = () => {
   return (
@@ -13,24 +13,26 @@ const OpeningInfo = () => {
       </ImgContainer>
   
       <OpeningInfoText>
-        <Heading>Location and Opening Times</Heading>
+        <Heading>Location & Opening hours: </Heading>
         <P bc2>
           Le Shoppe
           <br />
-          513 Elizabeth Street <br />
+          430 Little Collins St<br />
           Melbourne 3000
         </P>
         <GoogleLink>
           <a
-            href="https://www.google.com/maps/@-37.8068975,144.9567553,17z"
+            href="https://goo.gl/maps/13ikoRhFJk1iQUVLA"
             target="_blank"
           >
-            VIEW IN GOOGLE MAPS
+            View in Google Maps
           </a>
         </GoogleLink>
-      
-        <OpeningHoursContainer>
-          <Days>
+        <P bc2>
+          Monday - Friday: 7.30am - 4.00pm
+        </P>
+        {/* <OpeningHoursContainer> */}
+          {/* <Days>
             <ul>
               <li>
                 <P bc2>Monday</P>
@@ -82,7 +84,7 @@ const OpeningInfo = () => {
               </li>
             </ul>
           </Hours>
-        </OpeningHoursContainer>
+        </OpeningHoursContainer> */}
       </OpeningInfoText>
     </OpeningInfoContainer>
   )

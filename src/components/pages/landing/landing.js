@@ -16,12 +16,13 @@ const Landing = () => {
     return ( 
             <Section1>
                 
-            <Hero/>
-            <Intro/>
-            <About/>
-            <Quote/>
-            <MenuBoard/>
-            <OpeningInfo/>
+                <Hero />
+         
+         <Intro/>
+         <About/>
+         <Quote/>
+         <MenuBoard/>
+         <OpeningInfo/>
             </Section1>
     )
 }

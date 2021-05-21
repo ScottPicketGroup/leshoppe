@@ -72,11 +72,7 @@ const ContactUsForm = () => {
        onChange={handleChange}
        err={error.fName}
      />
-     {error.fName ? (
-       <P error style={{ marginTop: `1rem` }}>
-         Please enter your name
-       </P>
-     ) : null}
+     
    </InputContainer>
    <InputContainer>
      <Label>SURNAME</Label>
@@ -88,11 +84,7 @@ const ContactUsForm = () => {
        onChange={handleChange}
        err={error.sName}
      />
-     {error.sName ? (
-       <P error style={{ marginTop: `1rem` }}>
-         Please enter your surname
-       </P>
-     ) : null}
+    
    </InputContainer>
      </ContactFormRow>
      <ContactFormRow>
@@ -106,11 +98,7 @@ const ContactUsForm = () => {
        onChange={handleChange}
        err={error.email}
      />
-     {error.email ? (
-       <P error style={{ marginTop: `1rem` }}>
-         Please enter a valid email address
-       </P>
-     ) : null}
+    
    </InputContainer>
    <InputContainer>
      <Label>CONTACT NUMBER</Label>
@@ -122,11 +110,7 @@ const ContactUsForm = () => {
        onChange={handleChange}
        err={error.number}
      />
-     {error.number ? (
-       <P error style={{ marginTop: `1rem` }}>
-         Please enter a valid mobile number
-       </P>
-     ) : null}
+    
    </InputContainer>
      </ContactFormRow>
    
@@ -147,11 +131,7 @@ const ContactUsForm = () => {
      {1000 - inputs.message.length} characters remaining
     </P>
      ): error.message ? (<span></span>) : null}
-     {error.message ? (
-       <P error style={{ marginTop: `1rem`}}>
-         Please enter a message 
-       </P>
-     ) : null}
+  
    </InputContainer>
    <TixboxContainer>
     <CheckBox/>
@@ -209,7 +189,7 @@ margin-bottom: 0;
 `
 export const InputContainer = styled.div`
   min-width: 48%;
- 
+ background: transperant;
   @media screen and (max-width: 800px) {
     width: 100%;
     margin-bottom: 1.25rem;

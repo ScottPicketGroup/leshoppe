@@ -29,7 +29,7 @@ position: relative;
 z-index: 2;
 margin: 2.25rem 0 6rem 0;
 flex-wrap: wrap;
-padding: 0 2rem;
+padding: 0 4.4%;
 
 @media screen and (max-width: 450px) {
     flex-wrap: wrap;

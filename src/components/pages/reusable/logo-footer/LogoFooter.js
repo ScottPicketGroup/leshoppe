@@ -3,6 +3,8 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { padding } from "../../../styled-components/variables"
 import Img from "gatsby-image"
+import ImageSlider from './ImageSlider'
+import MenuImageSlider from "./ImageSlider"
 const LogoFooter = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -27,6 +29,9 @@ const LogoFooter = () => {
 
   const marginLeft = padding.menu * 2
   const imageWidth = logos.length
+ 
+  const [slideLive, setSlideLive] = useState(10)
+
 
   return (
     <LogoFooterContainer margin={marginLeft}>
@@ -46,9 +51,11 @@ const LogoFooter = () => {
 
 export default LogoFooter
 
+
+
 export const LogoFooterContainer = styled.div`
   width: 99vw;
-
+  height: 150px;
   position: relative;
   z-index: 2;
   padding: 0.5rem 0rem;
@@ -68,9 +75,18 @@ export const LogoFooterContainer = styled.div`
     
   }
 `
+export const Logo = styled.div`
+height: 100%;
+position: relative; 
+width: 100%;
+background: brown;
+`
 export const LogoLink = styled.a`
   text-decoration: none;
   color: black;
+  height: 100%;
+  display: flex;
+  align-items: center;
   transition: all 0.3s ease-in-out;
   :hover {
     opacity: 75%;

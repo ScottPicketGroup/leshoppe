@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef, useContext } from "react"
 import {
   GlobalStyle,
   PageBackground,
@@ -8,26 +8,31 @@ import styled from "styled-components"
 import LogoFooter from "./pages/reusable/logo-footer/LogoFooter"
 import Menu from "./pages/menu/menu"
 import Footer from "./pages/reusable/footer/Footer"
-import logo from '../images/logos/landing.png'
+import logo from "../images/logos/landing.png"
+import GlobalStateProvider from "./context/GlobalStateProvider"
+import Context from "../components/context/Context"
 const Layout = ({ children }) => {
+  const { globalState, globalDispatch } = useContext(Context)
   let footer = useRef(null)
   let page = useRef(null)
-  const [logoLimit, setLogoLimit] = useState(0)
-  const [logoDisplay, setLogoDisplay] = useState(true)
-  const [scrollY, setScrollY] = useState(1)
+
+  const [pageHeight, setPageHeight] = useState(0)
+  const [footerHeight, setFooterHeight] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
-  function logit() {
-    setScrollY(window.pageYOffset)
-  }
 
   useEffect(() => {
-    if (scrollY > logoLimit) {
-      setLogoDisplay(false)
-    } else {
-      setLogoDisplay(true)
-    }
-    setLogoLimit(page.clientHeight - 1000 - footer.clientHeight)
-  })
+    setPageHeight(page.clientHeight)
+    setFooterHeight(footer.clientHeight)
+  }, [])
+
+  useEffect(() => {
+    globalDispatch({
+      type: "WINDOW",
+      pageHeight: pageHeight,
+      footerHeight: footerHeight,
+      logoLimit: pageHeight - footerHeight - 250,
+    })
+  }, [pageHeight && footerHeight])
 
   useEffect(() => {
     function watchScroll() {
@@ -39,25 +44,34 @@ const Layout = ({ children }) => {
     }
   })
 
+  function logit() {
+    globalDispatch({
+      type: "SETSCROLLPOS",
+      payload: window.pageYOffset,
+      logoLimit: pageHeight - footerHeight ,
+    })
+  }
 
+console.log(`globalState.logoLimit`, globalState.logoLimit)
   return (
-    <LayoutContainer>
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-
-      <GlobalStyle />
-      
-      <Main ref={el => (page = el)}>
     
-      <PageBackground fade={scrollY} display={logoDisplay} />
-      <LogoMobile src={logo} alt="mobile logo" />
-        {children}
-        <FooterContainer ref={el => (footer = el)}>
-          <LogoFooter />
-          <Footer />
-        </FooterContainer>
-      </Main>
-    </LayoutContainer>
+      <LayoutContainer>
+        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+        <GlobalStyle />
+
+        <Main ref={el => (page = el)} meh="123">
+          {/* <PageBackground fade={scrollY} display={logoDisplay} /> */}
+          <LogoMobile src={logo} alt="mobile logo" />
+          {children}
+          <FooterContainer ref={el => (footer = el)}>
+            <LogoFooter />
+            <Footer />
+          </FooterContainer>
+        </Main>
+      </LayoutContainer>
+
   )
 }
 
@@ -74,15 +88,14 @@ export const Main = styled.main`
   position: relative;
 `
 
-export const FooterContainer = styled.div ``
+export const FooterContainer = styled.div``
 
+export const LogoMobile = styled.img`
+  display: none;
+  width: 50%;
+  margin: 112px 25% 0 25%;
 
-export const LogoMobile = styled.img `
-display: none;
-width: 50%;
-margin: 112px 25% 0 25%;
-
-@media screen and (max-width: 450px) {
-display: flex;
-}
+  @media screen and (max-width: 450px) {
+    display: flex;
+  }
 `

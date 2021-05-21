@@ -8,9 +8,9 @@ import Subscribe from '../email-subscription/subscribe'
 const FooterSubscribe = () => {
     return (
         <FooterSubscribeContainer>
-            <Heading>SUBSCRIBE TO OUR MAILING LIST</Heading>
+            <Heading>Subscribe:</Heading>
 
-            <Paragraph>Sign up to our newletter for news, stories and invitations to the things we love to share and enjoy from Scott Pickett Group.</Paragraph>
+            <P bc3>Subscribe to the Scott Pickett Group newsletter to stay up to date with special events, new menus and new venues. </P>
             <Subscribe/>
             <FooterMobile>
              <ChanceryLink href="http://www.chancerylane.com.au" target="blank">Visit Chancery Lane</ChanceryLink>

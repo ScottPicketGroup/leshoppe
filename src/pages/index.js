@@ -6,13 +6,16 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ComingSoon from "../components/pages/coming-soon/ComingSoon"
 import Landing from "../components/pages/landing/landing"
+import GlobalStateProvider from "../components/context/GlobalStateProvider"
 
 const IndexPage = () => (
+  <GlobalStateProvider>
   <Layout>
     <SEO title="Home" />
 
-<Landing/>
+<Landing />
   </Layout>
+  </GlobalStateProvider>
 )
 
 export default IndexPage

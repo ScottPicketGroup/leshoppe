@@ -1,79 +1,82 @@
-import React, { useRef, useState } from "react"
+import React, {useState, useEffect } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { P } from "../../../../../../styled-components/GlobalStyles"
 
-import Title from "./Title"
 
-const Image = ({ fluid, zIndex, slideLive, title, setSlideLive }) => {
+
+const Image = ({ fluid, zIndex, slideLive, title, setSlideLive, slideId, setTitle, numOfSlides }) => {
   const [mouseStartPos, setMouseStartPos] = useState(0)
   const [mouseEndPos, setMouseEndPos] = useState(0)
   const [mouseDown, setMouseDown] = useState(false)
-  const [touchStart, setTouchStart] = React.useState(0);
-  const [touchEnd, setTouchEnd] = React.useState(0);
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+  const [pos, setPos] = useState(slideId)
+  useEffect(() => {
+    console.log(slideLive, slideId)
+    if (slideLive == slideId  ) setTitle(title)
+    },)
+ 
 
   function handleTouchStart(e) {
-    setTouchStart(e.targetTouches[0].clientX);
-}
+    setTouchStart(e.targetTouches[0].clientX)
+  }
 
-function handleTouchMove(e) {
-    setTouchEnd(e.targetTouches[0].clientX);
-}
-function handleTouchEnd() {
-  if (touchStart - touchEnd > 150) {
+  function handleTouchMove(e) {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+  function handleTouchEnd() {
+    if (touchStart - touchEnd > 150) {
       // do your stuff here for left swipe
-      back();
-  }
+      back()
+    }
 
-  if (touchStart - touchEnd < -150) {
+    if (touchStart - touchEnd < -150) {
       // do your stuff here for right swipe
-      forward();
+      forward()
+    }
   }
+  const back = () => {
+    if (slideLive >= 0) {setSlideLive(slideLive => slideLive +1)} 
 }
-    const back = () => {
-      if (slideLive === -1) {setSlideLive(slideLive => -1)} 
-  }
-
 const forward = () => {
-    if (slideLive > -1) {setSlideLive(slideLive => slideLive -1)} 
-   
+    if (slideLive >= 0) {setSlideLive(slideLive -1)} 
 }
 
-const handleMouseDown = e => {
- 
-  setMouseStartPos(e.pageX)
-  setMouseDown(true)
-}
-const handleMouseMove = e => {
-  if (mouseDown) {
-    setMouseEndPos(e.pageX)
-  console.log(`mouseEndPos`, mouseEndPos)
+  const handleMouseDown = e => {
+    setMouseStartPos(e.pageX)
+    setMouseDown(true)
   }
-//  mouseDown ? 
-//   console.log(e.pageX) :
-//   console.log('mouse not down')
-}
-const handleMouseUp = e => {
-  console.log(slideLive)
-  setMouseDown(false)
-  if (e.pageX < mouseStartPos) {forward()} else (back())
-}
+  const handleMouseMove = e => {
+    if (mouseDown) {
+      setMouseEndPos(e.pageX)
+    }
+  }
+  const handleMouseUp = e => {
+    console.log(slideLive)
+    setMouseDown(false)
+    if (mouseEndPos < mouseStartPos && slideLive !== 0 ) {
+      forward()
+    } else if (mouseEndPos > mouseStartPos && slideLive -1 < numOfSlides || slideLive === 0){back()}
+  }
 
-console.log(`mouseDown`, mouseDown)
+
+console.log(`slideId`, slideId, slideLive, pos)
   return (
-    <ImageBox transform={`translateX(${54.55 * slideLive}vw)`}
-    transformMobile={`translateX(${90 * slideLive}vw)`}
-    onDragEnd={handleMouseUp}
-    onMouseDown={handleMouseDown}
-    onMouseMove={handleMouseMove}
-    onTouchMove={handleTouchMove}
-    onTouchStart={handleTouchStart}
-    onTouchEnd={handleTouchEnd}
+    <ImageBox
+      transform={slideLive + slideId}
+      slideId={slideId}
+      zIndex={zIndex}
+      slideLive={slideLive}
+      transformMobile={`translateX(${90 * slideLive}vw)`}
+      onDragEnd={handleMouseUp}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
-      <SliderImage fluid={fluid} zIndex={zIndex + 1} 
-  
-      />
-      {slideLive * slideLive + 1 === zIndex ? <Title imgTitle={title} /> : null}
+      <SliderImage fluid={fluid} zIndex={zIndex + 1} />
+     
     </ImageBox>
   )
 }
@@ -81,10 +84,13 @@ console.log(`mouseDown`, mouseDown)
 export default Image
 
 export const ImageBox = styled.div`
-  width: 53vw;
-  transition: transform 1s ease-in-out;
+  width: 58%;
+  height: 100%;
+  transition: left 1s ease-in-out;
   z-index: ${props => props.zIndex};
-  transform: ${props => props.transform};
+  left: ${props => props.slideId === props.slideLive ? `0` : `${props.transform * 59}%`};
+  position: absolute;
+
   @media screen and (max-width: 450px) {
     width: 85vw;
     height: 56vw;
@@ -92,11 +98,11 @@ export const ImageBox = styled.div`
   }
 `
 export const SliderImage = styled(Img)`
- @media screen and (max-width: 450px) {
+  @media screen and (max-width: 450px) {
     width: 85vw;
     height: 100%;
   }
-  width: 53vw;
+  width: 100%;
   height: 100%;
   margin-right: 1.5rem;
 `

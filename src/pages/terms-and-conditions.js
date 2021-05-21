@@ -6,12 +6,12 @@ import { Page } from "../components/styled-components/GlobalStyles"
 import { color, font, padding } from "../components/styled-components/variables"
 import LogoFooter from "../components/pages/reusable/logo-footer/LogoFooter"
 import Footer from "../components/pages/reusable/footer/Footer"
-
+import GlobalStateProvider from "../components/context/GlobalStateProvider"
 const TnCs = (menuOpen, setMenuOpen) => (
-  <>
+  <GlobalStateProvider>
     <Layout>
       <SEO title="Terms and Conditions" />
-      <Page>
+      
         <TnCsContainer>
           <Section>
             <Heading>
@@ -71,20 +71,19 @@ const TnCs = (menuOpen, setMenuOpen) => (
               quae ab illo inventore veritatis et quasi
             </Text>
           </Section>
-          <LogoFooter />
-          <Footer />
+         
         </TnCsContainer>
-      </Page>
+    
     </Layout>
-  </>
+    </GlobalStateProvider>
 )
 
 export default TnCs
 
 const TnCsContainer = styled.div`
-  min-height: 100%;
+ 
   width: 99vw;
-  position: absolute;
+  position: relative;
   z-index: 1;
   overflow-x: hidden;
   

@@ -6,10 +6,12 @@ const FooterContact = () => {
         <FooterContactContainer>
              <Heading>CONTACT DETAILS</Heading>
         <Address>
+          <P bc3>
           Le Shoppe
           <br />
           513 Elizabeth Street <br />
           Melbourne 3000
+          </P>
         </Address>
             <OpeningHoursContainer>
           <Days>
@@ -72,7 +74,8 @@ const FooterContact = () => {
 export default FooterContact
 
 export const FooterContactContainer = styled.div`
-width: 43.3%;
+width: 41.3%;
+padding: 0;
 
 @media screen and (max-width: 450px) {
     width: 100%;
@@ -110,9 +113,9 @@ export const OpeningHoursContainer = styled.div`
  
 `
 export const Days = styled.div`
-  width: 30%;
-  margin-right: 1.5rem;
-  
+  width: 36%;
+ 
+  font-size: 1rem;
   @media screen and (max-width: 450px) {
   margin-right: -2.25rem;
   

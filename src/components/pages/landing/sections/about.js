@@ -1,42 +1,44 @@
 import React from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
-import meat from "../../../../images/placeholders/homeLandscapeCupboardMeat.jpg"
-import salami from "../../../../images/placeholders/homeLandscapeSalami.jpg"
+import landscape from "../../../../images/placeholders/aboutLandscape.jpg"
+import vertical from "../../../../images/placeholders/aboutPortrait.jpg"
 
 const About = () => {
   return (
     <AboutContainer>
       <AboutText>
-        <Heading>
+        {/* <Heading>
           About Le Shoppe
           <br />
           Second line example
-        </Heading>
+        </Heading> */}
         <Paragraph bc2>
-          The acquisition of our newest site in Little Collins Street sees our
-          first footprint into the top end of Melbourne’s CBD.{" "}
-          <i> Housed in the historic Normanby Chambers building,</i> Scott
-          Pickett and the team have re-imagined the former Bistro Vue site to
-          become an instant classic. Returning to its most successful
-          incarnation, Chancery Lane will return the space to a
-          European-inspired bistro – albeit with an edge.
+          Visit us weekdays for freshly made baguettes, salads, pastries and
+          grab-and-go food for the workday, and of course your morning coffee.
         </Paragraph>
 
-        <Paragraph  bc2>
-          1. Like its name, the fit-out pays homage <br />
-          2. Previous era; a space where opulence and luxury <br />
-          3. Served as a refuge from life outside
+        <Paragraph bc2>
+        We also have a selection of pre-packaged pantry treats—both local and specialty imported items, soon to be joined by local spirits, international beers and wines and interesting aperitive for an afternoon pick-me-up. 
+          {/* <ol>
+            <li>Like its name, the fit-out pays homage </li>
+            <li>Previous era; a space where opulence and luxury </li>
+            <li>Served as a refuge from life outside</li>
+          </ol> */}
         </Paragraph>
-        <Paragraph  bc2>
-          - Like its name, the fit-out pays homage <br />
-          - Previous era; a space where opulence and luxury <br />- Served as a
-          refuge from life outside
+        <h1 style={{marginBottom: `1.75rem`}}>Catering</h1>
+        <Paragraph bc2>
+        We are pleased to offer a range of corporate catering options including lunch boxes, shared platters and bespoke breakfast/lunch catering, for enquiries, email info@leshoppe.com.au – our full catering offer and online ordering will be launching soon. Watch this space!
+          {/* <ul>
+            <li>Like its name, the fit-out pays homage</li>
+            <li>Previous era; a space where opulence and luxury</li>
+            <li>refuge from life outside</li>
+          </ul> */}
         </Paragraph>
       </AboutText>
       <ImgContainer>
-        <ImgPortraitSmall src={meat} />
-        <ImgLandscapeSmall src={salami} />
+        <ImgPortraitSmall src={vertical} />
+        <ImgLandscapeSmall src={landscape} />
       </ImgContainer>
     </AboutContainer>
   )
@@ -54,9 +56,7 @@ export const AboutContainer = styled.div`
     justify-content: center;
   }
   @media only screen and (max-width: 450px) {
-
     margin-bottom: 6rem;
-    
   }
 `
 export const AboutText = styled.div`
@@ -67,19 +67,20 @@ export const AboutText = styled.div`
   }
 `
 export const Heading = styled.h1`
-margin-top: 2.25rem;
-@media screen and (max-width: 450px) {
-  margin-bottom: 1.5rem;
-}
-`
-export const Paragraph = styled(P) `
-margin-bottom: 2.5rem;
-@media screen and (max-width: 450px) {
-  margin-bottom: 1.5rem;
-  :last-child {
-    margin-bottom: 0;
+  margin-bottom: 2.25rem;
+
+  @media screen and (max-width: 450px) {
+    margin-bottom: 1.5rem;
   }
-}
+`
+export const Paragraph = styled(P)`
+  margin-bottom: 2.5rem;
+  @media screen and (max-width: 450px) {
+    margin-bottom: 1.5rem;
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
 `
 export const ImgContainer = styled.div`
   width: 58%;
@@ -103,8 +104,7 @@ export const ImgPortraitSmall = styled.img`
 export const ImgLandscapeSmall = styled.img`
   width: 57%;
   @media screen and (max-width: 450px) {
-  width: 75%;
-  align-self: flex-end;
+    width: 75%;
+    align-self: flex-end;
   }
 `
-

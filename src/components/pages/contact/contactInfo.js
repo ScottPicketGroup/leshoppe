@@ -11,10 +11,8 @@ const ContactInfo = () => {
       </ContactImage>
       <ContactText>
         <PC bc1>
-          Le Shoppe, Chancery Lane is the latest edition to the Pickett & Co.
-          stable of venues. Fill in your details here to send us a message and
-          tick the box to be first to hear about all the exciting things we’ve
-          got planned.
+        Le Shoppe by Chancery Lane is the latest addition to the Scott Pickett Group venues. 
+Follow the links in the footer to our social channels so you don’t miss any of the action. We’ll share catering updates, new menu items and more.
           </PC>
           <PC bc1>
           
@@ -22,11 +20,11 @@ const ContactInfo = () => {
             you don’t miss any of the action.
           </PC>
         
-        <P bc1>Le Shoppe</P>
+        {/* <P bc1>Le Shoppe</P>
         <P bc1>513 Elizabeth Street </P>
-        <PC bc1>Melbourne 3000</PC>
-        
-        <OpeningHoursContainer>
+        <PC bc1>Melbourne 3000</PC> */}
+        <P bc1> For all enquiries, please fill out the form below: </P>
+        {/* <OpeningHoursContainer>
           <Days>
             <ul>
               <li>
@@ -79,7 +77,7 @@ const ContactInfo = () => {
               </li>
             </ul>
           </Hours>
-        </OpeningHoursContainer>
+        </OpeningHoursContainer> */}
       </ContactText>
     </ContactInfoContainer>
   )

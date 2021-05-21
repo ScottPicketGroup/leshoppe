@@ -1,15 +1,21 @@
 import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
 import { color, font, padding } from "./variables"
-import TTNormsProNormal from '../../fonts/font.woff'
-import TTNormsProNormal2 from '../../fonts/font.woff2'
-import landing from '../../images/logos/landing.png'
+import TTNormsProRegular from "../../fonts/font.woff"
+import TTNormsProRegular2 from "../../fonts/font.woff2"
+import TTNormsProNormal from "../../fonts/normalFont.woff"
+import TTNormsProNormal2 from "../../fonts/normalFont.woff2"
+import TTNormsProThin from "../../fonts/thinFont.woff"
+import TTNormsProThin2 from "../../fonts/thinFont.woff2"
+import TTNormsProMedium from "../../fonts/mediumFont.woff"
+import TTNormsProMedium2 from "../../fonts/mediumFont.woff2"
+import landing from "../../images/logos/landing.png"
 const { cream, green, error } = color
 const {
   h1,
   h2,
   h3,
-  bc1,   
+  bc1,
   bc2,
   bc3,
   pullQuotes,
@@ -18,27 +24,45 @@ const {
   button,
   menu,
 } = font
-const {
-  menuPadding
-} = padding
+const { menuPadding } = padding
 export const GlobalStyle = createGlobalStyle`
 
 * { 
     margin:0; 
     padding:0; 
     box-sizing:border-box;   
+    
 }
 @font-face {
-  font-family: 'ttNormsPro';
+  font-family: 'ttNormsProRegular';
         src: local('TTNormsPro'), local('TTNormsPro'),
+        url(${TTNormsProRegular2}) format('woff2'),
+        url(${TTNormsProRegular}) format('woff');
+      
+    }
+    @font-face{
+    font-family: 'ttNormsProNormal';
+        src: local('TTNormsProNormal'), local('TTNormsProNormal'),
         url(${TTNormsProNormal2}) format('woff2'),
         url(${TTNormsProNormal}) format('woff');
-        font-weight: 300;
-        font-style: normal;
+      
+    }
+    @font-face {
+        font-family: 'ttNormsProThin';
+        src: local('TTNormsProThin'), local('TTNormsProThin'),
+        url(${TTNormsProThin2}) format('woff2'),
+        url(${TTNormsProThin}) format('woff');
+    }
+    @font-face {
+        font-family: 'ttNormsProMedium';
+        src: local('TTNormsProMedium'), local('TTNormsProMedium'),
+        url(${TTNormsProMedium2}) format('woff2'),
+        url(${TTNormsProMedium}) format('woff');
     }
 
+
   body {
-   font-family: ttNormsPro;
+   font-family: ttNormsProNormal;
     background: ${cream};
     color: ${green}; 
     letter-spacing: 0.02rem;
@@ -82,72 +106,77 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 export const ComingSoonMenu = styled.h1`
-font-size: 1.25rem
+  font-size: 1.25rem;
 `
 export const PageBackground = styled.div`
-display: ${props => props.display === true ? "flex" : "none"};
-position: fixed;
-min-height: 100%;
-width: 62%;
-opacity: ${props => props.fade > 20 ? "55%" : "100%"};
-background-image: url(${landing});
-background-repeat: no-repeat;
-background-color: ${cream};
-background-position: 94% 25.5vw;
-background-size: 30%;
-top: 0;
-z-index: 1;
-@media screen and (max-width: 450px) {
-display: none;
-}
+  display: ${props => (props.display === true ? "flex" : "none")};
+  position: fixed;
+  min-height: 100%;
+  width: 62%;
+  margin-right: ${props => `${props.height + 56}px`};
+  opacity: ${props => (props.fade > 20 ? "55%" : "100%")};
+  background-image: url(${landing});
+  background-repeat: no-repeat;
+  background-color: ${cream};
+  background-position: 96% 23.5vw;
+  background-size: 30%;
+  top: 0;
+  z-index: 100;
+  @media screen and (min-width: 900px) and (max-width: 1440px) {
+    background-position: 96% 23.5vh;
+  }
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
 `
 export const Page = styled.div`
-width: 100%;
-height: 100%;
-position: relative;
-overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 `
 
 export const Section1 = styled.div`
-
-width: 99vw;
-position: relative;
-left: 0;
-display: flex;
-flex-direction: column;
-padding: ${padding.page.vertical} ${padding.page.horizontal} 0 ${padding.page.horizontal};
-z-index: 2;
-overflow-x: hidden;
-background: transperant;
-@media screen and (max-width: 700px) {
-  margin-top: 3.5rem;  
-  padding: 0 1.15rem;
+  width: 99vw;
+  position: relative;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: ${padding.page.vertical} ${padding.page.horizontal} 0
+    ${padding.page.horizontal};
+  z-index: 2;
+  overflow-x: hidden;
+  background: transperant;
+  @media screen and (max-width: 700px) {
+    margin-top: 3.5rem;
+    padding: 0 1.15rem;
   }
 `
 export const MenuButton = styled.button`
   border: none;
   font-size: ${menu.size};
-  padding: ${padding.menuPadding.vertical} ${padding.menuPadding.horizontal} ;
-  line-height: ${menu.lineHeight}  ;
-  letter-spacing:  ${menu.letterSpacing};
+  padding: ${padding.menuPadding.vertical} ${padding.menuPadding.horizontal};
+  line-height: ${menu.lineHeight};
+  letter-spacing: ${menu.letterSpacing};
   text-transform: ${menu.textTransformation};
   :hover {
-         color: rgb(21,62,53, 75%);
-        }
+    color: rgb(21, 62, 53, 75%);
+  }
 `
 
 export const Button = styled.button`
-        border: 1px solid ${green};
-        border-radius: 1px;
-        padding: ${padding.menuPadding.vertical} ${padding.menuPadding.horizontal} ;
-        font-size: ${button.size} ;
-        line-height: ${button.lineHeight};
-        letter-spacing: ${button.letterSpacing};
-        text-transform: ${button.textTransformation};
-        :hover {
-          color: ${cream};
-          background-color: ${green};
-        }
+  border: 1px solid ${green};
+  border-radius: 1px;
+  padding: ${padding.menuPadding.vertical} ${padding.menuPadding.horizontal};
+  font-size: ${button.size};
+  line-height: ${button.lineHeight};
+  letter-spacing: ${button.letterSpacing};
+  text-transform: ${button.textTransformation};
+  font-family: ttNormsProNormal;
+  :hover {
+    color: ${cream};
+    background-color: ${green};
+  }
 `
 export const P = styled.p`
   color: ${props =>
@@ -165,8 +194,10 @@ export const P = styled.p`
       ? `${bc2.size}`
       : props.bc3
       ? `${bc3.size}`
+      : props.menu
+      ? `1.5rem !important`
       : null};
-      line-height: ${props =>
+  line-height: ${props =>
     props.bc1
       ? `${bc1.lineHeight}`
       : props.bc2
@@ -174,25 +205,20 @@ export const P = styled.p`
       : props.bc3
       ? `${bc3.lineHeight}`
       : null};
-    padding-top: ${props => props.padding};
-    opacity: ${props =>
-    props.fFD
-      ? `${formFieldDesc.opacity}`
-      : '1'
-      
-   };
+  padding-top: ${props => props.padding};
+  opacity: ${props => (props.fFD ? `${formFieldDesc.opacity}` : "1")};
 `
 export const UnderlineLink = styled.a`
   position: relative;
   overflow: hidden;
   text-decoration: none;
   display: inline-block;
-  transition: all .3s ease-in-out ;
-  display:table;
+  transition: all 0.3s ease-in-out;
+  display: table;
   :hover {
     font-size: 130%;
   }
-/* ::before {
+  /* ::before {
   content: "";
   position: absolute;
  
@@ -216,11 +242,10 @@ export const Footer = styled.div`
   position: absolute;
   bottom: 0;
   display: flex;
- 
+
   align-items: center;
   padding: 3.37rem 0rem 0 0;
   @media screen and (max-width: 450px) {
-  align-items: flex-end;
-  
-}
+    align-items: flex-end;
+  }
 `

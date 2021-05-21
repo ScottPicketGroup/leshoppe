@@ -20,22 +20,28 @@ import LeShoppeLogo from "./leShopeLogo"
           <MenuHeader>
             <LogoBox><LeShoppeLogo/></LogoBox>
             
-            <P bc2 onClick={() => setMenuOpen(false)}><span style={{marginRight: `1rem`}}>X </span>   CLOSE</P>
+            <P  menu onClick={() => setMenuOpen(false)} style={{display: `flex`, alignItems: `center`}}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.085" height="19.085" viewBox="0 0 19.085 19.085" style={{marginRight: `1.5rem`}}>
+  <path id="Path_11769" data-name="Path 11769" d="M2807.2-13381l18.025,18.024" transform="translate(-2806.668 13381.53)" fill="none" stroke="#153e35" stroke-width="1.5"/>
+  <path id="Path_11770" data-name="Path 11770" d="M2807.2-13381l18.025,18.024" transform="translate(-13362.445 -2806.668) rotate(90)" fill="none" stroke="#153e35" stroke-width="1.5"/>
+</svg>
+
+              CLOSE</P>
           </MenuHeader> 
             <MenuLinksContainer>
               
               <MenuLink to="/" onClick={() => setMenuOpen(false)}>Home</MenuLink>
-              <MenuLink to="/shop" onClick={() => setMenuOpen(false)}>Shop</MenuLink>
+             
               <MenuLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</MenuLink>
               <MenuLink >-</MenuLink>
-              <MenuLink href="http://www.chancerylane.com.au" target="blank">
+              <MenuLink style={{marginBottom: 0}} href="http://www.chancerylane.com.au" target="blank">
                 Visit Chancery Lane
               </MenuLink>
 
               <ImgBox> 
               <img src={meat} alt="meat picture" width="100%"/>
               </ImgBox>
-              <Socials style={{marginBottom: `56px`}}>
+              <Socials>
                 <Facebook menu/>
                 <Instagram menu/>
               </Socials >
@@ -65,7 +71,7 @@ import LeShoppeLogo from "./leShopeLogo"
   export const MenuContainer = styled.div`
     
         height: 100vh;
-    width: 29%;
+    width: 31%;
     display: flex;
     align-items: center;
     position: absolute;
@@ -103,6 +109,7 @@ import LeShoppeLogo from "./leShopeLogo"
     display: flex;
     height: 100%;
     width: 75%;
+    padding-bottom: 96px;
     flex-direction: column;
     justify-content: flex-end;
     @media screen and (max-width: 450px) {
@@ -114,8 +121,12 @@ import LeShoppeLogo from "./leShopeLogo"
   `
 
   export const MenuLink = styled(Link)`
-    margin-bottom: 1.75rem;
+    margin-bottom: 28px;
     text-decoration: none;
+    font-size: 1.75rem;
+    :last-child{
+      margin-bottom: 0;
+    }
     @media screen and (max-width: 450px) {
       color: #FDF9EE !important;
 }
@@ -129,7 +140,7 @@ width: 30%;
 
 export const ImgBox = styled.div`
 width: 100%;
-margin-top: 2rem;
+margin-top: 3.5rem;
 margin-bottom: 2rem;
 display:flex;
 @media screen and (max-width: 450px) {
