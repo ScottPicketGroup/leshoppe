@@ -29,7 +29,7 @@ console.log(globalState)
       <GlobalStateProvider>
         <HeroContainer >
  
-        <BackgroundLogo imageHeight={imageHeight} logoLimit={globalState.logoLimit}/>
+        <BackgroundLogo imageHeight={imageHeight} />
             <ImgSqaure height={imageHeight}
             ref={el => imgContainer = el}
             src={landingSqaure} alt='man in a butchers apron'/>
@@ -52,6 +52,7 @@ margin-bottom: 3.5rem;
 export const ImgSqaure = styled.img`
 width: 33%;
 height: 33%;
+visibility: hidden;
 align-self: flex-end;
   @media only screen and (max-width: 450px) {
     width: 50%;

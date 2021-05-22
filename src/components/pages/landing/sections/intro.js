@@ -8,9 +8,8 @@ const Intro = () => {
       <ImgLandScape src={introImg} alt="meat hanging" />
       
       <IntroText>
-      <h1
-      style={{marginBottom: `1.75rem`}}
-      > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</h1>
+    < P bc1 style={{marginBottom: `2.25rem`}}
+      > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</P>
         <P bc1>
         Le Shoppe is Scott Pickett’s European-inspired coffee bar and provedore, located at 430 Little Collins St, Melbourne. Adjoining Chancery Lane Bistro, Le Shoppe is proud to continue Melbourne's legacy of historic grocers and corner stores.
         </P>

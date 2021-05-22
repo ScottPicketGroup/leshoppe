@@ -7,12 +7,17 @@ import { color, font, padding } from "../components/styled-components/variables"
 import LogoFooter from "../components/pages/reusable/logo-footer/LogoFooter"
 import Footer from "../components/pages/reusable/footer/Footer"
 import GlobalStateProvider from "../components/context/GlobalStateProvider"
+import FooterLogoSlider from "../components/pages/reusable/logo-footer/ImageSlider"
+
+
 const TnCs = (menuOpen, setMenuOpen) => (
   <GlobalStateProvider>
+  
     <Layout>
       <SEO title="Terms and Conditions" />
-      
+     
         <TnCsContainer>
+      
           <Section>
             <Heading>
               <h1>Terms and Conditions</h1>

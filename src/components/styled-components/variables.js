@@ -24,12 +24,12 @@ export const font = {
         textTransformation: 'capitalize'
     },
     bc1: {
-        size: '1.75rem',
+        size: '1.5rem',
         lineHeight: '1.14',
         letterSpacing: '.02rem'
     },
     bc2: {
-        size: '1.5rem',
+        size: '1.25rem',
         lineHeight: '1.17',
         letterSpacing: '.02rem'
     },

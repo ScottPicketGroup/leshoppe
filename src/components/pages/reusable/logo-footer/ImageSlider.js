@@ -1,36 +1,46 @@
-import React, { useState } from "react"
-import styled from "styled-components"
-import Image from "./Image"
+import React, { Component } from "react";
+import Slider from "react-slick";
+import { withPrefix, Link } from "gatsby"
 
-const MenuImageSlider = ({ assets, slideLive, setSlideLive}) => {
-
-  return (
-    <MenuImageSliderContainer>
-
-      {assets.map((image, i) => (
-       (
-            <Image 
-            
-            slideLive={slideLive}
-            slideId={i + 1}
-           
-            setSlideLive={setSlideLive}
-            fluid={image.fluid}
-        title={image.description}
-            />
-          )
-      ))}
-    </MenuImageSliderContainer>
-  )
+import { Helmet } from "react-helmet"
+export default class FooterLogoSlider extends Component {
+  render() {
+    const settings = {
+      
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 2000,
+      autoplaySpeed: 2000,
+      cssEase: "linear"
+    };
+    
+    return (
+      <div>
+     
+        <h2> Single Item</h2>
+        <Slider {...settings}>
+          <div>
+            <h3>1</h3>
+          </div>
+          <div>
+            <h3>2</h3>
+          </div>
+          <div>
+            <h3>3</h3>
+          </div>
+          <div>
+            <h3>4</h3>
+          </div>
+          <div>
+            <h3>5</h3>
+          </div>
+          <div>
+            <h3>6</h3>
+          </div>
+        </Slider>
+      </div>
+    );
+  }
 }
-
-export default MenuImageSlider
-
-export const MenuImageSliderContainer = styled.div`
-  width: 100%;
-  position: relative;
-  height: 35.3vw;
-  padding: 0;
-  display: flex;
- 
-`

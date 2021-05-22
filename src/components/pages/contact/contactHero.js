@@ -53,6 +53,7 @@ export const ImgSqaure = styled.img`
 width: 33%;
 height: 33%;
 align-self: flex-end;
+visibility: hidden;
   @media only screen and (max-width: 450px) {
     width: 50%;
     height: 100%;

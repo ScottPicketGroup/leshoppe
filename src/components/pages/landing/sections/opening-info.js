@@ -13,7 +13,7 @@ const OpeningInfo = () => {
       </ImgContainer>
   
       <OpeningInfoText>
-        <Heading>Location & Opening hours: </Heading>
+        <Heading>Location & opening hours: </Heading>
         <P bc2>
           Le Shoppe
           <br />
@@ -21,7 +21,7 @@ const OpeningInfo = () => {
           Melbourne 3000
         </P>
         <GoogleLink>
-          <a
+          <a style={{textDecoration: `none`}}
             href="https://goo.gl/maps/13ikoRhFJk1iQUVLA"
             target="_blank"
           >
@@ -130,7 +130,7 @@ margin-bottom: 2.25rem;
 
 export const GoogleLink = styled.h2`
 margin: 2.25rem 0;
-
+text-decoration: none;
 @media screen and (max-width: 700px) {
     
     margin: 1.5rem 0;

@@ -19,16 +19,16 @@ const About = () => {
         </Paragraph>
 
         <Paragraph bc2>
-        We also have a selection of pre-packaged pantry treats—both local and specialty imported items, soon to be joined by local spirits, international beers and wines and interesting aperitive for an afternoon pick-me-up. 
+        We also have a selection of pre-packaged pantry treats—both local and specialty imported items, and local spirits, international beers and wines and interesting aperitive for an afternoon pick-me-up. 
           {/* <ol>
             <li>Like its name, the fit-out pays homage </li>
             <li>Previous era; a space where opulence and luxury </li>
             <li>Served as a refuge from life outside</li>
           </ol> */}
         </Paragraph>
-        <h1 style={{marginBottom: `1.75rem`}}>Catering</h1>
+       
         <Paragraph bc2>
-        We are pleased to offer a range of corporate catering options including lunch boxes, shared platters and bespoke breakfast/lunch catering, for enquiries, email info@leshoppe.com.au – our full catering offer and online ordering will be launching soon. Watch this space!
+        We are pleased to offer a range of corporate catering options including lunch boxes, shared platters and bespoke breakfast & lunch catering, for enquiries, email info@leshoppe.com.au – our full catering offer and online ordering will be launching soon. Watch this space!
           {/* <ul>
             <li>Like its name, the fit-out pays homage</li>
             <li>Previous era; a space where opulence and luxury</li>

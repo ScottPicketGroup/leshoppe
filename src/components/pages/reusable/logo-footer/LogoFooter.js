@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useRef } from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery,  withPrefix } from "gatsby"
 import styled from "styled-components"
 import { padding } from "../../../styled-components/variables"
 import Img from "gatsby-image"
 import ImageSlider from './ImageSlider'
-import MenuImageSlider from "./ImageSlider"
+
+
+import { Helmet } from "react-helmet"
+import FooterLogoSlider from "./ImageSlider"
+import FooterSlider from "./footerSlider"
 const LogoFooter = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -34,17 +38,13 @@ const LogoFooter = () => {
 
 
   return (
-    <LogoFooterContainer margin={marginLeft}>
-      {logos.map(link => (
-        <LogoLink
-          key={link.id}
-          href={`http://${link.description}`}
-          target="_blank"
-        >
-          {" "}
-          <Image fluid={link.fluid} width={imageWidth} />
-        </LogoLink>
-      ))}
+    <LogoFooterContainer>
+           <Helmet>
+    <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+      </Helmet>
+     
+     <FooterSlider logos={logos}/>
     </LogoFooterContainer>
   )
 }
@@ -54,18 +54,14 @@ export default LogoFooter
 
 
 export const LogoFooterContainer = styled.div`
-  width: 99vw;
-  height: 150px;
+ height: 5rem;
+ width: 99vw;
   position: relative;
-  z-index: 2;
-  padding: 0.5rem 0rem;
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  z-index: 1;
+  overflow-x: hidden;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  overflow: hidden;
   @media screen and (max-width: 450px) {
     flex-wrap: nowrap;
     padding: 0;

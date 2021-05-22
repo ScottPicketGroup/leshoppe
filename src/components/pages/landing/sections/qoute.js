@@ -2,17 +2,17 @@ import React from "react"
 import styled from "styled-components"
 import open from '../../../../images/logos/quoteOpen.svg'
 import close from '../../../../images/logos/quoteClose.svg'
+import { P } from "../../../styled-components/GlobalStyles"
 const Quote = () => {
   return (
     <QuotePageContainer>
         <QouteIcon src={open} alt="open quote" />
       <QouteContainer>
           
-        <h1>
-        “We want you to eat really well during your workday, whether it's a quick takeaway baguette, a salad selection for team meetings or a charcuterie platter to take home after work.”
-        <br/>
-        -Scott Pickett.
+        <h1 style={{fontSize: `2rem`}}>
+        We want you to eat really well during your workday, whether it's a quick takeaway baguette, a salad selection for team meetings or a charcuterie platter to take home after work.
         </h1>
+        <P style={{fontSize: `1.75rem`, marginTop: `.5rem`}}>-Scott Pickett.</P>
       </QouteContainer>
       <QouteIcon src={close} alt="open quote" />
     </QuotePageContainer>
