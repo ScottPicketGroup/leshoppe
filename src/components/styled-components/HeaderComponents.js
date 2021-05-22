@@ -9,7 +9,7 @@ top: 0;
 z-index: 300;
 justify-content: space-between;
 width: 100vw;
-padding: 2rem ${padding.page.horizontal};
+padding: 1.55rem 6rem 1.55rem 5.5rem;
 border-bottom: 1px solid #153E35;
 background: ${color.cream};
 @media screen and (max-width: 600px) {
@@ -19,9 +19,12 @@ background: ${color.cream};
 `
 
 export const LogoContainer = styled(Link)`
-max-height: 1.5rem;
+
+svg {
+  max-height: 1.25rem;
+}
 @media screen and (max-width: 500px) {
-  img {max-height: .5rem;}
+  img {max-height: .25rem;}
   }
 `
 

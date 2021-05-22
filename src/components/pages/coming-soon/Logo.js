@@ -20,7 +20,9 @@ const Logo = () => {
 export default Logo
 
 export const SVG = styled.svg`
-width: 10.75rem;
+justify-self: flex-start;
+width: 6.75rem;
+
 @media screen and (max-width: 500px) {
     width: 5.5rem;
 }
