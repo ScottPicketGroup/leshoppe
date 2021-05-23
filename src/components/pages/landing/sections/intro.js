@@ -49,5 +49,6 @@ export const IntroText = styled.div`
   @media (max-width: 700px) {
     width: 100%;
     margin-bottom: 3.5rem;
+    margin-top: 3.5rem;
   }
 `
