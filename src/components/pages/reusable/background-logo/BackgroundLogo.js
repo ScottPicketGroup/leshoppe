@@ -29,7 +29,7 @@ const BackgroundLogo = ({logoLimit}) => {
     }
   })
 
-  console.log(logoLimit, scrollY)
+
     return (
         <LogoContainer height="0">
         <Logo height="0" fade={scrollY} display={logoLimit}>

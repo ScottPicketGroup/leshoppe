@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import styled, { css } from 'styled-components';
+import ReactDOM from 'react-dom';
+import ReactSwipe from 'react-swipe';
 import Img from 'gatsby-image'
 import {useStaticQuery, graphql} from 'gatsby'
 import SliderControls from './slider-components/SliderControls';
+import { useSwipeable } from "react-swipeable";
 export const ImageBox = styled.div`
   min-width: ${props => props.standardWidth}%;
   z-index: ${props => props.image};
@@ -32,6 +35,28 @@ export const ImageBox = styled.div`
   justify-content: center;
   flex-direction: column;
   display: flex;
+  @media screen and (max-width: 450px) {
+    min-width: 100%;
+    min-height: 80vw;
+    margin-left: ${props => {
+    const { image, gutterWidth, position, standardWidth } = props;
+    // the stack are the images on the left of the screen.
+    // We want to ensure the position is above zero as it's always at the bottom of 
+    // the stack.
+    // 
+    // Position is the top card on the stack. So if the image is greater than
+    // the position, it's right of the stack (aka on the deck).
+    const onStack = position > 0 && image <= position;
+    // if the image is not on the stack, we want to bump it over the standard width
+    // of all images plus the gutter width (padding between images)
+    if (image > 0 && onStack) {
+      return `-101%`
+    }
+    // other wise, don't add any left margin to it
+    return '0px;'
+  }}  ;
+}
+
 `;
 
 export const Wrapper = styled.div`
@@ -43,6 +68,11 @@ export const Wrapper = styled.div`
 
 const Carousel = (props) => {
   const [position, setPosition] = React.useState(0);
+  const [mouseStartPos, setMouseStartPos] = useState(0)
+  const [mouseEndPos, setMouseEndPos] = useState(0)
+  const [mousePos, setMousePos] = useState(0)
+  const [mouseDown, setMouseDown] = useState(false)
+
   const data = useStaticQuery(graphql`
     query assets {
       allContentfulSlider {
@@ -124,25 +154,37 @@ if (position > 0) {
     // increment the position to move the first card on the deck onto the top of the stack
     setPosition(p => p + 1)
   }
-console.log(images)
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => moveRight(),
+    onSwipedRight: () => moveLeft()
+  
+  })
+
+
   return (
-    <div>
+    <div  {...handlers}>
    
 
-      <Wrapper>
+      <Wrapper 
+       
+      >
         {images.map((image) => (
+          
           <ImageBox
             image={Number(image.id)}
             gutterWidth={1}
             position={Number(position)}
             standardWidth={standardWidth}
-            
+       
           >
-          
-            <Imgbox fluid={image.fluid} />
+       
+            <Imgbox fluid={image.fluid}  />
+            
           </ImageBox>
+         
         ))}
-      </Wrapper>
+      </Wrapper >
           <SliderControls moveLeft={moveLeft} moveRight={moveRight} />
       
     </div>

@@ -3,9 +3,18 @@ import styled from "styled-components"
 import open from '../../../../images/logos/quoteOpen.svg'
 import close from '../../../../images/logos/quoteClose.svg'
 import { P } from "../../../styled-components/GlobalStyles"
+import { useSwipeable } from "react-swipeable";
+
 const Quote = () => {
+
+  const handlers = useSwipeable({
+    onSwiped: (eventData) => console.log("User Swiped!"),
+  
+  })
+
   return (
-    <QuotePageContainer>
+    <div {...handlers}>
+    <QuotePageContainer >
         <QouteIcon src={open} alt="open quote" />
       <QouteContainer>
           
@@ -16,6 +25,7 @@ const Quote = () => {
       </QouteContainer>
       <QouteIcon src={close} alt="open quote" />
     </QuotePageContainer>
+    </div>
   )
 }
 
