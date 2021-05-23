@@ -193,4 +193,13 @@ const Sliderer = styled(Slider) `
     align-items: center;
    
   }
+
+  @media screen and (max-width: 450px) {
+    .slick-list {
+      width: 1500px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+}
 `
