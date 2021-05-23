@@ -151,8 +151,8 @@ const SignUpSubmit = styled.button`
   transition: all 0.2s ease;
   :hover {
     opacity: ${props => (props.err ? "1" : ".75")};
-   
-    color: ${props => (props.err ? "#CB0000" : "#FDF9EE")}; 
+    background: ${props => props.err ? "#CB0000" : "#153e35"};
+    color: ${props => (props.err ? "beige" : "beige")}; 
   }
   @media screen and (max-width: 450px) {
     font-size: 0.75rem !important;

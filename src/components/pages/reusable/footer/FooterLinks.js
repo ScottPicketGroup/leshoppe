@@ -35,7 +35,7 @@ text-decoration: none;
 transition: all .3s ease-in-out;
 font-size: 1rem;
 @media screen and (max-width: 450px) {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-size: .75rem;
 }
   :hover {

@@ -6,15 +6,22 @@ const FooterContact = () => {
         <FooterContactContainer>
              <Heading>CONTACT DETAILS</Heading>
         <Address>
-          <P bc3>
+          <PaddressDesktop bc3>
           Le Shoppe
           <br />
           513 Elizabeth Street <br />
           Melbourne 3000
-          </P>
+          </PaddressDesktop>
+          <PaddressMob>
+          Le Shoppe
+          <br />
+          513 Elizabeth Street <br />
+          Melbourne 3000
+          </PaddressMob>
         </Address>
             <OpeningHoursContainer>
-          <Days>
+            Monday - Friday: 7.30am - 4.00pm
+          {/* <Days>
             <ul>
               <li>
                 <Text>Monday</Text>
@@ -65,7 +72,7 @@ const FooterContact = () => {
                 <Text>11:30am–9pm</Text>
               </li>
             </ul>
-          </Hours>
+          </Hours> */}
         </OpeningHoursContainer>
         </FooterContactContainer>
     )
@@ -79,7 +86,7 @@ padding: 0;
 
 @media screen and (max-width: 450px) {
     width: 100%;
-    margin-top: 2.25rem;
+    margin-top: 1.25rem;
     font-size: .75rem;
 }
 `
@@ -95,13 +102,27 @@ export const Address = styled.div`
 margin-bottom: 2.25rem;
 @media screen and (max-width: 450px) {
    margin-bottom: 1rem;
-   font-size: .75rem;
+   font-size: .75rem !important;
+}
+`
+export const PaddressDesktop = styled(P)`
+@media screen and (max-width: 450px) {
+display: none;
+}
+`
+
+export const PaddressMob = styled.div`
+@media screen and (max-width: 450px) {
+  display: block
+}
+@media screen and (min-width: 451px) {
+display: none;
 }
 `
 export const OpeningHoursContainer = styled.div`
   width: 100%;
   display: flex;
-  font-size: .75rem;
+  
 
   ul {
     list-style-type: none;

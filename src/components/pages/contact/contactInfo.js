@@ -14,11 +14,7 @@ const ContactInfo = () => {
         Le Shoppe by Chancery Lane is the latest addition to the Scott Pickett Group venues. 
 Follow the links in the footer to our social channels so you don’t miss any of the action. We’ll share catering updates, new menu items and more.
           </PC>
-          <PC bc1>
-          
-            Follow the links at the bottom of the page to our social pages so
-            you don’t miss any of the action.
-          </PC>
+        
         
         {/* <P bc1>Le Shoppe</P>
         <P bc1>513 Elizabeth Street </P>

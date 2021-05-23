@@ -133,6 +133,10 @@ display: flex;
 
 justify-content: flex-end;
 align-items: flex-end;
+
+@media screen and (max-width: 450px) {
+display: none;
+}
 `
 export const Logo = styled.div`
 

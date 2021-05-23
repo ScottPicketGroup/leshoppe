@@ -12,7 +12,7 @@ const Quote = () => {
         <h1 style={{fontSize: `2rem`}}>
         We want you to eat really well during your workday, whether it's a quick takeaway baguette, a salad selection for team meetings or a charcuterie platter to take home after work.
         </h1>
-        <P style={{fontSize: `1.75rem`, marginTop: `.5rem`}}>-Scott Pickett.</P>
+        <P style={{fontSize: `1.75rem`, marginTop: `.5rem`}}>- Scott Pickett.</P>
       </QouteContainer>
       <QouteIcon src={close} alt="open quote" />
     </QuotePageContainer>

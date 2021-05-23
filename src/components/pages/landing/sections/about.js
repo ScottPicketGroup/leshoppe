@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
 import landscape from "../../../../images/placeholders/aboutLandscape.jpg"
 import vertical from "../../../../images/placeholders/aboutPortrait.jpg"
+import AboutLandscape from "./images/aboutLandscape"
 
 const About = () => {
   return (
@@ -37,8 +38,9 @@ const About = () => {
         </Paragraph>
       </AboutText>
       <ImgContainer>
+     
         <ImgPortraitSmall src={vertical} />
-        <ImgLandscapeSmall src={landscape} />
+        <AboutLandscape/>
       </ImgContainer>
     </AboutContainer>
   )
@@ -100,6 +102,7 @@ export const ImgPortraitSmall = styled.img`
     margin-bottom: 3.5rem;
   }
 `
+
 
 export const ImgLandscapeSmall = styled.img`
   width: 57%;

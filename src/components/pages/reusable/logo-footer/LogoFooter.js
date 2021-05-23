@@ -54,11 +54,13 @@ export default LogoFooter
 
 
 export const LogoFooterContainer = styled.div`
- height: 5rem;
+
  width: 99vw;
   position: relative;
   z-index: 1;
   overflow-x: hidden;
+ height: auto;
+ padding: 1rem;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   overflow: hidden;

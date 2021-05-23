@@ -3,13 +3,16 @@ import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
 import oldGuy from "../../../../images/placeholders/openingVertical.jpg"
 import outside from "../../../../images/placeholders/openingLandscape.jpg"
+import OpeningLandscape from "./images/openingLandscape"
+import OpeningPortrait from "./images/openingPortrait"
+
 
 const OpeningInfo = () => {
   return (
     <OpeningInfoContainer>
         <ImgContainer>
-        <ImgPortraitSmall src={oldGuy} />
-      <ImgLandscapeSmall src={outside} />
+       <OpeningPortrait/>
+      <OpeningLandscape/>
       </ImgContainer>
   
       <OpeningInfoText>
@@ -121,6 +124,7 @@ export const OpeningHoursContainer = styled.div`
   }
 `
 export const Heading = styled.h1`
+font-size: 2rem;
 margin-bottom: 2.25rem;
 @media screen and (max-width: 700px) {
     
@@ -131,8 +135,11 @@ margin-bottom: 2.25rem;
 export const GoogleLink = styled.h2`
 margin: 2.25rem 0;
 text-decoration: none;
+a {
+  font-size: 1rem!important;
+}
 @media screen and (max-width: 700px) {
-    
+  font-size: 1rem;
     margin: 1.5rem 0;
   }
 `

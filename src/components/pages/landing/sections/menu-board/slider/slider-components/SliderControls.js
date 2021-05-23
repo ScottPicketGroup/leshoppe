@@ -6,15 +6,20 @@ import ForwardIcon from "./forwardIcon"
 import Title from "./Title"
 
 const SliderControls = ({ slideLive, setSlideLive, numOfSlides, titleText }) => {
+
+
+
   const leftArrow = () => {
-    if (slideLive > 0) setSlideLive(slideLive - 1)
+    setSlideLive(slideLive + 1)
   }
 
   const rightArrow = () => {
-    if (slideLive > -1 && slideLive < numOfSlides - 1)
+    if (slideLive > 0) {
       setSlideLive(slideLive + 1)
-  }
 
+    }
+  }
+  console.log(`slideLive`, slideLive)
   return (
     <SliderControlsContainer>
       <Title titleText={titleText} />
@@ -42,9 +47,14 @@ export const SliderControlsContainer = styled.div`
   }
 `
 
-export const Control = styled.div``
+export const Control = styled.div`
+  :hover {
+    opacity: .75;
+  }
+`
 export const ControlsContainer = styled.div`
   width: 16%;
   display: flex;
   justify-content: space-between;
+
 `

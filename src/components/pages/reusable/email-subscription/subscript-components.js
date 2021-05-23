@@ -49,6 +49,9 @@ export const Input = styled.input `
   ::-moz-focus-outer {
     color: white;
   }
+  @media screen and (max-width: 450px) {
+    width: 100%;
+}
 `
 
 export const InputMessage = styled.textarea `

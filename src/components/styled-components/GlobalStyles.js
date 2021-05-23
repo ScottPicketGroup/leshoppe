@@ -70,13 +70,18 @@ export const GlobalStyle = createGlobalStyle`
         font-size: ${h1.fontSize};
         line-height: ${h1.lineHeight};
         letter-spacing: ${h1.letterSpacing};
-        font-weight: ${h1.fontWeight}
-    
+        font-weight: ${h1.fontWeight};
+        @media screen and (max-width: 450px) {
+          font-size: 1.25rem !important;
+} 
     } 
     h2 {
       font-size: ${h2.fontSize};
         line-height: ${h2.lineHeight};
         letter-spacing: ${h2.letterSpacing};
+        @media screen and (max-width: 450px) {
+          font-size: 1rem;
+}
     }
     h3 {
       font-size: ${h3.fontSize};
@@ -147,8 +152,8 @@ export const Section1 = styled.div`
   z-index: 2;
   overflow-x: hidden;
   background: transperant;
-  @media screen and (max-width: 700px) {
-    margin-top: 3.5rem;
+  @media screen and (max-width: 450px) {
+  
     padding: 0 1.15rem;
   }
 `
@@ -195,7 +200,7 @@ export const P = styled.p`
       : props.bc3
       ? `${bc3.size}`
       : props.menu
-      ? `1.5rem !important`
+      ? ``
       : null};
   line-height: ${props =>
     props.bc1

@@ -7,7 +7,7 @@ const FooterSocials = () => {
         <FooterSocialsContainer>
             <Heading>SOCIAL MEDIA</Heading>
             <SocialsLinks>
-            <FooterLink href="http://www.instagram.com/leshoppe" target="blank"><P bc3>Instagram</P></FooterLink>
+            <FooterLink href="http://www.instagram.com/leshoppe" target="blank">Instagram</FooterLink>
             <FooterLink href="http://www.facebook.com/leshoppe" target="blank">Facebook</FooterLink>
             <FooterLink  href="http://www.chancerylane.com.au" target="blank">VISIT CHANCERY LANE</FooterLink>
             </SocialsLinks>
@@ -19,14 +19,15 @@ export default FooterSocials
 
 export const FooterSocialsContainer = styled.div`
 
-
+width: 33%;
 
 display: flex;
 flex-direction: column;
+
 @media screen and (max-width: 450px) {
     width: 100%;
-    margin-top: 3rem;
-   margin-bottom: 2.25rem;
+    margin-top: 2.25rem;
+    font-size: .75rem;
 }
 `
 

@@ -11,6 +11,7 @@ import { Socials } from "../../styled-components/ComingSoonComponents"
 import Facebook from "../coming-soon/Facebook"
 import Instagram from "../coming-soon/Instagram"
 import LeShoppeLogo from "./leShopeLogo"
+import MenuLandscape from "../landing/sections/images/menuLandscape"
   const Menu = ({menuOpen, setMenuOpen}) => {
   
     return (
@@ -20,13 +21,13 @@ import LeShoppeLogo from "./leShopeLogo"
           <MenuHeader>
             <LogoBox><LeShoppeLogo/></LogoBox>
             
-            <P  menu onClick={() => setMenuOpen(false)} style={{display: `flex`, alignItems: `center`}}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="19.085" height="19.085" viewBox="0 0 19.085 19.085" style={{marginRight: `1.5rem`}}>
-  <path id="Path_11769" data-name="Path 11769" d="M2807.2-13381l18.025,18.024" transform="translate(-2806.668 13381.53)" fill="none" stroke="#153e35" stroke-width="1.5"/>
-  <path id="Path_11770" data-name="Path 11770" d="M2807.2-13381l18.025,18.024" transform="translate(-13362.445 -2806.668) rotate(90)" fill="none" stroke="#153e35" stroke-width="1.5"/>
-</svg>
+            <PMenu  menu onClick={() => setMenuOpen(false)} style={{display: `flex`, alignItems: `center`}}>
+            <SVG xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 19.085 19.085" style={{marginRight: `1.5rem`}}>
+  <path id="Path_11769" data-name="Path 11769" d="M2807.2-13381l18.025,18.024" transform="translate(-2806.668 13381.53)" fill="none" stroke-width="1.5"/>
+  <path id="Path_11770" data-name="Path 11770" d="M2807.2-13381l18.025,18.024" transform="translate(-13362.445 -2806.668) rotate(90)" fill="none"  stroke-width="1.5"/>
+</SVG>
 
-              CLOSE</P>
+              CLOSE</PMenu>
           </MenuHeader> 
             <MenuLinksContainer>
               
@@ -39,7 +40,7 @@ import LeShoppeLogo from "./leShopeLogo"
               </MenuLink>
 
               <ImgBox> 
-              <img src={meat} alt="meat picture" width="100%"/>
+              <MenuLandscape/>
               </ImgBox>
               <Socials>
                 <Facebook menu/>
@@ -60,7 +61,7 @@ import LeShoppeLogo from "./leShopeLogo"
     width: 100vw;
     background: rgba(0, 0, 0, 60%);
     z-index: 400;
-    transition: transform .4s ease-out;
+    transition: transform .4s ease-in-out;
     transform: ${props => props.display ? "translateX(0vh)" : "translateX(100vw)" };
     @media screen and (max-width: 450px) {
       width: 100vw;
@@ -105,6 +106,25 @@ import LeShoppeLogo from "./leShopeLogo"
  
 }
   `
+
+export const PMenu = styled.div`
+font-size: 1.25rem;
+@media screen and (max-width: 450px) {
+  color: #FDF9EE !important;
+}
+`
+export const SVG = styled.svg `
+stroke: #153e35;
+width: 19.085px;
+height: 19.085px;
+@media screen and (max-width: 450px) {
+stroke: #fdf9ee;
+font-size: 5%;
+height: 16px;
+width: 16px;
+}
+`
+
   export const MenuLinksContainer = styled.div`
     display: flex;
     height: 100%;
@@ -115,7 +135,7 @@ import LeShoppeLogo from "./leShopeLogo"
     @media screen and (max-width: 450px) {
       width: 100%;
       padding: 0 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 3.5rem;
       
 }
   `
@@ -123,7 +143,7 @@ import LeShoppeLogo from "./leShopeLogo"
   export const MenuLink = styled(Link)`
     margin-bottom: 28px;
     text-decoration: none;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     :last-child{
       margin-bottom: 0;
     }
@@ -135,13 +155,14 @@ export const LogoBox = styled.div`
 height: 100%;
 display: flex;
 align-items: center;
-width: 30%;
+width: 31%;
+margin-top: .2rem;
 `
 
 export const ImgBox = styled.div`
 width: 100%;
 margin-top: 3.5rem;
-margin-bottom: 2rem;
+margin-bottom: 2.25rem;
 display:flex;
 @media screen and (max-width: 450px) {
 height: 4rem;

@@ -8,8 +8,10 @@ console.log(assets)
   return (
     <MenuImageSliderContainer>
       
+      <Container>
+
       
-      {assets.map((image, i) => (
+      {/* {assets.map((image, i) => (
        (
         <Image 
         setTitle={setTitle}
@@ -20,7 +22,8 @@ console.log(assets)
         fluid={image.fluid}
     title={image.description}
         />   
-       )))}
+       )))} */}
+       </Container>
     </MenuImageSliderContainer>
   )
 }
@@ -33,5 +36,11 @@ export const MenuImageSliderContainer = styled.div`
   height: 35.3vw;
   padding: 0;
   display: flex;
- 
+  
+`
+export const Container = styled.div`
+height: 100%;
+width: 100%;
+background: green;
+transform: ${({ currentImage, image, position }) => `translateX(-${position * 58}%)` } ;
 `

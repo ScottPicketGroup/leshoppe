@@ -57,6 +57,7 @@ align-self: flex-end;
   @media only screen and (max-width: 450px) {
     width: 50%;
     height: 100%;
+    display: none;
   }
 `
 

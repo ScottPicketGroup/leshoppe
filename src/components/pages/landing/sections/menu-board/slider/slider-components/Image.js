@@ -10,9 +10,9 @@ const Image = ({ fluid, zIndex, slideLive, title, setSlideLive, slideId, setTitl
   const [mouseDown, setMouseDown] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
-  const [pos, setPos] = useState(slideId)
+  const [pos, setPos] = useState(0)
   useEffect(() => {
-    console.log(slideLive, slideId)
+   
     if (slideLive == slideId  ) setTitle(title)
     },)
  
@@ -60,10 +60,10 @@ const forward = () => {
   }
 
 
-console.log(`slideId`, slideId, slideLive, pos)
+
   return (
     <ImageBox
-      transform={slideLive + slideId}
+      position={slideLive}
       slideId={slideId}
       zIndex={zIndex}
       slideLive={slideLive}
@@ -88,7 +88,7 @@ export const ImageBox = styled.div`
   height: 100%;
   transition: left 1s ease-in-out;
   z-index: ${props => props.zIndex};
-  left: ${props => props.slideId === props.slideLive ? `0` : `${props.transform * 59}%`};
+
   position: absolute;
 
   @media screen and (max-width: 450px) {
