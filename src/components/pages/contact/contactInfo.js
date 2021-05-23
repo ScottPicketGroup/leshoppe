@@ -1,13 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { Img } from "gatsby-image"
-import img from "../../../images/placeholders/contactLandscape.jpg"
 import { P } from "../../styled-components/GlobalStyles"
+import ContactIntroLandscape from "../landing/sections/images/contactInfoLandscape"
 const ContactInfo = () => {
   return (
     <ContactInfoContainer>
       <ContactImage>
-        <img src={img} alt="landscape img" />
+        <ContactIntroLandscape/>
       </ContactImage>
       <ContactText>
         <PC bc1>

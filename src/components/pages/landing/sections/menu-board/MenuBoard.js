@@ -5,53 +5,15 @@ import MenuImageSlider from "./slider/MenuImageSlider"
 import { P } from "../../../../styled-components/GlobalStyles"
 import SliderControls from "./slider/slider-components/SliderControls"
 import Title from "./slider/slider-components/Title"
+import Carousel from "./slider/Carousel"
 const MenuBoard = () => {
-  const [title, setTitle] = useState("boob")
-  const data = useStaticQuery(graphql`
-    query mem {
-      allContentfulSlider {
-        edges {
-          node {
-            mediaMany {
-              title
-              description
-              file {
-                contentType
-                fileName
-              }
-              fluid {
-                ...GatsbyContentfulFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  const menuBoardImages = data.allContentfulSlider.edges[0].node.mediaMany
 
-  const [slideLive, setSlideLive] = useState(1)
 
   return (
     <MenuBoardPageContainer>
-      {/* <h1>Menu Board</h1> */}
-      <MenuImageSlider
-        assets={menuBoardImages}
-        slideLive={slideLive}
-        setSlideLive={setSlideLive}
-        setTitle={setTitle}
-        numOfSlides={menuBoardImages.length}
-      />
+    <Carousel />
   
-      <SliderControls
-        slideLive={slideLive}
-        setSlideLive={setSlideLive}
-        numOfSlides={menuBoardImages.length}
-        titleText={title}
-      >
-    
-
-      </SliderControls>
+     
     </MenuBoardPageContainer>
   )
 }

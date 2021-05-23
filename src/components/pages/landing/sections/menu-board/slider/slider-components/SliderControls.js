@@ -3,31 +3,28 @@ import styled from "styled-components"
 
 import BackIcon from "./backIcon"
 import ForwardIcon from "./forwardIcon"
-import Title from "./Title"
 
-const SliderControls = ({ slideLive, setSlideLive, numOfSlides, titleText }) => {
+
+const SliderControls = ({moveLeft, moveRight }) => {
 
 
 
   const leftArrow = () => {
-    setSlideLive(slideLive + 1)
+
   }
 
   const rightArrow = () => {
-    if (slideLive > 0) {
-      setSlideLive(slideLive + 1)
-
-    }
+  
   }
-  console.log(`slideLive`, slideLive)
+  
   return (
     <SliderControlsContainer>
-      <Title titleText={titleText} />
+     
       <ControlsContainer>
-        <Control onClick={rightArrow}>
+        <Control onClick={moveLeft}>
           <BackIcon />
         </Control>
-        <Control onClick={leftArrow} style={{ marginLeft: `1rem` }}>
+        <Control onClick={moveRight} style={{ marginLeft: `1rem` }}>
           <ForwardIcon />
         </Control>
       </ControlsContainer>
@@ -41,7 +38,8 @@ export const SliderControlsContainer = styled.div`
   margin-top: 1.5rem;
   display: flex;
   width: 58%;
-  justify-content: space-between;
+  padding-right: .4rem;
+  justify-content: flex-end;
   @media screen and (max-width: 450px) {
     display: none;
   }

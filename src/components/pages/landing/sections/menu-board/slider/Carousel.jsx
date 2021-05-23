@@ -1,13 +1,16 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-
+import Img from 'gatsby-image'
+import {useStaticQuery, graphql} from 'gatsby'
+import SliderControls from './slider-components/SliderControls';
 export const ImageBox = styled.div`
-  min-width: ${props => props.standardWidth}px;
+  min-width: ${props => props.standardWidth}%;
   z-index: ${props => props.image};
-  height: 674px;
+  height: 38.66vw;
   background-color: ${props => props.backgroundColor};
   transition: margin-left 1s ease;
-  margin-right: ${props => props.gutterWidth}px;
+  transition-timing-function: ease;
+  margin-right: ${props => props.gutterWidth}%;
   margin-left: ${props => {
     const { image, gutterWidth, position, standardWidth } = props;
     // the stack are the images on the left of the screen.
@@ -20,7 +23,7 @@ export const ImageBox = styled.div`
     // if the image is not on the stack, we want to bump it over the standard width
     // of all images plus the gutter width (padding between images)
     if (image > 0 && onStack) {
-      return `-${standardWidth + gutterWidth}px;`
+      return `-${standardWidth + gutterWidth}%;`
     }
     // other wise, don't add any left margin to it
     return '0px;'
@@ -34,39 +37,59 @@ export const ImageBox = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  min-width: 120%;
-  margin-top: 10rem;
-  padding-bottom: 10rem;
+  min-width: 100%;
+
 `
 
 const Carousel = (props) => {
   const [position, setPosition] = React.useState(0);
+  const data = useStaticQuery(graphql`
+    query assets {
+      allContentfulSlider {
+        edges {
+          node {
+            mediaMany {
+              title
+              description
+              file {
+                contentType
+                fileName
+              }
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-  // this is a stub for the array of images that will be coming through.
-  // when the carousel loads, you will need to iterate through it and assign
-  // it an id that MUST be a number (aka force casst it to a Number(id))
-  const initialImages = React.useMemo(() => {
-    return [
-      { color: 'lightgray', id: 0 },
-      { color: 'red', id: 1 },
-      { color: 'lightblue', id: 2 },
-      { color: 'green', id: 3 },
-      { color: 'palegoldenrod', id: 4 },
-    ]
-  }, [])
+    // get images from contentful, destructure, then remap them to include i as Id -- not sure if force casting is ness as i will always be a num?
+const assets = data.allContentfulSlider.edges[0].node.mediaMany
+
+const imageArr = assets.map((image, i) => {
+  const container = {}
+  container.fluid = image.fluid
+  container.title = image.title
+  container.id = i
+return container
+
+})
+
 
   // use the initialImages as the intial state for the images array.
-  const [images, setImages] = React.useState(initialImages);
+  const [images, setImages] = React.useState(imageArr);
 
   // you want to make sure this is set to the width of the widest image
-  const standardWidth = 1012;
+  const standardWidth = 58;
 
   // called when the left button is clicked
   const moveLeft = () => {
     // if the position is above 0, it means we have added the top image to the end of the deck
     // before shifting the position + 1 on to the top of the stack. So we want to remove it from the end
 
-    if (position >= 0) {
+    if (position >= 5) {
       // it is an anti-pattern to mutate a state object directly, this creates a new array
       // from images
       const nextImages = Array.from(images);
@@ -76,11 +99,14 @@ const Carousel = (props) => {
 
       // update images width out new array
       setImages(nextImages);
-    }
 
+      
+    }
+    if(position > 0) setPosition(p => p - 1);
     // decrement the position so the card currently on the top of the stack is shifted
     // back onto the deck
-    setPosition(p => p - 1);
+   
+    
   }
   const moveRight = () => {
 
@@ -100,30 +126,32 @@ if (position > 0) {
   }
 console.log(images)
   return (
-    <div style={{marginTop: `10rem`}}>
-      <h4>Position: {position}</h4>
+    <div>
+   
 
-      <button onClick={moveLeft}>left</button>
-      <button onClick={moveRight}> right</button>
       <Wrapper>
         {images.map((image) => (
           <ImageBox
             image={Number(image.id)}
-            gutterWidth={10}
+            gutterWidth={1}
             position={Number(position)}
             standardWidth={standardWidth}
-            backgroundColor={image.color}
+            
           >
-            <b>Image number: {image.id}  </b>
-            <br />
-            <b>Position: {position} </b>
-            <br />
-            <b>color: {image.color} </b>
+          
+            <Imgbox fluid={image.fluid} />
           </ImageBox>
         ))}
       </Wrapper>
+          <SliderControls moveLeft={moveLeft} moveRight={moveRight} />
+      
     </div>
   )
 }
 
 export default Carousel;
+
+export const Imgbox = styled(Img)`
+height: 100%;
+width: 100%;
+`
