@@ -61,8 +61,8 @@ export const LogoFooterContainer = styled.div`
   overflow-x: hidden;
  height: auto;
  padding: 1rem;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #153E35;
+  border-bottom: 1px solid #153E35;
   overflow: hidden;
   @media screen and (max-width: 450px) {
     flex-wrap: nowrap;

@@ -9,8 +9,8 @@ const Intro = () => {
      <IntroLandscape/>
       
       <IntroText>
-    < P bc1 
-      > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</P>
+    < Pintro bc1 
+      > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</Pintro>
         <P bc1>
         Le Shoppe is Scott Pickett’s European-inspired coffee bar and provedore, located at 430 Little Collins St, Melbourne. Adjoining Chancery Lane Bistro, Le Shoppe is proud to continue Melbourne's legacy of historic grocers and corner stores.
         </P>
@@ -51,4 +51,10 @@ export const IntroText = styled.div`
     margin-bottom: 3.5rem;
     margin-top: 3.5rem;
   }
+`
+export const Pintro = styled(P)`
+margin-bottom: 36px;
+@media screen and (max-width: 450px) {
+margin-bottom: 24px;
+}
 `

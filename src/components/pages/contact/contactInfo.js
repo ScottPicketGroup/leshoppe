@@ -92,7 +92,7 @@ export const ContactInfoContainer = styled.div`
 export const ContactImage = styled.div`
   width: 58%;
   @media screen and (max-width: 450px) {
-    width: 75%;
+    width: 100%;
     order: 2;
     
 }

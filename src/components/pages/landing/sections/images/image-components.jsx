@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 export const ImgPortrait = styled(Img)`
   width: 40%;
   @media screen and (max-width: 450px) {
-    width: 75%;
+  
     margin-bottom: 3.5rem;
   }
 `
