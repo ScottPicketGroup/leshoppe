@@ -7,8 +7,8 @@ const FooterSocials = () => {
         <FooterSocialsContainer>
             <Heading>SOCIAL MEDIA</Heading>
             <SocialsLinks>
-            <FooterLink href="http://www.instagram.com/leshoppe" target="blank">Instagram</FooterLink>
-            <FooterLink href="http://www.facebook.com/leshoppe" target="blank">Facebook</FooterLink>
+            <FooterLink href="https://www.instagram.com/leshoppe.chancerylane" target="blank">Instagram</FooterLink>
+            <FooterLink  href="https://www.facebook.com/leshoppe.chancerylane" target="blank">Facebook</FooterLink>
             <FooterLink  href="http://www.chancerylane.com.au" target="blank">VISIT CHANCERY LANE</FooterLink>
             </SocialsLinks>
         </FooterSocialsContainer>
