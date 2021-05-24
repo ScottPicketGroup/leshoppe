@@ -57,14 +57,14 @@ const ContactUsForm = () => {
     // checkForm()
     
     
-      setThankyou()
+      setThankyou(true)
   }
   return (
     <ContactUsFormContainer>
         {!thankyou ? (
             <>
  <SignUp 
-name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action={setThankyou(true)}>
+name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
   <input type="hidden" name="bot-field"/>
   <input type="hidden" name="contact" value="contact"/>
  <ContactDetailsContainer>
