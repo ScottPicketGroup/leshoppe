@@ -52,19 +52,26 @@ const ContactUsForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     checkForm()
-    if ( inputs.fName && inputs.sName && inputs.email.includes("@") && inputs.number && inputs.message)  setThankyou(true)    
-    
+    if ( inputs.fName && inputs.sName && inputs.email.includes("@") && inputs.number && inputs.message)    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": e.target.getAttribute("name"),
+        ...inputs
+      })
+    }).then(setThankyou(true)  )
   }
   return (
     <ContactUsFormContainer>
         {!thankyou ? (
             <>
  <SignUp 
- netlify
+ 
  data-netlify="true" 
  data-netlify-honepot="bot-field"
- method="post"
- name="contact">
+ action="POST"
+ name="contact-form">
  <ContactDetailsContainer>
      <ContactFormRow>
      <InputContainer>
