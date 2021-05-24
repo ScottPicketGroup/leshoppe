@@ -52,7 +52,13 @@ const ContactUsForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     checkForm()
-    if ( inputs.fName && inputs.sName && inputs.email.includes("@") && inputs.number && inputs.message)  setThankyou(true)    
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(inputs).toString()
+    }).then(() => console.log('Form successfully submitted')).catch((error) =>
+      alert(error))
+    
     
   }
   return (
