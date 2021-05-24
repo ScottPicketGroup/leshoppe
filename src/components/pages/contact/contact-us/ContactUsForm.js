@@ -49,15 +49,36 @@ const ContactUsForm = () => {
     inputs.message.length === 0 ? setError(error => ({ ...error, message: true}) )
     : setError(error => ({ ...error, message: false}) )
   }
+
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null
+  });
+  const handleServerResponse = (ok, msg, form) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg }
+    });
+    if (ok) {
+      form.reset();
+    }
+  };
+
   const handleSubmit = e => {
     e.preventDefault()
     checkForm()
-    fetch('/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(inputs).toString()
-    }).then(() => console.log('Form successfully submitted')).catch((error) =>
-      alert(error))
+    setServerState({ submitting: true });
+      axios({
+        method: "post",
+        url: "https://getform.io/f/4113f349-e99f-495a-b529-18c2cb40e11c",
+        data: new FormData(form)
+      })
+        .then(r => {
+          handleServerResponse(true, "Thanks!", form);
+        })
+        .catch(r => {
+          handleServerResponse(false, r.response.data.error, form);
+        });
     
     
   }
@@ -66,7 +87,7 @@ const ContactUsForm = () => {
         {!thankyou ? (
             <>
  <SignUp 
-name="contact" method="POST" data-netlify="true">
+method="post" action="https://marekreid.getform.com/egokk">
  <ContactDetailsContainer>
      <ContactFormRow>
      <InputContainer>
