@@ -10,8 +10,8 @@ const ContactInfo = () => {
       </ContactImage>
       <ContactText>
         <PC bc1>
-        Le Shoppe by Chancery Lane is the latest addition to the Scott Pickett Group venues. 
-Follow the links in the footer to our social channels so you don’t miss any of the action. We’ll share catering updates, new menu items and more.
+        Le Shoppe by Chancery Lane is the latest addition to the Scott Pickett Group venues. </PC>
+<PC bc1> Follow the links in the footer to our social channels so you don’t miss any of the action. We’ll share catering updates, new menu items and more.
           </PC>
         
         
@@ -86,7 +86,10 @@ export const ContactInfoContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+margin-bottom: 13.5rem;
+@media screen and (max-width: 450px) {
   margin-bottom: 6rem;
+}
 `
 
 export const ContactImage = styled.div`

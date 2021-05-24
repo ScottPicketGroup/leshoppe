@@ -28,7 +28,7 @@ const OpeningInfo = () => {
             href="https://goo.gl/maps/13ikoRhFJk1iQUVLA"
             target="_blank"
           >
-            View in Google Maps
+            VIEW IN GOOGLE MAPS
           </a>
         </GoogleLink>
         <P bc2>

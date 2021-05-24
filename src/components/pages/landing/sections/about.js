@@ -9,18 +9,17 @@ const About = () => {
   return (
     <AboutContainer>
       <AboutText>
-        {/* <Heading>
+        <Heading>
           About Le Shoppe
-          <br />
-          Second line example
-        </Heading> */}
+          
+        </Heading>
         <Paragraph bc2>
           Visit us weekdays for freshly made baguettes, salads, pastries and
           grab-and-go food for the workday, and of course your morning coffee.
         </Paragraph>
 
         <Paragraph bc2>
-        We also have a selection of pre-packaged pantry treats—both local and specialty imported items, and local spirits, international beers and wines and interesting aperitive for an afternoon pick-me-up. 
+        We also have a selection of pre-packaged pantry treats—both local and specialty imported items, local spirits, international beers and wines and interesting aperitivi for an afternoon pick-me-up. 
           {/* <ol>
             <li>Like its name, the fit-out pays homage </li>
             <li>Previous era; a space where opulence and luxury </li>

@@ -25,9 +25,7 @@ display: flex;
 flex-direction: column;
 
 @media screen and (max-width: 450px) {
-    width: 100%;
-    margin-top: 2.25rem;
-    font-size: .75rem;
+ display: none;
 }
 `
 

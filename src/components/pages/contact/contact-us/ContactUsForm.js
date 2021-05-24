@@ -144,7 +144,7 @@ const ContactUsForm = () => {
  
 </SignUp>
 <SignUpSubmit onClick={handleSubmit} err={error.email} type="submit">
-   SUBSCRIBE
+   SUBMIT
  </SignUpSubmit>
  </>
         ):
