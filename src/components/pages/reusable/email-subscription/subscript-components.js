@@ -11,7 +11,7 @@ export const SubContainer = styled.div`
   }
 `
 
-export const SignUp = styled.form`
+export const SignUp = styled.div`
 font-size: 1.25rem;
 @media screen and (max-width: 450px) {
   font-size: 0.75rem;

@@ -64,9 +64,12 @@ const ContactUsForm = () => {
         {!thankyou ? (
             <>
  <SignUp 
-name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-  <input type="hidden" name="bot-field"/>
-  <input type="hidden" name="contact" value="contact"/>
+>
+
+<form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
+<input type="hidden" name="bot-field" />
+<input type="hidden" name="form-name" value="contact" />
+
  <ContactDetailsContainer>
      <ContactFormRow>
      <InputContainer>
@@ -147,7 +150,7 @@ name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-fiel
  
  </ContactDetailsContainer>
 
- 
+</form> 
  
 </SignUp>
 <SignUpSubmit onClick={handleSubmit} err={error.email} type="submit">
