@@ -66,7 +66,7 @@ const ContactUsForm = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact-form", ...inputs })
     })
-      .then(() => alert("Success!"))
+      .then()
       .catch(error => alert(error));
     
 
@@ -80,7 +80,7 @@ const ContactUsForm = () => {
         {!thankyou ? (
             <>
  <SignUp 
- form method="post" data-netlify-honeypot="bot-field" data-netlify="true" name="contact-form"
+ form method="post" data-netlify-honeypot="bot-field" data-netlify="true" name="contact-form" action="#"
 >
 
 
