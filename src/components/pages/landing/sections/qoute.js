@@ -14,7 +14,10 @@ const Quote = () => {
 
   return (
     <div {...handlers}>
-    <QuotePageContainer >
+    <QuotePageContainer     data-sal="fade"
+  data-sal-delay="100"
+  data-sal-duration="500"
+  data-sal-easing="ease">
         <QouteIcon src={open} alt="open quote" />
       <QouteContainer>
           

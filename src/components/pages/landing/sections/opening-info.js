@@ -6,36 +6,45 @@ import outside from "../../../../images/placeholders/openingLandscape.jpg"
 import OpeningLandscape from "./images/openingLandscape"
 import OpeningPortrait from "./images/openingPortrait"
 
-
 const OpeningInfo = () => {
   return (
     <OpeningInfoContainer>
-        <ImgContainer>
-       <OpeningPortrait/>
-      <OpeningLandscape/>
+      <ImgContainer
+      data-sal="fade"
+      data-sal-delay="100"
+      data-sal-duration="500"
+      data-sal-easing="ease"
+      >
+        <OpeningPortrait />
+        <OpeningLandscape />
       </ImgContainer>
-  
-      <OpeningInfoText>
+
+      <OpeningInfoText
+        data-sal="fade"
+        data-sal-delay="100"
+        data-sal-duration="500"
+        data-sal-easing="ease"
+      >
         <Heading>Location & opening hours: </Heading>
         <P bc2>
           Le Shoppe
           <br />
-          430 Little Collins St<br />
+          430 Little Collins St
+          <br />
           Melbourne 3000
         </P>
         <GoogleLink>
-          <a style={{textDecoration: `none`}}
+          <a
+            style={{ textDecoration: `none` }}
             href="https://goo.gl/maps/13ikoRhFJk1iQUVLA"
             target="_blank"
           >
             VIEW IN GOOGLE MAPS
           </a>
         </GoogleLink>
-        <P bc2>
-          Monday - Friday: 7.00am - 4.00pm
-        </P>
+        <P bc2>Monday - Friday: 7.00am - 4.00pm</P>
         {/* <OpeningHoursContainer> */}
-          {/* <Days>
+        {/* <Days>
             <ul>
               <li>
                 <P bc2>Monday</P>
@@ -124,22 +133,21 @@ export const OpeningHoursContainer = styled.div`
   }
 `
 export const Heading = styled.h1`
-font-size: 2rem;
-margin-bottom: 2.25rem;
-@media screen and (max-width: 700px) {
-    
+  font-size: 2rem;
+  margin-bottom: 2.25rem;
+  @media screen and (max-width: 700px) {
     margin-bottom: 1.5rem;
   }
 `
 
 export const GoogleLink = styled.h2`
-margin: 2.25rem 0;
-text-decoration: none;
-a {
-  font-size: 1rem!important;
-}
-@media screen and (max-width: 700px) {
-  font-size: 1rem;
+  margin: 2.25rem 0;
+  text-decoration: none;
+  a {
+    font-size: 1rem !important;
+  }
+  @media screen and (max-width: 700px) {
+    font-size: 1rem;
     margin: 1.5rem 0;
   }
 `
@@ -174,7 +182,7 @@ export const ImgPortraitSmall = styled.img`
 export const ImgLandscapeSmall = styled.img`
   width: 57%;
   @media screen and (max-width: 450px) {
-  width: 75%;
-  align-self: flex-end;
+    width: 75%;
+    align-self: flex-end;
   }
 `

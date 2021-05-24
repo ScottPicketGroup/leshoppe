@@ -16,13 +16,14 @@ const Subscribe = () => {
   }
   const handleSubmit = e => {
     e.preventDefault()
+    const timestamp = Date.now()
     if ((email && email.includes(".")) || email.includes("@")) {
       var myHeaders = new Headers()
       myHeaders.append(
         "Authorization",
         "Bearer 25183d2e-1266-4207-a9d3-a5d9422d94b0"
       )
-      myHeaders.append("Timestamp", "1619765391")
+      myHeaders.append("Timestamp", {timestamp})
       myHeaders.append("Content-Type", "application/json")
 
       var raw = JSON.stringify({

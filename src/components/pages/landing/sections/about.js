@@ -7,8 +7,13 @@ import AboutLandscape from "./images/aboutLandscape"
 
 const About = () => {
   return (
-    <AboutContainer>
-      <AboutText>
+    <AboutContainer
+
+    >
+      <AboutText  data-sal="fade"
+  data-sal-delay="100"
+  data-sal-duration="500"
+  data-sal-easing="ease">
         <Heading>
           About Le Shoppe
           
@@ -38,7 +43,10 @@ const About = () => {
       </AboutText>
       <ImgContainer>
      
-        <ImgPortraitSmall src={vertical} />
+        <ImgPortraitSmall src={vertical}  data-sal="fade"
+  data-sal-delay="100"
+  data-sal-duration="500"
+  data-sal-easing="ease"/>
         <AboutLandscape/>
       </ImgContainer>
     </AboutContainer>

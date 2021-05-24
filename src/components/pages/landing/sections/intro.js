@@ -5,10 +5,16 @@ import introImg from "../../../../images/placeholders/introLandscape.jpg"
 import IntroLandscape from "./images/introLandscape"
 const Intro = () => {
   return (
-    <IntroContainer>
-     <IntroLandscape/>
+    <IntroContainer  >
+     <IntroLandscape  data-sal="fade"
+  data-sal-delay="100"
+  data-sal-duration="500"
+  data-sal-easing="ease"/>
       
-      <IntroText>
+      <IntroText  data-sal="fade"
+  data-sal-delay="100"
+  data-sal-duration="500"
+  data-sal-easing="ease">
     < Pintro bc1 
       > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</Pintro>
         <P bc1>

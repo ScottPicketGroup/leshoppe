@@ -10,7 +10,10 @@ const MenuBoard = () => {
 
 
   return (
-    <MenuBoardPageContainer>
+    <MenuBoardPageContainer     data-sal="fade"
+    data-sal-delay="100"
+    data-sal-duration="500"
+    data-sal-easing="ease">
     <Carousel />
   
      
