@@ -80,12 +80,12 @@ const ContactUsForm = () => {
         {!thankyou ? (
             <>
  <SignUp 
- form method="post" data-netlify-honeypot="bot-field" data-netlify="true" name="contact-form" action="#"
+ name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" 
 >
 
 
 <input type="hidden" name="bot-field" />
-<input type="hidden" name="form-name" value="contact-form" />
+<input type="hidden" name="form-name" value="contact" />
 
  <ContactDetailsContainer>
      <ContactFormRow>
@@ -164,15 +164,15 @@ const ContactUsForm = () => {
     <CheckBox/>
        <Label bc2 style={{width: `90%`}}>I would like to receive communications about Scott Pickett Group services, events and matters of relevant interest.</Label>
    </TixboxContainer>
- 
+   <SignUpSubmit onClick={handleSubmit} err={error.email} type="submit">
+   SUBMIT
+ </SignUpSubmit> 
  </ContactDetailsContainer>
 
 
- 
+
 </SignUp>
-<SignUpSubmit onClick={handleSubmit} err={error.email} type="submit">
-   SUBMIT
- </SignUpSubmit>
+
  </>
         ) :
         (

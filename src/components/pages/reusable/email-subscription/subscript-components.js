@@ -11,8 +11,9 @@ export const SubContainer = styled.div`
   }
 `
 
-export const SignUp = styled.div`
+export const SignUp = styled.form`
 font-size: 1.25rem;
+
 @media screen and (max-width: 450px) {
   font-size: 0.75rem;
 }
@@ -97,6 +98,7 @@ export const SignUpSubmit = styled.button`
   margin-top: 1.75rem;
   font-size: 1rem;
   transition: all 0.2s ease;
+  width: 13rem;
   :hover {
     opacity: 75%;
     background: ${props => props.err ? 'red' : '#153e35'};
