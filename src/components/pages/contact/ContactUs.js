@@ -5,7 +5,10 @@ import ContactUsForm from "./contact-us/ContactUsForm"
 import ContactUsIntro from "./contact-us/ContactUsIntro"
 const ContactUs = () => {
   return (
-    <ContactUsContainer>
+    <ContactUsContainer  data-sal="fade"
+    data-sal-delay="100"
+    data-sal-duration="500"
+    data-sal-easing="ease">
       <ContactUsIntro/>
       <ContactUsForm/>
     </ContactUsContainer>

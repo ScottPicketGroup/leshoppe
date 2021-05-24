@@ -28,7 +28,7 @@ const ContactUsForm = () => {
   const [thankyou, setThankyou] = useState(false)
   const handleChange = e => {
     setInputs(inputs => ({ ...inputs, [e.target.name]: e.target.value }))
-    console.log(inputs.message)
+    
  
     !inputs.email.includes(".") || !inputs.email.includes("@") 
       ? setError(error => ({ ...error, email: true}) )
@@ -57,16 +57,23 @@ const ContactUsForm = () => {
   }
   
   const handleSubmit = e => {
-   
-   
-    // checkForm()
-    
+   const timestamp = Date.now()
+   checkForm()
+   if((   inputs.fName 
+    && inputs.sName 
+    && inputs.email 
+    && inputs.email.includes(".")) || inputs.email.includes("@"))   
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...inputs })
     })
-      .then()
+      .then(
+     
+          setThankyou(true)
+     
+
+      )
       .catch(error => alert(error));
     
       if ( inputs.newsletter === true && (inputs.email && inputs.email.includes(".")) || inputs.email.includes("@")) {
@@ -75,7 +82,7 @@ const ContactUsForm = () => {
           "Authorization",
           "Bearer 25183d2e-1266-4207-a9d3-a5d9422d94b0"
         )
-        myHeaders.append("Timestamp", "1619765391")
+        myHeaders.append("Timestamp", {timestamp})
         myHeaders.append("Content-Type", "application/json")
   
         var raw = JSON.stringify({
@@ -100,9 +107,7 @@ const ContactUsForm = () => {
       } 
 
       e.preventDefault()
-      setTimeout(() => {
-        setThankyou(true)
-      }, 500);
+      
   }
   return (
     <ContactUsFormContainer>

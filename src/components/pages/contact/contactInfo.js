@@ -5,10 +5,16 @@ import ContactIntroLandscape from "../landing/sections/images/contactInfoLandsca
 const ContactInfo = () => {
   return (
     <ContactInfoContainer>
-      <ContactImage>
+      <ContactImage  data-sal="fade"
+    data-sal-delay="100"
+    data-sal-duration="500"
+    data-sal-easing="ease">
         <ContactIntroLandscape/>
       </ContactImage>
-      <ContactText>
+      <ContactText  data-sal="fade"
+    data-sal-delay="100"
+    data-sal-duration="500"
+    data-sal-easing="ease">
         <PC bc1>
         Le Shoppe by Chancery Lane is the latest addition to the Scott Pickett Group venues. </PC>
 <PC bc1> Follow the links in the footer to our social channels so you don’t miss any of the action. We’ll share catering updates, new menu items and more.
