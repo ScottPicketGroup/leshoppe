@@ -60,11 +60,7 @@ const ContactUsForm = () => {
         {!thankyou ? (
             <>
  <SignUp 
- netlify
- data-netlify="true" 
- data-netlify-honepot="bot-field"
- method="post"
- name="contact">
+name="contact" method="POST" data-netlify="true">
  <ContactDetailsContainer>
      <ContactFormRow>
      <InputContainer>
