@@ -53,22 +53,25 @@ const ContactUsForm = () => {
   
   const handleSubmit = e => {
     e.preventDefault()
-    checkForm()
+    console.log(`inputs`, inputs)
+    // checkForm()
     fetch('/', {
       method: 'POST',
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(inputs).toString()
-    }).then(() => console.log('Form successfully submitted')).catch((error) =>
-      alert(error)).then(setThankyou())
+    }).then(() => console.log('Form successfully submitted', inputs)).catch((error) =>
+      alert(error))
     
-    
+      setThankyou()
   }
   return (
     <ContactUsFormContainer>
         {!thankyou ? (
             <>
  <SignUp 
-name="contact" method="POST" data-netlify="true">
+name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+  <input type="hidden" name="bot-field"/>
+  <input type="hidden" name="contact" value="contact"/>
  <ContactDetailsContainer>
      <ContactFormRow>
      <InputContainer>
