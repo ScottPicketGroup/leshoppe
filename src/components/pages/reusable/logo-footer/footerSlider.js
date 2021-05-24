@@ -17,7 +17,7 @@ export default class SimpleSlider extends Component {
       <div>
         <Sliderer {...settings}>
           <div>
-            <a href="http://www.chancerylane.com" target="_blank">
+            <a href="http://www.chancerylane.com.au" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="247.831"

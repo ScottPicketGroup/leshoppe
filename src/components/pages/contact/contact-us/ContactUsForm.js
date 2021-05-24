@@ -59,7 +59,7 @@ const ContactUsForm = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(inputs).toString()
     }).then(() => console.log('Form successfully submitted')).catch((error) =>
-      alert(error))
+      alert(error)).then(setThankyou())
     
     
   }
