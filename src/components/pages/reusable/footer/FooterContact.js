@@ -87,6 +87,7 @@ padding: 0;
 @media screen and (max-width: 450px) {
     width: 100%;
     margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
     font-size: .75rem;
 }
 `
