@@ -5,7 +5,7 @@ const CheckBox = () => {
 
     const handleChecked = e => {
         setChecked(!checked)
-        console.log(checked)
+       
     }
     return (
         <label>
