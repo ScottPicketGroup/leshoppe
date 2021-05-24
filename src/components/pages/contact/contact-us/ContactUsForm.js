@@ -57,18 +57,21 @@ const ContactUsForm = () => {
     // checkForm()
     
     
-      setThankyou(true)
+      setTimeout(() => {
+        setThankyou(true)
+      }, 500);
   }
   return (
     <ContactUsFormContainer>
         {!thankyou ? (
             <>
  <SignUp 
+ form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact-form"
 >
 
-<form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
+
 <input type="hidden" name="bot-field" />
-<input type="hidden" name="form-name" value="contact" />
+<input type="hidden" name="form-name" value="contact-form" />
 
  <ContactDetailsContainer>
      <ContactFormRow>
@@ -150,14 +153,14 @@ const ContactUsForm = () => {
  
  </ContactDetailsContainer>
 
-</form> 
+
  
 </SignUp>
 <SignUpSubmit onClick={handleSubmit} err={error.email} type="submit">
    SUBMIT
  </SignUpSubmit>
  </>
-        ):
+        ) :
         (
             <>
             <Label thankyou> Thank you for submitting your enquirey.</Label>
