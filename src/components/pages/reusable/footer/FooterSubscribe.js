@@ -43,7 +43,7 @@ margin-bottom: 1.75rem;
 }
 `
 export const PintroDesktop = styled(P)`
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 450px) {
 display:none;
 }
 `
