@@ -84,7 +84,7 @@ export const Heading = styled.h1`
 `
 export const Paragraph = styled(P)`
   margin-bottom: 2.5rem;
-  @media screen and (max-width: 450px) {
+  @media (max-width: 450px) {
     margin-bottom: 1.5rem;
     :last-child {
       margin-bottom: 0;
@@ -96,7 +96,7 @@ export const ImgContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  @media screen and (max-width: 450px) {
+  @media  (max-width: 450px) {
     flex-direction: column;
     width: 100%;
     order: 2;
@@ -104,7 +104,7 @@ export const ImgContainer = styled.div`
 `
 export const ImgPortraitSmall = styled.img`
   width: 40%;
-  @media screen and (max-width: 450px) {
+  @media (max-width: 450px) {
     width: 75%;
     margin-bottom: 3.5rem;
   }
@@ -113,7 +113,7 @@ export const ImgPortraitSmall = styled.img`
 
 export const ImgLandscapeSmall = styled.img`
   width: 57%;
-  @media screen and (max-width: 450px) {
+  @media (max-width: 450px) {
     width: 75%;
     align-self: flex-end;
   }
