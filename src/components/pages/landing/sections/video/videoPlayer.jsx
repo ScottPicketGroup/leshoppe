@@ -86,7 +86,7 @@ export const ReactPlayerr = styled(ReactPlayer) `
   transition: opacity 2s ease;
   aspect-ratio: 16/9;
   @media screen and (max-width: 450px) {
-    width: 75%;
+    width: 100%;
     align-self: flex-end;
   }
   :hover {
