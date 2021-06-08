@@ -16,7 +16,7 @@ module.exports = {
       options: {
         spaceId: `rgc4vkz2tcms`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        accessToken: 'REM3Hkix0qZRVnKuW3QmvXq7ADnpzemUyeJ3eHlnoho',
       },
     },
     {
@@ -47,14 +47,14 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
 
-    {
-      resolve: `gatsby-source-shopify`,
-      options: {
-        shopName: 'scottpickettgroup',
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-        verbose: true,
-      },
+    // {
+    //   resolve: `gatsby-source-shopify`,
+    //   options: {
+    //     shopName: 'scottpickettgroup',
+    //     accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+    //     verbose: true,
+    //   },
      
-    },
+    // },
   ],
 }
