@@ -72,7 +72,7 @@ const VideoPlayer = ({url}) => {
   height: 3rem;
   width: 5rem;
   border: none;
-  background: none;
+  background: transparent;
   float: right;
   `
 
