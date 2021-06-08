@@ -88,6 +88,7 @@ export const ReactPlayerr = styled(ReactPlayer) `
   @media screen and (max-width: 450px) {
     width: 100%;
     align-self: flex-end;
+    
   }
   :hover {
       pointer-events: none;
