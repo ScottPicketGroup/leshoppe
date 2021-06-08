@@ -7,20 +7,20 @@ import ProductList from "./shop-components/product-list/ProductList"
 const Shop = () => {
   
  
-    const data = useStaticQuery(graphql`
-    query Catagories {
-      allShopifyProduct {
-        edges {
-          node {
-            productType
-          }
-        }
-      }
-    }
-  `)
- useEffect(() => {
-  data.allShopifyProduct.edges.map(catagory => setCatagories(catagories => [...catagories, catagory.node.productType]))
- }, [])
+  //   const data = useStaticQuery(graphql`
+  //   query Catagories {
+  //     allShopifyProduct {
+  //       edges {
+  //         node {
+  //           productType
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+//  useEffect(() => {
+//   data.allShopifyProduct.edges.map(catagory => setCatagories(catagories => [...catagories, catagory.node.productType]))
+//  }, [])
   const [catagories, setCatagories] = useState([
     "All Products",
     
@@ -29,14 +29,14 @@ const Shop = () => {
 
   return (
     <>
-      <ShopIntro />
+      {/* <ShopIntro />
       <ShopCatagoryDropdown
         catagory={catagory}
         setCatagory={setCatagory}
         catagories={catagories}
         setCatagories={setCatagories}
       />
-      <ProductList catagory={catagory} />
+      <ProductList catagory={catagory} /> */}
     </>
   )
 }

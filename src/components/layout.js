@@ -45,11 +45,7 @@ const Layout = ({ children }) => {
   })
 
   function logit() {
-    globalDispatch({
-      type: "SETSCROLLPOS",
-      payload: window.pageYOffset,
-      logoLimit: pageHeight - footerHeight ,
-    })
+   console.log(window.pageYOffset)
   }
 
 

@@ -10,7 +10,7 @@ const FooterSubscribe = () => {
         <FooterSubscribeContainer>
             <Heading>Subscribe:</Heading>
             <PintroMobile>Subscribe to the Scott Pickett Group newsletter to stay up to date with special events, new menus and new venues. </PintroMobile>
-            <PintroDesktop bc3>Subscribe to the Scott Pickett Group newsletter to stay up to date with special events, new menus and new venues. </PintroDesktop>
+            
             <Subscribe/>
             <FooterMobile>
              <ChanceryLink href="http://www.chancerylane.com.au" target="blank">Visit Chancery Lane</ChanceryLink>
@@ -48,6 +48,7 @@ display:none;
 }
 `
 export const PintroMobile = styled.div`
+font-size: 1rem;
 @media screen and (max-width: 450px) {
 display:block;
 font-size: .75rem;
