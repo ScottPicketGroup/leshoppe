@@ -28,7 +28,7 @@ const VideoPlayer = ({url}) => {
       return (
         <ImgLandscape >
         <Background ref={el => (player = el)}/>
-          <Video autoPlay="autplay">
+          <Video autoPlay muted loop>
           <source src={video} type="video/mp4" />
           </Video>
         
