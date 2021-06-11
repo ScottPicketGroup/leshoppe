@@ -13,11 +13,11 @@ const VideoPlayer = ({url}) => {
   
   useEffect(() => {
     TweenLite.fromTo(player, .5, {
-      autoAlpha: 0,
-      backgroundColor: `black`,
+      autoAlpha: 1,
+      
       delay: 1
     }, {
-      autoAlpha: 1,
+      autoAlpha: 0,
       delay: 1
      
     })
@@ -27,10 +27,11 @@ const VideoPlayer = ({url}) => {
   console.log(player)
       return (
         <ImgLandscape >
-          <Video autoPlay='autoplay'>
+        <Background ref={el => (player = el)}/>
+          <Video autoPlay="autplay">
           <source src={video} type="video/mp4" />
           </Video>
-        <Background ref={el => (player = el)}/>
+        
           { !sound ? (
                 <Mute
                 onClick={() => setSound(true)}
@@ -69,16 +70,21 @@ const VideoPlayer = ({url}) => {
 export const Video = styled.video `
 height: 100%;
 width: 100%;
-position: relative;
+
 `
 export const Background = styled.div`
-
+position: absolute;
+z-index: 2;
+height: 100%;
+width: 100%;
+background: black;
 `
 
   export const ImgLandscape = styled.div`
   width: 57%;
   transition: opacity 2s ease;
   aspect-ratio: 16/9;
+  position: relative;
   @media screen and (max-width: 450px) {
     width: 100%;
     align-self: flex-end;
