@@ -14,78 +14,101 @@ const VideoPlayer = ({url}) => {
   let overlay = useRef(null)
 
   
-  useEffect(() => {
-    TweenLite.fromTo(overlay, .5, {
-      autoAlpha: 1,
+  // useEffect(() => {
+  //   TweenLite.fromTo(overlay, 1, {
+  //     autoAlpha: 1,
       
-      delay: 1
-    }, {
-      autoAlpha: 0,
-      delay: 2
+  //     delay: 1
+  //   }, {
+  //     autoAlpha: 0,
+      
      
-    })
-    setPlaying(true)
-  },[])
+  //   })
+  //   setPlaying(true)
+  // },[])
 
   const controlMute = () => {
     player.muted = !player.muted
   }
 
   console.log(player)
-      return (
+      return (<>
         <ImgLandscape data-sal="fade"
         data-sal-delay="100"
         data-sal-duration="500"
         data-sal-easing="ease">
-        <Background ref={el => (overlay = el)}>
-          <img src={logo} alt="le shoppe logo loading" />
-          <P bc3 style={{color:`white`}}>Loading ...</P>
+        <Background ref={el => (overlay = el)} onClick={controlMute}>
+        Click anywhere on the video to play audo
         </Background>
+        {/* <MuteButton onClick={controlMute} ><MuteCaption bc2>Click anywhere to play audio</MuteCaption></MuteButton> */}
           <Video autoPlay muted loop ref={el => (player = el)}>
           <source src={video} type="video/mp4" />
+          
           </Video>
         
-          <button onClick={controlMute} >unmute</button>
      
         </ImgLandscape>
+        
+       
+        </>
       )
     
   }
   
   export default VideoPlayer
 
-  export const Mute = styled.button`
-  height: 3rem;
-  width: 5rem;
-  border: none;
-  background: transparent;
-  float: right;
-  `
+
 
 export const Video = styled.video `
-height: 100%;
+min-height: 99%;
 width: 100%;
+position: relative;
+aspect-ratio: 16/9;
+`
+
+export const MuteButton = styled.div`
+position: absolute;
+z-index: 300;
+height: 99%;
+width: 100%;
+background: black;
+
+opacity: 0;
+color: #FDF9EE;
+display: flex;
+justify-content: flex-end;
+align-items: flex-start;
+padding: 1rem;
+transition: opacity .4s ease-in-out;
+
 
 `
+
+export const MuteCaption = styled(P)`
+position: absolute;
+opacity: 1;
+z-index: 1000;
+background: white;
+height: 3rem;
+width:3rem;
+`
+
 export const Background = styled.div`
 position: absolute;
-z-index: 2;
+z-index: 100;
 height: 100%;
 width: 100%;
 background: black;
+opacity: 0;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-transition: all 1s ease-ine;
-img {
-  opacity: 1;
-  stroke: white;
-  fill: white;
-  z-index: 3;
-  height: 35%;
-  width: 35%;
-}
+transition: opacity .3s ease-in;
+color: white;
+:hover {
+     opacity: .3;
+  }
 `
 
   export const ImgLandscape = styled.div`
@@ -94,11 +117,8 @@ img {
   aspect-ratio: 16/9;
   position: relative;
   @media screen and (max-width: 450px) {
-    width: 100%;
-    align-self: flex-end;
+   display: none;
     
   }
-  :hover {
-      pointer-events: none;
-  }
+
 `

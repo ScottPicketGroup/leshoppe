@@ -3,12 +3,14 @@ import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
 import introImg from "../../../../images/placeholders/introLandscape.jpg"
 import IntroLandscape from "./images/introLandscape"
-import VideoPlayer from "./video/videoPlayer"
+import VideoPlayer, { ImgLandscape } from "./video/videoPlayer"
 const Intro = () => {
   return (
     <IntroContainer>
       <>
-    <VideoPlayer url="https://www.youtube.com/watch?v=Rq5SEhs9lws" />
+    <VideoPlayer />
+    <IntroLandscape/>
+
 </>
       <IntroText
         data-sal="fade"
