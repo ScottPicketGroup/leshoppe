@@ -6,6 +6,10 @@ import IntroLandscape from "./images/introLandscape"
 const Intro = () => {
   return (
     <IntroContainer  >
+    <>
+        <VideoPlayer />
+        <IntroLandscape />
+      </>
      <IntroLandscape  data-sal="fade"
   data-sal-delay="100"
   data-sal-duration="500"
