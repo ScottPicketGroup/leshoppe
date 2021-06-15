@@ -9,7 +9,7 @@ const FooterContact = () => {
           <PaddressDesktop bc3>
           Le Shoppe
           <br />
-          513 Elizabeth Street <br />
+          430 Little Collins St <br />
           Melbourne 3000
           </PaddressDesktop>
           <PaddressMob>
