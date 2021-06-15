@@ -9,7 +9,7 @@ export const ImgPortrait = styled(Img)`
   }
 `
 export const ImgLandscape = styled(Img)`
-width: 100%;
+ width: 57%;
   @media screen and (max-width: 450px) {
     width: 75%;
     align-self: flex-end;
