@@ -9,12 +9,12 @@ const Intro = () => {
     <IntroContainer  >
     <>
         <VideoPlayer />
-        <IntroLandscape />
-      </>
-     <IntroLandscape  data-sal="fade"
+      <IntroLandscape  data-sal="fade"
   data-sal-delay="100"
   data-sal-duration="500"
   data-sal-easing="ease"/>
+      </>
+     
       
       <IntroText  data-sal="fade"
   data-sal-delay="100"
