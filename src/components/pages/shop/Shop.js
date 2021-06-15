@@ -6,8 +6,8 @@ import ShopIntro from "./shop-components/ShopIntro"
 import ProductList from "./shop-components/product-list/ProductList"
 const Shop = () => {
   
- 
-    const data = useStaticQuery(graphql`
+ /* 
+   const data = useStaticQuery(graphql`
     query Catagories {
       allShopifyProduct {
         edges {
@@ -18,6 +18,7 @@ const Shop = () => {
       }
     }
   `)
+
  useEffect(() => {
   data.allShopifyProduct.edges.map(catagory => setCatagories(catagories => [...catagories, catagory.node.productType]))
  }, [])
@@ -25,10 +26,13 @@ const Shop = () => {
     "All Products",
     
   ])
+  
+    */
   const [catagory, setCatagory] = useState("Sort By Catagory")
 
   return (
     <>
+    /*
       <ShopIntro />
       <ShopCatagoryDropdown
         catagory={catagory}
@@ -37,6 +41,7 @@ const Shop = () => {
         setCatagories={setCatagories}
       />
       <ProductList catagory={catagory} />
+      */
     </>
   )
 }
