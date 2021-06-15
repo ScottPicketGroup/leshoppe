@@ -30,7 +30,9 @@ export default IntroLandscape
 
 export const ImgLandscape = styled(Img)`
   width: 57%;
+  display: none;
   @media screen and (max-width: 450px) {
+    display: inline;
     width: 75%;
     align-self: flex-end;
   }
