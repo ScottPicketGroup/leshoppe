@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
 import introImg from "../../../../images/placeholders/introLandscape.jpg"
 import IntroLandscape from "./images/introLandscape"
+import VideoPlayer, { ImgLandscape } from "./video/videoPlayer"
 const Intro = () => {
   return (
     <IntroContainer  >
