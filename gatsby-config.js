@@ -3,7 +3,7 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Le Shoppe`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Welcome to Le Shoppe`,
     author: `@marek.reid`,
   },
   plugins: [
@@ -47,13 +47,13 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
 
-    {
-      resolve: `gatsby-source-shopify`,
-      options: {
-        shopName: 'scottpickettgroup',
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-        verbose: true,
-      },
+   // shop disabled until required {
+     // resolve: `gatsby-source-shopify`,
+     // options: {
+       // shopName: 'scottpickettgroup',
+       // accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+      //  verbose: true,
+      //},
      
     },
   ],
