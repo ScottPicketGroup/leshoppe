@@ -38,7 +38,7 @@ const VideoPlayer = ({url}) => {
         data-sal-duration="500"
         data-sal-easing="ease">
         <Background ref={el => (overlay = el)} onClick={controlMute}>
-        Click anywhere on the video to play audo
+        Click anywhere on the video to play audio
         </Background>
         {/* <MuteButton onClick={controlMute} ><MuteCaption bc2>Click anywhere to play audio</MuteCaption></MuteButton> */}
           <Video autoPlay muted loop ref={el => (player = el)}>
