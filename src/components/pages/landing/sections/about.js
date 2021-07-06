@@ -4,6 +4,7 @@ import { P } from "../../../styled-components/GlobalStyles"
 import landscape from "../../../../images/placeholders/aboutLandscape.jpg"
 import vertical from "../../../../images/placeholders/aboutPortrait.jpg"
 import AboutLandscape from "./images/aboutLandscape"
+import AboutPortrait from "./images/aboutPortrait"
 
 const About = () => {
   return (
@@ -43,10 +44,11 @@ const About = () => {
       </AboutText>
       <ImgContainer>
       <AboutLandscape/>
-        <ImgPortraitSmall src={vertical}  data-sal="fade"
-  data-sal-delay="100"
-  data-sal-duration="500"
-  data-sal-easing="ease"/>
+           <AboutPortraot/>
+       // <ImgPortraitSmall src={vertical}  data-sal="fade"  
+  //  data-sal-delay="100"
+    //data-sal-duration="500"
+    //data-sal-easing="ease"/>
      
       </ImgContainer>
     </AboutContainer>
