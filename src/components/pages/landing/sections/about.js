@@ -42,12 +42,12 @@ const About = () => {
         </Paragraph>
       </AboutText>
       <ImgContainer>
-     
+      <AboutLandscape/>
         <ImgPortraitSmall src={vertical}  data-sal="fade"
   data-sal-delay="100"
   data-sal-duration="500"
   data-sal-easing="ease"/>
-        <AboutLandscape/>
+     
       </ImgContainer>
     </AboutContainer>
   )
@@ -96,6 +96,7 @@ export const ImgContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  position: relative;
   @media screen and (max-width: 450px) {
     flex-direction: column;
     width: 100%;

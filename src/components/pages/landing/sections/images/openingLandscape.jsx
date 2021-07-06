@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import {graphql, useStaticQuery } from 'gatsby'
-import { ImgLandscape } from './introLandscape'
+import { ImgLandscape } from './image-components'
 const OpeningLandscape = () => {
 
 const data = useStaticQuery(graphql`

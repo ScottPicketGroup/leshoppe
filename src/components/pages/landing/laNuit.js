@@ -5,7 +5,7 @@ import img1 from "../../../images/laNuit.gif"
 const LaNuit = () => {
   return (
     <IntroContainer>
-      <ImgLandScape img src={img1} alt="Otter dancing with a fish"/>
+      <GifLandscape img src={img1} alt="Otter dancing with a fish"/>
      
 
       <IntroText
@@ -48,16 +48,8 @@ export const IntroContainer = styled.div`
     margin-bottom: 6rem;
   }
 `
-export const ImgLandscape = styled.div`
-  width: 57%;
-  transition: opacity 2s ease;
-  aspect-ratio: 16/9;
-  position: relative;
-  @media screen and (max-width: 450px) {
-    display: none;
-  }
-`
-export const ImgLandScape = styled.img`
+
+export const GifLandscape = styled.img`
   width: 58%;
 
   height: 100%;

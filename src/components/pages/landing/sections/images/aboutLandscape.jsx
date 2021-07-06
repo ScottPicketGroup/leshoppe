@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import {graphql, useStaticQuery } from 'gatsby'
-import { ImgLandscape } from './introLandscape'
+import { ImgLandscape } from './image-components'
 const AboutLandscape = () => {
 
 const data = useStaticQuery(graphql`
@@ -28,4 +28,3 @@ const {fluid, title} = data.allContentfulAsset.edges[0].node
 }
 
 export default AboutLandscape
-
