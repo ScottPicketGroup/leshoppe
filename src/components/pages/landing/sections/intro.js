@@ -66,15 +66,8 @@ export const IntroText = styled.div`
   }
 `
 export const Pintro = styled(P)`
-<<<<<<< HEAD
   margin-bottom: 36px;
   @media screen and (max-width: 450px) {
     margin-bottom: 24px;
   }
-=======
-margin-bottom: 36px;
-@media screen and (max-width: 450px) {
-margin-bottom: 24px;
-}
->>>>>>> 7227c89dd5de497cf2bad2ccf1896a2dbfdfe907
 `

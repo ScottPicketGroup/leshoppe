@@ -1,10 +1,5 @@
 
 import React, {useState, useRef, useEffect} from 'react'
-<<<<<<< HEAD
-import ReactPlayer from 'react-player'
-=======
-
->>>>>>> 7227c89dd5de497cf2bad2ccf1896a2dbfdfe907
 import styled from 'styled-components'
 import {gsap, TweenLite} from 'gsap'
 import {P} from '../../../../styled-components/GlobalStyles'
@@ -42,11 +37,7 @@ const VideoPlayer = ({url}) => {
         data-sal-duration="500"
         data-sal-easing="ease">
         <Background ref={el => (overlay = el)} onClick={controlMute}>
-<<<<<<< HEAD
-        Click anywhere on the video to play audo
-=======
         Click anywhere on the video to play audio
->>>>>>> 7227c89dd5de497cf2bad2ccf1896a2dbfdfe907
         </Background>
         {/* <MuteButton onClick={controlMute} ><MuteCaption bc2>Click anywhere to play audio</MuteCaption></MuteButton> */}
           <Video autoPlay muted loop ref={el => (player = el)}>
