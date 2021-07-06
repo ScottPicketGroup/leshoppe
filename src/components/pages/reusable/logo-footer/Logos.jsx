@@ -1523,7 +1523,9 @@ align-items: center;
 animation-duration: 15s;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
- 
+  @media (max-width: 450px) {
+    padding: 1rem 0;
+  }
   /* @media screen and (max-width: 450px) {
     .slick-list {
       width: 1500px;
