@@ -43,7 +43,7 @@ const About = () => {
         </Paragraph>
       </AboutText>
       <ImgContainer>
-      <AboutLandscape/>
+      <AboutLandscape marginBottom="3.5rem"/>
            <AboutPortrait/>
        
      
