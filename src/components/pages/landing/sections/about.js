@@ -44,7 +44,7 @@ const About = () => {
       </AboutText>
       <ImgContainer>
       <AboutLandscape/>
-           <AboutPortraot/>
+           <AboutPortrait/>
        // <ImgPortraitSmall src={vertical}  data-sal="fade"  
   //  data-sal-delay="100"
     //data-sal-duration="500"
