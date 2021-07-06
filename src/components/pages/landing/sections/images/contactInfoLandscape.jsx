@@ -24,7 +24,7 @@ query contactLandscape {
 `)
 const {fluid, title} = data.allContentfulAsset.edges[0].node
     return (
-        <ImgLandscape fluid={fluid} alt={title} />
+        <ImgLandscape fluid={fluid} alt={title} full/>
     )
 }
 

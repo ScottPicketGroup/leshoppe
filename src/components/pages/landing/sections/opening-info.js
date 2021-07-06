@@ -36,7 +36,7 @@ const OpeningInfo = () => {
         <GoogleLink>
           <a
             style={{ textDecoration: `none` }}
-            href="https://goo.gl/maps/13ikoRhFJk1iQUVLA"
+            href="https://goo.gl/maps/HTxEaaJKiy3jfuNcA"
             target="_blank"
           >
             VIEW IN GOOGLE MAPS

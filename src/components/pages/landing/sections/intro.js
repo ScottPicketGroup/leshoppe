@@ -6,19 +6,22 @@ import IntroLandscape from "./images/introLandscape"
 import VideoPlayer, { ImgLandscape } from "./video/videoPlayer"
 const Intro = () => {
   return (
-    <IntroContainer>
-      <>
-    <VideoPlayer />
-    <IntroLandscape/>
-
-</>
-      <IntroText
-        data-sal="fade"
-        data-sal-delay="100"
-        data-sal-duration="500"
-        data-sal-easing="ease"
-      >
-        <Pintro bc1> Bienvenue! Welcome to Le Shoppe by Chancery Lane.</Pintro>
+    <IntroContainer  >
+    <>
+        <VideoPlayer />
+      <IntroLandscape  data-sal="fade"
+  data-sal-delay="100"
+  data-sal-duration="500"
+  data-sal-easing="ease"/>
+      </>
+     
+      
+      <IntroText  data-sal="fade"
+  data-sal-delay="100"
+  data-sal-duration="500"
+  data-sal-easing="ease">
+    < Pintro bc1 
+      > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</Pintro>
         <P bc1>
           Le Shoppe is Scott Pickett’s European-inspired coffee bar and
           provedore, located at 430 Little Collins St, Melbourne. Adjoining
@@ -63,8 +66,15 @@ export const IntroText = styled.div`
   }
 `
 export const Pintro = styled(P)`
+<<<<<<< HEAD
   margin-bottom: 36px;
   @media screen and (max-width: 450px) {
     margin-bottom: 24px;
   }
+=======
+margin-bottom: 36px;
+@media screen and (max-width: 450px) {
+margin-bottom: 24px;
+}
+>>>>>>> 7227c89dd5de497cf2bad2ccf1896a2dbfdfe907
 `

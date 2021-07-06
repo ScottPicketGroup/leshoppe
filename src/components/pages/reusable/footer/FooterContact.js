@@ -9,13 +9,13 @@ const FooterContact = () => {
           <PaddressDesktop bc3>
           Le Shoppe
           <br />
-          513 Elizabeth Street <br />
+          430 Little Collins St <br />
           Melbourne 3000
           </PaddressDesktop>
           <PaddressMob>
           Le Shoppe
           <br />
-          513 Elizabeth Street <br />
+          430 little Collins St <br />
           Melbourne 3000
           </PaddressMob>
         </Address>
@@ -87,6 +87,7 @@ padding: 0;
 @media screen and (max-width: 450px) {
     width: 100%;
     margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
     font-size: .75rem;
 }
 `
