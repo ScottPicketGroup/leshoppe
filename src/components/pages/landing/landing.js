@@ -10,6 +10,7 @@ import Quote from './sections/qoute'
 import Footer from '../reusable/footer/Footer'
 
 import { PageBackground, Section1, Test } from '../../styled-components/GlobalStyles'
+import LaNuit from './laNuit'
 
 const Landing = () => {
 
@@ -20,6 +21,7 @@ const Landing = () => {
          
          <Intro/>
          <About/>
+         <LaNuit/>
          <Quote/>
          <MenuBoard/>
          <OpeningInfo/>
