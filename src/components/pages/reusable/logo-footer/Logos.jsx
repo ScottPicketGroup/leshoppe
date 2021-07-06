@@ -1512,7 +1512,7 @@ const moveSlideshow = keyframes`
 
 const Logos = styled.div`
 display: flex;
-width: 2840px;
+width: 3010px;
 align-items: center;
 
   margin: 0 auto;
