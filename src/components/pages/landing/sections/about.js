@@ -47,7 +47,7 @@ const About = () => {
   data-sal-delay="100"
   data-sal-duration="500"
   data-sal-easing="ease"/>
-     
+     <AboutLandscape/>
       </ImgContainer>
     </AboutContainer>
   )
