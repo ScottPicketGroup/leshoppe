@@ -2,7 +2,7 @@ import React from 'react'
 
 import {graphql, useStaticQuery } from 'gatsby'
 import { ImgPortrait } from './image-components'
-const aboutPortrait = () => {
+const AboutPortrait = () => {
 
 const data = useStaticQuery(graphql`
 query aboutPortrait {
@@ -27,6 +27,6 @@ const {fluid, title} = data.allContentfulAsset.edges[0].node
     )
 }
 
-export default aboutPortrait
+export default AboutPortrait
 
 
