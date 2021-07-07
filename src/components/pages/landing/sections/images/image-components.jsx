@@ -14,6 +14,6 @@ export const ImgLandscape = styled(Img)`
   @media screen and (max-width: 450px) {
     width: 75%;
     align-self: flex-end;
-    margin-bottom: ${ props => props.marginBottom ? props.marginBottom : ``};
+    margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
   }
 `
