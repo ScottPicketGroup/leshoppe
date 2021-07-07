@@ -23,7 +23,7 @@ query imageone {
 `)
 const {fluid, title} = data.allContentfulAsset.edges[0].node
     return (
-        <ImgLandscape fluid={fluid} alt={title} />
+        <ImgLandscape fluid={fluid} alt={title} marginBottom="3.5rem"/>
     )
 }
 
