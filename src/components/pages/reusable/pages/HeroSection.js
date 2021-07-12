@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import shopSquare from '../../../../images/placeholders/shopSqaure.jpg'
+import BackgroundLogo from '../background-logo/BackgroundLogo'
 
-const HeroSection = () => {
+const HeroSection = ({imageHeight}) => {
     
   
     return (
         <HeroContainer>
-            <ImgSqaure src={shopSquare} alt='man in a butchers apron'/>
+          <BackgroundLogo imageHeight={imageHeight}/>
         </HeroContainer>
     )
 }

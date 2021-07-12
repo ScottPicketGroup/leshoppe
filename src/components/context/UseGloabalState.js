@@ -1,41 +1,35 @@
-import { elementType } from "prop-types"
-import { useReducer, usEffect } from "react"
 
+import React from "react"
 
+export const GlobalStateContext = React.createContext()
+export const GlobalDispatchContext = React.createContext()
 
-
-  const reducer = (state, action) => {
-    
-    switch (action.type) {
-      case "WINDOW": 
-        return {
-          ...state,
-          logoLimit: action.logoLimit 
-        }
-        
-     
-        
-     
-       
-      default: {
-        return state
-      }
-    }
-  }
-
-
-
-const useGlobalState = () => {
-  const [globalState, globalDispatch] = useReducer(reducer, {
-       
-  })
-
-  return { globalState, globalDispatch }
+const initialState = {
+  theme: "light",
 }
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "TOGGLE_THEME": {
+      return {
+        ...state,
+        theme: state.theme === "light" ? "dark" : "light",
+      }
+    }
+    default:
+      throw new Error("Bad Action Type")
+  }
+}
 
+const GlobalContextProvider = ({ children }) => {
+  const [state, dispatch] = React.useReducer(reducer, initialState)
+  return (
+    <GlobalStateContext.Provider value={state}>
+      <GlobalDispatchContext.Provider value={dispatch}>
+        {children}
+      </GlobalDispatchContext.Provider>
+    </GlobalStateContext.Provider>
+  )
+}
 
-
-
-
-export default useGlobalState
+export default GlobalContextProvider

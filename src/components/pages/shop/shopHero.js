@@ -1,8 +1,8 @@
 import React, {useEffect, useState, useRef, useLayoutEffect, useContext} from 'react'
 import styled from 'styled-components'
 import landingSqaure from '../../../images/placeholders/contactHero.jpg'
-import BackgroundLogo from '../../pages/reusable/background-logo/BackgroundLogo'
-const ContactHero = ({imageHeight}) => {
+import BackgroundLogo from '../reusable/background-logo/BackgroundLogo'
+const ShopHero = ({imageHeight}) => {
    
 
     const [size, setSize] = useState([0, 0])
@@ -37,7 +37,7 @@ let imgContainer = useRef(null)
     )
 }
 
-export default ContactHero
+export default ShopHero
 
 export const HeroContainer = styled.div`
 width: 100%;

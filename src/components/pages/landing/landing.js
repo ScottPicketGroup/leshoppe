@@ -1,33 +1,27 @@
-import React from 'react'
+import React from "react"
 
-import LogoFooter from '../reusable/logo-footer/LogoFooter'
-import About from './sections/about'
-import Hero from './sections/hero'
-import Intro from './sections/intro'
-import MenuBoard from './sections/menu-board/MenuBoard'
-import OpeningInfo from './sections/opening-info'
-import Quote from './sections/qoute'
-import Footer from '../reusable/footer/Footer'
+import About from "./sections/about"
+import Hero from "./sections/hero"
+import Intro from "./sections/intro"
+import MenuBoard from "./sections/menu-board/MenuBoard"
+import OpeningInfo from "./sections/opening-info"
+import Quote from "./sections/qoute"
 
-import { PageBackground, Section1, Test } from '../../styled-components/GlobalStyles'
-import LaNuit from './laNuit'
+import { Section1 } from "../../styled-components/GlobalStyles"
+import LaNuit from "./laNuit"
 
 const Landing = () => {
-
-    return ( 
-            <Section1>
-                
-                <Hero />
-         
-         <Intro/>
-         <About/>
-         <LaNuit/>
-         <Quote/>
-         <MenuBoard/>
-         <OpeningInfo/>
-            </Section1>
-    )
+  return (
+    <Section1>
+      <Hero />
+      <Intro />
+      <About />
+      <LaNuit />
+      <Quote />
+      <MenuBoard />
+      <OpeningInfo />
+    </Section1>
+  )
 }
 
 export default Landing
-

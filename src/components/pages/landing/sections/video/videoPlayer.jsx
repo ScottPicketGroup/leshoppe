@@ -1,10 +1,6 @@
 
-import React, {useState, useRef, useEffect} from 'react'
-<<<<<<< HEAD
+import React, {useRef} from 'react'
 import ReactPlayer from 'react-player'
-=======
-
->>>>>>> 7227c89dd5de497cf2bad2ccf1896a2dbfdfe907
 import styled from 'styled-components'
 import {gsap, TweenLite} from 'gsap'
 import {P} from '../../../../styled-components/GlobalStyles'
@@ -12,7 +8,6 @@ import logo from '../../../../../images/logos/leshoppe.svg'
 import video from '../../../../../images/introVideo.mp4'
 const VideoPlayer = ({url}) => {
   const [sound, setSound] = React.useState(true)
-  const [opacity, setOpacity] = React.useState(`100%`)
   const [playing, setPlaying] = React.useState(false)
   let player = useRef(null)
   let overlay = useRef(null)
@@ -42,11 +37,7 @@ const VideoPlayer = ({url}) => {
         data-sal-duration="500"
         data-sal-easing="ease">
         <Background ref={el => (overlay = el)} onClick={controlMute}>
-<<<<<<< HEAD
-        Click anywhere on the video to play audo
-=======
         Click anywhere on the video to play audio
->>>>>>> 7227c89dd5de497cf2bad2ccf1896a2dbfdfe907
         </Background>
         {/* <MuteButton onClick={controlMute} ><MuteCaption bc2>Click anywhere to play audio</MuteCaption></MuteButton> */}
           <Video autoPlay muted loop ref={el => (player = el)}>

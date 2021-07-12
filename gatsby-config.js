@@ -20,6 +20,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-rest-api',
+      options: {
+        endpoints: [
+          'https://fakestoreapi.com/products'
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

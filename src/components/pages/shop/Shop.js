@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import ShopCatagoryDropdown from "./shop-components/dropdown/ShopCatagoryDropdown"
 import ShopIntro from "./shop-components/ShopIntro"
 import ProductList from "./shop-components/product-list/ProductList"
-const Shop = () => {
-  
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../../context/GlobalContextProvider"
+import BackgroundLogo from "../reusable/background-logo/BackgroundLogo"
+const Shop = ({imageHeight}) => {
+  const dispatch = useContext(GlobalDispatchContext)
+  const state = useContext(GlobalStateContext)
  /* 
    const data = useStaticQuery(graphql`
     query Catagories {
@@ -18,30 +24,44 @@ const Shop = () => {
       }
     }
   `)
-
+  */
  useEffect(() => {
-  data.allShopifyProduct.edges.map(catagory => setCatagories(catagories => [...catagories, catagory.node.productType]))
- }, [])
+  // data.allShopifyProduct.edges.map(catagory => setCatagories(catagories => [...catagories, catagory.node.productType]))
+  // state.products && state.products.map(item => setCatagories(catagories => [...catagories, item.category]))
+
+  const arr = []
+  state.products && state.products.map(item => {
+   arr.push(item.category) 
+  })
+  
+  const removeDuplicates = arr.filter(function(item, pos) {
+    return arr.indexOf(item) == pos
+  })
+  const catagoryList = catagories.concat(removeDuplicates)
+setCatagories(catagoryList)
+ }, [state])
   const [catagories, setCatagories] = useState([
     "All Products",
     
   ])
   
-    */
+  
   const [catagory, setCatagory] = useState("Sort By Catagory")
 
   return (
     <>
-    /*
-      {/* <ShopIntro />
+    <BackgroundLogo imageHeight={imageHeight}/>
+    <ShopIntro />
+    
+      
       <ShopCatagoryDropdown
         catagory={catagory}
         setCatagory={setCatagory}
         catagories={catagories}
         setCatagories={setCatagories}
       />
-      <ProductList catagory={catagory} /> */}
-      */
+      
+      <ProductList catagory={catagory} />
     </>
   )
 }

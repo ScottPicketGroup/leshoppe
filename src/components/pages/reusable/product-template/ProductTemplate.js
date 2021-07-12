@@ -12,18 +12,17 @@ import OrderInfo from "./order-section/OrderInfo"
 import ProductContainer from "./order-section/ProductContainer"
 import RecommendationList from "./recommendations-section/product-list/ProductList"
 import Layout from "../../../layout"
-const ProductTemplate = ({ pageContext }) => {
-
+const ProductTemplate = ({ pageContext, state }) => {
+console.log(state)
   return (
     <Layout>
-      <Page>
+  
         <Section1>
           <ProductContainer product={pageContext}/>
           <RecommendationList />
-          <LogoFooter />
-          <Footer />
+      
         </Section1>
-      </Page>
+     
     </Layout>
   )
 }
