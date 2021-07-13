@@ -25,6 +25,19 @@ const Shop = ({imageHeight}) => {
     }
   `)
   */
+
+  useEffect(() => {
+      
+    fetch('https://fakestoreapi.com/products')
+    .then(res=>res.json())
+  
+    .then(json=> 
+      dispatch({
+        type: "PRODUCTS",
+        products: json
+      })
+      )
+  },[])
  useEffect(() => {
   // data.allShopifyProduct.edges.map(catagory => setCatagories(catagories => [...catagories, catagory.node.productType]))
   // state.products && state.products.map(item => setCatagories(catagories => [...catagories, item.category]))

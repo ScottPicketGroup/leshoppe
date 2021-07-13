@@ -35,20 +35,11 @@ function reducer(state, action) {
   }
 }
 
+
+
 const GlobalContextProvider = ({ children }) => {
-  const [products, setProducts] = useState()
-  useEffect(() => {
-      
-    fetch('https://fakestoreapi.com/products')
-    .then(res=>res.json())
-  
-    .then(json=> 
-      dispatch({
-        type: "PRODUCTS",
-        products: json
-      })
-      )
-  },[])
+ 
+
   const [state, dispatch] = React.useReducer(reducer, initialState)
   return (
     <GlobalStateContext.Provider value={state}>
