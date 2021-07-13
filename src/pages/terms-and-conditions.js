@@ -11,7 +11,7 @@ import FooterLogoSlider from "../components/pages/reusable/logo-footer/ImageSlid
 
 
 const TnCs = (menuOpen, setMenuOpen) => (
-  <GlobalStateProvider>
+
   
     <Layout>
       <SEO title="Terms and Conditions" />
@@ -80,7 +80,7 @@ const TnCs = (menuOpen, setMenuOpen) => (
         </TnCsContainer>
     
     </Layout>
-    </GlobalStateProvider>
+ 
 )
 
 export default TnCs
