@@ -34,6 +34,7 @@ import MenuLandscape from "../landing/sections/images/menuLandscape"
               <MenuLink to="/" onClick={() => setMenuOpen(false)}>Home</MenuLink>
              
               <MenuLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</MenuLink>
+              <MenuLink to="/shop" onClick={() => setMenuOpen(false)}>Shop</MenuLink>
               <MenuLink >-</MenuLink>
               <MenuLink style={{marginBottom: 0}} href="http://www.chancerylane.com.au" target="blank">
                 Visit Chancery Lane

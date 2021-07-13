@@ -5,6 +5,3 @@ const GlobalContextProvider = require("./src/components/context/GlobalContextPro
 exports.wrapRootElement = ({ element }) => {
   return <GlobalContextProvider>{element}</GlobalContextProvider>
 }
-
-
-
