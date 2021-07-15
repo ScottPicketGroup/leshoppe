@@ -14,7 +14,7 @@ const ProductCard = ({ product, catagory }) => {
   } = product
   
 
-
+console.log(id)
 
   return (
     <>

@@ -5,11 +5,11 @@ import { P } from '../../../../../../styled-components/GlobalStyles'
 import DropdownArrow from "./DropdownArrow"
 import Qauntities from "./Qauntities"
 import installMediaQueryWatcher from './mediaQueryWatcher'
-const ProductQauntityDropdown = ({variants}) => {
+const ProductQauntityDropdown = ({variants, qauntity, setQauntity}) => {
   const [open, setOpen] = useState(false)
   const [menuLabel, setMenuLabel] = useState("QAUNTITY - ")
   const [itemsAvailable, setItemsAvailable] = useState(5)
-  const [qauntity, setQauntity] = useState(1)
+  
   let menu = useRef(null)
 
   const openMenu = () => { 

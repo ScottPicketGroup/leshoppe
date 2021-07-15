@@ -1,10 +1,24 @@
-import React from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import styled from 'styled-components'
 import { Link } from "gatsby"
 import {P} from '../../../../../styled-components/GlobalStyles'
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../../../../../context/GlobalContextProvider"
+import useLocalStorage from '../../../../../context/useLocalStorage'
 import ProductQauntityDropdown from './dropdown/ProductQauntityDropdown'
 import Slider from './ProductCarousel.jsx/Slider'
 const Product = ({product}) => {
+  const state = useContext(GlobalStateContext)
+  const dispatch = useContext(GlobalDispatchContext)
+  const [qauntity, setQauntity] = useState(1)
+  const [itemToOrder, setItemToOrder] = useState(
+    {item: product.product,
+    amount: 0
+    }
+  )
+  const [cart, setCart] = useLocalStorage("cart", []);
     const {
         title,
         description,
@@ -13,7 +27,85 @@ const Product = ({product}) => {
         category,
         endpointId
       } = product.product
-      console.log(product)
+    
+      useEffect(() => {
+     
+       setItemToOrder({...itemToOrder, ['amount']: qauntity})
+      }, [qauntity])
+
+      const addToCart = () => {
+        
+        
+
+        if (cart.length === 0) {
+          const newCart = []
+          newCart.push(itemToOrder)
+          setCart(newCart)
+                
+              } else if (cart.some(e => e.item.endpointId === endpointId))  {
+                const update = cart.some(check)
+                function check(item, i) {
+         
+                  if (item.item.endpointId === endpointId) 
+                  {const newCart = [...cart];
+                  newCart[i].amount = itemToOrder.amount + newCart[i].amount
+                  setCart(newCart)}
+                    console.log(cart)
+                }
+              } else {
+                const addToExistingCart = cart.slice()
+                addToExistingCart.push(itemToOrder)
+                setCart(addToExistingCart)
+              }
+
+      //   if (cart.some(e => e.item.endpointId === endpointId)) 
+      //   {
+      //     setItemToOrder({...itemToOrder, ['amount']: qauntity })
+      //     const c = cart.slice()
+          
+
+      // }
+       
+
+    //     if (cart.length === 0) {
+    //       const newCart = []
+    //       newCart.push(itemToOrder)
+    //       setCart(newCart)
+    //       console.log(`cart`, cart)
+    //     } else {
+    //       const addToExistingCart = cart.slice()
+    //       addToExistingCart.push(itemToOrder)
+    //       setCart(addToExistingCart)
+    //     }
+      
+    //     dispatch({
+    //       type: "CART",
+    //       items: state.cartItems + 1,
+    //       cartProducts: itemToOrder
+    //     })
+    // if (state.cartProducts.length > -1) {
+      
+    //   dispatch({
+    //     type: "CART",
+    //     items: state.cartItems + 1,
+    //     cartProducts: itemToOrder
+    //   })
+    // } else if (state.cartProducts.some(e => e.item.endpointId === endpointId)) {
+    //   dispatch({
+    //     type: "CART",
+    //     items: state.cartItems + 1,
+    //     cartProducts: itemToOrder
+    //   })
+    // }
+}
+       
+
+
+
+
+
+
+
     return (
         <ProductContainer>
             <ProductTextConatiner>
@@ -27,8 +119,12 @@ const Product = ({product}) => {
                 </ProductInfoContainer>
                 <ProductPurchaseContainer>
               
-                    <ProductQauntityDropdown/>
-                    <AddToCartButton>Add To Cart</AddToCartButton>
+                    <ProductQauntityDropdown 
+                      setQauntity={setQauntity}
+                      qauntity={qauntity}/>
+                    <AddToCartButton
+                      onClick={addToCart}
+                    >Add To Cart</AddToCartButton>
                 </ProductPurchaseContainer>
             </ProductTextConatiner>
 

@@ -23,8 +23,8 @@ import MenuLandscape from "../landing/sections/images/menuLandscape"
             
             <PMenu  menu onClick={() => setMenuOpen(false)} style={{display: `flex`, alignItems: `center`}}>
             <SVG xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 19.085 19.085" style={{marginRight: `1.5rem`}}>
-  <path id="Path_11769" data-name="Path 11769" d="M2807.2-13381l18.025,18.024" transform="translate(-2806.668 13381.53)" fill="none" stroke-width="1.5"/>
-  <path id="Path_11770" data-name="Path 11770" d="M2807.2-13381l18.025,18.024" transform="translate(-13362.445 -2806.668) rotate(90)" fill="none"  stroke-width="1.5"/>
+  <path id="Path_11769" data-name="Path 11769" d="M2807.2-13381l18.025,18.024" transform="translate(-2806.668 13381.53)" fill="none" strokeWidth="1.5"/>
+  <path id="Path_11770" data-name="Path 11770" d="M2807.2-13381l18.025,18.024" transform="translate(-13362.445 -2806.668) rotate(90)" fill="none"  strokeWidth="1.5"/>
 </SVG>
 
               CLOSE</PMenu>

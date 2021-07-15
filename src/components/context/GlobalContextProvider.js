@@ -3,7 +3,10 @@ import React, {useEffect, useState} from "react"
 export const GlobalStateContext = React.createContext()
 export const GlobalDispatchContext = React.createContext()
 
-const initialState = []
+const initialState = {
+  cartItems: 0,
+  cartProducts: []
+}
 
 
 
@@ -27,7 +30,8 @@ function reducer(state, action) {
       case "CART": {
         return {
           ...state,
-          products: action.products
+          cartItems: action.items,
+          cartProducts: [...state.cartProducts, action.cartProducts]
         }
       }
     default:

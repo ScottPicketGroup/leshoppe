@@ -25,7 +25,6 @@ const Shop = ({imageHeight}) => {
     }
   `)
   */
-
   useEffect(() => {
       
     fetch('https://fakestoreapi.com/products')
@@ -37,6 +36,12 @@ const Shop = ({imageHeight}) => {
         products: json
       })
       )
+      .then(
+        dispatch({
+          type: "CART",
+          cart: true
+        })
+        )
   },[])
  useEffect(() => {
   // data.allShopifyProduct.edges.map(catagory => setCatagories(catagories => [...catagories, catagory.node.productType]))

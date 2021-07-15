@@ -10,7 +10,7 @@ const Qaunitities = ({
 }) => {
   const setQaunityAndLabel = q => {
     setQauntity(q)
-    console.log(`qauntity`, q)
+  
   }
   var qauntities = [];
   for (var i = 0; i < itemsAvailable; i++) {

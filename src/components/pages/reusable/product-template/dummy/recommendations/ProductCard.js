@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
         id
       } = product
       
-console.log(product)
+
 
   return (
     <>

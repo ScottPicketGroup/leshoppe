@@ -6,17 +6,14 @@ import {
 } from "../../../context/GlobalContextProvider"
 
 const BackgroundLogo = ({ logoLimit }) => {
-  const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
-  const [fadeLogo, setFadeLogo] = useState(false)
+  
   const [showLogo, setShowLogo] = useState(true)
   const [scrollY, setScrollY] = useState(0)
-  const [menuOpen, setMenuOpen] = useState(false)
   const [pageLimit, setPageLimit] = useState(
     
   )
 
-  console.log(pageLimit)
 
   function logit() {
     setScrollY(window.pageYOffset)

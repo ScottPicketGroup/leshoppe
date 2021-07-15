@@ -15,26 +15,15 @@ const RecommendationsList = ({ product }) => {
     state.products &&
     state.products.map(item => {
       if (item.category === product.category)
-      console.log(item)
+      
       products.push(item)
         products.map((product, i) => {
              if (i > 2) products.pop()
            })
            setRecommendations(products)
     })
-   
-    // state.products &&
-    //   state.products.map(product => {
-    //     if (product.category === product.category)
-    //       products.push(product)
-    //   })
-    // products.map((product, i) => {
-    //   if (i > 2) products.pop()
-    // })
-    // setRecommendations(products)
   }, [state])
 
-console.log(`recommendations`, product)
 
   return (
   
