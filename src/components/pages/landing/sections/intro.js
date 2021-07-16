@@ -22,12 +22,12 @@ const Intro = () => {
   data-sal-easing="ease">
     < Pintro bc1 
       > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</Pintro>
-        <P bc1>
+        <Pintro bc1>
           Le Shoppe is Scott Pickett’s European-inspired coffee bar and
           provedore, located at 430 Little Collins St, Melbourne. Adjoining
           Chancery Lane Bistro, Le Shoppe is proud to continue Melbourne's
           legacy of historic grocers and corner stores.
-        </P>
+        </Pintro>
       <P bc1>
           Le Shoppe will be closed for lockdown, reopening Thursday 22nd July. 
         </P>
