@@ -58,6 +58,8 @@ const Product = ({product}) => {
                 setCart(addToExistingCart)
               }
 
+           
+
       //   if (cart.some(e => e.item.endpointId === endpointId)) 
       //   {
       //     setItemToOrder({...itemToOrder, ['amount']: qauntity })
