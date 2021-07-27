@@ -28,9 +28,7 @@ const Intro = () => {
           Chancery Lane Bistro, Le Shoppe is proud to continue Melbourne's
           legacy of historic grocers and corner stores.
         </Pintro>
-      <P bc1>
-          Le Shoppe will be closed for lockdown, reopening Thursday 22nd July. 
-        </P>
+      
       </IntroText>
     </IntroContainer>
   )
