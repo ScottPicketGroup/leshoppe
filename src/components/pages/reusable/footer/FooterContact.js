@@ -20,7 +20,8 @@ const FooterContact = () => {
           </PaddressMob>
         </Address>
             <OpeningHoursContainer>
-            Monday - Friday: 7.00am - 4.00pm
+            Monday - Tuesday: 7.00am - 4.00pm <br/>
+        Wednesday - Friday: 7.00am - 9.00pm
           {/* <Days>
             <ul>
               <li>
