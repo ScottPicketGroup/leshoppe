@@ -42,7 +42,8 @@ const OpeningInfo = () => {
             VIEW IN GOOGLE MAPS
           </a>
         </GoogleLink>
-        <P bc2>Monday - Friday: 7.00am - 4.00pm</P>
+        <P bc2>Monday - Tuesday: 7.00am - 4.00pm</P>
+<P bc2>Wednesday - Friday: 7.00am - 9.00pm</P>
         {/* <OpeningHoursContainer> */}
         {/* <Days>
             <ul>
