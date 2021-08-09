@@ -12,13 +12,14 @@ import OrderInfo from "./order-section/OrderInfo"
 import ProductContainer from "./order-section/ProductContainer"
 import RecommendationList from "./recommendations-section/product-list/ProductList"
 import Layout from "../../../layout"
+import Product from "./product/product"
 const ProductTemplate = ({ pageContext, state }) => {
-console.log(state)
+
   return (
     <Layout>
   
         <Section1>
-          <ProductContainer product={pageContext}/>
+          <Product product={pageContext}/>
           <RecommendationList />
       
         </Section1>

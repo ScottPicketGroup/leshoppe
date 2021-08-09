@@ -55,14 +55,14 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
 
-   // shop disabled until required {
-     // resolve: `gatsby-source-shopify`,
-     // options: {
-       // shopName: 'scottpickettgroup',
-       // accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-      //  verbose: true,
-      //},
+  {
+     resolve: `gatsby-source-shopify`,
+     options: {
+       shopName: 'scottpickettgroup',
+       accessToken: '420e117d722371029ed050a1a7802bad',
+       verbose: true,
+      },
      
-    //},
+    },
   ],
 }

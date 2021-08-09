@@ -12,7 +12,7 @@ import BackgroundLogo from "../reusable/background-logo/BackgroundLogo"
 const Shop = ({imageHeight}) => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
- /* 
+
    const data = useStaticQuery(graphql`
     query Catagories {
       allShopifyProduct {
@@ -24,7 +24,7 @@ const Shop = ({imageHeight}) => {
       }
     }
   `)
-  */
+console.log(data)
   useEffect(() => {
       
     fetch('https://fakestoreapi.com/products')

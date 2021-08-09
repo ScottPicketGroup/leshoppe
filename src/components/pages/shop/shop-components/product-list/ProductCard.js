@@ -15,13 +15,13 @@ const ProductCard = ({ product, catagory }) => {
   const productTypeDisplay =
     productType.charAt(0).toUpperCase() + productType.slice(1)
   const catagoryDisplay = catagory.charAt(0).toUpperCase() + catagory.slice(1)
-  console.log(product.node.handle)
+
 
   return (
     <>
       {productTypeDisplay === catagoryDisplay ? (
         <ProductCardContainer>
-          {/* <ProductLink to={`/shop/products/${handle}`}> */}
+          <ProductLink to={`/shop/products/${handle}`}>
             <ProductImage
               fluid={images[0].localFile.childImageSharp.fluid}
               alt="blah"
@@ -34,11 +34,11 @@ const ProductCard = ({ product, catagory }) => {
             <ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>
             <ProductDescription bc2>{description}</ProductDescription>
             <P bc2> View Item</P>{" "}
-          {/* </ProductLink> */}
+          </ProductLink>
         </ProductCardContainer>
       ) : catagory === "All Products" || catagory === "Sort By Catagory" ? (
         <ProductCardContainer>
-          {/* <ProductLink to={`/shop/products/${handle}`}> */}
+          <ProductLink to={`/shop/products/${handle}`}>
             <ProductImage
               fluid={images[0].localFile.childImageSharp.fluid}
               alt="blah"
@@ -51,7 +51,7 @@ const ProductCard = ({ product, catagory }) => {
             <ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>
             <ProductDescription bc2>{description}</ProductDescription>
             <P bc2> View Item</P>{" "}
-          {/* </ProductLink> */}
+          </ProductLink>
         </ProductCardContainer>
       ) : null}
     </>
