@@ -67,6 +67,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${green}; 
     letter-spacing: 0.02rem;
     h1 {
+      margin-top: ${props => props.marginTop ? props.marginTop : ''};
         font-size: ${h1.fontSize};
         line-height: ${h1.lineHeight};
         letter-spacing: ${h1.letterSpacing};

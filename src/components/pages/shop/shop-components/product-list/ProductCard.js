@@ -15,7 +15,7 @@ const ProductCard = ({ product, catagory }) => {
   const productTypeDisplay =
     productType.charAt(0).toUpperCase() + productType.slice(1)
   const catagoryDisplay = catagory.charAt(0).toUpperCase() + catagory.slice(1)
-  console.log(product.node.handle)
+
 
   return (
     <>

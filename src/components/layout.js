@@ -9,34 +9,29 @@ import LogoFooter from "./pages/reusable/logo-footer/LogoFooter"
 import Menu from "./pages/menu/menu"
 import Footer from "./pages/reusable/footer/Footer"
 import logo from "../images/logos/landing.png"
-import GlobalStateProvider from "./context/GlobalStateProvider"
-import Context from "../components/context/Context"
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "./context/GlobalContextProvider"
 const Layout = ({ children }) => {
-  const { globalState, globalDispatch } = useContext(Context)
+  const dispatch = useContext(GlobalDispatchContext)
+  const state = useContext(GlobalStateContext)
   let footer = useRef(null)
   let page = useRef(null)
 
-  const [pageHeight, setPageHeight] = useState(0)
-  const [footerHeight, setFooterHeight] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    setPageHeight(page.clientHeight)
-    setFooterHeight(footer.clientHeight)
+    dispatch({
+      type: "WINDOW",
+      pageHeight: page.clientHeight,
+      footerHeight: footer.clientHeight,
+    })
   }, [])
 
   useEffect(() => {
-    globalDispatch({
-      type: "WINDOW",
-      pageHeight: pageHeight,
-      footerHeight: footerHeight,
-      logoLimit: pageHeight - footerHeight - 250,
-    })
-  }, [pageHeight && footerHeight])
-
-  useEffect(() => {
     function watchScroll() {
-      window.addEventListener("scroll", logit)
+      window.addEventListener("scroll", logit())
     }
     watchScroll()
     return () => {
@@ -45,29 +40,26 @@ const Layout = ({ children }) => {
   })
 
   function logit() {
-   console.log(window.pageYOffset)
+    //annonmous function to have second arg for watchscroll
   }
 
-
   return (
-    
-      <LayoutContainer>
-        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    <LayoutContainer>
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-        <GlobalStyle />
+      <GlobalStyle />
 
-        <Main ref={el => (page = el)} meh="123">
-          {/* <PageBackground fade={scrollY} display={logoDisplay} /> */}
-          <LogoMobile src={logo} alt="mobile logo" />
-          {children}
-          <FooterContainer ref={el => (footer = el)}>
-            <LogoFooter />
-            <Footer />
-          </FooterContainer>
-        </Main>
-      </LayoutContainer>
-
+      <Main ref={el => (page = el)} meh="123">
+      
+        <LogoMobile src={logo} alt="mobile logo" />
+        {children}
+        <FooterContainer ref={el => (footer = el)}>
+          <LogoFooter />
+          <Footer />
+        </FooterContainer>
+      </Main>
+    </LayoutContainer>
   )
 }
 

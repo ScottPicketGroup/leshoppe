@@ -1,11 +1,9 @@
 import React, {useEffect, useState, useRef, useLayoutEffect, useContext} from 'react'
 import styled from 'styled-components'
 import landingSqaure from '../../../images/placeholders/contactHero.jpg'
-import Context from '../../context/Context'
-import GlobalStateProvider from '../../context/GlobalStateProvider'
 import BackgroundLogo from '../../pages/reusable/background-logo/BackgroundLogo'
 const ContactHero = ({imageHeight}) => {
-    const { globalState, globalDispatch } = useContext(Context)
+   
 
     const [size, setSize] = useState([0, 0])
 let imgContainer = useRef(null)
@@ -27,15 +25,15 @@ let imgContainer = useRef(null)
 
   useWindowSize()
     return (
-        <GlobalStateProvider>
+       
         <HeroContainer >
  
-        <BackgroundLogo imageHeight={imageHeight} logoLimit={globalState.logoLimit}/>
+        <BackgroundLogo imageHeight={imageHeight} />
             <ImgSqaure height={imageHeight}
             ref={el => imgContainer = el}
             src={landingSqaure} alt='man in a butchers apron'/>
         </HeroContainer>
-        </GlobalStateProvider>
+   
     )
 }
 

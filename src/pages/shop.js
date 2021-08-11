@@ -5,7 +5,8 @@ import ShopLanding from "../components/pages/shop/ShopLanding"
 const Shop = () => (
     <Layout>
       <SEO title="Shop" />
-      {/* <ShopLanding /> */}
+      <ShopLanding />
+     
     </Layout>
 )
 

@@ -16,13 +16,13 @@ const SecondPage = (menuOpen,setMenuOpen) => {
 return (
 
   
-  <GlobalStateProvider>
+
   <Layout>
     <SEO title="Home" />
 
 <Carousel />
   </Layout>
-  </GlobalStateProvider>
+
 
 )}
 
