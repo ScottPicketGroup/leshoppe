@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     // Create pages for each markdown file.
     const ProductTemplate = path.resolve(`src/components/pages/reusable/product-template/ProductTemplate.js`)
     result.data.allShopifyProduct.edges.forEach(({ node }) => {
-      console.log(node)
+     
       const path = `/shop/products/${node.handle}`
       createPage({
         path,
