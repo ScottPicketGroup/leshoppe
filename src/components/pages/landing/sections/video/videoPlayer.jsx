@@ -1,10 +1,6 @@
 
-<<<<<<< HEAD
-import React, {useState, useRef, useEffect} from 'react'
-=======
 import React, {useRef} from 'react'
 import ReactPlayer from 'react-player'
->>>>>>> 46a4fe84b2cab241720743b3881813e88d48aa42
 import styled from 'styled-components'
 import {gsap, TweenLite} from 'gsap'
 import {P} from '../../../../styled-components/GlobalStyles'

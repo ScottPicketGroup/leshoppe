@@ -10,8 +10,11 @@ import useLocalStorage from '../../../../context/useLocalStorage'
 import ProductQauntityDropdown from './dropdown/ProductQauntityDropdown'
 import Slider from './ProductCarousel.jsx/Slider'
 import CheckBoxes from './checkboxes/CheckBoxes'
+import DatePicker from '../order-section/date-picker/DatePicker'
+import DeliveryOptions from './delivery-options/DeliveryOptions'
 const Product = ({product}) => {
   const [selected, setSelected] = useState(0)
+  const [delivery, setDelivery] = useState("Delivery")
   const state = useContext(GlobalStateContext)
   const dispatch = useContext(GlobalDispatchContext)
   const [qauntity, setQauntity] = useState(1)
@@ -28,7 +31,8 @@ const Product = ({product}) => {
         image,
         category,
         endpointId,
-        variants
+        variants, 
+        productType,
       } = product.product
     
       useEffect(() => {
@@ -124,10 +128,20 @@ console.log(product.product)
                 </ProductInfoContainer>
                 <ProductPurchaseContainer>
                   {/* checkbox container for options*/}
+                 
                   {variants.length > 1 ? (
                     <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
                   ): null}
                   {/* date picker */}
+                 
+                  {
+                    productType === "Catering" ? ( 
+                      <>
+                      <DeliveryOptions setDelivery={setDelivery} delivery={delivery}/>
+                      <DatePicker delivery={delivery}/>
+                      </>
+                    ) : null
+                  }
                   <ProductPurchaseContainerRow>
                     <ProductQauntityDropdown 
                       setQauntity={setQauntity}

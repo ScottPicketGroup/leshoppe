@@ -23,6 +23,7 @@ console.log(selected)
                <CheckBoxLabel bc2> {checkbox.item}</CheckBoxLabel>
                </CheckBoxOptionWrapper>
             ))}
+           
         </CheckBoxWrapper>
     )
 }
