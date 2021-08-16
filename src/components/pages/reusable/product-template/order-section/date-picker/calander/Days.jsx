@@ -6,7 +6,7 @@ const Days = ({setDeliveryDate, deliveryDate, setOpenDatePicker}) => {
 const [selected, setSelected] = useState()
 
 const date = new Date()
-const month = date.getMonth()
+const month = deliveryDate.month
 const year = date.getYear()
 const daysInMonth = new Date(year, month, 0).getDate()
 
@@ -16,7 +16,7 @@ const daysInMonth = new Date(year, month, 0).getDate()
    
     
     let firstDayAvailable = date.getDate() + 2
-    let numberOfDays = 40 - new Date(year, month, 40).getDate();
+    let numberOfDays = 40 - new Date(year, 10, 40).getDate();
    
     let firstDay = (new Date(year, month)).getDay();
  

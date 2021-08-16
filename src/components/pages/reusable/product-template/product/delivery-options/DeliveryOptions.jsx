@@ -6,7 +6,7 @@ import DeliveryCheckBox from './OptionCheckBox'
 const DeliveryOptions = ({delivery, setDelivery}) => {
     console.log(delivery)
     return (
-        <>
+        <DeliveryCheckBoxWrapper>
          
 
             <CheckBoxOptionWrapper onClick={() => setDelivery("Delivery")}>
@@ -15,7 +15,7 @@ const DeliveryOptions = ({delivery, setDelivery}) => {
                 style={{
                     marginLeft: `1rem`
                 }}
-                >Delivery</P>
+                >Delivery </P> <P bc3>(Only available in Melbourne CBD)</P>
             </CheckBoxOptionWrapper>
 
             <CheckBoxOptionWrapper onClick={() => setDelivery("Pick Up")}>
@@ -26,13 +26,17 @@ const DeliveryOptions = ({delivery, setDelivery}) => {
              }}
              >PickUp</P>
             </CheckBoxOptionWrapper>       
-        </>
+        </DeliveryCheckBoxWrapper>
     )
 }
 
 export default DeliveryOptions
 
+export const DeliveryCheckBoxWrapper = styled.div`
+
+margin-bottom: 1rem;
+`
+
 export const CheckBoxOptionWrapper = styled.div`
 display: flex;
-
 `

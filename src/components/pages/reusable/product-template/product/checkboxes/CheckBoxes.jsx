@@ -33,7 +33,7 @@ export default CheckBoxes
 const CheckBoxWrapper = styled.div`
 display: flex;
 flex-direction: column;
-margin-bottom: 2.25rem;
+margin-bottom: 1rem;
 `
 const CheckBoxOptionWrapper = styled.div`
 display: flex;
