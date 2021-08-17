@@ -43,7 +43,7 @@ const Product = ({product}) => {
        setItemToOrder({...itemToOrder, ['amount']: qauntity})
       }, [qauntity])
 
-      console.log(product.product.variants[0].priceV2.amount)
+     
 
       const addToCart = () => {
         
