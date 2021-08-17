@@ -3,18 +3,25 @@ import styled from 'styled-components'
 import {Link} from 'gatsby'
 import {P} from "../../../../styled-components/GlobalStyles"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-const CatagoriesDisplay = ({catagories}) => {
-
-
+const CatagoriesDisplay = ({catagories, setCatagory, catagory}) => {
+    const setCatgoryAndLabel = (catagory) => {
+        setCatagory(catagory) 
+        
+       
+       }
+console.log(catagory)
     return (
         <CatagoryWrapper>
       {  catagories && catagories.map(catagory => (
       <>
-         {catagory.image ? (<CatagoryCardContainer>
+         {catagory.image ? (
+         <CatagoryCardContainer 
+         onClick={() => setCatgoryAndLabel(catagory.title)}
+         >
              <GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> 
              <P bc1>{catagory.title}</P>
              <P bc1>View All {catagory.handle}</P>
-             </CatagoryCardContainer> ) : null}
+         </CatagoryCardContainer> ) : null}
       </>
       ))}
      

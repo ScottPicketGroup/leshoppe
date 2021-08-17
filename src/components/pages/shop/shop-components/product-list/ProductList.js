@@ -9,7 +9,7 @@ import {
 } from "../../../../context/GlobalContextProvider"
 import CatagoriesDisplay from "../Catagories/CatagoriesDisplay"
 
-const ProductList = ({ products, catagory, catagories }) => {
+const ProductList = ({ products, catagory, catagories, setCatagory }) => {
 const [displayProducts, setDisplayProducts] = useState()
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
@@ -59,8 +59,8 @@ useEffect(() => {
 
   return (
     <div>
-   {catagory === "Select a catagory" ? (
-     <CatagoriesDisplay catagories={catagories} />
+   {catagory === "Select a catagory" || "Sory By Catagory" ? (
+     <CatagoriesDisplay catagories={catagories} setCatagory={setCatagory}/>
    ): (
     <ProductGrid >
     {data.allShopifyProduct.edges.map(product => (

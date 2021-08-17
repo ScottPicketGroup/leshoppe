@@ -74,7 +74,7 @@ console.log(catagories)
         setCatagories={setCatagories}
       />
       
-      <ProductList catagory={catagory} catagories={catagories}/>
+      <ProductList catagory={catagory} setCatagory={setCatagory} catagories={catagories}/>
     
     </>
   )
