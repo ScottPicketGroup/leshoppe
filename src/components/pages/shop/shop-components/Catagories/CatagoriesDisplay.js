@@ -9,14 +9,14 @@ const CatagoriesDisplay = ({catagories}) => {
     useEffect(()=> {
         const items = []
         catagories && catagories.map(catagory => {
-            if(catagory.image,localFile.childImageSharp) {items.push(catagory) } else {console.log('fail')}
+          if(catagory.image !==null )  console.log(catagory.image)
         })
         console.log(items)
     }, [catagories])
 
     return (
         <CatagoryWrapper>
-      {catagories.map(catagory => (
+      {  catagories && catagories.map(catagory => (
       <CatagoryCardContainer>
          {catagory.image ? (<><GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> </> ) : null}
       </CatagoryCardContainer>

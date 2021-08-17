@@ -25,16 +25,18 @@ const Product = ({product}) => {
    if(product) setProductDetails(product.product)
   }, [product])
  
-  const {
-    title,
-    description,
-    price,
-    image,
-    category,
-    endpointId,
-    variants, 
-    productType,
-  } = productDetails
+  // const {
+  //   title,
+  //   description,
+  //   price,
+  //   image,
+  //   category,
+  //   endpointId,
+  //   variants, 
+  //   productType,
+  // } = productDetails
+
+  console.log(productDetails.title)
     
       useEffect(() => {
      
