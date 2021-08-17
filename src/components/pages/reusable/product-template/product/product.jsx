@@ -43,6 +43,8 @@ const Product = ({product}) => {
        setItemToOrder({...itemToOrder, ['amount']: qauntity})
       }, [qauntity])
 
+      console.log(product.product.variants[0].priceV2.amount)
+
       const addToCart = () => {
         
         
@@ -124,7 +126,7 @@ const Product = ({product}) => {
           <ProductInfoContainer>
     
          <ProductTitle bc1>{title}</ProductTitle>
-         <ProductPrice bc2>${product.product.variants[0].priceV2.amount}</ProductPrice>
+         {product.product.variants ? (<ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>) : null}
        </ProductInfoContainer>
       </ProductTextConatiner>
 
