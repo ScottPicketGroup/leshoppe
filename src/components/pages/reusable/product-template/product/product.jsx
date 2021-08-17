@@ -21,6 +21,9 @@ const Product = ({product}) => {
     
   )
   // const [cart, setCart] = useLocalStorage("cart", []);
+  useEffect(() => {
+   if(product) setProductDetails(product.product)
+  }, [product])
   const {
     title,
     description,
