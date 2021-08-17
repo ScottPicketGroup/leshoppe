@@ -15,26 +15,23 @@ import DeliveryOptions from './delivery-options/DeliveryOptions'
 const Product = ({product}) => {
   const [selected, setSelected] = useState(0)
   const [delivery, setDelivery] = useState("Delivery")
-  const state = useContext(GlobalStateContext)
-  const dispatch = useContext(GlobalDispatchContext)
+  const [productDetails, setProductDetails] = useState(product.product)
   const [qauntity, setQauntity] = useState(1)
   const [itemToOrder, setItemToOrder] = useState(
     
   )
   // const [cart, setCart] = useLocalStorage("cart", []);
-
+  const {
+    title,
+    description,
+    price,
+    image,
+    category,
+    endpointId,
+  } = productDetails
     
       useEffect(() => {
-        const {
-            title,
-            description,
-            price,
-            image,
-            category,
-            endpointId,
-            variants, 
-            productType,
-          } = product.product
+     
        setItemToOrder({...itemToOrder, ['amount']: qauntity})
       }, [qauntity])
 
@@ -115,45 +112,7 @@ const Product = ({product}) => {
 
     return (
         <ProductContainer>
-            <ProductTextConatiner>
-                <ProductInfoContainer>
-                <ProductCatagory fFD>
-                {/* {category.charAt(0).toUpperCase() + category.slice(1)} */} Catagory
-                </ProductCatagory>
-               <ProductTitle bc1>{title}</ProductTitle>
-                <ProductPrice bc2>${product.product.variants[0].priceV2.amount}</ProductPrice>
-             <ProductDescription bc2>{description}</ProductDescription>
-                </ProductInfoContainer>
-                <ProductPurchaseContainer>
-                  {/* checkbox container for options*/}
-                 
-                  {variants.length > 1 ? (
-                    <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
-                  ): null}
-                  {/* date picker */}
-                 
-                  {
-                    productType === "Catering" ? ( 
-                      <>
-                      <DeliveryOptions setDelivery={setDelivery} delivery={delivery}/>
-                      <DatePicker delivery={delivery}/>
-                      </>
-                    ) : null
-                  }
-                  <ProductPurchaseContainerRow>
-                    <ProductQauntityDropdown 
-                      setQauntity={setQauntity}
-                      qauntity={qauntity}/>
-                    <AddToCartButton
-                      onClick={addToCart}
-                    >Add To Cart</AddToCartButton>
-                    </ProductPurchaseContainerRow>
-                </ProductPurchaseContainer>
-            </ProductTextConatiner>
-
-            <ProductCarousel>
-          <Slider images={product.product.variants} selected={selected} setSelected={setSelected}/>
-            </ProductCarousel>
+           
         </ProductContainer>
     )
 }
