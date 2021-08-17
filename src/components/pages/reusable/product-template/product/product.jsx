@@ -102,7 +102,7 @@ const Product = ({product}) => {
     // }
 }
        
-// console.log(product.product)
+console.log(product)
 
 
 
