@@ -126,7 +126,7 @@ const Product = ({product}) => {
           <ProductInfoContainer>
     
          <ProductTitle bc1>{title}</ProductTitle>
-         {product.product.variants ? (<ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>) : null}
+         {product.product.variants && product.product.variants ? (<ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>) : null}
        </ProductInfoContainer>
       </ProductTextConatiner>
 
