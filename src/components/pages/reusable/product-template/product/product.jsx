@@ -124,7 +124,9 @@ const Product = ({product}) => {
       <ProductContainer>
       <ProductTextConatiner>
           <ProductInfoContainer>
-    
+          <ProductCatagory fFD>
+                {product.product.productType.charAt(0).toUpperCase() + product.product.productType.slice(1)} 
+                </ProductCatagory>
          <ProductTitle bc1>{title}</ProductTitle>
 
          {variants && variants.length > 0 ? (
