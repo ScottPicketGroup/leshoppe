@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {Link} from 'gatsby'
 import {P} from "../../../../styled-components/GlobalStyles"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-const CatagoriesDisplay = ({catagories, setCatagory, catagory}) => {
+const CatagoriesDisplay = ({catagories, setCatagory, setMenuLabel, catagory}) => {
 
 console.log(catagory)
     return (
@@ -12,7 +12,7 @@ console.log(catagory)
       <>
          {catagory.image ? (
          <CatagoryCardContainer 
-         
+         onClick={() => setCatagory(catagory.title)}
          >
              <GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> 
              <P bc1>{catagory.title}</P>
