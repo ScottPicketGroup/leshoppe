@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
 import {P} from "../../../../styled-components/GlobalStyles"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const CatagoriesDisplay = ({catagories}) => {
-    console.log(catagories)
+    const [item, setItems] = useState([])
+
+    useEffect(()=> {
+        const items = []
+        catagories && catagories.map(catagory => {
+            if(catagory.image,localFile.childImageSharp) {items.push(catagory) } else {console.log('fail')}
+        })
+        console.log(items)
+    }, [catagories])
 
     return (
         <CatagoryWrapper>
