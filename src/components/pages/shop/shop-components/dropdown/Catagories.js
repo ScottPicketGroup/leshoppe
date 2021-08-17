@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { P } from '../../../../styled-components/GlobalStyles'
-const Catagories = ({catagories, setCatagory ,setMenuLabel}) => {
+const Catagories = ({catagories, setCatagory , setMenuLabel}) => {
    const setCatgoryAndLabel = (catagory) => {
     setCatagory(catagory) 
     setMenuLabel(catagory)

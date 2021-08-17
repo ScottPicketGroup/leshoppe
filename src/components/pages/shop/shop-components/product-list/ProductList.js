@@ -71,11 +71,11 @@ const [displayProducts, setDisplayProducts] = useState()
     {data.allShopifyProduct.edges.map(product => (
       <ProductCard product={product} catagory={catagory}/>
     ))}
-    {displayProducts && displayProducts.map(
+    {/* {displayProducts && displayProducts.map(
       product => (
         <ProductCard product={product} catagory={catagory}/>
       )
-    )}
+    )} */}
   </ProductGrid>
    )}
       

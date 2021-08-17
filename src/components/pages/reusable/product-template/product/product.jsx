@@ -126,7 +126,7 @@ const Product = ({product}) => {
           {/* {category.charAt(0).toUpperCase() + category.slice(1)} */} Catagory
           </ProductCatagory>
          <ProductTitle bc1>{title}</ProductTitle>
-          <ProductPrice bc2>${product.product.variants[0].priceV2.amount}</ProductPrice>
+          {variants ? (<ProductPrice bc2>${product.product.variants[0].priceV2.amount}</ProductPrice>) : null}
        <ProductDescription bc2>{description}</ProductDescription>
           </ProductInfoContainer>
           <ProductPurchaseContainer>

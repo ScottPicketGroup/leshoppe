@@ -13,10 +13,11 @@ console.log(catagory)
          {catagory.image ? (
          <CatagoryCardContainer 
          onClick={() => setCatagory(catagory.title)}
-         >
+         ><CatagoryLink >
              <GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> 
              <P bc1>{catagory.title}</P>
              <P bc1>View All {catagory.handle}</P>
+             </CatagoryLink>
          </CatagoryCardContainer> ) : null}
       </>
       ))}
