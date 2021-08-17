@@ -57,7 +57,7 @@ console.log(catagories)
   setCatagories(catagoryList)
  }, [])
  
-  
+ const [menuLabel, setMenuLabel] = useState('Sort By Catagory')
   
   
 
@@ -72,9 +72,11 @@ console.log(catagories)
         setCatagory={setCatagory}
         catagories={catagories}
         setCatagories={setCatagories}
+        setMenuLabel={setMenuLabel}
+        menuLabel={menuLabel}
       />
       
-      <ProductList catagory={catagory} setCatagory={setCatagory} catagories={catagories}/>
+      <ProductList catagory={catagory} setMenuLabel={setMenuLabel} setCatagory={setCatagory} catagories={catagories}/>
     
     </>
   )

@@ -9,7 +9,7 @@ import {
 } from "../../../../context/GlobalContextProvider"
 import CatagoriesDisplay from "../Catagories/CatagoriesDisplay"
 
-const ProductList = ({ products, catagory, catagories, setCatagory }) => {
+const ProductList = ({ products, catagory, catagories, setCatagory, setMenuLabel, menuLabel }) => {
 const [displayProducts, setDisplayProducts] = useState()
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
@@ -45,23 +45,18 @@ const [displayProducts, setDisplayProducts] = useState()
   }
   `)
 
-useEffect(() => {
-  const products = []
-  state.products && state.products.map (
-    product => {
-      if(catagory === "All Products" || catagory === "Sort By Catagory" ) products.push(product)
-
-      else if(product.category === catagory) products.push(product)
-    }
-  )
-  setDisplayProducts(products)
-}, [state, catagory])
+console.log(data.allShopifyProduct)
 
   return (
     <div>
-   {catagory === "Select a catagory" || "Sory By Catagory" ? (
-     <CatagoriesDisplay catagories={catagories} setCatagory={setCatagory}/>
-   ): (
+   {catagory === "Sort By Catagory" ? (
+     <CatagoriesDisplay catagories={catagories} setCatagory={setCatagory} setMenuLabel={setMenuLabel}/>
+   )
+   : 
+   catagory === "Select a catagory" ? (
+    <CatagoriesDisplay catagories={catagories} setCatagory={setCatagory} setMenuLabel={setMenuLabel}/>
+   ) :
+   (
     <ProductGrid >
     {data.allShopifyProduct.edges.map(product => (
       <ProductCard product={product} catagory={catagory}/>

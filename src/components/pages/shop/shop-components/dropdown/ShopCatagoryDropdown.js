@@ -9,9 +9,11 @@ const ShopCatagoryDropdown = ({
   catagory,
   setCatagories,
   setCatagory,
+  setMenuLabel,
+  menuLabel
 }) => {
   const [open, setOpen] = useState(false)
-  const [menuLabel, setMenuLabel] = useState('Sort By Catagory')
+
   let menu = useRef(null)
 
   const openMenu = () => {
