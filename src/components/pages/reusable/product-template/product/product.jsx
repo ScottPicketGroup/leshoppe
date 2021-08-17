@@ -126,7 +126,7 @@ const Product = ({product}) => {
           <ProductInfoContainer>
     
          <ProductTitle bc1>{title}</ProductTitle>
-         {variants.length > 1 ? (
+         {variants && variants.length > 1 ? (
                     <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
                   ): null}
        </ProductInfoContainer>
