@@ -6,7 +6,7 @@ import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../../context/GlobalContextProvider"
-import useLocalStorage from '../../../../context/useLocalStorage'
+// import useLocalStorage from '../../../../context/useLocalStorage'
 import ProductQauntityDropdown from './dropdown/ProductQauntityDropdown'
 import Slider from './ProductCarousel.jsx/Slider'
 import CheckBoxes from './checkboxes/CheckBoxes'
@@ -21,7 +21,7 @@ const Product = ({product}) => {
   const [itemToOrder, setItemToOrder] = useState(
     
   )
-  const [cart, setCart] = useLocalStorage("cart", []);
+  // const [cart, setCart] = useLocalStorage("cart", []);
     const {
         title,
         description,
@@ -42,26 +42,26 @@ const Product = ({product}) => {
         
         
 
-        if (cart.length === 0) {
-          const newCart = []
-          newCart.push(itemToOrder)
-          setCart(newCart)
+        // if (cart.length === 0) {
+        //   const newCart = []
+        //   newCart.push(itemToOrder)
+        //   setCart(newCart)
                 
-              } else if (cart.some(e => e.item.endpointId === endpointId))  {
-                const update = cart.some(check)
-                function check(item, i) {
+        //       } else if (cart.some(e => e.item.endpointId === endpointId))  {
+        //         const update = cart.some(check)
+        //         function check(item, i) {
          
-                  if (item.item.endpointId === endpointId) 
-                  {const newCart = [...cart];
-                  newCart[i].amount = itemToOrder.amount + newCart[i].amount
-                  setCart(newCart)}
-                    console.log(cart)
-                }
-              } else {
-                const addToExistingCart = cart.slice()
-                addToExistingCart.push(itemToOrder)
-                setCart(addToExistingCart)
-              }
+        //           if (item.item.endpointId === endpointId) 
+        //           {const newCart = [...cart];
+        //           newCart[i].amount = itemToOrder.amount + newCart[i].amount
+        //           setCart(newCart)}
+        //             console.log(cart)
+        //         }
+        //       } else {
+        //         const addToExistingCart = cart.slice()
+        //         addToExistingCart.push(itemToOrder)
+        //         setCart(addToExistingCart)
+        //       }
 
            
 
@@ -106,7 +106,7 @@ const Product = ({product}) => {
     // }
 }
        
-console.log(product.product)
+// console.log(product.product)
 
 
 

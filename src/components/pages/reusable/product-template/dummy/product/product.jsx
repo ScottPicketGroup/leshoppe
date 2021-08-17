@@ -6,7 +6,7 @@ import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../../context/GlobalContextProvider"
-import useLocalStorage from "../../../../context/useLocalStorage"
+// import useLocalStorage from "../../../../context/useLocalStorage"
 import ProductQauntityDropdown from "./dropdown/ProductQauntityDropdown"
 import Slider from "./ProductCarousel.jsx/Slider"
 const Product = ({ product }) => {
@@ -17,7 +17,7 @@ const Product = ({ product }) => {
     item: product.product,
     amount: 0,
   })
-  const [cart, setCart] = useLocalStorage("cart", [])
+  // const [cart, setCart] = useLocalStorage("cart", [])
   const {
     title,
     description,
@@ -32,25 +32,25 @@ const Product = ({ product }) => {
   }, [qauntity])
 
   const addToCart = () => {
-    if (cart.length === 0) {
-      const newCart = []
-      newCart.push(itemToOrder)
-      setCart(newCart)
-    } else if (cart.some(e => e.item.endpointId === endpointId)) {
-      const update = cart.some(check)
-      function check(item, i) {
-        if (item.item.endpointId === endpointId) {
-          const newCart = [...cart]
-          newCart[i].amount = itemToOrder.amount + newCart[i].amount
-          setCart(newCart)
-        }
-        console.log(cart)
-      }
-    } else {
-      const addToExistingCart = cart.slice()
-      addToExistingCart.push(itemToOrder)
-      setCart(addToExistingCart)
-    }
+    // if (cart.length === 0) {
+    //   const newCart = []
+    //   newCart.push(itemToOrder)
+    //   setCart(newCart)
+    // } else if (cart.some(e => e.item.endpointId === endpointId)) {
+    //   const update = cart.some(check)
+    //   function check(item, i) {
+    //     if (item.item.endpointId === endpointId) {
+    //       const newCart = [...cart]
+    //       newCart[i].amount = itemToOrder.amount + newCart[i].amount
+    //       setCart(newCart)
+    //     }
+    //     console.log(cart)
+    //   }
+    // } else {
+    //   const addToExistingCart = cart.slice()
+    //   addToExistingCart.push(itemToOrder)
+    //   setCart(addToExistingCart)
+    // }
 
     //   if (cart.some(e => e.item.endpointId === endpointId))
     //   {

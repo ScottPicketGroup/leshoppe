@@ -10,7 +10,7 @@ const Catagories = ({catagories, setCatagory ,setMenuLabel}) => {
     return (
         <CatagoriesContainer>
             {catagories.map((catagory, i) => (
-                <P bc2 onClick={() => setCatgoryAndLabel(catagory)}> {catagory}</P>
+                <P bc2 onClick={() => setCatgoryAndLabel(catagory.title)}> {catagory.title}</P>
             ))}
         </CatagoriesContainer>
     )

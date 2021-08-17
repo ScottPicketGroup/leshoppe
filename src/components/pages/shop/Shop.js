@@ -45,7 +45,7 @@ const Shop = ({imageHeight}) => {
 console.log(catagories)
  useEffect(() => {
   const catagoriesToPush = []
-  data.allShopifyProduct.edges.map(catagory => catagoriesToPush.push(catagory.node.productType))
+  data.allShopifyCollection.edges.map(catagory => catagoriesToPush.push(catagory.node))
   
   
 
