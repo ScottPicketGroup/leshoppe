@@ -13,7 +13,7 @@ const Product = ({ product }) => {
   const state = useContext(GlobalStateContext)
   const dispatch = useContext(GlobalDispatchContext)
   const [qauntity, setQauntity] = useState(1)
- 
+
   // const [cart, setCart] = useLocalStorage("cart", [])
  
 

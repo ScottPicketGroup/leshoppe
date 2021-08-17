@@ -15,7 +15,7 @@ import DeliveryOptions from './delivery-options/DeliveryOptions'
 const Product = ({product}) => {
   const [selected, setSelected] = useState(0)
   const [delivery, setDelivery] = useState("Delivery")
-  const [productDetails, setProductDetails] = useState(product.product)
+  const [productDetails, setProductDetails] = useState()
   const [qauntity, setQauntity] = useState(1)
   const [itemToOrder, setItemToOrder] = useState(
     

@@ -9,9 +9,9 @@ const CatagoriesDisplay = ({catagories}) => {
     return (
         <>
       {catagories.map(catagory => (
-      <CatagoryCardContainer>
-         {catagory.image ? ( <GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  />) : null}
-      </CatagoryCardContainer>
+      <CatagoryWrapper>
+         {catagory.image ? (<CatagoryCardContainer><GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> </CatagoryCardContainer> ) : null}
+      </CatagoryWrapper>
       ))}
      
     
@@ -21,6 +21,10 @@ const CatagoriesDisplay = ({catagories}) => {
 }
 
 export default CatagoriesDisplay
+
+export const CatagoryWrapper = styled.div`
+display:flex;
+`
 
 export const CatagoryCardContainer = styled.div`
   width: 32%;
