@@ -4,7 +4,7 @@ import Calander from './calander/Calander'
 import {DatePickerWrapper, DateLabel, MDPInput, Input} from './DatePicker.css'
 
 let date = new Date();
-      
+let today = date.getDay()
 
 const DatePicker = ({delivery}) => {
 
@@ -25,7 +25,7 @@ useEffect(() => {
 const showDatePicker = () => {
     setOpenDatePicker(!openDatePicker)
 }
-
+console.log(deliveryDate.day)
 
     return (
         <DatePickerWrapper>
@@ -34,7 +34,7 @@ const showDatePicker = () => {
              onClick={showDatePicker}
             >
                 <Input type='date' />
-                {deliveryDate.day === date ? (
+                {deliveryDate.day === today ? (
                     <DateLabel>Select {delivery} Date</DateLabel>
                 ) : (
                     <DateLabel>{delivery}:  {deliveryDate.day}/{deliveryDate.month}/{deliveryDate.year} </DateLabel>

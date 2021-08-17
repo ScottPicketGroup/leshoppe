@@ -12,7 +12,11 @@ import BackgroundLogo from "../reusable/background-logo/BackgroundLogo"
 const Shop = ({imageHeight}) => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
-
+  const [catagory, setCatagory] = useState("Sort By Catagory")
+  const [catagories, setCatagories] = useState([
+    "All Products",
+    
+  ])
    const data = useStaticQuery(graphql`
     query Catagories {
       allShopifyProduct {
@@ -24,47 +28,29 @@ const Shop = ({imageHeight}) => {
       }
     }
   `)
-console.log(data)
-  useEffect(() => {
-      
-    fetch('https://fakestoreapi.com/products')
-    .then(res=>res.json())
-  
-    .then(json=> 
-      dispatch({
-        type: "PRODUCTS",
-        products: json
-      })
-      )
-      .then(
-        dispatch({
-          type: "CART",
-          cart: true
-        })
-        )
-  },[])
+
+console.log(catagories)
  useEffect(() => {
-  // data.allShopifyProduct.edges.map(catagory => setCatagories(catagories => [...catagories, catagory.node.productType]))
-  // state.products && state.products.map(item => setCatagories(catagories => [...catagories, item.category]))
+  const catagoriesToPush = []
+  data.allShopifyProduct.edges.map(catagory => catagoriesToPush.push(catagory.node.productType))
+  console.log(catagoriesToPush)
+  
 
   const arr = []
   state.products && state.products.map(item => {
    arr.push(item.category) 
   })
   
-  const removeDuplicates = arr.filter(function(item, pos) {
-    return arr.indexOf(item) == pos
+  const removeDuplicates = catagoriesToPush.filter(function(item, pos) {
+    return catagoriesToPush.indexOf(item) == pos
   })
   const catagoryList = catagories.concat(removeDuplicates)
 setCatagories(catagoryList)
- }, [state])
-  const [catagories, setCatagories] = useState([
-    "All Products",
-    
-  ])
+ }, [data])
+ 
   
   
-  const [catagory, setCatagory] = useState("Sort By Catagory")
+  
 
   return (
     <>
