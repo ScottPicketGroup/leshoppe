@@ -59,7 +59,7 @@ useEffect(() => {
 
   return (
     <div>
-   {catagory === "All Products" || catagory === "Sort By Catagory" ? (
+   {catagory === "Select a catagory" ? (
      <CatagoriesDisplay catagories={catagories} />
    ): (
     <ProductGrid >

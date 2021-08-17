@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react"
-import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import ShopCatagoryDropdown from "./shop-components/dropdown/ShopCatagoryDropdown"
 import ShopIntro from "./shop-components/ShopIntro"
@@ -9,13 +8,13 @@ import {
   GlobalStateContext,
 } from "../../context/GlobalContextProvider"
 import BackgroundLogo from "../reusable/background-logo/BackgroundLogo"
-import CatagoriesDisplay from "./shop-components/Catagories/CatagoriesDisplay"
+
 const Shop = ({imageHeight}) => {
-  const dispatch = useContext(GlobalDispatchContext)
-  const state = useContext(GlobalStateContext)
+
   const [catagory, setCatagory] = useState("Sort By Catagory")
   const [catagories, setCatagories] = useState([
-    "All Products",
+   { title: "Select a catagory"},
+   {title: "All Products"}
     
   ])
    const data = useStaticQuery(graphql`
@@ -44,21 +43,18 @@ const Shop = ({imageHeight}) => {
 
 console.log(catagories)
  useEffect(() => {
-  const catagoriesToPush = []
+
+  const catagoriesToPush =  []
   data.allShopifyCollection.edges.map(catagory => catagoriesToPush.push(catagory.node))
   
-  
+ 
 
-  const arr = []
-  state.products && state.products.map(item => {
-   arr.push(item.category) 
-  })
-  
+ 
   const removeDuplicates = catagoriesToPush.filter(function(item, pos) {
     return catagoriesToPush.indexOf(item) == pos
   })
   const catagoryList = catagories.concat(removeDuplicates)
-setCatagories(catagoryList)
+  setCatagories(catagoryList)
  }, [])
  
   
@@ -79,7 +75,7 @@ setCatagories(catagoryList)
       />
       
       <ProductList catagory={catagory} catagories={catagories}/>
-      {/* <CatagoriesDisplay catagories={catagories}/> */}
+    
     </>
   )
 }
