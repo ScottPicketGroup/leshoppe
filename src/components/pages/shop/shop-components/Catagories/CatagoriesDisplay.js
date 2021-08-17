@@ -7,16 +7,16 @@ const CatagoriesDisplay = ({catagories}) => {
     console.log(catagories)
 
     return (
-        <>
+        <CatagoryWrapper>
       {catagories.map(catagory => (
-      <CatagoryWrapper>
-         {catagory.image ? (<CatagoryCardContainer><GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> </CatagoryCardContainer> ) : null}
-      </CatagoryWrapper>
+      <CatagoryCardContainer>
+         {catagory.image ? (<><GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> </> ) : null}
+      </CatagoryCardContainer>
       ))}
      
     
     
-    </>
+    </CatagoryWrapper>
     )
 }
 
@@ -24,6 +24,7 @@ export default CatagoriesDisplay
 
 export const CatagoryWrapper = styled.div`
 display:flex;
+flex-wrap: wrap;
 `
 
 export const CatagoryCardContainer = styled.div`
