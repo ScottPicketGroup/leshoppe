@@ -132,7 +132,7 @@ const Product = ({product}) => {
           <ProductPurchaseContainer>
             {/* checkbox container for options*/}
            
-            {variants.length > 1 ? (
+            {variants && variants.length > 1 ? (
               <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
             ): null}
             {/* date picker */}
