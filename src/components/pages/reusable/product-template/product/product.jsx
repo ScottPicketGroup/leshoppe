@@ -22,7 +22,7 @@ const Product = ({product}) => {
   )
   // const [cart, setCart] = useLocalStorage("cart", []);
   useEffect(() => {
-   if(product) setProductDetails(product.product)
+    console.log(product)
   }, [product])
  
   // const {
@@ -36,7 +36,7 @@ const Product = ({product}) => {
   //   productType,
   // } = productDetails
 
-  console.log(productDetails.title)
+ 
     
       useEffect(() => {
      

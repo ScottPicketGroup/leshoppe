@@ -4,22 +4,18 @@ import {Link} from 'gatsby'
 import {P} from "../../../../styled-components/GlobalStyles"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const CatagoriesDisplay = ({catagories}) => {
-    const [item, setItems] = useState([])
 
-    useEffect(()=> {
-        const items = []
-        catagories && catagories.map(catagory => {
-          if(catagory.image !==null )  console.log(catagory.image)
-        })
-        console.log(items)
-    }, [catagories])
 
     return (
         <CatagoryWrapper>
       {  catagories && catagories.map(catagory => (
-      <CatagoryCardContainer>
-         {catagory.image ? (<><GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> </> ) : null}
-      </CatagoryCardContainer>
+      <>
+         {catagory.image ? (<CatagoryCardContainer>
+             <GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> 
+             <P bc1>{catagory.title}</P>
+             <P bc1>View All {catagory.handle}</P>
+             </CatagoryCardContainer> ) : null}
+      </>
       ))}
      
     
@@ -38,6 +34,7 @@ flex-wrap: wrap;
 export const CatagoryCardContainer = styled.div`
   width: 32%;
   height: 100%;
+  margin-right: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
