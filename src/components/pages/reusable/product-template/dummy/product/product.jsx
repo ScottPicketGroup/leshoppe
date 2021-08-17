@@ -13,19 +13,9 @@ const Product = ({ product }) => {
   const state = useContext(GlobalStateContext)
   const dispatch = useContext(GlobalDispatchContext)
   const [qauntity, setQauntity] = useState(1)
-  const [itemToOrder, setItemToOrder] = useState({
-    item: product.product,
-    amount: 0,
-  })
+ 
   // const [cart, setCart] = useLocalStorage("cart", [])
-  const {
-    title,
-    description,
-    price,
-    image,
-    category,
-    endpointId,
-  } = product.product
+ 
 
   useEffect(() => {
     setItemToOrder({ ...itemToOrder, ["amount"]: qauntity })
