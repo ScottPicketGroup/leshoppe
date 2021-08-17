@@ -15,8 +15,9 @@ console.log(catagory)
          onClick={() => setCatagory(catagory.title)}
          ><CatagoryLink >
              <GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> 
-             <P bc1>{catagory.title}</P>
-             <P bc1>View All {catagory.handle}</P>
+           
+             <P bc1>View all {catagory.handle}{catagory.handle.slice(-1) !== "s" ? (<span>s</span>) : null}</P>
+             <P bc1>{catagory.description}</P>
              </CatagoryLink>
          </CatagoryCardContainer> ) : null}
       </>
