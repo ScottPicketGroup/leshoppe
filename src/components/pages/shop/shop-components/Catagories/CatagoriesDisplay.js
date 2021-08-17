@@ -2,13 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
 import {P} from "../../../../styled-components/GlobalStyles"
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const CatagoriesDisplay = ({catagories}) => {
     console.log(catagories)
+
     return (
         <>
       {catagories.map(catagory => (
-      <>{catagory.title}</>
+      <CatagoryCardContainer>
+         {catagory.image ? ( <GatsbyImage image={getImage(catagory.image)}  />) : null}
+      </CatagoryCardContainer>
       ))}
      
     
@@ -31,7 +34,7 @@ export const CatagoryCardContainer = styled.div`
     margin-bottom: 0;
 }
 `
-export const CatagoryImage = styled(Img)`
+export const CatagoryImage = styled(GatsbyImage)`
   margin-bottom: 1.75rem;
 `
 export const CatagoryCatagory = styled(P)`
