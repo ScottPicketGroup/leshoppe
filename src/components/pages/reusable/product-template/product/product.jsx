@@ -119,9 +119,42 @@ const Product = ({product}) => {
 
 
     return (
-        <ProductContainer>
+      <ProductContainer>
+      <ProductTextConatiner>
+          <ProductInfoContainer>
+          <ProductCatagory fFD>
+          {/* {category.charAt(0).toUpperCase() + category.slice(1)} */} Catagory
+          </ProductCatagory>
+         <ProductTitle bc1>{title}</ProductTitle>
+          <ProductPrice bc2>${product.product.variants[0].priceV2.amount}</ProductPrice>
+       <ProductDescription bc2>{description}</ProductDescription>
+          </ProductInfoContainer>
+          <ProductPurchaseContainer>
+            {/* checkbox container for options*/}
            
-        </ProductContainer>
+            {variants.length > 1 ? (
+              <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
+            ): null}
+            {/* date picker */}
+           
+            {
+              productType === "Catering" ? ( 
+                <>
+                <DeliveryOptions setDelivery={setDelivery} delivery={delivery}/>
+                <DatePicker delivery={delivery}/>
+                </>
+              ) : null
+            }
+            <ProductPurchaseContainerRow>
+              <ProductQauntityDropdown 
+                setQauntity={setQauntity}
+                qauntity={qauntity}/>
+              <AddToCartButton
+                onClick={addToCart}
+              >Add To Cart</AddToCartButton>
+              </ProductPurchaseContainerRow>
+          </ProductPurchaseContainer>
+      </ProductTextConatiner>
     )
 }
 

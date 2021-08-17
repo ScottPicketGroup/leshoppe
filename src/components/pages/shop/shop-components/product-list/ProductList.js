@@ -45,7 +45,17 @@ const [displayProducts, setDisplayProducts] = useState()
   }
   `)
 
-console.log(data.allShopifyProduct)
+  useEffect(() => {
+    const products = []
+    state.products && state.products.map (
+      product => {
+        if(catagory === "All Products" || catagory === "Sort By Catagory" ) products.push(product)
+  
+        else if(product.category === catagory) products.push(product)
+      }
+    )
+    setDisplayProducts(products)
+  }, [state, catagory])
 
   return (
     <div>
@@ -61,11 +71,7 @@ console.log(data.allShopifyProduct)
     {data.allShopifyProduct.edges.map(product => (
       <ProductCard product={product} catagory={catagory}/>
     ))}
-    {/* {displayProducts && displayProducts.map(
-      product => (
-        <ProductCard product={product} catagory={catagory}/>
-      )
-    )} */}
+  
   </ProductGrid>
    )}
       
