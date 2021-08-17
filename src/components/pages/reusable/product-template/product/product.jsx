@@ -117,26 +117,27 @@ const Product = ({product}) => {
 
 
 
-
+console.log(product.product)
 
 
     return (
       <ProductContainer>
       <ProductTextConatiner>
           <ProductInfoContainer>
-          <ProductCatagory fFD>
-                {product.product.productType.charAt(0).toUpperCase() + product.product.productType.slice(1)} 
-                </ProductCatagory>
-         <ProductTitle bc1>{title}</ProductTitle>
-
-         {variants && variants.length > 0 ? (
+                     <ProductCatagory fFD>
+                {       product &&    product.product.productType.charAt(0).toUpperCase() + product.product.productType.slice(1)} 
+                      </ProductCatagory>
+                      <ProductTitle bc1>{title}</ProductTitle>
+                {variants && variants.length > 0 ? (
                      <ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>
                   ): null}
-
-         {variants && variants.length > 1 ? (
+                      <ProductDescription bc2>{description}</ProductDescription>
+                {variants && variants.length > 1 ? (
                     <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
                   ): null}
        </ProductInfoContainer>
+
+     
       </ProductTextConatiner>
 
       {/* <ProductCarousel>
