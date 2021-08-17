@@ -25,16 +25,16 @@ const Product = ({product}) => {
     console.log(product)
   }, [product])
  
-  // const {
-  //   title,
-  //   description,
-  //   price,
-  //   image,
-  //   category,
-  //   endpointId,
-  //   variants, 
-  //   productType,
-  // } = productDetails
+  const {
+    title,
+    description,
+    price,
+    image,
+    category,
+    endpointId,
+    variants, 
+    productType,
+  } = productDetails
 
  
     

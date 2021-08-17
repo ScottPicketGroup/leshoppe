@@ -7,8 +7,9 @@ import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../../context/GlobalContextProvider"
+import CatagoriesDisplay from "../Catagories/CatagoriesDisplay"
 
-const ProductList = ({ products, catagory }) => {
+const ProductList = ({ products, catagory, catagories }) => {
 const [displayProducts, setDisplayProducts] = useState()
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
@@ -58,17 +59,21 @@ useEffect(() => {
 
   return (
     <div>
-   
-      <ProductGrid >
-        {data.allShopifyProduct.edges.map(product => (
-          <ProductCard product={product} catagory={catagory}/>
-        ))}
-        {/* {displayProducts && displayProducts.map(
-          product => (
-            <ProductCard product={product} catagory={catagory}/>
-          )
-        )} */}
-      </ProductGrid>
+   {catagory === "All Products" || catagory === "Sort By Catagory" ? (
+     <CatagoriesDisplay catagories={catagories} />
+   ): (
+    <ProductGrid >
+    {data.allShopifyProduct.edges.map(product => (
+      <ProductCard product={product} catagory={catagory}/>
+    ))}
+    {/* {displayProducts && displayProducts.map(
+      product => (
+        <ProductCard product={product} catagory={catagory}/>
+      )
+    )} */}
+  </ProductGrid>
+   )}
+      
     </div>
   )
 }

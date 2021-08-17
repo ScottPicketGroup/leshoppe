@@ -78,8 +78,8 @@ setCatagories(catagoryList)
         setCatagories={setCatagories}
       />
       
-      {/* <ProductList catagory={catagory} /> */}
-      <CatagoriesDisplay catagories={catagories}/>
+      <ProductList catagory={catagory} catagories={catagories}/>
+      {/* <CatagoriesDisplay catagories={catagories}/> */}
     </>
   )
 }
