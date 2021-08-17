@@ -19,9 +19,7 @@ const Product = ({product}) => {
   const dispatch = useContext(GlobalDispatchContext)
   const [qauntity, setQauntity] = useState(1)
   const [itemToOrder, setItemToOrder] = useState(
-    {item: product.product,
-    amount: 0
-    }
+    
   )
   const [cart, setCart] = useLocalStorage("cart", []);
     const {
