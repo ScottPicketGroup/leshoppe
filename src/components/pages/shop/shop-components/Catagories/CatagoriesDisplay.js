@@ -10,7 +10,7 @@ const CatagoriesDisplay = ({catagories}) => {
         <>
       {catagories.map(catagory => (
       <CatagoryCardContainer>
-         {catagory.image ? ( <GatsbyImage image={getImage(catagory.image)}  />) : null}
+         {catagory.image ? ( <GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  />) : null}
       </CatagoryCardContainer>
       ))}
      
