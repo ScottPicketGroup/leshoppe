@@ -9,6 +9,7 @@ import {
   GlobalStateContext,
 } from "../../context/GlobalContextProvider"
 import BackgroundLogo from "../reusable/background-logo/BackgroundLogo"
+import CatagoriesDisplay from "./shop-components/Catagories/CatagoriesDisplay"
 const Shop = ({imageHeight}) => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
@@ -18,22 +19,34 @@ const Shop = ({imageHeight}) => {
     
   ])
    const data = useStaticQuery(graphql`
-    query Catagories {
-      allShopifyProduct {
-        edges {
-          node {
-            productType
+   query Catagories {
+    allShopifyCollection {
+      edges {
+        node {
+          title
+          image {
+            id
+            src
+            localFile {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1.5)
+              }
+            }
           }
+          handle
+          description
+          descriptionHtml
         }
       }
     }
+  }
   `)
 
 console.log(catagories)
  useEffect(() => {
   const catagoriesToPush = []
   data.allShopifyProduct.edges.map(catagory => catagoriesToPush.push(catagory.node.productType))
-  console.log(catagoriesToPush)
+  
   
 
   const arr = []
@@ -46,7 +59,7 @@ console.log(catagories)
   })
   const catagoryList = catagories.concat(removeDuplicates)
 setCatagories(catagoryList)
- }, [data])
+ }, [])
  
   
   
@@ -65,7 +78,8 @@ setCatagories(catagoryList)
         setCatagories={setCatagories}
       />
       
-      <ProductList catagory={catagory} />
+      {/* <ProductList catagory={catagory} /> */}
+      <CatagoriesDisplay catagories={catagories}/>
     </>
   )
 }
