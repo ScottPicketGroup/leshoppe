@@ -16,7 +16,11 @@ console.log(catagory)
          ><CatagoryLink >
              <GatsbyImage image={getImage(catagory.image.localFile.childImageSharp)}  /> 
            
-             <P bc1>View all {catagory.handle}{catagory.handle.slice(-1) !== "s" ? (<span>s</span>) : null}</P>
+             <P bc1 
+             style={{
+               marginTop: `1rem`
+             }}
+             >View all {catagory.handle} items</P>
              <P bc1>{catagory.description}</P>
              </CatagoryLink>
          </CatagoryCardContainer> ) : null}

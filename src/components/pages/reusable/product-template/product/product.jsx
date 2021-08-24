@@ -36,7 +36,7 @@ const Product = ({product}) => {
     productType,
   } = productDetails
 
- 
+ console.log(productDetails.productType)
     
       useEffect(() => {
      

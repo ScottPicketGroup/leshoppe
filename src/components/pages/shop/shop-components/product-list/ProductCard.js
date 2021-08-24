@@ -19,7 +19,7 @@ const ProductCard = ({ product, catagory }) => {
 
   return (
     <>
-      {productTypeDisplay === catagoryDisplay ? (
+      {productType === "" ? (<div></div>) : productTypeDisplay === catagoryDisplay || catagoryDisplay.includes(productTypeDisplay) ? (
         <ProductCardContainer>
           <ProductLink to={`/shop/products/${handle}`}>
             <ProductImage
@@ -53,7 +53,9 @@ const ProductCard = ({ product, catagory }) => {
             <P bc2> View Item</P>{" "}
           </ProductLink>
         </ProductCardContainer>
-      ) : null}
+      ) : productType === "" ? (<div>
+
+      </div>) : null }
     </>
   )
 }
