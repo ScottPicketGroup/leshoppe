@@ -132,9 +132,7 @@ const Product = ({product}) => {
                      <ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>
                   ): null}
                       <ProductDescription bc2>{description}</ProductDescription>
-                {variants && variants.length > 1 ? (
-                    <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
-                  ): null}
+                
        </ProductInfoContainer>
 
      
@@ -142,7 +140,9 @@ const Product = ({product}) => {
       <ProductPurchaseContainer>
                   {/* checkbox container for options*/}
                  
-                  
+                  {variants && variants.length > 1 ? (
+                    <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
+                  ): null}
                   {/* date picker */}
                  
                   {
@@ -164,9 +164,11 @@ const Product = ({product}) => {
                     </ProductPurchaseContainerRow> 
                 </ProductPurchaseContainer>
                 </ProductTextConatiner>
-      {/* <ProductCarousel>
-    <Slider images={product.product.variants} selected={selected} setSelected={setSelected}/>
-      </ProductCarousel> */}
+      { product ? (
+        <ProductCarousel>
+        <Slider images={product.product.variants} selected={selected} setSelected={setSelected}/>
+          </ProductCarousel>
+      ): null}
   </ProductContainer>
     )
 }
