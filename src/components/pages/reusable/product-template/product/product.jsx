@@ -166,9 +166,9 @@ const Product = ({product}) => {
                     </ProductPurchaseContainerRow> 
                 </ProductPurchaseContainer>
                 </ProductTextConatiner>
-      {/* <ProductCarousel>
+      <ProductCarousel>
     <Slider images={product.product.variants} selected={selected} setSelected={setSelected}/>
-      </ProductCarousel> */}
+      </ProductCarousel>
   </ProductContainer>
     )
 }
