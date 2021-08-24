@@ -35,7 +35,7 @@ const BackgroundLogo = ({ logoLimit }) => {
       window.removeEventListener("scroll", logit)
     }
   })
-  console.log(scrollY, pageLimit - 500)
+
 
   return (
     <LogoContainer height="0">

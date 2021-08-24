@@ -41,12 +41,13 @@ const Shop = ({imageHeight}) => {
   }
   `)
 
-console.log(catagories)
  useEffect(() => {
 
   const catagoriesToPush =  []
   data.allShopifyCollection.edges.map(catagory => catagoriesToPush.push(catagory.node))
-  
+  catagoriesToPush.map(item => {
+    if(item.title === "Le Shoppe Catering") catagoriesToPush.unshift(item)
+  })
  
 
  
@@ -54,12 +55,13 @@ console.log(catagories)
     return catagoriesToPush.indexOf(item) == pos
   })
   const catagoryList = catagories.concat(removeDuplicates)
+  console.log(catagoryList)
   setCatagories(catagoryList)
  }, [])
- 
+
  const [menuLabel, setMenuLabel] = useState('Sort By Catagory')
   
-  
+
 
   return (
     <>
