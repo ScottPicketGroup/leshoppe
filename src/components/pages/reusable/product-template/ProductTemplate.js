@@ -13,14 +13,23 @@ import ProductContainer from "./order-section/ProductContainer"
 import RecommendationList from "./recommendations-section/product-list/ProductList"
 import Layout from "../../../layout"
 import Product from "./product/product"
+import { useEffect } from "react"
 const ProductTemplate = ({ pageContext, state }) => {
+const [product, setProduct] = React.useState(pageContext)
+
+useEffect(() => {
+  setProduct(pageContext)
+}, [pageContext])
+
 
   return (
     <Layout>
   
         <Section1>
           <Product product={pageContext}/>
-          <RecommendationList />
+         {
+           product ? ( <RecommendationList product={product}/>) : null
+         }
       
         </Section1>
      

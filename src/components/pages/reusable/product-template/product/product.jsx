@@ -12,9 +12,10 @@ import Slider from './ProductCarousel.jsx/Slider'
 import CheckBoxes from './checkboxes/CheckBoxes'
 import DatePicker from '../order-section/date-picker/DatePicker'
 import DeliveryOptions from './delivery-options/DeliveryOptions'
+import RecommendationsModal from '../recommendations-section/Modal/RecommendationsModa;'
 const Product = ({product}) => {
   const [selected, setSelected] = useState(0)
-  const [delivery, setDelivery] = useState("Delivery")
+  const [delivery, setDelivery] = useState("Pick Up")
   const [productDetails, setProductDetails] = useState({})
   const [qauntity, setQauntity] = useState(1)
   const [itemToOrder, setItemToOrder] = useState(
@@ -124,6 +125,7 @@ const Product = ({product}) => {
       <ProductContainer>
       <ProductTextConatiner>
           <ProductInfoContainer>
+           
                      <ProductCatagory fFD>
                 {       product &&    product.product.productType.charAt(0).toUpperCase() + product.product.productType.slice(1)} 
                       </ProductCatagory>
@@ -162,13 +164,17 @@ const Product = ({product}) => {
                       onClick={addToCart}
                     >Add To Cart</AddToCartButton>
                     </ProductPurchaseContainerRow> 
+                 
                 </ProductPurchaseContainer>
                 </ProductTextConatiner>
       { product ? (
         <ProductCarousel>
+           
         <Slider images={product.product.variants} selected={selected} setSelected={setSelected}/>
+      
           </ProductCarousel>
       ): null}
+    {/* <RecommendationsModal product={product} /> */}
   </ProductContainer>
     )
 }

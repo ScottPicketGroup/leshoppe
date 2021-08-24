@@ -3,18 +3,62 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 
 import ProductCard from "./ProductCard"
-const RecommendationList = () => {
- 
+import { useEffect } from "react"
+const RecommendationList = ({product}) => {
+ const [recommendations, setRecommendations] = React.useState([])
+  const data = useStaticQuery(graphql`
+  query AllProducts {
+    allShopifyProduct {
+      edges {
+        node {
+          handle
+          description
+          availableForSale
+          tags
+          productType
+          title
+          variants {
+            priceV2 {
+              amount
+              currencyCode
+            }
+            title
+          }
+          images {
+            localFile {
+              id
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+ `)
+
+useEffect(() => {
+  const recommendationsList = []
+  data.allShopifyProduct.edges.map((recommendation, i )=> {
+   
+    if (recommendation.node.tags[0] === product.product.tags[0]) recommendationsList.push(recommendation)
+    
+    setRecommendations(recommendationsList.slice(0,3))
+  })
+}, [product, data])
+
+console.log(recommendations)
   return (
  <RecommendationListContainer>
     <h1>Related recommendations</h1>
       <RecommendationGrid >
-        
-        {/* {data.allShopifyProduct.edges.map(product => ( */}
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-
+      {
+        recommendations.map(item => (
+          <ProductCard product={item}/>
+        ))
+      }
          
         
       </RecommendationGrid>

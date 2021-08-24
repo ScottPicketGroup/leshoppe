@@ -1,61 +1,44 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'gatsby'
-import Img from "gatsby-image"
+import { Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {P} from '../.././../../../styled-components/GlobalStyles'
-const ProductCard = () => {
-    // const {title, images, productType, variants, description} = product.node
-    // const productTypeDisplay = productType.charAt(0).toUpperCase()+ productType.slice(1)
-    // const catagoryDisplay = catagory.charAt(0).toUpperCase()+ catagory.slice(1)
-    
+import RecommendationsModal from '../Modal/RecommendationsModa;'
+const ProductCard = ({product}) => {
+ 
+
+   
+console.log(product.node.images[0].localFile.childImageSharp)
+
 
     return (
-        <>
-        <ProductCardContainer>
-  {/* <ProductImage qalt="blah"/> */}
-            <ProductCatagory fFD> Catagory</ProductCatagory>
-            <ProductTitle bc2>title</ProductTitle>
-            <ProductPrice bc2>$price</ProductPrice>
-            <ProductDescription bc2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nostrum, fuga deleniti accusamus quas aut cum harum dolorem architecto laboriosam nam sit autem rem ut ipsum magni modi est? Dicta?</ProductDescription>
+    
+        <ProductCardContainer to={`/shop/products/${product.node.handle}`}>
+        <ProductImage
+              image={getImage(product.node.images[0].localFile.childImageSharp)}
+              alt={product.node.title}
+            />
+            <ProductCatagory fFD> {product.node.productType}</ProductCatagory>
+            <ProductTitle bc2>{product.node.title}</ProductTitle>
+            <ProductPrice bc2>${product.node.variants[0].priceV2.amount}</ProductPrice>
+            <ProductDescription bc2>{product.node.description}</ProductDescription>
             <ProductLink> <P bc2> View Item</P> </ProductLink>
-            
+           
         </ProductCardContainer>
-      {/* {  productTypeDisplay ===  catagoryDisplay  ? (
-        <ProductCardContainer>
-  <ProductImage fluid={images[0].localFile.childImageSharp.fluid} alt="blah"/>
-            <ProductCatagory fFD> {productType.charAt(0).toUpperCase() + productType.slice(1)}</ProductCatagory>
-            <ProductTitle bc2>{title}</ProductTitle>
-            <ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>
-            <ProductDescription bc2>{description}</ProductDescription>
-            <ProductLink> <P bc2> View Item</P> </ProductLink>
-            
-        </ProductCardContainer>) : 
-        catagory === 'All Products'  ?
-        (
-            <ProductCardContainer>
-  <ProductImage fluid={images[0].localFile.childImageSharp.fluid} alt="blah"/>
-            <ProductCatagory fFD> {productType.charAt(0).toUpperCase() + productType.slice(1)}</ProductCatagory>
-            <ProductTitle bc2>{title}</ProductTitle>
-            <ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>
-            <ProductDescription bc2>{description}</ProductDescription>
-            <ProductLink> <P bc2> View Item</P> </ProductLink>
-            </ProductCardContainer>
-        ) : null
-        } */}
-    </>
+
     )
 
 }
 
 export default ProductCard
 
-export const ProductCardContainer = styled.div`
+export const ProductCardContainer = styled(Link)`
 width: 33%;
 height: 100%;
 display: flex;
 flex-direction: column;
 `
-export const ProductImage = styled(Img)`
+export const ProductImage = styled(GatsbyImage)`
 margin-bottom: 1.75rem;
 `
 export const ProductCatagory = styled(P)`

@@ -9,14 +9,7 @@ const DeliveryOptions = ({delivery, setDelivery}) => {
         <DeliveryCheckBoxWrapper>
          
 
-            <CheckBoxOptionWrapper onClick={() => setDelivery("Delivery")}>
-                <DeliveryCheckBox  checked={delivery === "Delivery" ? true : false}/> 
-                <P bc2
-                style={{
-                    marginLeft: `1rem`
-                }}
-                >Delivery </P> <P bc3>(Only available in Melbourne CBD)</P>
-            </CheckBoxOptionWrapper>
+           
 
             <CheckBoxOptionWrapper onClick={() => setDelivery("Pick Up")}>
              <DeliveryCheckBox  checked={delivery === "Pick Up" ? true : false}/> 
@@ -25,7 +18,33 @@ const DeliveryOptions = ({delivery, setDelivery}) => {
                  marginLeft: `1rem`
              }}
              >PickUp</P>
-            </CheckBoxOptionWrapper>       
+            </CheckBoxOptionWrapper> 
+            <CheckBoxOptionWrapper onClick={() => setDelivery("Delivery")}>
+                <DeliveryCheckBox  checked={delivery === "Delivery" ? true : false}/> 
+                <P bc2
+                style={{
+                    marginLeft: `1rem`
+                }}
+                >Delivery </P> 
+            </CheckBoxOptionWrapper>      
+            {delivery === "Delivery" ? (
+                <>
+                <P bc3
+                style={{
+                    marginTop: `1rem`
+                }}
+                >
+                    **Delivery only available within the Melbourne CBD
+                </P>
+                <P bc3
+                style={{
+                    paddingLeft: `.75rem`, marginBottom: `.25rem`
+                }}
+                >
+                    Minimum delivery $100 - FREE delivery on orders over $300
+                </P>
+                </>
+            ): null}
         </DeliveryCheckBoxWrapper>
     )
 }
