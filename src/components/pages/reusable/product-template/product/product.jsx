@@ -142,9 +142,7 @@ const Product = ({product}) => {
       <ProductPurchaseContainer>
                   {/* checkbox container for options*/}
                  
-                  {variants && variants.length > 1 ? (
-                    <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
-                  ): null}
+                  
                   {/* date picker */}
                  
                   {
@@ -166,9 +164,9 @@ const Product = ({product}) => {
                     </ProductPurchaseContainerRow> 
                 </ProductPurchaseContainer>
                 </ProductTextConatiner>
-      <ProductCarousel>
+      {/* <ProductCarousel>
     <Slider images={product.product.variants} selected={selected} setSelected={setSelected}/>
-      </ProductCarousel>
+      </ProductCarousel> */}
   </ProductContainer>
     )
 }
