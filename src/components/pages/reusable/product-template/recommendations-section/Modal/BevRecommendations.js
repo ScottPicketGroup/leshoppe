@@ -13,7 +13,7 @@ const BeverageSlider = ({products}) => {
             {
                 productsList.map((item, i) => (
                     <Product>
-                        {item.node.title}
+                        {item.node.title}       
                     </Product>
                 ))
             }
