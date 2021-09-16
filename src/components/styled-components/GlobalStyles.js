@@ -141,7 +141,6 @@ export const Page = styled.div`
   position: relative;
   overflow: hidden;
 `
-
 export const Section1 = styled.div`
   width: 99vw;
   position: relative;
@@ -149,6 +148,22 @@ export const Section1 = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${padding.page.vertical} ${padding.page.horizontal} 0
+    ${padding.page.horizontal};
+  z-index: 2;
+  overflow-x: hidden;
+  background: transperant;
+  @media screen and (max-width: 450px) {
+  
+    padding: 0 1.15rem;
+  }
+`
+export const Section2 = styled.div`
+  width: 99vw;
+  position: relative;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 7.25rem ${padding.page.horizontal} 0
     ${padding.page.horizontal};
   z-index: 2;
   overflow-x: hidden;
