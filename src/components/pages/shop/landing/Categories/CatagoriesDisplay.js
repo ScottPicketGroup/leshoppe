@@ -13,8 +13,8 @@ const CatagoriesDisplay = ({ categories, setCategory }) => {
   return (
     <CatagoryWrapper>
       {categories &&
-        categories.map(category => (
-          <>
+        categories.map((category, index) => (
+          <React.Fragment key={index}>
             {category.image ? (
               <CatagoryCardContainer
                 onClick={() => setCategory(category.title)}
@@ -44,7 +44,7 @@ const CatagoriesDisplay = ({ categories, setCategory }) => {
                 </CatagoryLink>
               </CatagoryCardContainer>
             ) : null}
-          </>
+          </React.Fragment>
         ))}
     </CatagoryWrapper>
   )

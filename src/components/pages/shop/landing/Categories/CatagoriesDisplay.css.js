@@ -14,7 +14,7 @@ export const CatagoryCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 13.5rem;
+  margin-bottom: 5.5rem;
   @media screen and (max-width: 450px) {
     width: 100%;
     margin-bottom: 0;
@@ -46,7 +46,12 @@ export const CatagoryPrice = styled(P)`
 `
 export const CatagoryDescription = styled(P)`
   margin-bottom: 2.25rem;
-  min-height: 100px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 54px;
   @media screen and (max-width: 450px) {
     margin-bottom: 1.5rem;
   }
