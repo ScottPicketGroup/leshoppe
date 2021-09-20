@@ -18,7 +18,7 @@ const SortDropDown = ({ sortBy, setSortBy }) => {
     <DropDownWrapper>
       <MenuWrapper onClick={toggleAccordion}>
         <Item>
-          <P bc3>Sort by {sortBy.title}</DropdownArrow>
+          <P bc3>Sort by {sortBy.title} </P>
           <DropdownArrow open={setActive} />
         </Item>
         <DropDownContainer ref={content} style={{ maxHeight: `${setHeight}` }}>
