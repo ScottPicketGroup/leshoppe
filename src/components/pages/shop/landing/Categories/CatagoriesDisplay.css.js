@@ -17,6 +17,10 @@ export const CatagoryCardContainer = styled(Link)`
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 5.5rem;
+  :hover {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.02);
+  }
   @media screen and (max-width: 450px) {
     width: 100%;
     margin-bottom: 0;
@@ -66,7 +70,11 @@ export const CatagoryLink = styled.button`
   background: transparent;
   color: #153e35;
   border: 1px solid #153e35;
-
+  transition: all .2s ease-in-out;
+  ${CatagoryCardContainer}:hover & {
+    background: #153e35;
+    color: white;
+  }
   @media screen and (max-width: 450px) {
     margin-bottom: 6rem;
   }

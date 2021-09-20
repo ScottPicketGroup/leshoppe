@@ -57,7 +57,7 @@ const Shop = () => {
     const categoryList = data.allShopifyCollection.edges.map(
       category => category.node
     )
-    setCategories(categoryList)
+    setCategories(categoryList.reverse())
   }, [])
 
   return (
