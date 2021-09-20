@@ -30,7 +30,8 @@ const Products = ({ location }) => {
         )
   }, [activeProductType])
 
-  return (
+ 
+  return location ? (
     <Layout>
       <SEO title="Products" />
       <Section2>
@@ -50,6 +51,8 @@ const Products = ({ location }) => {
         />
       </Section2>
     </Layout>
+  ) : (
+    <div class=""></div>
   )
 }
 
