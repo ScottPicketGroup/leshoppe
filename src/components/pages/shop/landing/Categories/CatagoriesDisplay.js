@@ -10,6 +10,7 @@ import {
 } from "./CatagoriesDisplay.css"
 
 const CatagoriesDisplay = ({ categories, setCategory }) => {
+  
   return (
     <CatagoryWrapper>
       {categories &&
@@ -18,6 +19,8 @@ const CatagoriesDisplay = ({ categories, setCategory }) => {
             {category.image ? (
               <CatagoryCardContainer
                 onClick={() => setCategory(category.title)}
+                to="products"
+                state={{category}}
               >
                 <GatsbyImage
                   image={getImage(category.image.localFile.childImageSharp)}

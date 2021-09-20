@@ -78,6 +78,7 @@ const ProductQauntityDropdownContainer = styled.div`
   align-items: center;
   border: 1px solid #153e35;
   border-radius: 1px;
+  transition: all .2s ease-in-out;
   :hover {
     background: #153e35;
     color: #fdf9ee;

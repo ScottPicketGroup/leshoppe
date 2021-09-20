@@ -6,8 +6,10 @@ import { P } from "../../../../styled-components/GlobalStyles"
 export const CatagoryWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  min-height: 90vh;
+  margin-top: 10rem;
 `
-export const CatagoryCardContainer = styled.div`
+export const CatagoryCardContainer = styled(Link)`
   width: 32%;
   height: 100%;
   margin-right: 1rem;
@@ -22,6 +24,7 @@ export const CatagoryCardContainer = styled.div`
 `
 export const CatagoryImage = styled(GatsbyImage)`
   margin-bottom: 1.75rem;
+  
 `
 export const CatagoryCatagory = styled(P)`
   margin-bottom: 1.75rem;
