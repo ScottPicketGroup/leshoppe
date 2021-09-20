@@ -41,13 +41,13 @@ const Products = ({ location }) => {
     <Layout>
       <SEO title="Products" />
       <Section2>
-    { location.state.category && location.state.category ? (
+    
     <CategoryListLanding
       title={categoryInfo.title}
       image={categoryInfo.image}
       description={categoryInfo.description}
     />
-    ) : null}
+    
         <ProductListHeader
           productTypes={productTypes}
           setActiveProductType={setActiveProductType}

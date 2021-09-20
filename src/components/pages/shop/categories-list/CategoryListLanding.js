@@ -3,12 +3,12 @@ import React from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
 const CategoryListLanding = ({ title, image, description }) => {
-
+  console.log(image)
   return (
     <ShopIntroContainer>
       <h1>{title}</h1>
       <P bc1>{description}</P>
-      <CatagoryImage image={getImage(image.localFile.childImageSharp)} />
+     {image &&  <CatagoryImage image={getImage(image.localFile.childImageSharp)} />}
     </ShopIntroContainer>
   )
 }
