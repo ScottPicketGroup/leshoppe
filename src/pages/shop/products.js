@@ -38,7 +38,7 @@ const Products = ({ location, beep }) => {
     <Layout>
       <SEO title="Products" />
       <Section2>
-    {location.state.category ? (
+    { location.state.category && location.state.category ? (
     <CategoryListLanding
       title={location.state.category.title}
       image={location.state.category.image}
