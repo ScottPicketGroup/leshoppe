@@ -39,9 +39,9 @@ const Products = ({ location, beep }) => {
       <SEO title="Products" />
       <Section2>
         <CategoryListLanding
-          title={state.category.title}
-          image={state.category.image}
-          description={state.category.description}
+          title={location.state.category.title}
+          image={location.state.category.image}
+          description={location.state.category.description}
         />
         <ProductListHeader
           productTypes={productTypes}
