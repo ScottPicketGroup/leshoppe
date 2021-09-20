@@ -5,14 +5,16 @@ import { Section2 } from "../../components/styled-components/GlobalStyles"
 import CategoryListLanding from "../../components/pages/shop/categories-list/CategoryListLanding"
 import ProductListHeader from "../../components/pages/shop/categories-list/ProductTypeHeader"
 import ProductsListGrid from "../../components/pages/shop/categories-list/ProductGrid/ProductListGrid"
-const Products = ({ location }) => {
+const Products = ({ location, beep }) => {
   const { state = {} } = location
-  const { title, description, image, products } = state.category
-  const [productList, setProductList] = React.useState(products)
+
+  const [productList, setProductList] = React.useState(location ? state.category.products : null)
   const [productTypes, setProductTypes] = React.useState([])
   const [activeProductType, setActiveProductType] = React.useState(
     "All Products"
   )
+
+  
 
   useEffect(() => {
     const allProductTypes = ["All Products"]
@@ -24,9 +26,9 @@ const Products = ({ location }) => {
 
   useEffect(() => {
     activeProductType === "All Products"
-      ? setProductList(products)
+      ? setProductList(state.category.products)
       : setProductList(
-          products.filter(p => p.productType === activeProductType)
+          state.category.products.filter(p => p.productType === activeProductType)
         )
   }, [activeProductType])
 
@@ -36,9 +38,9 @@ const Products = ({ location }) => {
       <SEO title="Products" />
       <Section2>
         <CategoryListLanding
-          title={title}
-          image={image}
-          description={description}
+          title={state.category.title}
+          image={state.category.image}
+          description={state.category.description}
         />
         <ProductListHeader
           productTypes={productTypes}

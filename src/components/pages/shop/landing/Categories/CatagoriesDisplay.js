@@ -21,6 +21,7 @@ const CatagoriesDisplay = ({ categories, setCategory }) => {
                 onClick={() => setCategory(category.title)}
                 to="products"
                 state={{category}}
+                
               >
                 <GatsbyImage
                   image={getImage(category.image.localFile.childImageSharp)}
