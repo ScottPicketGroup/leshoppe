@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
 const CategoryListLanding = ({ title, image, description }) => {
+
   return (
     <ShopIntroContainer>
       <h1>{title}</h1>

@@ -5,18 +5,21 @@ import { Section2 } from "../../components/styled-components/GlobalStyles"
 import CategoryListLanding from "../../components/pages/shop/categories-list/CategoryListLanding"
 import ProductListHeader from "../../components/pages/shop/categories-list/ProductTypeHeader"
 import ProductsListGrid from "../../components/pages/shop/categories-list/ProductGrid/ProductListGrid"
-const Products = ({ location, beep }) => {
-  const { state = {} } = location
-
+const Products = ({ location }) => {
+  const [categoryInfo, setCategoryInfo] = React.useState({})
   const [productList, setProductList] = React.useState([])
   const [productTypes, setProductTypes] = React.useState([])
   const [activeProductType, setActiveProductType] = React.useState(
     "All Products"
   )
 
-  
 
   useEffect(() => {
+    setCategoryInfo({...categoryInfo, 
+      ['title']: location.state.category.title,
+      ['description']: location.state.category.description,
+      ['image']: location.state.category.image
+    })
     setProductList(location.state.category.products)
     const allProductTypes = ["All Products"]
     location.state.category.products.map(product =>
@@ -27,9 +30,9 @@ const Products = ({ location, beep }) => {
 
   useEffect(() => {
     activeProductType === "All Products"
-      ? setProductList(state.category.products)
+      ? setProductList(location.state.category.products)
       : setProductList(
-          state.category.products.filter(p => p.productType === activeProductType)
+          location.state.category.products.filter(p => p.productType === activeProductType)
         )
   }, [activeProductType])
 
@@ -40,9 +43,9 @@ const Products = ({ location, beep }) => {
       <Section2>
     { location.state.category && location.state.category ? (
     <CategoryListLanding
-      title={location.state.category.title}
-      image={location.state.category.image}
-      description={location.state.category.description}
+      title={categoryInfo.title}
+      image={categoryInfo.image}
+      description={categoryInfo.description}
     />
     ) : null}
         <ProductListHeader
