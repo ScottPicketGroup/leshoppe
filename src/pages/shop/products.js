@@ -38,11 +38,13 @@ const Products = ({ location, beep }) => {
     <Layout>
       <SEO title="Products" />
       <Section2>
-        <CategoryListLanding
-          title={location.state.category.title}
-          image={location.state.category.image}
-          description={location.state.category.description}
-        />
+    {location.state.category ? (
+    <CategoryListLanding
+      title={location.state.category.title}
+      image={location.state.category.image}
+      description={location.state.category.description}
+    />
+    ) : null}
         <ProductListHeader
           productTypes={productTypes}
           setActiveProductType={setActiveProductType}
