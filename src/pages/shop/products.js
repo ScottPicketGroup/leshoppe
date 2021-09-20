@@ -8,7 +8,7 @@ import ProductsListGrid from "../../components/pages/shop/categories-list/Produc
 const Products = ({ location, beep }) => {
   const { state = {} } = location
 
-  const [productList, setProductList] = React.useState()
+  const [productList, setProductList] = React.useState([])
   const [productTypes, setProductTypes] = React.useState([])
   const [activeProductType, setActiveProductType] = React.useState(
     "All Products"
@@ -17,6 +17,7 @@ const Products = ({ location, beep }) => {
   
 
   useEffect(() => {
+    setProductList(location.state.category.products)
     const allProductTypes = ["All Products"]
     location.state.category.products.map(product =>
       allProductTypes.push(product.productType)
