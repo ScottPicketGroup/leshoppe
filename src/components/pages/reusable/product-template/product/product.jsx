@@ -160,9 +160,10 @@ const Product = ({product}) => {
                     <ProductQauntityDropdown 
                       setQauntity={setQauntity}
                       qauntity={qauntity}/>
-                    <AddToCartButton
-                      onClick={addToCart}
-                    >Add To Cart</AddToCartButton>
+                    {product && <AddToCartButton
+                      to={'/shop/products/recommendations'}
+                      state={product}
+                    >Add To Cart</AddToCartButton>}
                     </ProductPurchaseContainerRow> 
                  
                 </ProductPurchaseContainer>
@@ -256,7 +257,7 @@ justify-content: center;
 }
 `
 
-export const AddToCartButton = styled.button`
+export const AddToCartButton = styled(Link)`
     display: flex;
   flex-direction: column;
   width: 48%;

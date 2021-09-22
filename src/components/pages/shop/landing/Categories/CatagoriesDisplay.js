@@ -19,7 +19,7 @@ const CatagoriesDisplay = ({ categories, setCategory }) => {
             {category.image ? (
               <CatagoryCardContainer
                 onClick={() => setCategory(category.title)}
-                to="products"
+                to="/shop/products"
                 state={{category}}
                 
               >

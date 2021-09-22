@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import { Section2 } from "../../components/styled-components/GlobalStyles"
-import CategoryListLanding from "../../components/pages/shop/categories-list/CategoryListLanding"
-import ProductListHeader from "../../components/pages/shop/categories-list/ProductTypeHeader"
-import ProductsListGrid from "../../components/pages/shop/categories-list/ProductGrid/ProductListGrid"
+import Layout from "../../../components/layout"
+import SEO from "../../../components/seo"
+import { Section2 } from "../../../components/styled-components/GlobalStyles"
+import CategoryListLanding from "../../../components/pages/shop/categories-list/CategoryListLanding"
+import ProductListHeader from "../../../components/pages/shop/categories-list/ProductTypeHeader"
+import ProductsListGrid from "../../../components/pages/shop/categories-list/ProductGrid/ProductListGrid"
 const Products = ({ location }) => {
   const [categoryInfo, setCategoryInfo] = React.useState({})
   const [productList, setProductList] = React.useState([])
