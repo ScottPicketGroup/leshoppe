@@ -4,17 +4,17 @@ import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { P } from "../../../../styled-components/GlobalStyles"
 import ProductDescription from "./ProductDescription"
-const ProductCard = ({ product }) => {
+const ProductCard = (props) => {
   const {
     title,
     images,
     variants,
     descriptionHtml,
     handle,
-  } = product
+  } = props.product
 
   return (
-    <ProductCardContainer>
+    <ProductCardContainer style={props.style ? props.style : {} }>
       <ProductLink to={`/shop/products/${handle}`}>
         <ProductImage
           image={getImage(images[0].localFile.childrenImageSharp[0])}
