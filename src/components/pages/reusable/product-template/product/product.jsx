@@ -1,7 +1,7 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from "gatsby"
-import {P} from '../../../../styled-components/GlobalStyles'
+import { P } from '../../../../styled-components/GlobalStyles'
 import {
   GlobalDispatchContext,
   GlobalStateContext,
@@ -12,20 +12,21 @@ import Slider from './ProductCarousel.jsx/Slider'
 import CheckBoxes from './checkboxes/CheckBoxes'
 import DatePicker from '../order-section/date-picker/DatePicker'
 import DeliveryOptions from './delivery-options/DeliveryOptions'
-import RecommendationsModal from '../recommendations-section/Modal/RecommendationsModa;'
-const Product = ({product}) => {
+import ViewMore from './ViewMore'
+
+const Product = ({ product }) => {
   const [selected, setSelected] = useState(0)
   const [delivery, setDelivery] = useState("Pick Up")
   const [productDetails, setProductDetails] = useState({})
   const [qauntity, setQauntity] = useState(1)
   const [itemToOrder, setItemToOrder] = useState(
-    
+
   )
   // const [cart, setCart] = useLocalStorage("cart", []);
   useEffect(() => {
-   setProductDetails(product.product)
+    setProductDetails(product.product)
   }, [])
- 
+
   const {
     title,
     description,
@@ -33,54 +34,54 @@ const Product = ({product}) => {
     image,
     category,
     endpointId,
-    variants, 
+    variants,
     productType,
   } = productDetails
 
- console.log(productDetails.productType)
-    
-      useEffect(() => {
-     
-       setItemToOrder({...itemToOrder, ['amount']: qauntity})
-      }, [qauntity])
+  console.log(productDetails.productType)
 
-     
+  useEffect(() => {
 
-      const addToCart = () => {
-        
-        
+    setItemToOrder({ ...itemToOrder, ['amount']: qauntity })
+  }, [qauntity])
 
-        // if (cart.length === 0) {
-        //   const newCart = []
-        //   newCart.push(itemToOrder)
-        //   setCart(newCart)
-                
-        //       } else if (cart.some(e => e.item.endpointId === endpointId))  {
-        //         const update = cart.some(check)
-        //         function check(item, i) {
-         
-        //           if (item.item.endpointId === endpointId) 
-        //           {const newCart = [...cart];
-        //           newCart[i].amount = itemToOrder.amount + newCart[i].amount
-        //           setCart(newCart)}
-        //             console.log(cart)
-        //         }
-        //       } else {
-        //         const addToExistingCart = cart.slice()
-        //         addToExistingCart.push(itemToOrder)
-        //         setCart(addToExistingCart)
-        //       }
 
-           
 
-      //   if (cart.some(e => e.item.endpointId === endpointId)) 
-      //   {
-      //     setItemToOrder({...itemToOrder, ['amount']: qauntity })
-      //     const c = cart.slice()
-          
+  const addToCart = () => {
 
-      // }
-       
+
+
+    // if (cart.length === 0) {
+    //   const newCart = []
+    //   newCart.push(itemToOrder)
+    //   setCart(newCart)
+
+    //       } else if (cart.some(e => e.item.endpointId === endpointId))  {
+    //         const update = cart.some(check)
+    //         function check(item, i) {
+
+    //           if (item.item.endpointId === endpointId) 
+    //           {const newCart = [...cart];
+    //           newCart[i].amount = itemToOrder.amount + newCart[i].amount
+    //           setCart(newCart)}
+    //             console.log(cart)
+    //         }
+    //       } else {
+    //         const addToExistingCart = cart.slice()
+    //         addToExistingCart.push(itemToOrder)
+    //         setCart(addToExistingCart)
+    //       }
+
+
+
+    //   if (cart.some(e => e.item.endpointId === endpointId)) 
+    //   {
+    //     setItemToOrder({...itemToOrder, ['amount']: qauntity })
+    //     const c = cart.slice()
+
+
+    // }
+
 
     //     if (cart.length === 0) {
     //       const newCart = []
@@ -92,14 +93,14 @@ const Product = ({product}) => {
     //       addToExistingCart.push(itemToOrder)
     //       setCart(addToExistingCart)
     //     }
-      
+
     //     dispatch({
     //       type: "CART",
     //       items: state.cartItems + 1,
     //       cartProducts: itemToOrder
     //     })
     // if (state.cartProducts.length > -1) {
-      
+
     //   dispatch({
     //     type: "CART",
     //     items: state.cartItems + 1,
@@ -112,72 +113,70 @@ const Product = ({product}) => {
     //     cartProducts: itemToOrder
     //   })
     // }
-}
-       
-// console.log(product.product)
+  }
+
+  // console.log(product.product)
 
 
 
-// console.log(product.product)
+  // console.log(product.product)
 
 
-    return (
-      <ProductContainer>
+  return (
+    <ProductContainer>
       <ProductTextConatiner>
-          <ProductInfoContainer>
-           
-                     <ProductCatagory fFD>
-                {       product &&    product.product.productType.charAt(0).toUpperCase() + product.product.productType.slice(1)} 
-                      </ProductCatagory>
-                      <ProductTitle bc1>{title}</ProductTitle>
-                {variants && variants.length > 0 ? (
-                     <ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>
-                  ): null}
-                      <ProductDescription bc2>{description}</ProductDescription>
-                
-       </ProductInfoContainer>
+        <ProductInfoContainer>
+          <ProductTitle bc1>{title}</ProductTitle>
+          {variants && variants.length > 0 ? (
+            <ProductPrice bc2>${variants[0].priceV2.amount}</ProductPrice>
+          ) : null}
+          <ViewMore bc2>{description}</ViewMore>
+          <DeliverInfo>*** Pickup or delivery avialble - Select your delivery or pick up preferences at check out.
+            We offer in-shoppe pick up and CBD delivery on all online orders.
+            All orders require 48 hours’ notice. Please contact us if your order is urgent.
+            Free CBD delivery on all orders over $300. Delivery calculated at check out.
+            Delivery and pick up available between 7am and 4pm weekdays.</DeliverInfo>
+        </ProductInfoContainer>
 
-     
-      
-      <ProductPurchaseContainer>
-                  {/* checkbox container for options*/}
-                 
-                  {variants && variants.length > 1 ? (
-                    <CheckBoxes variants={variants} selected={selected} setSelected={setSelected}/>
-                  ): null}
-                  {/* date picker */}
-                 
-                  {
-                    productType === "Catering" ? ( 
-                      <>
-                      <DeliveryOptions setDelivery={setDelivery} delivery={delivery}/>
-                      <DatePicker delivery={delivery}/>
-                      </>
-                    ) : null
-                  }
-                 
-                  <ProductPurchaseContainerRow>
-                    <ProductQauntityDropdown 
-                      setQauntity={setQauntity}
-                      qauntity={qauntity}/>
-                    {product && <AddToCartButton
-                      to={'/shop/products/recommendations'}
-                      state={product}
-                    >Add To Cart</AddToCartButton>}
-                    </ProductPurchaseContainerRow> 
-                 
-                </ProductPurchaseContainer>
-                </ProductTextConatiner>
-      { product ? (
+
+
+        <ProductPurchaseContainer>
+
+          {/* {variants && variants.length > 1 ? (
+            <CheckBoxes variants={variants} selected={selected} setSelected={setSelected} />
+          ) : null}
+
+          {
+            productType === "Catering" ? (
+              <>
+                <DeliveryOptions setDelivery={setDelivery} delivery={delivery} />
+                <DatePicker delivery={delivery} />
+              </>
+            ) : null
+          }*/}
+
+          <ProductPurchaseContainerRow>
+            <ProductQauntityDropdown
+              setQauntity={setQauntity}
+              qauntity={qauntity} />
+            {product && <AddToCartButton
+              to={'/shop/products/recommendations'}
+              state={product}
+            >Add To Cart</AddToCartButton>}
+          </ProductPurchaseContainerRow>
+
+        </ProductPurchaseContainer>
+      </ProductTextConatiner>
+      {product ? (
         <ProductCarousel>
-           
-        <Slider images={product.product.variants} selected={selected} setSelected={setSelected}/>
-      
-          </ProductCarousel>
-      ): null}
-    {/* <RecommendationsModal product={product} /> */}
-  </ProductContainer>
-    )
+
+          <Slider images={product.product.variants} selected={selected} setSelected={setSelected} />
+
+        </ProductCarousel>
+      ) : null}
+      {/* <RecommendationsModal product={product} /> */}
+    </ProductContainer>
+  )
 }
 
 export default Product
@@ -198,6 +197,7 @@ export const ProductInfoContainer = styled.div`
 width: 80%;
 `
 export const ProductPurchaseContainer = styled.div`
+margin-top: 1.75rem;
 width: 80%;
 display: flex;
 justify-content: space-between;
@@ -222,8 +222,7 @@ margin-top: 1.75rem;
     margin-bottom: 1rem;
 }
 `
-export const ProductTitle = styled(P)`
-font-size: 2.25rem;
+export const ProductTitle = styled.h1`
   @media screen and (max-width: 450px) {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -236,7 +235,8 @@ export const ProductPrice = styled(P)`
     margin-bottom: 1.5rem;
 }
 `
-export const ProductDescription = styled(P)`
+export const DeliverInfo = styled(P)`
+  margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   @media screen and (max-width: 450px) {
     margin-bottom: 1.5rem;
