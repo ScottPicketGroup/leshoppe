@@ -20,9 +20,10 @@ const FooterContact = () => {
           </PaddressMob>
         </Address>
             <OpeningHoursContainer>
-            Monday - Tuesday: 7.00am - 4.00pm <br/>
-        Wednesday - Friday: 7.00am - 9.00pm
-          {/* <Days>
+        Le Shoppe is currently closed and will reopen early 2022
+            {/* Monday - Tuesday: 7.00am - 4.00pm <br/>
+        Wednesday - Friday: 7.00am - 9.00pm 
+          <Days>
             <ul>
               <li>
                 <Text>Monday</Text>
