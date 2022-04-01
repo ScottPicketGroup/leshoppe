@@ -30,7 +30,7 @@ const Intro = () => {
         </Pintro>
       <Pintro bc1> Le Shoppe is currently closed, keep an eye on our <a href="https://www.instagram.com/leshoppe.chancerylane/" target="_blank"> 
     <Pintro bc1
-    style={{display: `inline`}}
+    style={{display: `inline`, textDecoration: `underline`}}
     > socials</Pintro></a> for re-opening date. </Pintro>
       </IntroText>
     </IntroContainer>
