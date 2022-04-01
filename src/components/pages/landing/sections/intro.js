@@ -28,7 +28,7 @@ const Intro = () => {
           Chancery Lane Bistro, Le Shoppe is proud to continue Melbourne's
           legacy of historic grocers and corner stores.
         </Pintro>
-      <Pintro bc1> Le Shoppe is currently closed for lockdown. </Pintro>
+      <Pintro bc1> Le Shoppe is currently closed, keep an eye on our <a href="https://www.instagram.com/leshoppe.chancerylane/" target="_blank">socials</a> for re-opening date. </Pintro>
       </IntroText>
     </IntroContainer>
   )
