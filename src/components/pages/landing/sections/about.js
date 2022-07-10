@@ -5,48 +5,22 @@ import landscape from "../../../../images/placeholders/aboutLandscape.jpg"
 import vertical from "../../../../images/placeholders/aboutPortrait.jpg"
 import AboutLandscape from "./images/aboutLandscape"
 import AboutPortrait from "./images/aboutPortrait"
+import Renderer from "../../reusable/rich-text-renderers/about"
 
-const About = () => {
+const About = ({ aboutText, aboutHorizontalImage, aboutVerticalImage }) => {
   return (
-    <AboutContainer
-
-    >
-      <AboutText  data-sal="fade"
-  data-sal-delay="100"
-  data-sal-duration="500"
-  data-sal-easing="ease">
-        <Heading>
-          About Le Shoppe
-          
-        </Heading>
-        <Paragraph bc2>
-          Visit us weekdays for freshly made baguettes, salads, pastries and
-          grab-and-go food for the workday, and of course your morning coffee.
-        </Paragraph>
-
-        <Paragraph bc2>
-        We also have a selection of pre-packaged pantry treats—both local and specialty imported items, local spirits, international beers and wines and interesting aperitivi for an afternoon pick-me-up. 
-          {/* <ol>
-            <li>Like its name, the fit-out pays homage </li>
-            <li>Previous era; a space where opulence and luxury </li>
-            <li>Served as a refuge from life outside</li>
-          </ol> */}
-        </Paragraph>
-       
-        <Paragraph bc2>
-        We are pleased to offer a range of corporate catering options including lunch boxes, shared platters and bespoke breakfast & lunch catering, for enquiries, email info@leshoppe.com.au – our full catering offer and online ordering will be launching soon. Watch this space!
-          {/* <ul>
-            <li>Like its name, the fit-out pays homage</li>
-            <li>Previous era; a space where opulence and luxury</li>
-            <li>refuge from life outside</li>
-          </ul> */}
-        </Paragraph>
+    <AboutContainer>
+      <AboutText
+        data-sal="fade"
+        data-sal-delay="100"
+        data-sal-duration="500"
+        data-sal-easing="ease"
+      >
+        <Renderer bc="bc2" node={aboutText} />
       </AboutText>
       <ImgContainer>
-      <AboutLandscape marginBottom="3.5rem"/>
-           <AboutPortrait/>
-       
-     
+        <AboutLandscape marginBottom="3.5rem" aboutHorizontalImage={aboutHorizontalImage} />
+        <AboutPortrait aboutVerticalImage={aboutVerticalImage}/>
       </ImgContainer>
     </AboutContainer>
   )
@@ -95,7 +69,7 @@ export const ImgContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  @media  (max-width: 450px) {
+  @media (max-width: 450px) {
     flex-direction: column;
     width: 100%;
     order: 2;
@@ -108,7 +82,6 @@ export const ImgPortraitSmall = styled.img`
     margin-bottom: 3.5rem;
   }
 `
-
 
 export const ImgLandscapeSmall = styled.img`
   width: 57%;

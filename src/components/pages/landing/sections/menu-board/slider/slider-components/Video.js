@@ -15,7 +15,7 @@ const Video = ({
 }) => { 
   
   useEffect(() => {
-    console.log(slideLive -1 , slideId )
+  
     if (slideLive  -1 == slideId  ) setTitle(title)
    
     }, [slideLive])

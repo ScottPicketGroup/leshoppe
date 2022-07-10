@@ -1,22 +1,28 @@
 import React from "react"
 import styled from "styled-components"
-import { P } from "../../../styled-components/GlobalStyles"
-import oldGuy from "../../../../images/placeholders/openingVertical.jpg"
-import outside from "../../../../images/placeholders/openingLandscape.jpg"
+import { GoogleMapsLink, P, Pintro } from "../../../styled-components/GlobalStyles"
+import Renderer from "../../reusable/rich-text-renderers/OpeningInfo"
 import OpeningLandscape from "./images/openingLandscape"
 import OpeningPortrait from "./images/openingPortrait"
 
-const OpeningInfo = () => {
+const OpeningInfo = ({
+  venueInfoVerticalImage,
+  venueInfoHorizontalImage,
+  venueInfoHeading,
+  venueInfoGoogleLInk,
+  venueInfoDescription,
+  venueInfoOpeningTimes,
+}) => {
   return (
     <OpeningInfoContainer>
       <ImgContainer
-      data-sal="fade"
-      data-sal-delay="100"
-      data-sal-duration="500"
-      data-sal-easing="ease"
+        data-sal="fade"
+        data-sal-delay="100"
+        data-sal-duration="500"
+        data-sal-easing="ease"
       >
-        <OpeningPortrait />
-        <OpeningLandscape />
+        <OpeningPortrait venueInfoVerticalImage={venueInfoVerticalImage} />
+        <OpeningLandscape venueInfoHorizontalImage={venueInfoHorizontalImage} />
       </ImgContainer>
 
       <OpeningInfoText
@@ -24,82 +30,13 @@ const OpeningInfo = () => {
         data-sal-delay="100"
         data-sal-duration="500"
         data-sal-easing="ease"
-      >
-        <Heading>Location & opening hours: </Heading>
-        <P bc2>
-          Le Shoppe
-          <br />
-          430 Little Collins St
-          <br />
-          Melbourne 3000
-        </P>
-        <GoogleLink>
-          <a
-            style={{ textDecoration: `none` }}
-            href="https://goo.gl/maps/HTxEaaJKiy3jfuNcA"
-            target="_blank"
-          >
-            VIEW IN GOOGLE MAPS
-          </a>
-        </GoogleLink>
-
-<P bc2>Le Shoppe is currently closed and will reopen early 2022</P>
-       {/* <P bc2>Monday - Tuesday: 7.00am - 4.00pm</P>*/}
-{/*<P bc2>Wednesday - Friday: 7.00am - 9.00pm</P>*/}
-        {/* <OpeningHoursContainer> */}
-        {/* <Days>
-            <ul>
-              <li>
-                <P bc2>Monday</P>
-              </li>
-              <li>
-                <P bc2>Tuesday</P>
-              </li>
-              <li>
-                <P bc2>Wednesday</P>
-              </li>
-              <li>
-                <P bc2>Thursday</P>
-              </li>
-              <li>
-                <P bc2>Friday</P>
-              </li>
-              <li>
-                <P bc2>Saturday</P>
-              </li>
-              <li>
-                <P bc2>Sunday</P>
-              </li>
-            </ul>
-          </Days>
-          <Hours>
-            <ul>
-              <li>
-                <P bc2>11:30am–9pm</P>
-              </li>
-              <li>
-                <P bc2>11:30am–9pm</P>
-              </li>
-              <li>
-                <P bc2>11:30am–9pm</P>
-              </li>
-              <li>
-                <P bc2>11:30am–9pm</P>
-              </li>
-              <li>
-                <P bc2>11:30am–11:30pm
-</P>
-              </li>
-              <li>
-                <P bc2>11:30am–11:30pm
-</P>
-              </li>
-              <li>
-                <P bc2>11:30am–9pm</P>
-              </li>
-            </ul>
-          </Hours>
-        </OpeningHoursContainer> */}
+      ><Heading>{venueInfoHeading}</Heading>
+      
+        <Renderer node={venueInfoDescription} />
+     
+          <GoogleMapsLink href={venueInfoGoogleLInk}>VIEW IN GOOGLE MAPS</GoogleMapsLink>
+       
+        <Renderer node={venueInfoOpeningTimes} />
       </OpeningInfoText>
     </OpeningInfoContainer>
   )

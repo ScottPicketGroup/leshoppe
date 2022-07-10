@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react"
 import {
   GlobalStyle,
-  PageBackground,
+
 } from "../components/styled-components/GlobalStyles"
 import Header from "./header"
 import styled from "styled-components"
@@ -9,10 +9,10 @@ import LogoFooter from "./pages/reusable/logo-footer/LogoFooter"
 import Menu from "./pages/menu/menu"
 import Footer from "./pages/reusable/footer/Footer"
 import logo from "../images/logos/landing.png"
-import GlobalStateProvider from "./context/GlobalStateProvider"
 import Context from "../components/context/Context"
-const Layout = ({ children }) => {
-  const { globalState, globalDispatch } = useContext(Context)
+const Layout = ({ children, venueInfoDescription, menuImage }) => {
+
+  const {globalDispatch } = useContext(Context)
   let footer = useRef(null)
   let page = useRef(null)
 
@@ -44,30 +44,24 @@ const Layout = ({ children }) => {
     }
   })
 
-  function logit() {
-   console.log(window.pageYOffset)
-  }
-
+  function logit() {}
 
   return (
-    
-      <LayoutContainer>
-        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    <LayoutContainer>
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} menuImage={menuImage}/>
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-        <GlobalStyle />
+      <GlobalStyle />
 
-        <Main ref={el => (page = el)} meh="123">
-          {/* <PageBackground fade={scrollY} display={logoDisplay} /> */}
-          <LogoMobile src={logo} alt="mobile logo" />
-          {children}
-          <FooterContainer ref={el => (footer = el)}>
-            <LogoFooter />
-            <Footer />
-          </FooterContainer>
-        </Main>
-      </LayoutContainer>
-
+      <Main ref={el => (page = el)} meh="123">
+        <LogoMobile src={logo} alt="mobile logo" />
+        {children}
+        <FooterContainer ref={el => (footer = el)}>
+          <LogoFooter />
+          <Footer venueInfoDescription={venueInfoDescription}/>
+        </FooterContainer>
+      </Main>
+    </LayoutContainer>
   )
 }
 

@@ -1,31 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
-import {graphql, useStaticQuery } from 'gatsby'
-import { ImgLandscape } from './image-components'
-const OpeningLandscape = () => {
-
-const data = useStaticQuery(graphql`
-query openingLandscape {
-    allContentfulAsset(filter: {title: {eq: "openingLandscape"}}) {
-      edges {
-        node {
-          id
-          title
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-      }
-    }
-  }
-  
-`)
-const {fluid, title} = data.allContentfulAsset.edges[0].node
-    return (
-        <ImgLandscape fluid={fluid} alt={title} />
-    )
+import { getImage } from "gatsby-plugin-image"
+import React from "react"
+import { ImgLandscape } from "./image-components"
+const OpeningLandscape = ({venueInfoHorizontalImage}) => {
+  return <ImgLandscape image={getImage(venueInfoHorizontalImage)} />
 }
 
 export default OpeningLandscape
-

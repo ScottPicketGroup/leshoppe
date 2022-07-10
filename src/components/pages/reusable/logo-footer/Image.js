@@ -13,7 +13,6 @@ useEffect(() => {
 
 useEffect(() => {
 
-  console.log((slideLive * 10)  + (slideId + 2), pos, 'boobs')
 }, [slideLive])
  let img = useRef(null)
 

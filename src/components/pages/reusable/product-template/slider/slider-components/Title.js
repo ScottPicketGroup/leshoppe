@@ -7,7 +7,6 @@ gsap.registerPlugin()
 const Title = ({imgTitle}) => {
 let title = useRef(null)
     useEffect(() => {
-      console.log('poo')
         gsap.fromTo(title, 1, {
          opacity: 0
        },

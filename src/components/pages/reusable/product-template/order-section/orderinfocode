@@ -5,7 +5,7 @@ import { Button, P } from "../../../../styled-components/GlobalStyles"
 import ProductQauntityDropdown from "./dropdown/ProductQauntityDropdown"
 const OrderInfo = ({product}) => {
   const {title, price, productType, description, variants} = product
-  console.log(product)
+
   return (
     <OrderInfoContainer>
       <TextContainer>

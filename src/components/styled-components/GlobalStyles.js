@@ -153,7 +153,6 @@ export const Section1 = styled.div`
   overflow-x: hidden;
   background: transperant;
   @media screen and (max-width: 450px) {
-  
     padding: 0 1.15rem;
   }
 `
@@ -181,6 +180,13 @@ export const Button = styled.button`
   :hover {
     color: ${cream};
     background-color: ${green};
+  }
+`
+export const Heading = styled.h1`
+  margin-bottom: 2.25rem;
+
+  @media screen and (max-width: 450px) {
+    margin-bottom: 1.5rem;
   }
 `
 export const P = styled.p`
@@ -212,6 +218,37 @@ export const P = styled.p`
       : null};
   padding-top: ${props => props.padding};
   opacity: ${props => (props.fFD ? `${formFieldDesc.opacity}` : "1")};
+`
+
+export const Pintro = styled(P)`
+  margin-bottom: ${props => (props.footer ? "0" : "36px")};
+  @media screen and (max-width: 450px) {
+   
+    font-size:${props => (props.footer ? "1rem !important" : "0")};
+  }
+`
+
+export const PintroLink = styled.a`
+  text-decoration: none;
+  color: #153e35;
+  text-decoration: underline;
+  font-size: ${props => (props.googleMapsLink ? "1rem" : "1.5rem")};
+  line-height: 1.14;
+  opacity: 1;
+  margin-bottom: ${props => (props.footer ? "0" : "1.5rem")};
+  @media screen and (max-width: 450px) {
+    font-size: .75rem;
+  }
+`
+export const GoogleMapsLink = styled.a`
+text-decoration: none;
+font-size: 1rem;
+line-height: ${h2.lineHeight};
+letter-spacing: ${h2.letterSpacing};
+margin: 0 0 2.25rem 0;
+@media screen and (max-width: 450px) {
+  font-size: 1rem !important;
+}
 `
 export const UnderlineLink = styled.a`
   position: relative;

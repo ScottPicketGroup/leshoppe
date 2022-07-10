@@ -6,7 +6,7 @@ const DropdownArrow = ({open}) => {
     return (
    
         <SVG xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 28.871 15.849" open={open}>
-        <path id="Path_11619" data-name="Path 11619" d="M13.728,0,0,13.729,13.728,27.457" transform="translate(0.707 14.435) rotate(-90)" fill="none" stroke="#153e35" stroke-width="2"/>
+        <path id="Path_11619" data-name="Path 11619" d="M13.728,0,0,13.729,13.728,27.457" transform="translate(0.707 14.435) rotate(-90)" fill="none" stroke="#153e35" strokeWidth="2"/>
       </SVG>
       
     )

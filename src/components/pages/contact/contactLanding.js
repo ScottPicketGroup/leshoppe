@@ -1,19 +1,24 @@
 import React from "react"
-import styled from "styled-components"
-import { Page, Section1 } from "../../styled-components/GlobalStyles"
-import LogoFooter from "../reusable/logo-footer/LogoFooter"
-import { color, font, padding } from "../../styled-components/variables"
+import {Section1 } from "../../styled-components/GlobalStyles"
 
-import Footer from "../reusable/footer/Footer"
 import ContactHero from "./contactHero"
 import ContactInfo from "./contactInfo"
 import ContactUs from "./ContactUs"
-const ContactLanding = () => {
+const ContactLanding = ({ data }) => {
+  const {
+    formSectionHeading,
+    formSectionIntroduction,
+    contactText,
+    heroImage,
+  } = data.allContentfulContactUsPageContent.edges[0].node
   return (
     <Section1>
       <ContactHero />
-      <ContactInfo />
-      <ContactUs />
+      <ContactInfo image={heroImage} contactText={contactText} />
+      <ContactUs
+        formSectionHeading={formSectionHeading}
+        formSectionIntroduction={formSectionIntroduction}
+      />
     </Section1>
   )
 }

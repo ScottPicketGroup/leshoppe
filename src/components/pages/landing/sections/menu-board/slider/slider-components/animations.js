@@ -9,7 +9,7 @@ export const slideLeft = () => {
       setBackButton(true)
       setImageNo(imageNo + 1)
 
-      console.log(`imageNo`, imageNo)
+   
     } else {
       TweenLite.to(imageList, {
         x: 0,

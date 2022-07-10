@@ -4,34 +4,28 @@ import { P } from "../../../styled-components/GlobalStyles"
 import introImg from "../../../../images/placeholders/introLandscape.jpg"
 import IntroLandscape from "./images/introLandscape"
 import VideoPlayer, { ImgLandscape } from "./video/videoPlayer"
-const Intro = () => {
+import Renderer from "../../reusable/rich-text-renderers/sample"
+const Intro = ({welcomeText, introVideo}) => {
+  console.log('introVideo', introVideo)
   return (
-    <IntroContainer  >
-    <>
-        <VideoPlayer />
-      <IntroLandscape  data-sal="fade"
-  data-sal-delay="100"
-  data-sal-duration="500"
-  data-sal-easing="ease"/>
+    <IntroContainer>
+      <>
+        <VideoPlayer introVideo={introVideo}/>
+        <IntroLandscape
+          data-sal="fade"
+          data-sal-delay="100"
+          data-sal-duration="500"
+          data-sal-easing="ease"
+        />
       </>
-     
-      
-      <IntroText  data-sal="fade"
-  data-sal-delay="100"
-  data-sal-duration="500"
-  data-sal-easing="ease">
-    < Pintro bc1 
-      > Bienvenue! Welcome to Le Shoppe by Chancery Lane.</Pintro>
-        <Pintro bc1>
-          Le Shoppe is Scott Pickett’s European-inspired coffee bar and
-          provedore, located at 430 Little Collins St, Melbourne. Adjoining
-          Chancery Lane Bistro, Le Shoppe is proud to continue Melbourne's
-          legacy of historic grocers and corner stores.
-        </Pintro>
-      <Pintro bc1> Le Shoppe is currently closed, keep an eye on our <a href="https://www.instagram.com/leshoppe.chancerylane/" target="_blank"> 
-    <Pintro bc1
-    style={{display: `inline`, textDecoration: `underline`}}
-    > socials</Pintro></a> for re-opening date. </Pintro>
+
+      <IntroText
+        data-sal="fade"
+        data-sal-delay="100"
+        data-sal-duration="500"
+        data-sal-easing="ease"
+      >
+        <Renderer node={welcomeText} />
       </IntroText>
     </IntroContainer>
   )

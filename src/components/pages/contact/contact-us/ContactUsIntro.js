@@ -1,14 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { P } from '../../../styled-components/GlobalStyles'
-const ContactUsIntro = () => {
+import Renderer from '../../reusable/rich-text-renderers/about'
+const ContactUsIntro = ({ formSectionHeading, formSectionIntroduction }) => {
     return (
         <ContactUsIntroContainer>
-        <h1>Contact Us</h1>
-        <P bc2>
-          Fill in your details here to send us a message and tick the box to be
-          first to hear about all the exciting things we’ve got planned.{" "}
-        </P>
+        <h1>{formSectionHeading}</h1>
+       <Renderer node={formSectionIntroduction}/>
     </ContactUsIntroContainer>
     )
 }

@@ -5,8 +5,9 @@ import MenuImageSlider from "./slider/MenuImageSlider"
 import { P } from "../../../../styled-components/GlobalStyles"
 import SliderControls from "./slider/slider-components/SliderControls"
 import Title from "./slider/slider-components/Title"
-import Carousel from "./slider/Carousel"
-const MenuBoard = () => {
+
+import NewCarousel from "./slider/NewCarousel"
+const MenuBoard = ({galleryImages}) => {
 
 
   return (
@@ -14,7 +15,7 @@ const MenuBoard = () => {
     data-sal-delay="100"
     data-sal-duration="500"
     data-sal-easing="ease">
-    <Carousel />
+<NewCarousel galleryImages={galleryImages}/>
   
      
     </MenuBoardPageContainer>

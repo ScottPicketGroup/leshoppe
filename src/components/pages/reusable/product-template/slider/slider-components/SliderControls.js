@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const SliderControls = ({slideLive, setSlideLive}) => {
 
     const back = () => {
-        console.log(`slideLive`, slideLive)
+    
         if (slideLive === -2) {setSlideLive(slideLive +1)} 
     }
     const forward = () => {

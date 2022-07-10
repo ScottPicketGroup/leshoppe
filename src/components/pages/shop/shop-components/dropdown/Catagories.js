@@ -5,7 +5,6 @@ const Catagories = ({catagories, setCatagory ,setMenuLabel}) => {
    const setCatgoryAndLabel = (catagory) => {
     setCatagory(catagory) 
     setMenuLabel(catagory)
-    console.log(catagory)
    }
     return (
         <CatagoriesContainer>

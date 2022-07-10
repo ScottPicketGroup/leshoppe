@@ -4,13 +4,13 @@ import FooterContact from './FooterContact'
 import FooterLinks from './FooterLinks'
 import FooterSocials from './FooterSocials'
 import FooterSubscribe from './FooterSubscribe'
-const Footer = () => {
+const Footer = ({venueInfoDescription}) => {
     return (
         <FooterContainer>
             <LeftContainer>
                 <SubContainer>
                 <FooterLinks/>
-                <FooterContact/>
+                <FooterContact venueInfoDescription={venueInfoDescription}/>
                 <FooterSocials/>
                 </SubContainer>
             </LeftContainer>
