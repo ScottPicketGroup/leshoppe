@@ -6,14 +6,13 @@ import ProductTemplate from "../components/pages/reusable/product-template/Produ
 const ProductPage = () => (
   <>
   
-    <Layout>
+   
       <SEO title="Welcome" />
       <AA>
 
           <ProductTemplate/>
       </AA>
-      
-    </Layout>
+ 
   </>
 )
 
