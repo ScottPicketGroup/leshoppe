@@ -3,11 +3,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import ShopLanding from "../components/pages/shop/ShopLanding"
-const Shop = (menuOpen, setMenuOpen) => (
+const Shop = () => (
   <>
     <Layout>
       <SEO title="Shop" />
-      <ShopLanding />
+      {/* <ShopLanding /> */}
       
     </Layout>
   </>
