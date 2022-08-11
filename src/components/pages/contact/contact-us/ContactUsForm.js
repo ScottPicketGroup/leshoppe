@@ -221,7 +221,7 @@ const ContactUsForm = () => {
         </>
       ) : (
         <>
-          <Label thankyou> Thank you for submitting your enquirey.</Label>
+          <Label thankyou> Thank you for submitting your enquiry.</Label>
           <Label thankyou>
             {" "}
             A member of our staff will be in contact shortly.

@@ -7,17 +7,15 @@ import SliderControls from "./slider/slider-components/SliderControls"
 import Title from "./slider/slider-components/Title"
 
 import NewCarousel from "./slider/NewCarousel"
-const MenuBoard = ({galleryImages}) => {
-
-
+const MenuBoard = ({ galleryImages }) => {
   return (
-    <MenuBoardPageContainer     data-sal="fade"
-    data-sal-delay="100"
-    data-sal-duration="500"
-    data-sal-easing="ease">
-<NewCarousel galleryImages={galleryImages}/>
-  
-     
+    <MenuBoardPageContainer
+      data-sal="fade"
+      data-sal-delay="100"
+      data-sal-duration="500"
+      data-sal-easing="ease"
+    >
+      <NewCarousel galleryImages={galleryImages} />
     </MenuBoardPageContainer>
   )
 }
