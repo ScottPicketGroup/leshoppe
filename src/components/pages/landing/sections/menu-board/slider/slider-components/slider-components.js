@@ -115,3 +115,72 @@ export const ModalBack = styled.button`
   z-index: 1000;
   `
 
+export const ImageBox = styled.div`
+  min-width: ${props => props.standardWidth}%;
+  z-index: ${props => props.image};
+  aspect-ratio: ${props => props.type === "menu" ? '4/5' : '4/3'};
+  background-color: ${props => props.backgroundColor};
+  transition: margin-left 1s ease;
+  transition-timing-function: ease;
+  margin-right: ${props => props.gutterWidth}%;
+  margin-left: ${props => {
+    const { image, gutterWidth, position, standardWidth } = props;
+    console.log('standardwidth', standardWidth)
+    // the stack are the images on the left of the screen.
+    // We want to ensure the position is above zero as it's always at the bottom of 
+    // the stack.
+    // 
+    // Position is the top card on the stack. So if the image is greater than
+    // the position, it's right of the stack (aka on the deck).
+    const onStack = position > 0 && image <= position;
+    // if the image is not on the stack, we want to bump it over the standard width
+    // of all images plus the gutter width (padding between images)
+    if (image > 0 && onStack) {
+      return `-${standardWidth + gutterWidth}%;`
+    }
+    // other wise, don't add any left margin to it
+    return '0px;'
+  }}  ;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  @media screen and (max-width: 450px) {
+    min-width: 100%;
+    min-height: 80vw;
+    margin-left: ${props => {
+    const { image, gutterWidth, position, standardWidth } = props;
+    // the stack are the images on the left of the screen.
+    // We want to ensure the position is above zero as it's always at the bottom of 
+    // the stack.
+    // 
+    // Position is the top card on the stack. So if the image is greater than
+    // the position, it's right of the stack (aka on the deck).
+    const onStack = position > 0 && image <= position;
+    // if the image is not on the stack, we want to bump it over the standard width
+    // of all images plus the gutter width (padding between images)
+    if (image > 0 && onStack) {
+      return `-101%`
+    }
+    // other wise, don't add any left margin to it
+    return '0px;'
+  }}  ;
+}
+
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+
+`
+export const Imgbox = styled(Img)`
+height: 100%;
+width: 100%;
+`
+export const MenuBoardContainer = styled.div`
+  height: 100%;
+width: 100%;
+background: darkgray;
+`;
