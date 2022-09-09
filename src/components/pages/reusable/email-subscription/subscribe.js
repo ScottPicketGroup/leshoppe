@@ -29,6 +29,7 @@ const Subscribe = () => {
       var raw = JSON.stringify({
         data: {
           email: email,
+          tags: ["Le Shoppe"]
         },
       })
 
