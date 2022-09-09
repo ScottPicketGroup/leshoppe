@@ -1,13 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
-import MenuImageSlider from "./slider/MenuImageSlider"
-import { P } from "../../../../styled-components/GlobalStyles"
-import SliderControls from "./slider/slider-components/SliderControls"
-import Title from "./slider/slider-components/Title"
+import MenuBoardCarousel from "./slider/MenuBoardCarousel"
 
-import NewCarousel from "./slider/NewCarousel"
-const MenuBoard = ({ galleryImages }) => {
+import NewCarousel from "./slider/MenuBoardCarousel"
+const MenuBoard = ({ menuBoardContent }) => {
+
+
   return (
     <MenuBoardPageContainer
       data-sal="fade"
@@ -15,7 +13,7 @@ const MenuBoard = ({ galleryImages }) => {
       data-sal-duration="500"
       data-sal-easing="ease"
     >
-      <NewCarousel galleryImages={galleryImages} />
+     { menuBoardContent &&  <MenuBoardCarousel elements={menuBoardContent}/>}
     </MenuBoardPageContainer>
   )
 }

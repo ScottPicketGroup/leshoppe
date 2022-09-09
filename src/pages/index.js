@@ -53,6 +53,36 @@ export const query = graphql`
           menuImage {
             gatsbyImageData(placeholder: BLURRED)
           }
+          menuBoardContent {
+            heading
+            availability
+            items {
+              ... on ContentfulMenuBoardCardItem {
+                id
+                itemPrice
+                itemName
+              }
+              ... on ContentfulMenuCardDayItem {
+                id
+                day
+                dayOptionItems {
+                  itemName
+                  itemPrice
+                }
+              }
+              ... on ContentfulMenuCardLongTextBox {
+                id
+                text {
+                  raw
+                }
+              }
+            }
+            cardBackground {
+              fluid {
+                src
+              }
+            }
+          }
           venueInfoHeading
           venueInfoGoogleLInk
           venueInfoDescription {

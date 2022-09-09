@@ -291,3 +291,23 @@ export const Footer = styled.div`
     align-items: flex-end;
   }
 `
+export const CardHeading = styled.h1`
+  font-size: 40px;
+  color: white;
+  margin-top: 3rem;
+  margin-bottom: ${props => !props.availability && '1rem !important' };
+`;
+
+export const AvailabilityHeading = styled.h1`
+    font-size: 24px;
+  color: white;
+  margin-top: ${props => props.availability ? '1rem' : '11%'};
+  margin-bottom: ${props => props.availability ? '1rem !important' : '.5rem !important'};
+`;
+
+export const Pitem = styled(P)`
+color: white;
+
+  font-size: 24px;
+  text-align: ${props => props.center ? `center` : ``};
+`;

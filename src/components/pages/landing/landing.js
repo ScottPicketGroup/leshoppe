@@ -8,6 +8,7 @@ import Quote from "./sections/qoute"
 import { Section1 } from "../../styled-components/GlobalStyles"
 import LaNuit from "./laNuit"
 import MenuBoard from "./sections/menu-board/MenuBoard"
+import Carousel from "./sections/Carousel/Carousel"
 
 const Landing = ({ data }) => {
   const {
@@ -18,6 +19,7 @@ const Landing = ({ data }) => {
     quote,
     welcomeImage,
     galleryImages,
+    menuBoardContent,
     venueInfoHeading,
     venueInfoGoogleLInk,
     venueInfoDescription,
@@ -25,10 +27,7 @@ const Landing = ({ data }) => {
     venueInfoHorizontalImage,
     venueInfoVerticalImage,
   } = data.allContentfulLandingPageContent.edges[0].node
-  console.log(
-    "first",
-    data.allContentfulLandingPageContent.edges[0].node.welcomeImage
-  )
+
   return (
     <Section1>
       <Hero />
@@ -40,7 +39,9 @@ const Landing = ({ data }) => {
       />
       {/* <LaNuit /> */}
       <Quote />
-      <MenuBoard galleryImages={galleryImages} />
+      <Carousel galleryImages={galleryImages} />
+      <MenuBoard menuBoardContent={menuBoardContent} />
+   
       <OpeningInfo
         venueInfoHeading={venueInfoHeading}
         venueInfoGoogleLInk={venueInfoGoogleLInk}

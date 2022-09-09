@@ -17,27 +17,27 @@ export const StyledImg = styled(Img)``
 
 export const SliderControls = styled.div`
   position: absolute;
-
+  
   width: 100%;
   height: 100%;
 `
 export const Forward = styled.button`
   background: rgba(255, 255, 255, 20%);
-  padding: 0.5rem 0.9rem;
+  padding: .5rem .90rem;
   position: absolute;
   right: 2.5%;
   top: 50%;
   border: none;
   border: 1px solid black;
-
+  
   font-family: Arial;
   font-weight: bold;
   z-index: 1;
 `
 export const Back = styled.button`
   background: rgba(255, 255, 255, 20%);
-  padding: 0.5rem 0.9rem;
-
+  padding: .5rem .90rem;
+  
   position: absolute;
   left: 2.5%;
   top: 50%;
@@ -49,7 +49,7 @@ export const Back = styled.button`
 `
 export const FullScreen = styled.button`
   background: rgba(255, 255, 255, 20%);
-  padding: 0.5rem 0.9rem;
+  padding: .5rem .90rem;
   position: absolute;
   right: 2.5%;
   bottom: 2.5%;
@@ -57,30 +57,32 @@ export const FullScreen = styled.button`
   border: 1px solid black;
   font-family: Arial;
   font-weight: bold;
+
+
 `
 export const FullScreenLightBoxContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  box-sizing: border-box;
-  margin: 0;
-  position: absolute;
-  z-index: 200;
-  background: black;
-  display: ${props => (props.openLightbox ? "flex" : "none")};
+height: 100vh;
+width: 100vw;
+overflow: hidden;
+box-sizing: border-box;
+margin: 0;
+position: absolute;
+z-index: 200;
+background: black;
+display: ${props => props.openLightbox ? "flex" : "none"};
 `
 export const CloseButton = styled.div`
-  position: absolute;
-  top: 3.5%;
-  right: 2%;
-  color: black;
+position: absolute;
+top: 3.5%;
+right: 2%;
+color: black;
 
-  padding: 0.25rem 0.5rem;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
-  z-index: 2;
+padding: .25rem .5rem;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+font-size: 2rem;
+z-index: 2;
 `
 export const ModalSliderContainer = styled.div`
   min-width: 100%;
@@ -88,21 +90,21 @@ export const ModalSliderContainer = styled.div`
 `
 export const ModalForward = styled.button`
   background: rgba(255, 255, 255, 20%);
-  padding: 0.5rem 0.9rem;
+  padding: .5rem .90rem;
   position: absolute;
   top: 50%;
   right: 2.5%;
   border: none;
   border: 1px solid black;
-
+  
   font-family: Arial;
   font-weight: bold;
   z-index: 1000;
 `
 export const ModalBack = styled.button`
   background: rgba(255, 255, 255, 20%);
-  padding: 0.5rem 0.9rem;
-
+  padding: .5rem .90rem;
+  
   position: absolute;
   left: 2.5%;
   top: 50%;
@@ -111,34 +113,34 @@ export const ModalBack = styled.button`
   font-family: Arial;
   font-weight: bold;
   z-index: 1000;
-`
+  `
 
 export const ImageBox = styled.div`
   min-width: ${props => props.standardWidth}%;
   z-index: ${props => props.image};
-  aspect-ratio: ${props => (props.type === "menu" ? "4/5" : "4/3")};
+  aspect-ratio: ${props => props.type === "menu" ? '4/5' : '4/3'};
   background-color: ${props => props.backgroundColor};
   transition: margin-left 1s ease;
   transition-timing-function: ease;
   margin-right: ${props => props.gutterWidth}%;
   margin-left: ${props => {
-    const { image, gutterWidth, position, standardWidth } = props
-
+    const { image, gutterWidth, position, standardWidth } = props;
+    console.log('standardwidth', standardWidth)
     // the stack are the images on the left of the screen.
-    // We want to ensure the position is above zero as it's always at the bottom of
+    // We want to ensure the position is above zero as it's always at the bottom of 
     // the stack.
-    //
+    // 
     // Position is the top card on the stack. So if the image is greater than
     // the position, it's right of the stack (aka on the deck).
-    const onStack = position > 0 && image <= position
+    const onStack = position > 0 && image <= position;
     // if the image is not on the stack, we want to bump it over the standard width
     // of all images plus the gutter width (padding between images)
     if (image > 0 && onStack) {
       return `-${standardWidth + gutterWidth}%;`
     }
     // other wise, don't add any left margin to it
-    return "0px;"
-  }};
+    return '0px;'
+  }}  ;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -147,67 +149,38 @@ export const ImageBox = styled.div`
     min-width: 100%;
     min-height: 80vw;
     margin-left: ${props => {
-      const { image, gutterWidth, position, standardWidth } = props
-      // the stack are the images on the left of the screen.
-      // We want to ensure the position is above zero as it's always at the bottom of
-      // the stack.
-      //
-      // Position is the top card on the stack. So if the image is greater than
-      // the position, it's right of the stack (aka on the deck).
-      const onStack = position > 0 && image <= position
-      // if the image is not on the stack, we want to bump it over the standard width
-      // of all images plus the gutter width (padding between images)
-      if (image > 0 && onStack) {
-        return `-101%`
-      }
-      // other wise, don't add any left margin to it
-      return "0px;"
-    }};
-  }
-`
+    const { image, gutterWidth, position, standardWidth } = props;
+    // the stack are the images on the left of the screen.
+    // We want to ensure the position is above zero as it's always at the bottom of 
+    // the stack.
+    // 
+    // Position is the top card on the stack. So if the image is greater than
+    // the position, it's right of the stack (aka on the deck).
+    const onStack = position > 0 && image <= position;
+    // if the image is not on the stack, we want to bump it over the standard width
+    // of all images plus the gutter width (padding between images)
+    if (image > 0 && onStack) {
+      return `-101%`
+    }
+    // other wise, don't add any left margin to it
+    return '0px;'
+  }}  ;
+}
+
+`;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   min-width: 100%;
+
 `
 export const Imgbox = styled(Img)`
-  height: 100%;
-  width: 100%;
+height: 100%;
+width: 100%;
 `
 export const MenuBoardContainer = styled.div`
   height: 100%;
-  width: 100%;
-  background-image: ${props =>
-    props.backgroundImage ? `url(${props.backgroundImage}) ` : "grey"};
-  background-size: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-`
-
-export const ItemsContainer = styled.div`
-  /* margin-top: 20px; */
-  /* border: white 5px solid; */
-  height: ${props => !props.heading && "85% !important"};
-  width: 80%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: ${props => !props.heading && "center"};
-`
-export const ItemContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: ${props => !props.heading && 'column'};
-  justify-content: space-between;
-  margin: ${props => props.single ? ".5rem 0" : !props.heading ? '-5rem 0 0 0' : ''};
-  :first-child {
-    margin-top: ${props => props.heading && '0'};
-  }
-`
-
-export const ItemDayContainer = styled.div`
-  margin: 0.5rem 0;
-`
+width: 100%;
+background: darkgray;
+`;
