@@ -2,11 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import { Link } from "gatsby"
-
-import { P, UnderlineLink } from "../../styled-components/GlobalStyles"
-
-import leShoppe from "../../../images/logos/leshoppe.svg"
-import meat from "../../../images/placeholders/homeLandscapeMeat.jpg"
 import { Socials } from "../../styled-components/ComingSoonComponents"
 import Facebook from "../coming-soon/Facebook"
 import Instagram from "../coming-soon/Instagram"

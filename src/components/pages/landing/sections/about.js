@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
-import landscape from "../../../../images/placeholders/aboutLandscape.jpg"
-import vertical from "../../../../images/placeholders/aboutPortrait.jpg"
 import AboutLandscape from "./images/aboutLandscape"
 import AboutPortrait from "./images/aboutPortrait"
 import Renderer from "../../reusable/rich-text-renderers/about"

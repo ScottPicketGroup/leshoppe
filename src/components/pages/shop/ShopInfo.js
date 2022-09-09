@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Img } from "gatsby-image"
 import img from "../../../images/placeholders/shopPasta.jpg"
 
 import { P } from "../../styled-components/GlobalStyles"

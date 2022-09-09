@@ -1,16 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import { P } from "../../../styled-components/GlobalStyles"
-import introImg from "../../../../images/placeholders/introLandscape.jpg"
 import IntroLandscape from "./images/introLandscape"
-import VideoPlayer, { ImgLandscape } from "./video/videoPlayer"
+import VideoPlayer from "./video/videoPlayer"
 import Renderer from "../../reusable/rich-text-renderers/sample"
-const Intro = ({welcomeText, introVideo}) => {
-  console.log('introVideo', introVideo)
+const Intro = ({ welcomeText, introVideo }) => {
+  console.log("introVideo", introVideo)
   return (
     <IntroContainer>
       <>
-        <VideoPlayer introVideo={introVideo}/>
+        <VideoPlayer introVideo={introVideo} />
         <IntroLandscape
           data-sal="fade"
           data-sal-delay="100"
